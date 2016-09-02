@@ -4,16 +4,27 @@
 		<title>Yakume</title>
 		<script type="text/javascript" src="js/angular.min.js"></script>
 		<script type="text/javascript" src="js/angular-route.min.js"></script>
+		<script type="text/javascript" src="js/jquery-1.11.0.js"></script>
 		<script type="text/javascript" src="controller.js"></script>
+		<script type="text/javascript" src="login/login.controller.js"></script>
 
-
-		<link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/images/icons/apple-touch-icon-144-precomposed.png">
+	<link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/images/icons/apple-touch-icon-144-precomposed.png">
 	<link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/images/icons/apple-touch-icon-114-precomposed.png">
 	<link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/images/icons/apple-touch-icon-72-precomposed.png">
 	<link rel="apple-touch-icon-precomposed" href="assets/images/icons/apple-touch-icon-57-precomposed.png">
 	<link rel="shortcut icon" href="assets/images/icons/favicon.png">
 
+	
+	<script type="text/javascript" src="assets/widgets/wow/wow.js"></script>
+	<script type="text/javascript">
+	    /* WOW animations */
 
+	    wow = new WOW({
+	        animateClass: 'animated',
+	        offset: 100
+	    });
+	    wow.init();
+	</script>
 
 	    <!-- HELPERS -->
 
@@ -162,7 +173,7 @@
     <script type="text/javascript" src="assets/js-core/jquery-cookie.js"></script>
 
 	</head>
-<body ng-app="mainApp">
+<body ng-app="mainApp" id="bodyBackground" ui-vew>
 
 	<div ng-view></div>
 
@@ -250,7 +261,7 @@
 
 <!-- Theme switcher -->
 
-<script type="text/javascript" src="assets/widgets/theme-switcher/themeswitcher.js"></script>
+
 
 
 </html>

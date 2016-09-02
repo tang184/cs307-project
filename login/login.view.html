@@ -1,22 +1,93 @@
-<div class="col-md-6 col-md-offset-3">
-    <h2>Login</h2>
-    <form name="form" ng-submit="vm.login()" role="form">
-        <div class="form-group" ng-class="{ 'has-error': form.username.$dirty && form.username.$error.required }">
-            <label for="username">Username</label>
-            <input type="text" name="username" id="username" class="form-control" ng-model="vm.username" required />
-            <span ng-show="form.username.$dirty && form.username.$error.required" class="help-block">Username is required</span>
+
+    <div class="center-vertical">
+        <div class="center-content row">
+
+            <div class="col-md-6 center-margin">
+
+                <h3 class="text-center pad15B font-gray text-transform-upr font-size-23">Yakume</h3>
+
+                <div class="content-box border-top border-red clearfix">
+                    <div class="content-box-wrapper row">
+                        <form action="" id="login-validation" class="col-md-7" method="">
+                            <div id="login-form">
+                                <div class="pad20A">
+
+                                    <div class="form-group">
+                                        <label for="exampleInputEmail1">Email address:</label>
+                                        <div class="input-group input-group-lg">
+                                            <span class="input-group-addon addon-inside bg-white font-primary">
+                                                <i class="glyph-icon icon-envelope-o"></i>
+                                            </span>
+                                            <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleInputPassword1">Password:</label>
+                                        <div class="input-group input-group-lg">
+                                            <span class="input-group-addon addon-inside bg-white font-primary">
+                                                <i class="glyph-icon icon-unlock-alt"></i>
+                                            </span>
+                                            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                                        </div>
+                                    </div>
+                                    <div class="row mrg15B">
+                                        <div class="checkbox-primary col-md-10" style="height: 20px;">
+                                            <label>
+                                                <input type="checkbox" id="loginCheckbox1" class="custom-checkbox">
+                                                Remember me
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <button type="submit" class="btn btn-block btn-blue-alt">Login</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </form>
+                        <div class="col-md-4 float-right" style="height: 287px;">
+
+                            <div class="center-vertical">
+                                <div class="center-content">
+
+                                    <a href="#" class="btn btn-block btn-md bg-facebook">
+                                        <span class="glyph-icon icon-separator">
+                                            <i class="glyph-icon icon-facebook"></i>
+                                        </span>
+                                        <span class="button-content">
+                                            Connect with Facebook
+                                        </span>
+                                    </a>
+                                    <div class="mrg10A"></div>
+                                    <a href="#" class="btn btn-block btn-md bg-twitter">
+                                        <span class="glyph-icon icon-separator">
+                                            <i class="glyph-icon icon-twitter"></i>
+                                        </span>
+                                        <span class="button-content">
+                                            Connect with Twitter
+                                        </span>
+                                    </a>
+                                    <div class="mrg10A"></div>
+                                    <a href="#" class="btn btn-block btn-md bg-google">
+                                        <span class="glyph-icon icon-separator">
+                                            <i class="glyph-icon icon-google-plus"></i>
+                                        </span>
+                                        <span class="button-content">
+                                            Connect with Google+
+                                        </span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="form-group" ng-class="{ 'has-error': form.password.$dirty && form.password.$error.required }">
-            <label for="password">Password</label>
-            <input type="password" name="password" id="password" class="form-control" ng-model="vm.password" required />
-            <span ng-show="form.password.$dirty && form.password.$error.required" class="help-block">Password is required</span>
-        </div>
-        <div class="form-actions">
-            <button type="submit" ng-disabled="form.$invalid || vm.dataLoading" class="btn btn-primary">Login</button>
-            <img ng-if="vm.dataLoading" src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" />
-            <a href="#/register" class="btn btn-link">Register</a>
-        </div>
-    </form>
-</div>
+    </div>
+
+<script src="login.controller.js"></script>
+<script src="../controller.js"></script>
+<script type="text/javascript" src="../js/angular.min.js"></script>
+<script type="text/javascript" src="../js/angular-route.min.js"></script>
 
 
