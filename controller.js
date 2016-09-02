@@ -14,6 +14,7 @@
                 templateUrl: 'dashboard/dashboard.view.html',
             })
             .when('/register', {
+                controller: 'RegisterController',
                 templateUrl: 'register/register.view.html',
             })
             .otherwise({redirectTo: '/' });

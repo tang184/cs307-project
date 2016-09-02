@@ -2,28 +2,17 @@
     'use strict';
 
     angular
-        .module('app')
+        .module('mainApp')
         .controller('RegisterController', RegisterController);
 
-    RegisterController.$inject = ['UserService', '$location', '$rootScope', 'FlashService'];
-    function RegisterController(UserService, $location, $rootScope, FlashService) {
-        var vm = this;
+    RegisterController.$inject = ['$location', '$scope'];
+        function RegisterController($location, $scope) {
+            $("#bodyBackground").css('background-image', 'url(../assets/image-resources/blurred-bg/blurred-bg-2.jpg)');
 
-        vm.register = register;
-
-        function register() {
-            vm.dataLoading = true;
-            UserService.Create(vm.user)
-                .then(function (response) {
-                    if (response.success) {
-                        FlashService.Success('Registration successful', true);
-                        $location.path('/login');
-                    } else {
-                        FlashService.Error(response.message);
-                        vm.dataLoading = false;
-                    }
-                });
+            $scope.back = function() {
+                $location.path('/');
+            }
         }
-    }
+
 
 })();
