@@ -25,14 +25,29 @@
                                 <span ng-show="form.email.$dirty && form.email.$error.required" class="help-block">Email is required</span>
                                 <span ng-show="form.email.$dirty && !form.email.$error.required && form.email.$error.pattern" class="help-block">Please enter a valid email</span>
                             </div>
-                            <div class="form-group" ng-class="{ 'has-error': form.password.$dirty && form.password.$error.required }">
+                            <div class="form-group" ng-class="{ 'has-error': form.password.$dirty && form.password.$error}">
                                 <label for="password">Password</label>
-                                <input type="password" name="password" id="password" class="form-control" ng-model="vm.user.password" required ng-change="checkPassword()"/>
+                                <input type="password" name="password" id="password" class="form-control" ng-model="vm.user.password"
+                                ng-minlength="8" onpaste="return false" oncontextmenu="return false" oncopy="return false" 
+                                oncut="return false" ng-maxlength="20" ng-pattern="/(?=.*[A-z])(?=.*[0-9])/"
+                                required ng-change="checkPassword()"/>
                                 <span ng-show="form.password.$dirty && form.password.$error.required" class="help-block">Password is required</span>
+
+                                <span class="help-block"
+                                    ng-show="!form.password.$error.required && (form.password.$error.minlength || form.password.$error.maxlength) && form.password.$dirty">
+                                    Passwords must be between 8 and 20 characters
+                                </span>
+                                <span class="help-block"
+                                      ng-show="!form.password.$error.required && !form.password.$error.minlength && !form.password.$error.maxlength && form.password.$error.pattern && form.password.$dirty">
+                                    Must contain both alphabetical and number characters
+                                </span>
+
+
                             </div>
                             <div class="form-group" ng-class="{ 'has-error': form.c_password.$dirty && form.c_password.$error}">
                                 <label for="password">Confirm Password</label>
-                                <input type="password" name="c_password" id="c_password" class="form-control" ng-model="c_password" required ng-change="checkPassword()"/>
+                                <input type="password" name="c_password" id="c_password" class="form-control" ng-model="c_password"
+                                onpaste="return false" oncontextmenu="return false" oncopy="return false"  required ng-change="checkPassword()"/>
                                 <span ng-show="form.c_password.$dirty && form.c_password.$error.required" class="help-block">Confirm password is required.</span>
                                 <span ng-show="form.c_password.$touched && !form.c_password.$error.required && !confirmPassword" class="help-block">Password not match.</span>
                             </div>
