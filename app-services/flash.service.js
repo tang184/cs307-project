@@ -5,8 +5,8 @@
         .module('mainApp')
         .factory('FlashService', FlashService);
 
-    FlashService.$inject = ['$rootScope'];
-    function FlashService($rootScope) {
+    FlashService.$inject = ['$rootScope', '$timeout'];
+    function FlashService($rootScope, $timeout) {
         var service = {};
 
         service.Success = Success;
@@ -28,6 +28,9 @@
                         delete $rootScope.flash;
                     } else {
                         // only keep for a single location change
+                        $timeout(function () {
+                            delete $rootScope.flash;
+                        }, 500);                       
                         flash.keepAfterLocationChange = false;
                     }
                 }

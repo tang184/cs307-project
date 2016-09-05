@@ -10,13 +10,16 @@
                 templateUrl: 'login/login.view.html',
             
             })
-            .when('/dashboard', {
-                templateUrl: 'dashboard/dashboard.view.html',
-            })
             .when('/register', {
                 controller: 'RegisterController',
                 templateUrl: 'register/register.view.html',
             })
+            .when('/dashboard', {
+                controller: 'DashboardController',
+                templateUrl: 'dashboard/dashboard.view.html',
+            })
+            
+
             .otherwise({redirectTo: '/' });
     });
 
