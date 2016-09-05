@@ -2,11 +2,11 @@
 // version 1.9.3 Build: 176
 // © 2013-2014 Denis Ineshin | IonDen.com
 //
-// Project page:    http://ionden.com/a/plugins/ion.rangeSlider/
+// Project page:    https://ionden.com/a/plugins/ion.rangeSlider/
 // GitHub page:     https://github.com/IonDen/ion.rangeSlider
 //
 // Released under MIT licence:
-// http://ionden.com/a/plugins/licence-en.html
+// https://ionden.com/a/plugins/licence-en.html
 // =====================================================================================================================
 
 (function ($, document, window, navigator) {

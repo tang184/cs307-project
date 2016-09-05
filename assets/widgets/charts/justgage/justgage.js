@@ -1,12 +1,12 @@
 /**
  * JustGage - a handy JavaScript plugin for generating and animating nice & clean dashboard gauges.
- * Copyright (c) 2012 Bojan Djuricic - pindjur(at)gmail(dot)com | http://www.madcog.com
+ * Copyright (c) 2012 Bojan Djuricic - pindjur(at)gmail(dot)com | https://www.madcog.com
  * Licensed under MIT.
  * Date: 31/07/2012
  * @author Bojan Djuricic  (@Toorshia)
  * @version 1.0
  *
- * http://www.justgage.com
+ * https://www.justgage.com
  */
 
 JustGage = function(config) {
@@ -282,7 +282,7 @@ JustGage = function(config) {
     this.txtMax.id = this.config.id+"-txtmax";
 
     var defs = this.canvas.canvas.childNodes[1];
-    var svg = "http://www.w3.org/2000/svg";
+    var svg = "https://www.w3.org/2000/svg";
 
 
 

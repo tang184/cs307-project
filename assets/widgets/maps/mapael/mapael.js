@@ -5,8 +5,8 @@
 *
 * Version: 0.7.1 (23-01-2014)
 *
-* Copyright (c) 2014 Vincent Brouté (http://www.neveldo.fr/mapael)
-* Licensed under the MIT license (http://www.opensource.org/licenses/mit-license.php).
+* Copyright (c) 2014 Vincent Brouté (https://www.neveldo.fr/mapael)
+* Licensed under the MIT license (https://www.opensource.org/licenses/mit-license.php).
 *
 */
 (function($) {
@@ -245,7 +245,7 @@
 			// Hook that allows to add custom processing on the map
 			options.map.afterInit && options.map.afterInit($self, paper, areas, plots, options);
 			
-			$(paper.desc).append(" and Mapael (http://neveldo.fr/mapael)");
+			$(paper.desc).append(" and Mapael (https://neveldo.fr/mapael)");
 		});
 	};
 	

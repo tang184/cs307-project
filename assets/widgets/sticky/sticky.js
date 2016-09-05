@@ -3,8 +3,8 @@
 // Version: 1.2.43
 // Copyright: Some Web Media
 // Author: Some Web Guy
-// Author URL: http://twitter.com/some_web_guy
-// Website: http://someweblog.com/
+// Author URL: https://twitter.com/some_web_guy
+// Website: https://someweblog.com/
 // Plugin URL: https://github.com/somewebmedia/hc-sticky
 // License: Released under the MIT License www.opensource.org/licenses/mit-license.php
 // Description: Cross-browser jQuery plugin that makes any element attached to the page and always visible while you scroll.
@@ -421,7 +421,7 @@
 
                     if (offset_top > top_limit) {
 
-                        // http://geek-and-poke.com/geekandpoke/2012/7/27/simply-explained.html
+                        // https://geek-and-poke.com/geekandpoke/2012/7/27/simply-explained.html
 
                         if (bottom_limit + options.bottom - (options.followScroll && window_height < this_height ? 0 : options.top) <= offset_top + this_height - top_spacing - ((this_height - top_spacing > window_height - (top_limit - top_spacing) && options.followScroll) ? (((bottom_distance = this_height - window_height - top_spacing) > 0) ? bottom_distance : 0) : 0)) {
                             // bottom reached end
@@ -638,8 +638,8 @@
 // Version: 1.0
 // Copyright: Some Web Media
 // Author: Some Web Guy
-// Author URL: http://twitter.com/some_web_guy
-// Website: http://someweblog.com/
+// Author URL: https://twitter.com/some_web_guy
+// Website: https://someweblog.com/
 // License: Released under the MIT License www.opensource.org/licenses/mit-license.php
 
 (function($, undefined) {

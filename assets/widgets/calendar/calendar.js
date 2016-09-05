@@ -1,6 +1,6 @@
 /*!
  * FullCalendar v2.0.2
- * Docs & License: http://arshaw.com/fullcalendar/
+ * Docs & License: https://arshaw.com/fullcalendar/
  * (c) 2013 Adam Shaw
  */
 

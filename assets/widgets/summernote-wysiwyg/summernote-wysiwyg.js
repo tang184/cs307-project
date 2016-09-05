@@ -1,6 +1,6 @@
 /**
  * Super simple wysiwyg editor on Bootstrap v0.5.3
- * http://hackerwins.github.io/summernote/
+ * https://hackerwins.github.io/summernote/
  *
  * summernote.js
  * Copyright 2013 Alan Hong. and outher contributors
@@ -134,8 +134,8 @@
         /**
          * returns bnd (bounds) from rect
          *
-         * - IE Compatability Issue: http://goo.gl/sRLOAo
-         * - Scroll Issue: http://goo.gl/sNjUc
+         * - IE Compatability Issue: https://goo.gl/sRLOAo
+         * - Scroll Issue: https://goo.gl/sNjUc
          *
          * @param {Rect} rect
          * @return {Object} bounds
@@ -872,7 +872,7 @@
                 if (sLinkUrl.indexOf('@') !== -1 && sLinkUrl.indexOf(':') === -1) {
                     sLinkUrl =  'mailto:' + sLinkUrl;
                 } else if (sLinkUrl.indexOf('://') === -1) {
-                    sLinkUrl = 'http://' + sLinkUrl;
+                    sLinkUrl = 'https://' + sLinkUrl;
                 }
 
                 return sLinkUrl;
@@ -2315,7 +2315,7 @@
     };
 
     /**
-     * Popover (http://getbootstrap.com/javascript/#popovers)
+     * Popover (https://getbootstrap.com/javascript/#popovers)
      */
     var Popover = function () {
         var button = new Button();
@@ -3675,7 +3675,7 @@
                     title: lang.link.unlink,
                     event: 'unlink'
                 });
-                var content = '<a href="http://www.google.com" target="_blank">www.google.com</a>&nbsp;&nbsp;' +
+                var content = '<a href="https://www.google.com" target="_blank">www.google.com</a>&nbsp;&nbsp;' +
                     '<div class="note-insert btn-group">' +
                     linkButton + unlinkButton +
                     '</div>';

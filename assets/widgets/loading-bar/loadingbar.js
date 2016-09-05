@@ -2,7 +2,7 @@
  * jquery-loadingbar.js v1
  * ===========================================================
  * Copyright 2013 Pete Rojwongsuriya.
- * http://www.thepetedesign.com
+ * https://www.thepetedesign.com
  *
  * Add a Youtube-like loading bar  
  * to all your AJAX links 

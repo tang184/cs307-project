@@ -3,7 +3,7 @@
 -- copyright 2011-12-13 InuYaksa*2013
 -- licensed under the MIT
 --
--- http://areaaperta.com/nicescroll
+-- https://areaaperta.com/nicescroll
 -- https://github.com/inuyaksa/jquery.nicescroll
 --
 */
@@ -20,7 +20,7 @@
   
   var $ = jQuery;  // sandbox
  
-  // http://stackoverflow.com/questions/2161159/get-script-path
+  // https://stackoverflow.com/questions/2161159/get-script-path
   function getScriptPath() {
     var scripts=document.getElementsByTagName('script');
     var path=scripts[scripts.length-1].src.split('?')[0];
@@ -186,7 +186,7 @@
         domtest.style['cursor']=p;
         if (domtest.style['cursor']==p) return p;
       }
-      return 'url(http://www.google.com/intl/en_ALL/mapfiles/openhand.cur),n-resize';  // thank you google for custom cursor!
+      return 'url(https://www.google.com/intl/en_ALL/mapfiles/openhand.cur),n-resize';  // thank you google for custom cursor!
     }
     d.cursorgrabvalue = detectCursorGrab();
 
@@ -451,10 +451,10 @@
     // hw accelerated scroll
       this.doc.translate = {x:0,y:0,tx:"0px",ty:"0px"};
       
-      //this one can help to enable hw accel on ios6 http://indiegamr.com/ios6-html-hardware-acceleration-changes-and-how-to-fix-them/
-      if (cap.hastranslate3d&&cap.isios) this.doc.css("-webkit-backface-visibility","hidden");  // prevent flickering http://stackoverflow.com/questions/3461441/      
+      //this one can help to enable hw accel on ios6 https://indiegamr.com/ios6-html-hardware-acceleration-changes-and-how-to-fix-them/
+      if (cap.hastranslate3d&&cap.isios) this.doc.css("-webkit-backface-visibility","hidden");  // prevent flickering https://stackoverflow.com/questions/3461441/      
       
-      //derived from http://stackoverflow.com/questions/11236090/
+      //derived from https://stackoverflow.com/questions/11236090/
       function getMatrixValues() {
         var tr = self.doc.css(cap.trstyle);
         if (tr&&(tr.substr(0,6)=="matrix")) {
@@ -570,7 +570,7 @@
       return false;
     };
     
-//inspired by http://forum.jquery.com/topic/width-includes-border-width-when-set-to-thin-medium-thick-in-ie
+//inspired by https://forum.jquery.com/topic/width-includes-border-width-when-set-to-thin-medium-thick-in-ie
     var _convertBorderWidth = {"thin":1,"medium":3,"thick":5};
     function getWidthToPixel(dom,prop,chkheight) {
       var wd = dom.css(prop);
@@ -1525,7 +1525,7 @@
           
         }  // !ie9mobile
         
-        //Thanks to http://www.quirksmode.org !!
+        //Thanks to https://www.quirksmode.org !!
         self.onkeypress = function(e) {
           if (self.locked&&self.page.maxh==0) return true;
           
@@ -1709,7 +1709,7 @@
           self.css($(self.iframe.body),{'overflow-y':'hidden'});
           
           if (cap.isios&&self.haswrapper) {
-            self.css($(doc.body),{'-webkit-transform':'translate3d(0,0,0)'});  // avoid iFrame content clipping - thanks to http://blog.derraab.com/2012/04/02/avoid-iframe-content-clipping-with-css-transform-on-ios/
+            self.css($(doc.body),{'-webkit-transform':'translate3d(0,0,0)'});  // avoid iFrame content clipping - thanks to https://blog.derraab.com/2012/04/02/avoid-iframe-content-clipping-with-css-transform-on-ios/
           }
           
           if ('contentWindow' in this) {
@@ -2051,7 +2051,7 @@
       }
     };
     
-    // Thanks to http://www.switchonthecode.com !!
+    // Thanks to https://www.switchonthecode.com !!
     this.cancelEvent = function(e) {
       var e = (e.original) ? e.original : (e) ? e : window.event||false;
       if (!e) return false;      
@@ -2834,7 +2834,7 @@
   };
   
 // Inspired by the work of Kin Blas
-// http://webpro.host.adobe.com/people/jblas/momentum/includes/jquery.momentum.0.7.js  
+// https://webpro.host.adobe.com/people/jblas/momentum/includes/jquery.momentum.0.7.js  
   
   
   var ScrollMomentumClass2D = function(nc) {

@@ -1,15 +1,15 @@
 /**
  * jGrowl 1.3.0
  *
- * Dual licensed under the MIT (http://www.opensource.org/licenses/mit-license.php)
- * and GPL (http://www.opensource.org/licenses/gpl-license.php) licenses.
+ * Dual licensed under the MIT (https://www.opensource.org/licenses/mit-license.php)
+ * and GPL (https://www.opensource.org/licenses/gpl-license.php) licenses.
  *
  * Written by Stan Lemon <stosh1985@gmail.com>
  * Last updated: 2014.04.18
  *
  * jGrowl is a jQuery plugin implementing unobtrusive userland notifications.  These
  * notifications function similarly to the Growl Framework available for
- * Mac OS X (http://growl.info).
+ * Mac OS X (https://growl.info).
  *
  * To Do:
  * - Move library settings to containers and allow them to be changed per container

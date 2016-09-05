@@ -4,8 +4,8 @@
  *
  * (c) 2011-2014 George Krupa, John Gera & Kreatura Media
  *
- * Plugin web:			http://kreaturamedia.com/
- * licenses:				http://codecanyon.net/licenses/
+ * Plugin web:			https://kreaturamedia.com/
+ * licenses:				https://codecanyon.net/licenses/
  */
 
 
@@ -29,7 +29,7 @@ function lsShowNotice(lsobj,issue,ver){
             break;
         case 'oldjquery':
             errorTitle = 'old jQuery issue';
-            errorText = 'It looks like you are using an old version ('+ver+') of the jQuery library. LayerSlider requires at least version 1.7.0 or newer. Please update jQuery to 1.10.x or higher. Important: Please do not use the jQuery Updater plugin on WordPress and do not update to 2.x version of jQuery because it is not compatible with older browsers like IE 7 & 8. <a href="http://support.kreaturamedia.com/faq/4/layerslider-for-wordpress/#group-13&entry-60">You can read more about updating jQuery by clicking here.</a>';
+            errorText = 'It looks like you are using an old version ('+ver+') of the jQuery library. LayerSlider requires at least version 1.7.0 or newer. Please update jQuery to 1.10.x or higher. Important: Please do not use the jQuery Updater plugin on WordPress and do not update to 2.x version of jQuery because it is not compatible with older browsers like IE 7 & 8. <a href="https://support.kreaturamedia.com/faq/4/layerslider-for-wordpress/#group-13&entry-60">You can read more about updating jQuery by clicking here.</a>';
             break;
     }
 

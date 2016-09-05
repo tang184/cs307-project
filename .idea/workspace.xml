@@ -1,0 +1,1007 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="b40e5ccb-19ad-403b-ba30-281bd9f92624" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/angular/angular.min.js" afterPath="$PROJECT_DIR$/assets/angular/angular.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bootstrap/css/bootstrap-theme.css" afterPath="$PROJECT_DIR$/assets/bootstrap/css/bootstrap-theme.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bootstrap/css/bootstrap-theme.css.map" afterPath="$PROJECT_DIR$/assets/bootstrap/css/bootstrap-theme.css.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bootstrap/css/bootstrap-theme.min.css" afterPath="$PROJECT_DIR$/assets/bootstrap/css/bootstrap-theme.min.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bootstrap/css/bootstrap.css" afterPath="$PROJECT_DIR$/assets/bootstrap/css/bootstrap.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bootstrap/css/bootstrap.css.map" afterPath="$PROJECT_DIR$/assets/bootstrap/css/bootstrap.css.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bootstrap/css/bootstrap.min.css" afterPath="$PROJECT_DIR$/assets/bootstrap/css/bootstrap.min.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bootstrap/fonts/glyphicons-halflings-regular.svg" afterPath="$PROJECT_DIR$/assets/bootstrap/fonts/glyphicons-halflings-regular.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bootstrap/js/bootstrap.js" afterPath="$PROJECT_DIR$/assets/bootstrap/js/bootstrap.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bootstrap/js/bootstrap.min.js" afterPath="$PROJECT_DIR$/assets/bootstrap/js/bootstrap.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/icons/elusive/elusive.svg" afterPath="$PROJECT_DIR$/assets/icons/elusive/elusive.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/icons/fontawesome/fontawesome-webfont.svg" afterPath="$PROJECT_DIR$/assets/icons/fontawesome/fontawesome-webfont.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/icons/iconic/iconic.svg" afterPath="$PROJECT_DIR$/assets/icons/iconic/iconic.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/icons/linecons/linecons.svg" afterPath="$PROJECT_DIR$/assets/icons/linecons/linecons.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/icons/meteocons/meteocons.svg" afterPath="$PROJECT_DIR$/assets/icons/meteocons/meteocons.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/icons/spinnericon/spinnericon.svg" afterPath="$PROJECT_DIR$/assets/icons/spinnericon/spinnericon.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/icons/typicons/typicons.svg" afterPath="$PROJECT_DIR$/assets/icons/typicons/typicons.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/js-core/d3.js" afterPath="$PROJECT_DIR$/assets/js-core/d3.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/js-core/greensock.js" afterPath="$PROJECT_DIR$/assets/js-core/greensock.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/js-core/jquery-core.js" afterPath="$PROJECT_DIR$/assets/js-core/jquery-core.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/js-core/jquery-ui-core.js" afterPath="$PROJECT_DIR$/assets/js-core/jquery-ui-core.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/js-core/jquery-ui-mouse.js" afterPath="$PROJECT_DIR$/assets/js-core/jquery-ui-mouse.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/js-core/jquery-ui-position.js" afterPath="$PROJECT_DIR$/assets/js-core/jquery-ui-position.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/js-core/jquery-ui-widget.js" afterPath="$PROJECT_DIR$/assets/js-core/jquery-ui-widget.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/js-core/modernizr.js" afterPath="$PROJECT_DIR$/assets/js-core/modernizr.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/js-core/raphael.js" afterPath="$PROJECT_DIR$/assets/js-core/raphael.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/js-core/transition.js" afterPath="$PROJECT_DIR$/assets/js-core/transition.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/themes/admin/color-schemes/default.css" afterPath="$PROJECT_DIR$/assets/themes/admin/color-schemes/default.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/themes/frontend/color-schemes/default.css" afterPath="$PROJECT_DIR$/assets/themes/frontend/color-schemes/default.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/widgets/accordion-ui/accordion.js" afterPath="$PROJECT_DIR$/assets/widgets/accordion-ui/accordion.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/widgets/autocomplete/autocomplete.js" afterPath="$PROJECT_DIR$/assets/widgets/autocomplete/autocomplete.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/widgets/autocomplete/menu.js" afterPath="$PROJECT_DIR$/assets/widgets/autocomplete/menu.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/widgets/button-ui/button.js" afterPath="$PROJECT_DIR$/assets/widgets/button-ui/button.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/widgets/button/button.js" afterPath="$PROJECT_DIR$/assets/widgets/button/button.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/widgets/calendar/calendar-demo.js" afterPath="$PROJECT_DIR$/assets/widgets/calendar/calendar-demo.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/widgets/calendar/calendar.js" afterPath="$PROJECT_DIR$/assets/widgets/calendar/calendar.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/widgets/carousel/carousel.js" afterPath="$PROJECT_DIR$/assets/widgets/carousel/carousel.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/widgets/charts/chart-js/chart-core.js" afterPath="$PROJECT_DIR$/assets/widgets/charts/chart-js/chart-core.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/widgets/charts/flot/flot-resize.js" afterPath="$PROJECT_DIR$/assets/widgets/charts/flot/flot-resize.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/widgets/charts/justgage/justgage.js" afterPath="$PROJECT_DIR$/assets/widgets/charts/justgage/justgage.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/widgets/charts/morris/morris-demo.js" afterPath="$PROJECT_DIR$/assets/widgets/charts/morris/morris-demo.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/widgets/charts/piegage/piegage.js" afterPath="$PROJECT_DIR$/assets/widgets/charts/piegage/piegage.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/widgets/charts/sparklines/sparklines.js" afterPath="$PROJECT_DIR$/assets/widgets/charts/sparklines/sparklines.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/widgets/charts/xcharts/xcharts.js" afterPath="$PROJECT_DIR$/assets/widgets/charts/xcharts/xcharts.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/widgets/chosen/chosen.js" afterPath="$PROJECT_DIR$/assets/widgets/chosen/chosen.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/widgets/ckeditor/ckeditor.js" afterPath="$PROJECT_DIR$/assets/widgets/ckeditor/ckeditor.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/widgets/ckeditor/config.js" afterPath="$PROJECT_DIR$/assets/widgets/ckeditor/config.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/widgets/ckeditor/contents.css" afterPath="$PROJECT_DIR$/assets/widgets/ckeditor/contents.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/widgets/ckeditor/lang/en.js" afterPath="$PROJECT_DIR$/assets/widgets/ckeditor/lang/en.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/widgets/ckeditor/plugins/a11yhelp/dialogs/a11yhelp.js" afterPath="$PROJECT_DIR$/assets/widgets/ckeditor/plugins/a11yhelp/dialogs/a11yhelp.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/widgets/ckeditor/plugins/a11yhelp/dialogs/lang/_translationstatus.txt" afterPath="$PROJECT_DIR$/assets/widgets/ckeditor/plugins/a11yhelp/dialogs/lang/_translationstatus.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/widgets/ckeditor/plugins/a11yhelp/dialogs/lang/ar.js" afterPath="$PROJECT_DIR$/assets/widgets/ckeditor/plugins/a11yhelp/dialogs/lang/ar.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/widgets/ckeditor/plugins/a11yhelp/dialogs/lang/bg.js" afterPath="$PROJECT_DIR$/assets/widgets/ckeditor/plugins/a11yhelp/dialogs/lang/bg.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/widgets/ckeditor/plugins/a11yhelp/dialogs/lang/ca.js" afterPath="$PROJECT_DIR$/assets/widgets/ckeditor/plugins/a11yhelp/dialogs/lang/ca.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/widgets/ckeditor/plugins/a11yhelp/dialogs/lang/cs.js" afterPath="$PROJECT_DIR$/assets/widgets/ckeditor/plugins/a11yhelp/dialogs/lang/cs.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/widgets/ckeditor/plugins/a11yhelp/dialogs/lang/cy.js" afterPath="$PROJECT_DIR$/assets/widgets/ckeditor/plugins/a11yhelp/dialogs/lang/cy.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/widgets/ckeditor/plugins/a11yhelp/dialogs/lang/da.js" afterPath="$PROJECT_DIR$/assets/widgets/ckeditor/plugins/a11yhelp/dialogs/lang/da.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/widgets/ckeditor/plugins/a11yhelp/dialogs/lang/de.js" afterPath="$PROJECT_DIR$/assets/widgets/ckeditor/plugins/a11yhelp/dialogs/lang/de.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/widgets/ckeditor/plugins/a11yhelp/dialogs/lang/el.js" afterPath="$PROJECT_DIR$/assets/widgets/ckeditor/plugins/a11yhelp/dialogs/lang/el.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/widgets/ckeditor/plugins/a11yhelp/dialogs/lang/en-gb.js" afterPath="$PROJECT_DIR$/assets/widgets/ckeditor/plugins/a11yhelp/dialogs/lang/en-gb.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/widgets/ckeditor/plugins/a11yhelp/dialogs/lang/en.js" afterPath="$PROJECT_DIR$/assets/widgets/ckeditor/plugins/a11yhelp/dialogs/lang/en.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/widgets/ckeditor/plugins/a11yhelp/dialogs/lang/eo.js" afterPath="$PROJECT_DIR$/assets/widgets/ckeditor/plugins/a11yhelp/dialogs/lang/eo.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/widgets/ckeditor/plugins/a11yhelp/dialogs/lang/es.js" afterPath="$PROJECT_DIR$/assets/widgets/ckeditor/plugins/a11yhelp/dialogs/lang/es.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/widgets/ckeditor/plugins/a11yhelp/dialogs/lang/et.js" afterPath="$PROJECT_DIR$/assets/widgets/ckeditor/plugins/a11yhelp/dialogs/lang/et.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/widgets/ckeditor/plugins/a11yhelp/dialogs/lang/fa.js" afterPath="$PROJECT_DIR$/assets/widgets/ckeditor/plugins/a11yhelp/dialogs/lang/fa.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/widgets/ckeditor/plugins/a11yhelp/dialogs/lang/fi.js" afterPath="$PROJECT_DIR$/assets/widgets/ckeditor/plugins/a11yhelp/dialogs/lang/fi.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/widgets/ckeditor/plugins/a11yhelp/dialogs/lang/fr-ca.js" afterPath="$PROJECT_DIR$/assets/widgets/ckeditor/plugins/a11yhelp/dialogs/lang/fr-ca.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/widgets/ckeditor/plugins/a11yhelp/dialogs/lang/fr.js" afterPath="$PROJECT_DIR$/assets/widgets/ckeditor/plugins/a11yhelp/dialogs/lang/fr.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/widgets/ckeditor/plugins/a11yhelp/dialogs/lang/gl.js" afterPath="$PROJECT_DIR$/assets/widgets/ckeditor/plugins/a11yhelp/dialogs/lang/gl.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/widgets/ckeditor/plugins/a11yhelp/dialogs/lang/gu.js" afterPath="$PROJECT_DIR$/assets/widgets/ckeditor/plugins/a11yhelp/dialogs/lang/gu.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/widgets/ckeditor/plugins/a11yhelp/dialogs/lang/he.js" afterPath="$PROJECT_DIR$/assets/widgets/ckeditor/plugins/a11yhelp/dialogs/lang/he.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/widgets/ckeditor/plugins/a11yhelp/dialogs/lang/hi.js" afterPath="$PROJECT_DIR$/assets/widgets/ckeditor/plugins/a11yhelp/dialogs/lang/hi.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/widgets/ckeditor/plugins/a11yhelp/dialogs/lang/hr.js" afterPath="$PROJECT_DIR$/assets/widgets/ckeditor/plugins/a11yhelp/dialogs/lang/hr.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/widgets/ckeditor/plugins/a11yhelp/dialogs/lang/hu.js" afterPath="$PROJECT_DIR$/assets/widgets/ckeditor/plugins/a11yhelp/dialogs/lang/hu.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/widgets/ckeditor/plugins/a11yhelp/dialogs/lang/id.js" afterPath="$PROJECT_DIR$/assets/widgets/ckeditor/plugins/a11yhelp/dialogs/lang/id.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/widgets/ckeditor/plugins/a11yhelp/dialogs/lang/it.js" afterPath="$PROJECT_DIR$/assets/widgets/ckeditor/plugins/a11yhelp/dialogs/lang/it.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/widgets/ckeditor/plugins/a11yhelp/dialogs/lang/ja.js" afterPath="$PROJECT_DIR$/assets/widgets/ckeditor/plugins/a11yhelp/dialogs/lang/ja.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/widgets/ckeditor/plugins/a11yhelp/dialogs/lang/km.js" afterPath="$PROJECT_DIR$/assets/widgets/ckeditor/plugins/a11yhelp/dialogs/lang/km.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/widgets/ckeditor/plugins/a11yhelp/dialogs/lang/ko.js" afterPath="$PROJECT_DIR$/assets/widgets/ckeditor/plugins/a11yhelp/dialogs/lang/ko.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/widgets/ckeditor/plugins/a11yhelp/dialogs/lang/ku.js" afterPath="$PROJECT_DIR$/assets/widgets/ckeditor/plugins/a11yhelp/dialogs/lang/ku.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/widgets/ckeditor/plugins/a11yhelp/dialogs/lang/lt.js" afterPath="$PROJECT_DIR$/assets/widgets/ckeditor/plugins/a11yhelp/dialogs/lang/lt.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/widgets/ckeditor/plugins/a11yhelp/dialogs/lang/lv.js" afterPath="$PROJECT_DIR$/assets/widgets/ckeditor/plugins/a11yhelp/dialogs/lang/lv.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/widgets/ckeditor/plugins/a11yhelp/dialogs/lang/mk.js" afterPath="$PROJECT_DIR$/assets/widgets/ckeditor/plugins/a11yhelp/dialogs/lang/mk.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/widgets/ckeditor/plugins/a11yhelp/dialogs/lang/mn.js" afterPath="$PROJECT_DIR$/assets/widgets/ckeditor/plugins/a11yhelp/dialogs/lang/mn.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/widgets/ckeditor/plugins/a11yhelp/dialogs/lang/nb.js" afterPath="$PROJECT_DIR$/assets/widgets/ckeditor/plugins/a11yhelp/dialogs/lang/nb.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/widgets/ckeditor/plugins/a11yhelp/dialogs/lang/nl.js" afterPath="$PROJECT_DIR$/assets/widgets/ckeditor/plugins/a11yhelp/dialogs/lang/nl.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/widgets/ckeditor/plugins/a11yhelp/dialogs/lang/no.js" afterPath="$PROJECT_DIR$/assets/widgets/ckeditor/plugins/a11yhelp/dialogs/lang/no.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/widgets/ckeditor/plugins/a11yhelp/dialogs/lang/pl.js" afterPath="$PROJECT_DIR$/assets/widgets/ckeditor/plugins/a11yhelp/dialogs/lang/pl.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/widgets/ckeditor/plugins/a11yhelp/dialogs/lang/pt-br.js" afterPath="$PROJECT_DIR$/assets/widgets/ckeditor/plugins/a11yhelp/dialogs/lang/pt-br.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/widgets/ckeditor/plugins/a11yhelp/dialogs/lang/pt.js" afterPath="$PROJECT_DIR$/assets/widgets/ckeditor/plugins/a11yhelp/dialogs/lang/pt.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/widgets/ckeditor/plugins/a11yhelp/dialogs/lang/ro.js" afterPath="$PROJECT_DIR$/assets/widgets/ckeditor/plugins/a11yhelp/dialogs/lang/ro.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/widgets/ckeditor/plugins/a11yhelp/dialogs/lang/ru.js" afterPath="$PROJECT_DIR$/assets/widgets/ckeditor/plugins/a11yhelp/dialogs/lang/ru.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/widgets/ckeditor/plugins/a11yhelp/dialogs/lang/si.js" afterPath="$PROJECT_DIR$/assets/widgets/ckeditor/plugins/a11yhelp/dialogs/lang/si.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/widgets/ckeditor/plugins/a11yhelp/dialogs/lang/sk.js" afterPath="$PROJECT_DIR$/assets/widgets/ckeditor/plugins/a11yhelp/dialogs/lang/sk.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/widgets/ckeditor/plugins/a11yhelp/dialogs/lang/sl.js" afterPath="$PROJECT_DIR$/assets/widgets/ckeditor/plugins/a11yhelp/dialogs/lang/sl.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/widgets/ckeditor/plugins/a11yhelp/dialogs/lang/sq.js" afterPath="$PROJECT_DIR$/assets/widgets/ckeditor/plugins/a11yhelp/dialogs/lang/sq.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/widgets/ckeditor/plugins/a11yhelp/dialogs/lang/sr-latn.js" afterPath="$PROJECT_DIR$/assets/widgets/ckeditor/plugins/a11yhelp/dialogs/lang/sr-latn.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/widgets/ckeditor/plugins/a11yhelp/dialogs/lang/sr.js" afterPath="$PROJECT_DIR$/assets/widgets/ckeditor/plugins/a11yhelp/dialogs/lang/sr.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/widgets/ckeditor/plugins/a11yhelp/dialogs/lang/sv.js" afterPath="$PROJECT_DIR$/assets/widgets/ckeditor/plugins/a11yhelp/dialogs/lang/sv.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/widgets/ckeditor/plugins/a11yhelp/dialogs/lang/th.js" afterPath="$PROJECT_DIR$/assets/widgets/ckeditor/plugins/a11yhelp/dialogs/lang/th.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/widgets/ckeditor/plugins/a11yhelp/dialogs/lang/tr.js" afterPath="$PROJECT_DIR$/assets/widgets/ckeditor/plugins/a11yhelp/dialogs/lang/tr.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/widgets/ckeditor/plugins/a11yhelp/dialogs/lang/tt.js" afterPath="$PROJECT_DIR$/assets/widgets/ckeditor/plugins/a11yhelp/dialogs/lang/tt.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/widgets/ckeditor/plugins/a11yhelp/dialogs/lang/ug.js" afterPath="$PROJECT_DIR$/assets/widgets/ckeditor/plugins/a11yhelp/dialogs/lang/ug.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/widgets/ckeditor/plugins/a11yhelp/dialogs/lang/uk.js" afterPath="$PROJECT_DIR$/assets/widgets/ckeditor/plugins/a11yhelp/dialogs/lang/uk.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/widgets/ckeditor/plugins/a11yhelp/dialogs/lang/vi.js" afterPath="$PROJECT_DIR$/assets/widgets/ckeditor/plugins/a11yhelp/dialogs/lang/vi.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/widgets/ckeditor/plugins/a11yhelp/dialogs/lang/zh-cn.js" afterPath="$PROJECT_DIR$/assets/widgets/ckeditor/plugins/a11yhelp/dialogs/lang/zh-cn.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/widgets/ckeditor/plugins/a11yhelp/dialogs/lang/zh.js" afterPath="$PROJECT_DIR$/assets/widgets/ckeditor/plugins/a11yhelp/dialogs/lang/zh.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/widgets/ckeditor/plugins/about/dialogs/about.js" afterPath="$PROJECT_DIR$/assets/widgets/ckeditor/plugins/about/dialogs/about.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/widgets/ckeditor/plugins/clipboard/dialogs/paste.js" afterPath="$PROJECT_DIR$/assets/widgets/ckeditor/plugins/clipboard/dialogs/paste.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/widgets/ckeditor/plugins/dialog/dialogDefinition.js" afterPath="$PROJECT_DIR$/assets/widgets/ckeditor/plugins/dialog/dialogDefinition.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/widgets/ckeditor/plugins/image/dialogs/image.js" afterPath="$PROJECT_DIR$/assets/widgets/ckeditor/plugins/image/dialogs/image.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/widgets/ckeditor/plugins/link/dialogs/anchor.js" afterPath="$PROJECT_DIR$/assets/widgets/ckeditor/plugins/link/dialogs/anchor.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/widgets/ckeditor/plugins/link/dialogs/link.js" afterPath="$PROJECT_DIR$/assets/widgets/ckeditor/plugins/link/dialogs/link.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/widgets/ckeditor/plugins/pastefromword/filter/default.js" afterPath="$PROJECT_DIR$/assets/widgets/ckeditor/plugins/pastefromword/filter/default.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/widgets/ckeditor/plugins/scayt/LICENSE.md" afterPath="$PROJECT_DIR$/assets/widgets/ckeditor/plugins/scayt/LICENSE.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/widgets/ckeditor/plugins/scayt/README.md" afterPath="$PROJECT_DIR$/assets/widgets/ckeditor/plugins/scayt/README.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/widgets/ckeditor/plugins/specialchar/dialogs/lang/_translationstatus.txt" afterPath="$PROJECT_DIR$/assets/widgets/ckeditor/plugins/specialchar/dialogs/lang/_translationstatus.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/widgets/ckeditor/plugins/specialchar/dialogs/lang/ar.js" afterPath="$PROJECT_DIR$/assets/widgets/ckeditor/plugins/specialchar/dialogs/lang/ar.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/widgets/ckeditor/plugins/specialchar/dialogs/lang/bg.js" afterPath="$PROJECT_DIR$/assets/widgets/ckeditor/plugins/specialchar/dialogs/lang/bg.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/widgets/ckeditor/plugins/specialchar/dialogs/lang/ca.js" afterPath="$PROJECT_DIR$/assets/widgets/ckeditor/plugins/specialchar/dialogs/lang/ca.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/widgets/ckeditor/plugins/specialchar/dialogs/lang/cs.js" afterPath="$PROJECT_DIR$/assets/widgets/ckeditor/plugins/specialchar/dialogs/lang/cs.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/widgets/ckeditor/plugins/specialchar/dialogs/lang/cy.js" afterPath="$PROJECT_DIR$/assets/widgets/ckeditor/plugins/specialchar/dialogs/lang/cy.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/widgets/ckeditor/plugins/specialchar/dialogs/lang/de.js" afterPath="$PROJECT_DIR$/assets/widgets/ckeditor/plugins/specialchar/dialogs/lang/de.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/widgets/ckeditor/plugins/specialchar/dialogs/lang/el.js" afterPath="$PROJECT_DIR$/assets/widgets/ckeditor/plugins/specialchar/dialogs/lang/el.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/widgets/ckeditor/plugins/specialchar/dialogs/lang/en-gb.js" afterPath="$PROJECT_DIR$/assets/widgets/ckeditor/plugins/specialchar/dialogs/lang/en-gb.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/widgets/ckeditor/plugins/specialchar/dialogs/lang/en.js" afterPath="$PROJECT_DIR$/assets/widgets/ckeditor/plugins/specialchar/dialogs/lang/en.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/widgets/ckeditor/plugins/specialchar/dialogs/lang/eo.js" afterPath="$PROJECT_DIR$/assets/widgets/ckeditor/plugins/specialchar/dialogs/lang/eo.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/widgets/ckeditor/plugins/specialchar/dialogs/lang/es.js" afterPath="$PROJECT_DIR$/assets/widgets/ckeditor/plugins/specialchar/dialogs/lang/es.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/widgets/ckeditor/plugins/specialchar/dialogs/lang/et.js" afterPath="$PROJECT_DIR$/assets/widgets/ckeditor/plugins/specialchar/dialogs/lang/et.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/widgets/ckeditor/plugins/specialchar/dialogs/lang/fa.js" afterPath="$PROJECT_DIR$/assets/widgets/ckeditor/plugins/specialchar/dialogs/lang/fa.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/widgets/ckeditor/plugins/specialchar/dialogs/lang/fi.js" afterPath="$PROJECT_DIR$/assets/widgets/ckeditor/plugins/specialchar/dialogs/lang/fi.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/widgets/ckeditor/plugins/specialchar/dialogs/lang/fr-ca.js" afterPath="$PROJECT_DIR$/assets/widgets/ckeditor/plugins/specialchar/dialogs/lang/fr-ca.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/widgets/ckeditor/plugins/specialchar/dialogs/lang/fr.js" afterPath="$PROJECT_DIR$/assets/widgets/ckeditor/plugins/specialchar/dialogs/lang/fr.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/widgets/ckeditor/plugins/specialchar/dialogs/lang/gl.js" afterPath="$PROJECT_DIR$/assets/widgets/ckeditor/plugins/specialchar/dialogs/lang/gl.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/widgets/ckeditor/plugins/specialchar/dialogs/lang/he.js" afterPath="$PROJECT_DIR$/assets/widgets/ckeditor/plugins/specialchar/dialogs/lang/he.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/widgets/ckeditor/plugins/specialchar/dialogs/lang/hr.js" afterPath="$PROJECT_DIR$/assets/widgets/ckeditor/plugins/specialchar/dialogs/lang/hr.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/widgets/ckeditor/plugins/specialchar/dialogs/lang/hu.js" afterPath="$PROJECT_DIR$/assets/widgets/ckeditor/plugins/specialchar/dialogs/lang/hu.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/widgets/ckeditor/plugins/specialchar/dialogs/lang/id.js" afterPath="$PROJECT_DIR$/assets/widgets/ckeditor/plugins/specialchar/dialogs/lang/id.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/widgets/ckeditor/plugins/specialchar/dialogs/lang/it.js" afterPath="$PROJECT_DIR$/assets/widgets/ckeditor/plugins/specialchar/dialogs/lang/it.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/widgets/ckeditor/plugins/specialchar/dialogs/lang/ja.js" afterPath="$PROJECT_DIR$/assets/widgets/ckeditor/plugins/specialchar/dialogs/lang/ja.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/widgets/ckeditor/plugins/specialchar/dialogs/lang/km.js" afterPath="$PROJECT_DIR$/assets/widgets/ckeditor/plugins/specialchar/dialogs/lang/km.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/widgets/ckeditor/plugins/specialchar/dialogs/lang/ku.js" afterPath="$PROJECT_DIR$/assets/widgets/ckeditor/plugins/specialchar/dialogs/lang/ku.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/widgets/ckeditor/plugins/specialchar/dialogs/lang/lv.js" afterPath="$PROJECT_DIR$/assets/widgets/ckeditor/plugins/specialchar/dialogs/lang/lv.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/widgets/ckeditor/plugins/specialchar/dialogs/lang/nb.js" afterPath="$PROJECT_DIR$/assets/widgets/ckeditor/plugins/specialchar/dialogs/lang/nb.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/widgets/ckeditor/plugins/specialchar/dialogs/lang/nl.js" afterPath="$PROJECT_DIR$/assets/widgets/ckeditor/plugins/specialchar/dialogs/lang/nl.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/widgets/ckeditor/plugins/specialchar/dialogs/lang/no.js" afterPath="$PROJECT_DIR$/assets/widgets/ckeditor/plugins/specialchar/dialogs/lang/no.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/widgets/ckeditor/plugins/specialchar/dialogs/lang/pl.js" afterPath="$PROJECT_DIR$/assets/widgets/ckeditor/plugins/specialchar/dialogs/lang/pl.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/widgets/ckeditor/plugins/specialchar/dialogs/lang/pt-br.js" afterPath="$PROJECT_DIR$/assets/widgets/ckeditor/plugins/specialchar/dialogs/lang/pt-br.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/widgets/ckeditor/plugins/specialchar/dialogs/lang/pt.js" afterPath="$PROJECT_DIR$/assets/widgets/ckeditor/plugins/specialchar/dialogs/lang/pt.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/widgets/ckeditor/plugins/specialchar/dialogs/lang/ru.js" afterPath="$PROJECT_DIR$/assets/widgets/ckeditor/plugins/specialchar/dialogs/lang/ru.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/widgets/ckeditor/plugins/specialchar/dialogs/lang/si.js" afterPath="$PROJECT_DIR$/assets/widgets/ckeditor/plugins/specialchar/dialogs/lang/si.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/widgets/ckeditor/plugins/specialchar/dialogs/lang/sk.js" afterPath="$PROJECT_DIR$/assets/widgets/ckeditor/plugins/specialchar/dialogs/lang/sk.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/widgets/ckeditor/plugins/specialchar/dialogs/lang/sl.js" afterPath="$PROJECT_DIR$/assets/widgets/ckeditor/plugins/specialchar/dialogs/lang/sl.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/widgets/ckeditor/plugins/specialchar/dialogs/lang/sq.js" afterPath="$PROJECT_DIR$/assets/widgets/ckeditor/plugins/specialchar/dialogs/lang/sq.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/widgets/ckeditor/plugins/specialchar/dialogs/lang/sv.js" afterPath="$PROJECT_DIR$/assets/widgets/ckeditor/plugins/specialchar/dialogs/lang/sv.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/widgets/ckeditor/plugins/specialchar/dialogs/lang/th.js" afterPath="$PROJECT_DIR$/assets/widgets/ckeditor/plugins/specialchar/dialogs/lang/th.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/widgets/ckeditor/plugins/specialchar/dialogs/lang/tr.js" afterPath="$PROJECT_DIR$/assets/widgets/ckeditor/plugins/specialchar/dialogs/lang/tr.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/widgets/ckeditor/plugins/specialchar/dialogs/lang/tt.js" afterPath="$PROJECT_DIR$/assets/widgets/ckeditor/plugins/specialchar/dialogs/lang/tt.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/widgets/ckeditor/plugins/specialchar/dialogs/lang/ug.js" afterPath="$PROJECT_DIR$/assets/widgets/ckeditor/plugins/specialchar/dialogs/lang/ug.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/widgets/ckeditor/plugins/specialchar/dialogs/lang/uk.js" afterPath="$PROJECT_DIR$/assets/widgets/ckeditor/plugins/specialchar/dialogs/lang/uk.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/widgets/ckeditor/plugins/specialchar/dialogs/lang/vi.js" afterPath="$PROJECT_DIR$/assets/widgets/ckeditor/plugins/specialchar/dialogs/lang/vi.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/widgets/ckeditor/plugins/specialchar/dialogs/lang/zh-cn.js" afterPath="$PROJECT_DIR$/assets/widgets/ckeditor/plugins/specialchar/dialogs/lang/zh-cn.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/widgets/ckeditor/plugins/specialchar/dialogs/lang/zh.js" afterPath="$PROJECT_DIR$/assets/widgets/ckeditor/plugins/specialchar/dialogs/lang/zh.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/widgets/ckeditor/plugins/specialchar/dialogs/specialchar.js" afterPath="$PROJECT_DIR$/assets/widgets/ckeditor/plugins/specialchar/dialogs/specialchar.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/widgets/ckeditor/plugins/table/dialogs/table.js" afterPath="$PROJECT_DIR$/assets/widgets/ckeditor/plugins/table/dialogs/table.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/widgets/ckeditor/plugins/tabletools/dialogs/tableCell.js" afterPath="$PROJECT_DIR$/assets/widgets/ckeditor/plugins/tabletools/dialogs/tableCell.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/widgets/ckeditor/plugins/wsc/LICENSE.md" afterPath="$PROJECT_DIR$/assets/widgets/ckeditor/plugins/wsc/LICENSE.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/widgets/ckeditor/plugins/wsc/README.md" afterPath="$PROJECT_DIR$/assets/widgets/ckeditor/plugins/wsc/README.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/widgets/ckeditor/plugins/wsc/dialogs/ciframe.html" afterPath="$PROJECT_DIR$/assets/widgets/ckeditor/plugins/wsc/dialogs/ciframe.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/widgets/ckeditor/plugins/wsc/dialogs/tmpFrameset.html" afterPath="$PROJECT_DIR$/assets/widgets/ckeditor/plugins/wsc/dialogs/tmpFrameset.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/widgets/ckeditor/plugins/wsc/dialogs/wsc.css" afterPath="$PROJECT_DIR$/assets/widgets/ckeditor/plugins/wsc/dialogs/wsc.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/widgets/ckeditor/plugins/wsc/dialogs/wsc.js" afterPath="$PROJECT_DIR$/assets/widgets/ckeditor/plugins/wsc/dialogs/wsc.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/widgets/ckeditor/plugins/wsc/dialogs/wsc_ie.js" afterPath="$PROJECT_DIR$/assets/widgets/ckeditor/plugins/wsc/dialogs/wsc_ie.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/widgets/ckeditor/skins/bootstrapck/readme.md" afterPath="$PROJECT_DIR$/assets/widgets/ckeditor/skins/bootstrapck/readme.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/widgets/ckeditor/styles.js" afterPath="$PROJECT_DIR$/assets/widgets/ckeditor/styles.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/widgets/collapse/collapse.js" afterPath="$PROJECT_DIR$/assets/widgets/collapse/collapse.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/widgets/colorpicker/colorpicker.js" afterPath="$PROJECT_DIR$/assets/widgets/colorpicker/colorpicker.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/widgets/datatable/datatable-fixedcolumns.js" afterPath="$PROJECT_DIR$/assets/widgets/datatable/datatable-fixedcolumns.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/widgets/datatable/datatable-fixedheader.js" afterPath="$PROJECT_DIR$/assets/widgets/datatable/datatable-fixedheader.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/widgets/datatable/datatable-reorder.js" afterPath="$PROJECT_DIR$/assets/widgets/datatable/datatable-reorder.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/widgets/datatable/datatable-responsive.js" afterPath="$PROJECT_DIR$/assets/widgets/datatable/datatable-responsive.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/widgets/datatable/datatable-tabletools.js" afterPath="$PROJECT_DIR$/assets/widgets/datatable/datatable-tabletools.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/widgets/datatable/datatable.css" afterPath="$PROJECT_DIR$/assets/widgets/datatable/datatable.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/widgets/datatable/datatable.js" afterPath="$PROJECT_DIR$/assets/widgets/datatable/datatable.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/widgets/datepicker-ui/datepicker.js" afterPath="$PROJECT_DIR$/assets/widgets/datepicker-ui/datepicker.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/widgets/datepicker/datepicker.js" afterPath="$PROJECT_DIR$/assets/widgets/datepicker/datepicker.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/widgets/daterangepicker/daterangepicker.css" afterPath="$PROJECT_DIR$/assets/widgets/daterangepicker/daterangepicker.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/widgets/daterangepicker/daterangepicker.js" afterPath="$PROJECT_DIR$/assets/widgets/daterangepicker/daterangepicker.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/widgets/daterangepicker/moment.js" afterPath="$PROJECT_DIR$/assets/widgets/daterangepicker/moment.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/widgets/dialog/dialog.js" afterPath="$PROJECT_DIR$/assets/widgets/dialog/dialog.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/widgets/dropdown/dropdown.js" afterPath="$PROJECT_DIR$/assets/widgets/dropdown/dropdown.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/widgets/dropzone/dropzone.js" afterPath="$PROJECT_DIR$/assets/widgets/dropzone/dropzone.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/widgets/file-input/file-input-demo.js" afterPath="$PROJECT_DIR$/assets/widgets/file-input/file-input-demo.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/widgets/file-input/file-input.js" afterPath="$PROJECT_DIR$/assets/widgets/file-input/file-input.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/widgets/fullpage/fullpage.js" afterPath="$PROJECT_DIR$/assets/widgets/fullpage/fullpage.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/widgets/input-mask/inputmask.js" afterPath="$PROJECT_DIR$/assets/widgets/input-mask/inputmask.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/widgets/input-switch/inputswitch.css" afterPath="$PROJECT_DIR$/assets/widgets/input-switch/inputswitch.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/widgets/input-switch/inputswitch.js" afterPath="$PROJECT_DIR$/assets/widgets/input-switch/inputswitch.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/widgets/interactions-ui/draggable.js" afterPath="$PROJECT_DIR$/assets/widgets/interactions-ui/draggable.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/widgets/interactions-ui/droppable.js" afterPath="$PROJECT_DIR$/assets/widgets/interactions-ui/droppable.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/widgets/interactions-ui/resizable.js" afterPath="$PROJECT_DIR$/assets/widgets/interactions-ui/resizable.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/widgets/interactions-ui/selectable.js" afterPath="$PROJECT_DIR$/assets/widgets/interactions-ui/selectable.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/widgets/interactions-ui/sortable.js" afterPath="$PROJECT_DIR$/assets/widgets/interactions-ui/sortable.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/widgets/ionrangeslider/ionrangeslider.js" afterPath="$PROJECT_DIR$/assets/widgets/ionrangeslider/ionrangeslider.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/widgets/jcrop/jcrop.js" afterPath="$PROJECT_DIR$/assets/widgets/jcrop/jcrop.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/widgets/jgrowl-notifications/jgrowl.js" afterPath="$PROJECT_DIR$/assets/widgets/jgrowl-notifications/jgrowl.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/widgets/knobs/knob.js" afterPath="$PROJECT_DIR$/assets/widgets/knobs/knob.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/widgets/layerslider/layerslider-transitions.js" afterPath="$PROJECT_DIR$/assets/widgets/layerslider/layerslider-transitions.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/widgets/layerslider/layerslider.css" afterPath="$PROJECT_DIR$/assets/widgets/layerslider/layerslider.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/widgets/layerslider/layerslider.js" afterPath="$PROJECT_DIR$/assets/widgets/layerslider/layerslider.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/widgets/lazyload/lazyload.js" afterPath="$PROJECT_DIR$/assets/widgets/lazyload/lazyload.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/widgets/loading-bar/loadingbar.js" afterPath="$PROJECT_DIR$/assets/widgets/loading-bar/loadingbar.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/widgets/maps/gmaps/gmaps.js" afterPath="$PROJECT_DIR$/assets/widgets/maps/gmaps/gmaps.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/widgets/maps/mapael/mapael-demo.js" afterPath="$PROJECT_DIR$/assets/widgets/maps/mapael/mapael-demo.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/widgets/maps/mapael/mapael.js" afterPath="$PROJECT_DIR$/assets/widgets/maps/mapael/mapael.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/widgets/maps/mapael/maps/france_departments.js" afterPath="$PROJECT_DIR$/assets/widgets/maps/mapael/maps/france_departments.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/widgets/maps/mapael/maps/usa_states.js" afterPath="$PROJECT_DIR$/assets/widgets/maps/mapael/maps/usa_states.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/widgets/maps/mapael/maps/world_countries.js" afterPath="$PROJECT_DIR$/assets/widgets/maps/mapael/maps/world_countries.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/widgets/maps/vector-maps/vectormaps.js" afterPath="$PROJECT_DIR$/assets/widgets/maps/vector-maps/vectormaps.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/widgets/markdown/markdown.js" afterPath="$PROJECT_DIR$/assets/widgets/markdown/markdown.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/widgets/mixitup/isotope.js" afterPath="$PROJECT_DIR$/assets/widgets/mixitup/isotope.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/widgets/mixitup/mixitup.js" afterPath="$PROJECT_DIR$/assets/widgets/mixitup/mixitup.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/widgets/modal/modal.js" afterPath="$PROJECT_DIR$/assets/widgets/modal/modal.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/widgets/multi-select/multiselect.js" afterPath="$PROJECT_DIR$/assets/widgets/multi-select/multiselect.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/widgets/multi-upload/app.js" afterPath="$PROJECT_DIR$/assets/widgets/multi-upload/app.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/widgets/multi-upload/cors/jquery.postmessage-transport.js" afterPath="$PROJECT_DIR$/assets/widgets/multi-upload/cors/jquery.postmessage-transport.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/widgets/multi-upload/cors/jquery.xdr-transport.js" afterPath="$PROJECT_DIR$/assets/widgets/multi-upload/cors/jquery.xdr-transport.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/widgets/multi-upload/jquery.fileupload-angular.js" afterPath="$PROJECT_DIR$/assets/widgets/multi-upload/jquery.fileupload-angular.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/widgets/multi-upload/jquery.fileupload-audio.js" afterPath="$PROJECT_DIR$/assets/widgets/multi-upload/jquery.fileupload-audio.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/widgets/multi-upload/jquery.fileupload-image.js" afterPath="$PROJECT_DIR$/assets/widgets/multi-upload/jquery.fileupload-image.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/widgets/multi-upload/jquery.fileupload-jquery-ui.js" afterPath="$PROJECT_DIR$/assets/widgets/multi-upload/jquery.fileupload-jquery-ui.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/widgets/multi-upload/jquery.fileupload-process.js" afterPath="$PROJECT_DIR$/assets/widgets/multi-upload/jquery.fileupload-process.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/widgets/multi-upload/jquery.fileupload-ui.js" afterPath="$PROJECT_DIR$/assets/widgets/multi-upload/jquery.fileupload-ui.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/widgets/multi-upload/jquery.fileupload-validate.js" afterPath="$PROJECT_DIR$/assets/widgets/multi-upload/jquery.fileupload-validate.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/widgets/multi-upload/jquery.fileupload-video.js" afterPath="$PROJECT_DIR$/assets/widgets/multi-upload/jquery.fileupload-video.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/widgets/multi-upload/jquery.fileupload.js" afterPath="$PROJECT_DIR$/assets/widgets/multi-upload/jquery.fileupload.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/widgets/multi-upload/jquery.iframe-transport.js" afterPath="$PROJECT_DIR$/assets/widgets/multi-upload/jquery.iframe-transport.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/widgets/multi-upload/main.js" afterPath="$PROJECT_DIR$/assets/widgets/multi-upload/main.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/widgets/nestable/nestable.js" afterPath="$PROJECT_DIR$/assets/widgets/nestable/nestable.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/widgets/nicescroll/nicescroll.js" afterPath="$PROJECT_DIR$/assets/widgets/nicescroll/nicescroll.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/widgets/noty-notifications/noty.js" afterPath="$PROJECT_DIR$/assets/widgets/noty-notifications/noty.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/widgets/owlcarousel/owlcarousel.js" afterPath="$PROJECT_DIR$/assets/widgets/owlcarousel/owlcarousel.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/widgets/parsley/parsley.js" afterPath="$PROJECT_DIR$/assets/widgets/parsley/parsley.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/widgets/popover/popover.js" afterPath="$PROJECT_DIR$/assets/widgets/popover/popover.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/widgets/pretty-photo/prettyphoto.js" afterPath="$PROJECT_DIR$/assets/widgets/pretty-photo/prettyphoto.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/widgets/slidebars/slidebars.css" afterPath="$PROJECT_DIR$/assets/widgets/slidebars/slidebars.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/widgets/slidebars/slidebars.js" afterPath="$PROJECT_DIR$/assets/widgets/slidebars/slidebars.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/widgets/slider-ui/slider.js" afterPath="$PROJECT_DIR$/assets/widgets/slider-ui/slider.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/widgets/slimscroll/slimscroll.js" afterPath="$PROJECT_DIR$/assets/widgets/slimscroll/slimscroll.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/widgets/spinner/spinner.js" afterPath="$PROJECT_DIR$/assets/widgets/spinner/spinner.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/widgets/sticky/sticky.js" afterPath="$PROJECT_DIR$/assets/widgets/sticky/sticky.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/widgets/summernote-wysiwyg/summernote-wysiwyg.js" afterPath="$PROJECT_DIR$/assets/widgets/summernote-wysiwyg/summernote-wysiwyg.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/widgets/superclick/superclick.js" afterPath="$PROJECT_DIR$/assets/widgets/superclick/superclick.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/widgets/superfish/superfish.js" afterPath="$PROJECT_DIR$/assets/widgets/superfish/superfish.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/widgets/syntax/scripts/shAutoloader.js" afterPath="$PROJECT_DIR$/assets/widgets/syntax/scripts/shAutoloader.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/widgets/syntax/scripts/shBrushAS3.js" afterPath="$PROJECT_DIR$/assets/widgets/syntax/scripts/shBrushAS3.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/widgets/syntax/scripts/shBrushAppleScript.js" afterPath="$PROJECT_DIR$/assets/widgets/syntax/scripts/shBrushAppleScript.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/widgets/syntax/scripts/shBrushBash.js" afterPath="$PROJECT_DIR$/assets/widgets/syntax/scripts/shBrushBash.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/widgets/syntax/scripts/shBrushCSharp.js" afterPath="$PROJECT_DIR$/assets/widgets/syntax/scripts/shBrushCSharp.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/widgets/syntax/scripts/shBrushColdFusion.js" afterPath="$PROJECT_DIR$/assets/widgets/syntax/scripts/shBrushColdFusion.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/widgets/syntax/scripts/shBrushCpp.js" afterPath="$PROJECT_DIR$/assets/widgets/syntax/scripts/shBrushCpp.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/widgets/syntax/scripts/shBrushCss.js" afterPath="$PROJECT_DIR$/assets/widgets/syntax/scripts/shBrushCss.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/widgets/syntax/scripts/shBrushDelphi.js" afterPath="$PROJECT_DIR$/assets/widgets/syntax/scripts/shBrushDelphi.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/widgets/syntax/scripts/shBrushDiff.js" afterPath="$PROJECT_DIR$/assets/widgets/syntax/scripts/shBrushDiff.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/widgets/syntax/scripts/shBrushErlang.js" afterPath="$PROJECT_DIR$/assets/widgets/syntax/scripts/shBrushErlang.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/widgets/syntax/scripts/shBrushGroovy.js" afterPath="$PROJECT_DIR$/assets/widgets/syntax/scripts/shBrushGroovy.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/widgets/syntax/scripts/shBrushJScript.js" afterPath="$PROJECT_DIR$/assets/widgets/syntax/scripts/shBrushJScript.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/widgets/syntax/scripts/shBrushJava.js" afterPath="$PROJECT_DIR$/assets/widgets/syntax/scripts/shBrushJava.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/widgets/syntax/scripts/shBrushJavaFX.js" afterPath="$PROJECT_DIR$/assets/widgets/syntax/scripts/shBrushJavaFX.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/widgets/syntax/scripts/shBrushPerl.js" afterPath="$PROJECT_DIR$/assets/widgets/syntax/scripts/shBrushPerl.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/widgets/syntax/scripts/shBrushPhp.js" afterPath="$PROJECT_DIR$/assets/widgets/syntax/scripts/shBrushPhp.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/widgets/syntax/scripts/shBrushPlain.js" afterPath="$PROJECT_DIR$/assets/widgets/syntax/scripts/shBrushPlain.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/widgets/syntax/scripts/shBrushPowerShell.js" afterPath="$PROJECT_DIR$/assets/widgets/syntax/scripts/shBrushPowerShell.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/widgets/syntax/scripts/shBrushPython.js" afterPath="$PROJECT_DIR$/assets/widgets/syntax/scripts/shBrushPython.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/widgets/syntax/scripts/shBrushRuby.js" afterPath="$PROJECT_DIR$/assets/widgets/syntax/scripts/shBrushRuby.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/widgets/syntax/scripts/shBrushSass.js" afterPath="$PROJECT_DIR$/assets/widgets/syntax/scripts/shBrushSass.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/widgets/syntax/scripts/shBrushScala.js" afterPath="$PROJECT_DIR$/assets/widgets/syntax/scripts/shBrushScala.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/widgets/syntax/scripts/shBrushSql.js" afterPath="$PROJECT_DIR$/assets/widgets/syntax/scripts/shBrushSql.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/widgets/syntax/scripts/shBrushVb.js" afterPath="$PROJECT_DIR$/assets/widgets/syntax/scripts/shBrushVb.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/widgets/syntax/scripts/shBrushXml.js" afterPath="$PROJECT_DIR$/assets/widgets/syntax/scripts/shBrushXml.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/widgets/syntax/scripts/shCore.js" afterPath="$PROJECT_DIR$/assets/widgets/syntax/scripts/shCore.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/widgets/syntax/scripts/shLegacy.js" afterPath="$PROJECT_DIR$/assets/widgets/syntax/scripts/shLegacy.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/widgets/syntax/styles/shCore.css" afterPath="$PROJECT_DIR$/assets/widgets/syntax/styles/shCore.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/widgets/syntax/styles/shCoreDefault.css" afterPath="$PROJECT_DIR$/assets/widgets/syntax/styles/shCoreDefault.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/widgets/syntax/styles/shCoreDjango.css" afterPath="$PROJECT_DIR$/assets/widgets/syntax/styles/shCoreDjango.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/widgets/syntax/styles/shCoreEclipse.css" afterPath="$PROJECT_DIR$/assets/widgets/syntax/styles/shCoreEclipse.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/widgets/syntax/styles/shCoreEmacs.css" afterPath="$PROJECT_DIR$/assets/widgets/syntax/styles/shCoreEmacs.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/widgets/syntax/styles/shCoreFadeToGrey.css" afterPath="$PROJECT_DIR$/assets/widgets/syntax/styles/shCoreFadeToGrey.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/widgets/syntax/styles/shCoreMDUltra.css" afterPath="$PROJECT_DIR$/assets/widgets/syntax/styles/shCoreMDUltra.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/widgets/syntax/styles/shCoreMidnight.css" afterPath="$PROJECT_DIR$/assets/widgets/syntax/styles/shCoreMidnight.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/widgets/syntax/styles/shCoreRDark.css" afterPath="$PROJECT_DIR$/assets/widgets/syntax/styles/shCoreRDark.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/widgets/syntax/styles/shThemeDefault.css" afterPath="$PROJECT_DIR$/assets/widgets/syntax/styles/shThemeDefault.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/widgets/syntax/styles/shThemeDjango.css" afterPath="$PROJECT_DIR$/assets/widgets/syntax/styles/shThemeDjango.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/widgets/syntax/styles/shThemeEclipse.css" afterPath="$PROJECT_DIR$/assets/widgets/syntax/styles/shThemeEclipse.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/widgets/syntax/styles/shThemeEmacs.css" afterPath="$PROJECT_DIR$/assets/widgets/syntax/styles/shThemeEmacs.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/widgets/syntax/styles/shThemeFadeToGrey.css" afterPath="$PROJECT_DIR$/assets/widgets/syntax/styles/shThemeFadeToGrey.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/widgets/syntax/styles/shThemeMDUltra.css" afterPath="$PROJECT_DIR$/assets/widgets/syntax/styles/shThemeMDUltra.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/widgets/syntax/styles/shThemeMidnight.css" afterPath="$PROJECT_DIR$/assets/widgets/syntax/styles/shThemeMidnight.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/widgets/syntax/styles/shThemeRDark.css" afterPath="$PROJECT_DIR$/assets/widgets/syntax/styles/shThemeRDark.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/widgets/tabs-ui/tabs.js" afterPath="$PROJECT_DIR$/assets/widgets/tabs-ui/tabs.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/widgets/tabs/tabs-responsive.js" afterPath="$PROJECT_DIR$/assets/widgets/tabs/tabs-responsive.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/widgets/tabs/tabs.js" afterPath="$PROJECT_DIR$/assets/widgets/tabs/tabs.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/widgets/textarea/textarea.js" afterPath="$PROJECT_DIR$/assets/widgets/textarea/textarea.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/widgets/tocify/tocify.js" afterPath="$PROJECT_DIR$/assets/widgets/tocify/tocify.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/widgets/tooltip/tooltip.js" afterPath="$PROJECT_DIR$/assets/widgets/tooltip/tooltip.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/widgets/uniform/uniform.js" afterPath="$PROJECT_DIR$/assets/widgets/uniform/uniform.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/widgets/wizard/wizard.js" afterPath="$PROJECT_DIR$/assets/widgets/wizard/wizard.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/widgets/xeditable/xeditable.css" afterPath="$PROJECT_DIR$/assets/widgets/xeditable/xeditable.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/widgets/xeditable/xeditable.js" afterPath="$PROJECT_DIR$/assets/widgets/xeditable/xeditable.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/bootstrap.css" afterPath="$PROJECT_DIR$/css/bootstrap.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/landing-page.css" afterPath="$PROJECT_DIR$/css/landing-page.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/reset.css" afterPath="$PROJECT_DIR$/css/reset.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/angular-cookies.min.js" afterPath="$PROJECT_DIR$/js/angular-cookies.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/angular-route.min.js" afterPath="$PROJECT_DIR$/js/angular-route.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/angular.min.js" afterPath="$PROJECT_DIR$/js/angular.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/bootstrap.js" afterPath="$PROJECT_DIR$/js/bootstrap.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/jquery.backstretch.min.js" afterPath="$PROJECT_DIR$/js/jquery.backstretch.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/jquery.easing.min.js" afterPath="$PROJECT_DIR$/js/jquery.easing.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/modernizr.js" afterPath="$PROJECT_DIR$/js/modernizr.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/production/admin-angular/admin-blog.html" afterPath="$PROJECT_DIR$/production/admin-angular/admin-blog.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/production/admin-angular/admin-pricing.html" afterPath="$PROJECT_DIR$/production/admin-angular/admin-pricing.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/production/admin-angular/advanced-datatables.html" afterPath="$PROJECT_DIR$/production/admin-angular/advanced-datatables.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/production/admin-angular/animations.html" afterPath="$PROJECT_DIR$/production/admin-angular/animations.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/production/admin-angular/auto-menu.html" afterPath="$PROJECT_DIR$/production/admin-angular/auto-menu.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/production/admin-angular/bs-carousel.html" afterPath="$PROJECT_DIR$/production/admin-angular/bs-carousel.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/production/admin-angular/buttons.html" afterPath="$PROJECT_DIR$/production/admin-angular/buttons.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/production/admin-angular/calendar.html" afterPath="$PROJECT_DIR$/production/admin-angular/calendar.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/production/admin-angular/chart-boxes.html" afterPath="$PROJECT_DIR$/production/admin-angular/chart-boxes.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/production/admin-angular/chart-js.html" afterPath="$PROJECT_DIR$/production/admin-angular/chart-js.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/production/admin-angular/chat.html" afterPath="$PROJECT_DIR$/production/admin-angular/chat.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/production/admin-angular/checklist.html" afterPath="$PROJECT_DIR$/production/admin-angular/checklist.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/production/admin-angular/ckeditor.html" afterPath="$PROJECT_DIR$/production/admin-angular/ckeditor.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/production/admin-angular/collapsable.html" afterPath="$PROJECT_DIR$/production/admin-angular/collapsable.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/production/admin-angular/content-boxes.html" afterPath="$PROJECT_DIR$/production/admin-angular/content-boxes.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/production/admin-angular/data-tables.html" afterPath="$PROJECT_DIR$/production/admin-angular/data-tables.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/production/admin-angular/dropzone-uploader.html" afterPath="$PROJECT_DIR$/production/admin-angular/dropzone-uploader.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/production/admin-angular/faq-section.html" afterPath="$PROJECT_DIR$/production/admin-angular/faq-section.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/production/admin-angular/fixed-datatables.html" afterPath="$PROJECT_DIR$/production/admin-angular/fixed-datatables.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/production/admin-angular/flot-charts.html" afterPath="$PROJECT_DIR$/production/admin-angular/flot-charts.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/production/admin-angular/forms-elements.html" afterPath="$PROJECT_DIR$/production/admin-angular/forms-elements.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/production/admin-angular/forms-masks.html" afterPath="$PROJECT_DIR$/production/admin-angular/forms-masks.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/production/admin-angular/forms-validation.html" afterPath="$PROJECT_DIR$/production/admin-angular/forms-validation.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/production/admin-angular/forms-wizard.html" afterPath="$PROJECT_DIR$/production/admin-angular/forms-wizard.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/production/admin-angular/gmaps.html" afterPath="$PROJECT_DIR$/production/admin-angular/gmaps.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/production/admin-angular/helper-classes.html" afterPath="$PROJECT_DIR$/production/admin-angular/helper-classes.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/production/admin-angular/icons.html" afterPath="$PROJECT_DIR$/production/admin-angular/icons.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/production/admin-angular/image-crop.html" afterPath="$PROJECT_DIR$/production/admin-angular/image-crop.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/production/admin-angular/images.html" afterPath="$PROJECT_DIR$/production/admin-angular/images.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/production/admin-angular/index-alt.html" afterPath="$PROJECT_DIR$/production/admin-angular/index-alt.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/production/admin-angular/index.html" afterPath="$PROJECT_DIR$/production/admin-angular/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/production/admin-angular/inline-editor.html" afterPath="$PROJECT_DIR$/production/admin-angular/inline-editor.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/production/admin-angular/input-knobs.html" afterPath="$PROJECT_DIR$/production/admin-angular/input-knobs.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/production/admin-angular/invoice.html" afterPath="$PROJECT_DIR$/production/admin-angular/invoice.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/production/admin-angular/just-gage.html" afterPath="$PROJECT_DIR$/production/admin-angular/just-gage.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/production/admin-angular/labels-badges.html" afterPath="$PROJECT_DIR$/production/admin-angular/labels-badges.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/production/admin-angular/lazyload.html" afterPath="$PROJECT_DIR$/production/admin-angular/lazyload.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/production/admin-angular/loading-feedback.html" afterPath="$PROJECT_DIR$/production/admin-angular/loading-feedback.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/production/admin-angular/lockscreen-1.html" afterPath="$PROJECT_DIR$/production/admin-angular/lockscreen-1.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/production/admin-angular/lockscreen-2.html" afterPath="$PROJECT_DIR$/production/admin-angular/lockscreen-2.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/production/admin-angular/lockscreen-3.html" afterPath="$PROJECT_DIR$/production/admin-angular/lockscreen-3.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/production/admin-angular/login-1.html" afterPath="$PROJECT_DIR$/production/admin-angular/login-1.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/production/admin-angular/login-2.html" afterPath="$PROJECT_DIR$/production/admin-angular/login-2.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/production/admin-angular/login-3.html" afterPath="$PROJECT_DIR$/production/admin-angular/login-3.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/production/admin-angular/login-4.html" afterPath="$PROJECT_DIR$/production/admin-angular/login-4.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/production/admin-angular/login-5.html" afterPath="$PROJECT_DIR$/production/admin-angular/login-5.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/production/admin-angular/mailbox-compose.html" afterPath="$PROJECT_DIR$/production/admin-angular/mailbox-compose.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/production/admin-angular/mailbox-inbox.html" afterPath="$PROJECT_DIR$/production/admin-angular/mailbox-inbox.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/production/admin-angular/mailbox-single.html" afterPath="$PROJECT_DIR$/production/admin-angular/mailbox-single.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/production/admin-angular/mapael.html" afterPath="$PROJECT_DIR$/production/admin-angular/mapael.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/production/admin-angular/markdown.html" afterPath="$PROJECT_DIR$/production/admin-angular/markdown.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/production/admin-angular/modals.html" afterPath="$PROJECT_DIR$/production/admin-angular/modals.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/production/admin-angular/morris-charts.html" afterPath="$PROJECT_DIR$/production/admin-angular/morris-charts.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/production/admin-angular/multi-uploader.html" afterPath="$PROJECT_DIR$/production/admin-angular/multi-uploader.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/production/admin-angular/nav-menus.html" afterPath="$PROJECT_DIR$/production/admin-angular/nav-menus.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/production/admin-angular/notifications.html" afterPath="$PROJECT_DIR$/production/admin-angular/notifications.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/production/admin-angular/page-transitions.html" afterPath="$PROJECT_DIR$/production/admin-angular/page-transitions.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/production/admin-angular/pages/bs-carousel.hbs" afterPath="$PROJECT_DIR$/production/admin-angular/pages/bs-carousel.hbs" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/production/admin-angular/pages/ckeditor.hbs" afterPath="$PROJECT_DIR$/production/admin-angular/pages/ckeditor.hbs" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/production/admin-angular/pages/image-crop.hbs" afterPath="$PROJECT_DIR$/production/admin-angular/pages/image-crop.hbs" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/production/admin-angular/pages/loading-feedback.hbs" afterPath="$PROJECT_DIR$/production/admin-angular/pages/loading-feedback.hbs" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/production/admin-angular/pages/markdown.hbs" afterPath="$PROJECT_DIR$/production/admin-angular/pages/markdown.hbs" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/production/admin-angular/pages/multi-uploader.hbs" afterPath="$PROJECT_DIR$/production/admin-angular/pages/multi-uploader.hbs" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/production/admin-angular/panel-boxes.html" afterPath="$PROJECT_DIR$/production/admin-angular/panel-boxes.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/production/admin-angular/pickers.html" afterPath="$PROJECT_DIR$/production/admin-angular/pickers.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/production/admin-angular/pie-gages.html" afterPath="$PROJECT_DIR$/production/admin-angular/pie-gages.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/production/admin-angular/popovers-tooltips.html" afterPath="$PROJECT_DIR$/production/admin-angular/popovers-tooltips.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/production/admin-angular/portfolio-gallery.html" afterPath="$PROJECT_DIR$/production/admin-angular/portfolio-gallery.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/production/admin-angular/portfolio-masonry.html" afterPath="$PROJECT_DIR$/production/admin-angular/portfolio-masonry.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/production/admin-angular/progress-bars.html" afterPath="$PROJECT_DIR$/production/admin-angular/progress-bars.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/production/admin-angular/response-messages.html" afterPath="$PROJECT_DIR$/production/admin-angular/response-messages.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/production/admin-angular/responsive-datatables.html" afterPath="$PROJECT_DIR$/production/admin-angular/responsive-datatables.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/production/admin-angular/responsive-tables.html" afterPath="$PROJECT_DIR$/production/admin-angular/responsive-tables.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/production/admin-angular/scrollbars.html" afterPath="$PROJECT_DIR$/production/admin-angular/scrollbars.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/production/admin-angular/server-1.html" afterPath="$PROJECT_DIR$/production/admin-angular/server-1.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/production/admin-angular/server-2.html" afterPath="$PROJECT_DIR$/production/admin-angular/server-2.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/production/admin-angular/server-3.html" afterPath="$PROJECT_DIR$/production/admin-angular/server-3.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/production/admin-angular/slidebars.html" afterPath="$PROJECT_DIR$/production/admin-angular/slidebars.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/production/admin-angular/sliders.html" afterPath="$PROJECT_DIR$/production/admin-angular/sliders.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/production/admin-angular/social-boxes.html" afterPath="$PROJECT_DIR$/production/admin-angular/social-boxes.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/production/admin-angular/sortable-elements.html" afterPath="$PROJECT_DIR$/production/admin-angular/sortable-elements.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/production/admin-angular/sparklines.html" afterPath="$PROJECT_DIR$/production/admin-angular/sparklines.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/production/admin-angular/summernote.html" afterPath="$PROJECT_DIR$/production/admin-angular/summernote.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/production/admin-angular/tables.html" afterPath="$PROJECT_DIR$/production/admin-angular/tables.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/production/admin-angular/tabs.html" afterPath="$PROJECT_DIR$/production/admin-angular/tabs.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/production/admin-angular/tile-boxes.html" afterPath="$PROJECT_DIR$/production/admin-angular/tile-boxes.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/production/admin-angular/timeline.html" afterPath="$PROJECT_DIR$/production/admin-angular/timeline.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/production/admin-angular/vector-maps.html" afterPath="$PROJECT_DIR$/production/admin-angular/vector-maps.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/production/admin-angular/view-profile.html" afterPath="$PROJECT_DIR$/production/admin-angular/view-profile.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/production/admin-angular/xcharts.html" afterPath="$PROJECT_DIR$/production/admin-angular/xcharts.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/production/admin-template/bs-carousel.html" afterPath="$PROJECT_DIR$/production/admin-template/bs-carousel.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/production/admin-template/ckeditor.html" afterPath="$PROJECT_DIR$/production/admin-template/ckeditor.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/production/admin-template/image-crop.html" afterPath="$PROJECT_DIR$/production/admin-template/image-crop.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/production/admin-template/loading-feedback.html" afterPath="$PROJECT_DIR$/production/admin-template/loading-feedback.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/production/admin-template/markdown.html" afterPath="$PROJECT_DIR$/production/admin-template/markdown.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/production/admin-template/multi-uploader.html" afterPath="$PROJECT_DIR$/production/admin-template/multi-uploader.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/production/frontend-template/blog-single.html" afterPath="$PROJECT_DIR$/production/frontend-template/blog-single.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/production/frontend-template/bs-carousel.html" afterPath="$PROJECT_DIR$/production/frontend-template/bs-carousel.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/production/frontend-template/ckeditor.html" afterPath="$PROJECT_DIR$/production/frontend-template/ckeditor.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/production/frontend-template/features-box.html" afterPath="$PROJECT_DIR$/production/frontend-template/features-box.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/production/frontend-template/header-animations.html" afterPath="$PROJECT_DIR$/production/frontend-template/header-animations.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/production/frontend-template/header-fixed.html" afterPath="$PROJECT_DIR$/production/frontend-template/header-fixed.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/production/frontend-template/header-no-top-menu.html" afterPath="$PROJECT_DIR$/production/frontend-template/header-no-top-menu.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/production/frontend-template/header-transparent.html" afterPath="$PROJECT_DIR$/production/frontend-template/header-transparent.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/production/frontend-template/image-crop.html" afterPath="$PROJECT_DIR$/production/frontend-template/image-crop.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/production/frontend-template/index-alt-2.html" afterPath="$PROJECT_DIR$/production/frontend-template/index-alt-2.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/production/frontend-template/loading-feedback.html" afterPath="$PROJECT_DIR$/production/frontend-template/loading-feedback.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/production/frontend-template/markdown.html" afterPath="$PROJECT_DIR$/production/frontend-template/markdown.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/production/frontend-template/multi-uploader.html" afterPath="$PROJECT_DIR$/production/frontend-template/multi-uploader.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/production/frontend-template/slideshows.html" afterPath="$PROJECT_DIR$/production/frontend-template/slideshows.html" />
+    </list>
+    <ignored path="cs307-web-ui.iws" />
+    <ignored path=".idea/workspace.xml" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
+  <component name="CreatePatchCommitExecutor">
+    <option name="PATCH_PATH" value="" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
+  <component name="FavoritesManager">
+    <favorites_list name="cs307-web-ui" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file leaf-file-name="angular.min.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/assets/angular/angular.min.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="30">
+              <caret line="2" column="28" selection-start-line="2" selection-start-column="28" selection-end-line="2" selection-end-column="28" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GradleLocalSettings">
+    <option name="externalProjectsViewState">
+      <projects_view />
+    </option>
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/assets/angular/angular.min.js" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" />
+  <component name="JsBuildToolPackageJson" detection-done="true" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="y" value="23" />
+    <option name="width" value="1280" />
+    <option name="height" value="732" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="false">
+    <OptionsSetting value="true" id="Add" />
+    <OptionsSetting value="true" id="Remove" />
+    <OptionsSetting value="true" id="Checkout" />
+    <OptionsSetting value="true" id="Update" />
+    <OptionsSetting value="true" id="Status" />
+    <OptionsSetting value="true" id="Edit" />
+    <ConfirmationsSetting value="0" id="Add" />
+    <ConfirmationsSetting value="0" id="Remove" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+      <manualOrder />
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scratches" />
+      <pane id="PackagesPane" />
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cs307-web-ui" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cs307-web-ui" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cs307-web-ui" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="js-jscs-nodeInterpreter" value="/usr/local/bin/node" />
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
+      <module name="" />
+      <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
+      <option name="PROGRAM_PARAMETERS" />
+      <method />
+    </configuration>
+    <configuration default="true" type="AndroidRunConfigurationType" factoryName="Android Application">
+      <module name="" />
+      <option name="DEPLOY" value="true" />
+      <option name="ARTIFACT_NAME" value="" />
+      <option name="PM_INSTALL_OPTIONS" value="" />
+      <option name="ACTIVITY_EXTRA_FLAGS" value="" />
+      <option name="MODE" value="default_activity" />
+      <option name="TARGET_SELECTION_MODE" value="SHOW_DIALOG" />
+      <option name="PREFERRED_AVD" value="" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="true" />
+      <option name="SKIP_NOOP_APK_INSTALLATIONS" value="true" />
+      <option name="FORCE_STOP_RUNNING_APP" value="true" />
+      <option name="USE_LAST_SELECTED_DEVICE" value="false" />
+      <option name="PREFERRED_AVD" value="" />
+      <option name="DEEP_LINK" value="" />
+      <option name="ACTIVITY_CLASS" value="" />
+      <method />
+    </configuration>
+    <configuration default="true" type="AndroidTestRunConfigurationType" factoryName="Android Tests">
+      <module name="" />
+      <option name="TESTING_TYPE" value="0" />
+      <option name="INSTRUMENTATION_RUNNER_CLASS" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="EXTRA_OPTIONS" value="" />
+      <option name="TARGET_SELECTION_MODE" value="SHOW_DIALOG" />
+      <option name="PREFERRED_AVD" value="" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="true" />
+      <option name="SKIP_NOOP_APK_INSTALLATIONS" value="true" />
+      <option name="FORCE_STOP_RUNNING_APP" value="true" />
+      <option name="USE_LAST_SELECTED_DEVICE" value="false" />
+      <option name="PREFERRED_AVD" value="" />
+      <method />
+    </configuration>
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <module />
+      <method />
+    </configuration>
+    <configuration default="true" type="Application" factoryName="Application">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="ArquillianJUnit" factoryName="">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
+    <configuration default="true" type="ArquillianTestNG" factoryName="">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="SUITE_NAME" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="GROUP_NAME" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="VM_PARAMETERS" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="OUTPUT_DIRECTORY" />
+      <option name="ANNOTATION_TYPE" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <option name="USE_DEFAULT_REPORTERS" value="false" />
+      <option name="PROPERTIES_FILE" />
+      <envs />
+      <properties />
+      <listeners />
+      <method />
+    </configuration>
+    <configuration default="true" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="myFilePath" />
+      <option name="GLUE" />
+      <option name="myNameFilter" />
+      <option name="myGeneratedName" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="FlashRunConfigurationType" factoryName="Flash App">
+      <option name="BCName" value="" />
+      <option name="IOSSimulatorSdkPath" value="" />
+      <option name="adlOptions" value="" />
+      <option name="airProgramParameters" value="" />
+      <option name="appDescriptorForEmulator" value="Android" />
+      <option name="debugTransport" value="USB" />
+      <option name="debuggerSdkRaw" value="BC SDK" />
+      <option name="emulator" value="NexusOne" />
+      <option name="emulatorAdlOptions" value="" />
+      <option name="fastPackaging" value="true" />
+      <option name="fullScreenHeight" value="0" />
+      <option name="fullScreenWidth" value="0" />
+      <option name="launchUrl" value="false" />
+      <option name="launcherParameters">
+        <LauncherParameters>
+          <option name="browser" value="a7bb68e0-33c0-4d6f-a81a-aac1fdb870c8" />
+          <option name="launcherType" value="OSDefault" />
+          <option name="newPlayerInstance" value="false" />
+          <option name="playerPath" value="/Applications/Flash Player Debugger.app" />
+        </LauncherParameters>
+      </option>
+      <option name="mobileRunTarget" value="Emulator" />
+      <option name="moduleName" value="" />
+      <option name="overriddenMainClass" value="" />
+      <option name="overriddenOutputFileName" value="" />
+      <option name="overrideMainClass" value="false" />
+      <option name="runTrusted" value="true" />
+      <option name="screenDpi" value="0" />
+      <option name="screenHeight" value="0" />
+      <option name="screenWidth" value="0" />
+      <option name="url" value="http://" />
+      <option name="usbDebugPort" value="7936" />
+      <method />
+    </configuration>
+    <configuration default="true" type="FlexUnitRunConfigurationType" factoryName="FlexUnit" appDescriptorForEmulator="Android" class_name="" emulatorAdlOptions="" method_name="" package_name="" scope="Class">
+      <option name="BCName" value="" />
+      <option name="launcherParameters">
+        <LauncherParameters>
+          <option name="browser" value="a7bb68e0-33c0-4d6f-a81a-aac1fdb870c8" />
+          <option name="launcherType" value="OSDefault" />
+          <option name="newPlayerInstance" value="false" />
+          <option name="playerPath" value="/Applications/Flash Player Debugger.app" />
+        </LauncherParameters>
+      </option>
+      <option name="moduleName" value="" />
+      <option name="trusted" value="true" />
+      <method />
+    </configuration>
+    <configuration default="true" type="GradleRunConfiguration" factoryName="Gradle">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list />
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <method />
+    </configuration>
+    <configuration default="true" type="GrailsRunConfigurationType" factoryName="Grails">
+      <setting name="vmparams" value="" />
+      <setting name="cmdLine" value="run-app" />
+      <setting name="passParentEnv" value="true" />
+      <setting name="launchBrowser" value="true" />
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <method />
+    </configuration>
+    <configuration default="true" type="JUnit" factoryName="JUnit">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
+    <configuration default="true" type="JUnitTestDiscovery" factoryName="JUnit Test Discovery" changeList="All">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
+    <configuration default="true" type="JarApplication" factoryName="JAR Application">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="Java Scratch" factoryName="Java Scratch">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="SCRATCH_FILE_ID" value="0" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
+      <method />
+    </configuration>
+    <configuration default="true" type="JetRunConfigurationType" factoryName="Kotlin">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="cs307-web-ui" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType" factoryName="Kotlin script">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="filePath" />
+      <option name="vmParameters" />
+      <option name="alternativeJrePath" />
+      <option name="programParameters" />
+      <option name="passParentEnvs" value="true" />
+      <option name="workingDirectory" />
+      <option name="isAlternativeJrePathEnabled" value="false" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="Remote" factoryName="Remote">
+      <option name="USE_SOCKET_TRANSPORT" value="true" />
+      <option name="SERVER_MODE" value="false" />
+      <option name="SHMEM_ADDRESS" value="javadebug" />
+      <option name="HOST" value="localhost" />
+      <option name="PORT" value="5005" />
+      <method />
+    </configuration>
+    <configuration default="true" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="TestNG" factoryName="TestNG">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="SUITE_NAME" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="GROUP_NAME" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="OUTPUT_DIRECTORY" />
+      <option name="ANNOTATION_TYPE" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <option name="USE_DEFAULT_REPORTERS" value="false" />
+      <option name="PROPERTIES_FILE" />
+      <envs />
+      <properties />
+      <listeners />
+      <method />
+    </configuration>
+    <configuration default="true" type="TestNGTestDiscovery" factoryName="TestNG Test Discovery" changeList="All">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="SUITE_NAME" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="GROUP_NAME" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="VM_PARAMETERS" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="OUTPUT_DIRECTORY" />
+      <option name="ANNOTATION_TYPE" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <option name="USE_DEFAULT_REPORTERS" value="false" />
+      <option name="PROPERTIES_FILE" />
+      <envs />
+      <properties />
+      <listeners />
+      <method />
+    </configuration>
+    <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
+      <method />
+    </configuration>
+    <configuration default="true" type="js.build_tools.npm" factoryName="npm">
+      <command value="run-script" />
+      <scripts />
+      <node-interpreter value="project" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="osgi.bnd.run" factoryName="Run Launcher">
+      <method />
+    </configuration>
+    <configuration default="true" type="osgi.bnd.run" factoryName="Test Launcher (JUnit)">
+      <method />
+    </configuration>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false">
+    <option name="remove_strategy" value="false" />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="b40e5ccb-19ad-403b-ba30-281bd9f92624" name="Default" comment="" />
+      <created>1473044803382</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1473044803382</updated>
+      <workItem from="1473044805009" duration="135000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="135000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="0" y="23" width="1280" height="732" extended-state="6" />
+    <editor active="false" />
+    <layout>
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24959612" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32954547" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+    </layout>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager />
+    <watches-manager />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/assets/angular/angular.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="28" selection-start-line="2" selection-start-column="28" selection-end-line="2" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>

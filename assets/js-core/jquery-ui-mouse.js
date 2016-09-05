@@ -1,12 +1,12 @@
 /*!
  * jQuery UI Mouse @VERSION
- * http://jqueryui.com
+ * https://jqueryui.com
  *
  * Copyright 2014 jQuery Foundation and other contributors
  * Released under the MIT license.
- * http://jquery.org/license
+ * https://jquery.org/license
  *
- * http://api.jqueryui.com/mouse/
+ * https://api.jqueryui.com/mouse/
  */
 (function( factory ) {
     if ( typeof define === "function" && define.amd ) {

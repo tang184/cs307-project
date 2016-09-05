@@ -6,8 +6,8 @@
 * Map of metropolitan France by department
 * Equirectangular projection
 
-* @author Vincent Brouté
-* @source http://fr.m.wikipedia.org/wiki/Fichier:France_location_map-Departements.svg
+* @author Vincent Broutï¿½
+* @source https://fr.m.wikipedia.org/wiki/Fichier:France_location_map-Departements.svg
 */
 (function($) {
 	$.extend(true, $.fn.mapael, 

@@ -38,7 +38,7 @@ $(function(){
 				latitude :45.758888888889, 
 				longitude: 4.8413888888889, 
 				value : 700000, 
-				href : "http://fr.wikipedia.org/wiki/Lyon",
+				href : "https://fr.wikipedia.org/wiki/Lyon",
 				tooltip: {content : "<span style=\"font-weight:bold;\">City :</span> Lyon"},
 				text : {content : "Lyon"}
 			},
@@ -49,7 +49,7 @@ $(function(){
 				longitude: -1.6808333333333, 
 				tooltip: {content : "<span style=\"font-weight:bold;\">City :</span> Rennes"},
 				text : {content : "Rennes"},
-				href : "http://fr.wikipedia.org/wiki/Rennes"
+				href : "https://fr.wikipedia.org/wiki/Rennes"
 			}
 		}
 	});

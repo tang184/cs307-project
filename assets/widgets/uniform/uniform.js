@@ -2,7 +2,7 @@
 
  Uniform v2.1.0
  Copyright © 2009 Josh Pyles / Pixelmatrix Design LLC
- http://pixelmatrixdesign.com
+ https://pixelmatrixdesign.com
 
  Requires jQuery 1.3 or newer
 
@@ -10,7 +10,7 @@
  this.
 
  Disabling text selection is made possible by Mathias Bynens
- <http://mathiasbynens.be/> and his noSelect plugin.
+ <https://mathiasbynens.be/> and his noSelect plugin.
  <https://github.com/mathiasbynens/jquery-noselect>, which is embedded.
 
  Also, thanks to David Kaneda and Eugene Bond for their contributions to the
@@ -20,7 +20,7 @@
  and ensured version 2 got out the door.
 
  License:
- MIT License - http://www.opensource.org/licenses/mit-license.php
+ MIT License - https://www.opensource.org/licenses/mit-license.php
 
  Enjoy!
 
@@ -389,7 +389,7 @@
 
     /**
      * noSelect plugin, very slightly modified
-     * http://mths.be/noselect v1.0.3
+     * https://mths.be/noselect v1.0.3
      *
      * @param jQuery $elem Element that we don't want to select
      * @param Object options Uniform options for the element

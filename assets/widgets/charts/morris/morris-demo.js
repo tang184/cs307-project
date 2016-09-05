@@ -234,7 +234,7 @@ $(function() {
 */
 
 $(function() {
-    // data stolen from http://howmanyleft.co.uk/vehicle/jaguar_'e'_type
+    // data stolen from https://howmanyleft.co.uk/vehicle/jaguar_'e'_type
     var tax_data = [{
         "period": "2011 Q3",
         "licensed": 3407,

@@ -2,12 +2,12 @@
 * MIXITUP - A CSS3 and JQuery Filter & Sort Plugin
 * Version: 1.5.5
 * License: Creative Commons Attribution-NoDerivs 3.0 Unported - CC BY-ND 3.0
-* http://creativecommons.org/licenses/by-nd/3.0/
+* https://creativecommons.org/licenses/by-nd/3.0/
 * This software may be used freely on commercial and non-commercial projects with attribution to the author/copyright holder.
 * Author: Patrick Kunka
 * Copyright 2012-2013 Patrick Kunka, Barrel LLC, All Rights Reserved
 * 
-* http://mixitup.io
+* https://mixitup.io
 */
 
 (function(d){function r(e,c,l,b,a){function f(){n.unbind("webkitTransitionEnd transitionend otransitionend oTransitionEnd");c&&x(c,l,b,a);a.startOrder=[];a.newOrder=[];a.origSort=[];a.checkSort=[];v.removeStyle(a.prefix+"filter, filter, "+a.prefix+"transform, transform, opacity, display").css(a.clean).removeAttr("data-checksum");window.atob||v.css({display:"none",opacity:"0"});n.removeStyle(a.prefix+"transition, transition, "+a.prefix+"perspective, perspective, "+a.prefix+"perspective-origin, perspective-origin, "+

@@ -1,7 +1,7 @@
 /*!
  * Isotope PACKAGED v2.0.1
  * Filter & sort magical layouts
- * http://isotope.metafizzy.co
+ * https://isotope.metafizzy.co
  */
 
 /**
@@ -771,7 +771,7 @@
 /*!
  * getStyleProperty v1.0.3
  * original by kangax
- * http://perfectionkills.com/feature-testing-css-properties/
+ * https://perfectionkills.com/feature-testing-css-properties/
  */
 
 /*jshint browser: true, strict: true, undef: true */
@@ -1177,7 +1177,7 @@
         return true;
     }
 
-// http://jamesroberts.name/blog/2010/02/22/string-functions-for-javascript-trim-to-camel-case-to-dashed-and-to-underscore/
+// https://jamesroberts.name/blog/2010/02/22/string-functions-for-javascript-trim-to-camel-case-to-dashed-and-to-underscore/
     function toDash( str ) {
         return str.replace( /([A-Z])/g, function( $1 ){
             return '-' + $1.toLowerCase();
@@ -1444,7 +1444,7 @@
             // set from styles
             if ( args.from ) {
                 this.css( args.from );
-                // force redraw. http://blog.alexmaccaw.com/css-transitions
+                // force redraw. https://blog.alexmaccaw.com/css-transitions
                 var h = this.element.offsetHeight;
                 // hack for JSHint to hush about unused var
                 h = null;
@@ -1717,7 +1717,7 @@
         return ary;
     }
 
-// http://stackoverflow.com/a/384380/182183
+// https://stackoverflow.com/a/384380/182183
     var isElement = ( typeof HTMLElement === 'object' ) ?
         function isElementDOM2( obj ) {
             return obj instanceof HTMLElement;
@@ -1746,7 +1746,7 @@
         }
     }
 
-// http://jamesroberts.name/blog/2010/02/22/string-functions-for-javascript-trim-to-camel-case-to-dashed-and-to-underscore/
+// https://jamesroberts.name/blog/2010/02/22/string-functions-for-javascript-trim-to-camel-case-to-dashed-and-to-underscore/
     function toDashed( str ) {
         return str.replace( /(.)([A-Z])/g, function( match, $1, $2 ) {
             return $1 + '-' + $2;
@@ -2334,7 +2334,7 @@
         };
 
 // original debounce by John Hann
-// http://unscriptable.com/index.php/2009/03/20/debouncing-javascript-methods/
+// https://unscriptable.com/index.php/2009/03/20/debouncing-javascript-methods/
 
 // this fires every resize
         Outlayer.prototype.onresize = function() {
@@ -2911,7 +2911,7 @@
 /*!
  * Masonry v3.1.5
  * Cascading grid layout library
- * http://masonry.desandro.com
+ * https://masonry.desandro.com
  * MIT License
  * by David DeSandro
  */
@@ -3117,7 +3117,7 @@
 /*!
  * Masonry layout mode
  * sub-classes Masonry
- * http://masonry.desandro.com
+ * https://masonry.desandro.com
  */
 
 ( function( window ) {
@@ -3297,7 +3297,7 @@
 /*!
  * Isotope v2.0.1
  * Filter & sort magical layouts
- * http://isotope.metafizzy.co
+ * https://isotope.metafizzy.co
  */
 
 ( function( window ) {

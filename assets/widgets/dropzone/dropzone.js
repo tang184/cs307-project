@@ -237,7 +237,7 @@
 
         /*
          *
-         * More info at [www.dropzonejs.com](http://www.dropzonejs.com)
+         * More info at [www.dropzonejs.com](https://www.dropzonejs.com)
          *
          * Copyright (c) 2012, Matias Meno
          *
@@ -1753,7 +1753,7 @@
             /*
 
              Bugfix for iOS 6 and 7
-             Source: http://stackoverflow.com/questions/11929099/html5-canvas-drawimage-ratio-bug-ios
+             Source: https://stackoverflow.com/questions/11929099/html5-canvas-drawimage-ratio-bug-ios
              based on the work of https://github.com/stomita/ios-imagefile-megapixel
              */
 
@@ -1804,8 +1804,8 @@
              * Version: 1.2
              *
              * URL:
-             * http://javascript.nwbox.com/ContentLoaded/
-             * http://javascript.nwbox.com/ContentLoaded/MIT-LICENSE
+             * https://javascript.nwbox.com/ContentLoaded/
+             * https://javascript.nwbox.com/ContentLoaded/MIT-LICENSE
              */
 
             contentLoaded = function(win, fn) {
