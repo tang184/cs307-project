@@ -17,7 +17,7 @@
         	$scope.login = function() {
         		var myVar = setInterval(FlashService.Success, 2000);
         		FlashService.Success('Login successful', true);
-        		$location.path('/dashboard');
+        		$location.path('/main/dashboard');
         	}
     	};
 

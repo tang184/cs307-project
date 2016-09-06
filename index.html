@@ -4,6 +4,7 @@
 		<title>Yakume</title>
 		<script type="text/javascript" src="js/angular.min.js"></script>
 		<script type="text/javascript" src="js/angular-route.min.js"></script>
+		<script type="text/javascript" src="js/angular-ui-router.min.js"></script>
 		<script type="text/javascript" src="js/jquery-1.11.0.js"></script>
 		<script type="text/javascript" src="controller.js"></script>
 		<script type="text/javascript" src="login/login.controller.js"></script>
@@ -190,7 +191,7 @@
 	</script>
 
 	</head>
-<body ng-app="mainApp" id="bodyBackground" ui-vew>
+<body ng-app="mainApp" id="bodyBackground">
 	<div id="loading">
     <div class="spinner">
         <div class="bounce1"></div>
@@ -200,7 +201,7 @@
 </div>
 	<div ng-class="{ 'alert': flash, 'alert-success': flash.type === 'success', 'alert-danger': flash.type === 'error' }" ng-if="flash" ng-bind="flash.message"></div>
 
-	<div ng-view></div>
+	<section ui-view></section>
 
 </body>
 
