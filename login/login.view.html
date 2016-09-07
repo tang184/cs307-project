@@ -17,7 +17,7 @@
                                             <span class="input-group-addon addon-inside bg-white font-primary">
                                                 <i class="glyph-icon icon-envelope-o"></i>
                                             </span>
-                                            <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+                                            <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email" ng-model="username">
                                         </div>
                                     </div>
                                     <div class="form-group">
@@ -26,7 +26,7 @@
                                             <span class="input-group-addon addon-inside bg-white font-primary">
                                                 <i class="glyph-icon icon-unlock-alt"></i>
                                             </span>
-                                            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                                            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" ng-model="password">
                                         </div>
                                     </div>
                                     <div class="row mrg15B">
@@ -38,10 +38,10 @@
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <p href="" ng-click="login()" class="btn btn-block btn-blue-alt">Login</p>
+                                        <p href="" ng-click="login()" class="btn btn-block btn-blue-alt">Log in</p>
                                     </div>
                                     <div class="form-group">
-                                        <a href="" ng-click="register()">Register account</a>
+                                        <a href="" ng-click="register()">Sign Up</a>
                                     </div>
                                 </div>
                             </div>
@@ -125,11 +125,11 @@
   window.fbAsyncInit = function() {
   FB.init({
     appId      : '1793641007572063',
-    cookie     : true,  // enable cookies to allow the server to access 
+    cookie     : true,  // enable cookies to allow the server to access
     xfbml      : true,  // parse social plugins on this page
     version    : 'v2.5' // use graph api version 2.5
   });
-  // Now that we've initialized the JavaScript SDK, we call 
+  // Now that we've initialized the JavaScript SDK, we call
   // FB.getLoginStatus().  This function gets the state of the
   // person visiting this page and can return one of three states to
   // the callback you provide.  They can be:
@@ -179,4 +179,3 @@
 <script type="text/javascript" src="../js/angular-route.min.js"></script>
 <script type="text/javascript" src="../dashboard/dashboard.controller.js"></script>
 <script type="text/javascript" src="../main/main.controller.js"></script>
-

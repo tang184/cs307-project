@@ -5,9 +5,9 @@
         .module('mainApp')
         .controller('LoginController', LoginController);
 
-    LoginController.$inject = ['$scope', '$location', 'FlashService'];
-    	function LoginController($scope, $location, FlashService) {
-    		
+    LoginController.$inject = ['$scope', '$location', '$rootScope', 'FlashService'];
+    	function LoginController($scope, $location, $rootScope, FlashService) {
+
         	$("#bodyBackground").css('background-image', 'url(assets/image-resources/blurred-bg/blurred-bg-3.jpg)');
 
             /*function statusChangeCallback(response) {
@@ -24,7 +24,7 @@
             window.fbAsyncInit = function() {
               FB.init({
                 appId      : '1793641007572063',
-                cookie     : true,  // enable cookies to allow the server to access 
+                cookie     : true,  // enable cookies to allow the server to access
                 xfbml      : true,  // parse social plugins on this page
                 version    : 'v2.5' // use graph api version 2.5
               });
@@ -47,7 +47,7 @@
                 console.log('Welcome!  Fetching your information.... ');
                 FB.api('/me', function(response) {
                   console.log('Successful login for: ' + response.name);
-                  
+
                 });
               }*/
 
@@ -56,9 +56,15 @@
         	}
 
         	$scope.login = function() {
-        		var myVar = setInterval(FlashService.Success, 2000);
-        		FlashService.Success('Login successful', true);
-        		$location.path('/main/dashboard');
+                if ($scope.username == 'admin@yakume.xyz' && $scope.password == 'admin') {
+                    $rootScope.loggedIn = true;
+
+        		    var myVar = setInterval(FlashService.Success, 2000);
+        		    FlashService.Success('Login successful', true);
+        		    $location.path('/main/dashboard');
+                } else {
+                    alert('Wrong Username or Password.');
+                }
         	}
 
             $scope.myFacebookLogin = function() {
@@ -66,14 +72,14 @@
                     if (response.status === 'connected') {
                         FB.api('/me', function(response1) {
                             console.log('Successful login for: ' + response1.name);
-                            $scope.$apply( function () { $location.path('/main/dashboard').replace() } ); 
+                            $scope.$apply( function () { $location.path('/main/dashboard').replace() } );
                         });
                     } else if (response.status == 'not_authorized') {
                         FB.login(function(response) {
                             if (response.status === 'connected') {
                                 FB.api('/me', function(response1) {
                                     console.log('Successful login for: ' + response1.name);
-                                    $scope.$apply( function () { $location.path('/main/dashboard').replace() } ); 
+                                    $scope.$apply( function () { $location.path('/main/dashboard').replace() } );
                                 });
                             }
 
@@ -83,7 +89,7 @@
                             if (response.status === 'connected') {
                                 FB.api('/me', function(response1) {
                                     console.log('Successful login for: ' + response1.name);
-                                    $scope.$apply( function () { $location.path('/main/dashboard').replace() } ); 
+                                    $scope.$apply( function () { $location.path('/main/dashboard').replace() } );
                                 });
                             }
                         });
@@ -91,15 +97,11 @@
                     }
                 });
 
-                
 
-                
+
+
             }
     	};
 
 
 })();
-
-
-
-

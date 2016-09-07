@@ -8,17 +8,26 @@
                 controller: 'LoginController',
                 templateUrl: 'login/login.view.html',
                 url:"/login"
-            
+
             })
 
             .state('register', {
                 controller: 'RegisterController',
                 templateUrl: 'register/register.view.html',
                 url:"/register"
-            
+
             })
 
             .state('dashboard', {
+                resolve: {
+                    "check": function($location, $rootScope) {
+                        if (!$rootScope.loggedIn) {
+                            $scope.$apply(function() { // simple trick otherwise dashboard page will still be loaded.
+                                $location.path('/');
+                            });
+                        }
+                    }
+                },
                 parent:'main',
                 controller: 'DashboardController',
                 templateUrl: 'dashboard/dashboard.view.html',
@@ -29,12 +38,12 @@
                 abstract: true,
                 url: '/main',
                 templateUrl: 'main/main.html'
-            });    
-            
+            });
+
 
             $urlRouterProvider.otherwise('/login')
     });
 
-    
+
 
 })();
