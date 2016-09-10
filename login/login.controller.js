@@ -32,7 +32,7 @@
 
             (function initController() {
             // reset login status
-                /*AuthenticationService.ClearCredentials();*/
+                AuthenticationService.ClearCredentials();
             })();
 
         	$scope.register = function() {
@@ -43,7 +43,7 @@
 
                 AuthenticationService.Login($scope.username, $scope.password, function (response) {
                     if (response.success) {
-                        //AuthenticationService.SetCredentials(vm.username, vm.password);
+                        AuthenticationService.SetCredentials($scope.username, $scope.password);
                         var myVar = setInterval(FlashService.Success, 2000);
                         FlashService.Success('Login successful', true);
                         $location.path('/main/dashboard');
@@ -54,26 +54,25 @@
         	}
 
             $scope.myFacebookLogin = function() {
+
                 FB.getLoginStatus(function(response) {
+
                     if (response.status === 'connected') {
-                        if (!$rootScope.loggedIn) {
-                            $rootScope.loggedIn = true;
-                        }
+
                         var myVar = setInterval(FlashService.Success, 2000);
                         FlashService.Success('Login successful', true);
+
                         $scope.$apply( function () { $location.path('/main/dashboard').replace() } );
+
                         FB.api('/me', function(response) {
                             //console.log('Successful login for: ' + response.name);
-
                             var accessToken = FB.getAuthResponse().accessToken;
                             console.log(accessToken);
                         });
                     } else if (response.status == 'not_authorized') {
                         FB.login(function(response) {
                             if (response.status === 'connected') {
-                                if (!$rootScope.loggedIn) {
-                                    $rootScope.loggedIn = true;
-                                }
+                                
                                 var myVar = setInterval(FlashService.Success, 2000);
                                 FlashService.Success('Login successful', true);
                                 $scope.$apply( function () { $location.path('/main/dashboard').replace() } );
@@ -83,9 +82,7 @@
                     } else {
                         FB.login(function(response) {
                             if (response.status === 'connected') {
-                                if (!$rootScope.loggedIn) {
-                                    $rootScope.loggedIn = true;
-                                }
+                                
                                 var myVar = setInterval(FlashService.Success, 2000);
                                 FlashService.Success('Login successful', true);
                                 $scope.$apply( function () { $location.path('/main/dashboard').replace() } );

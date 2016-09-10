@@ -4,14 +4,14 @@
     angular
         .module('mainApp')
         .factory('AuthenticationService', AuthenticationService);
-    AuthenticationService.$inject = ['$http', '$rootScope', '$timeout'];
+    AuthenticationService.$inject = ['$http', '$cookieStore', '$rootScope', '$timeout'];
 
-    function AuthenticationService($http, $rootScope, $timeout) {
+    function AuthenticationService($http, $cookieStore, $rootScope, $timeout) {
         var service = {};
 
         service.Login = Login;
-        //service.SetCredentials = SetCredentials;
-        //service.ClearCredentials = ClearCredentials;
+        service.SetCredentials = SetCredentials;
+        service.ClearCredentials = ClearCredentials;
 
         return service;
 
@@ -38,7 +38,7 @@
 
         }
 
-        /*function SetCredentials(username, password) {
+        function SetCredentials(username, password) {
             var authdata = Base64.encode(username + ':' + password);
 
             $rootScope.globals = {
@@ -138,7 +138,7 @@
             } while (i < input.length);
 
             return output;
-        }*/
+        }
     };
 
 })();
