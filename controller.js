@@ -33,7 +33,7 @@
             });
 
 
-            $urlRouterProvider.otherwise('/login')
+            $urlRouterProvider.otherwise('/main/dashboard');
     });
 
 

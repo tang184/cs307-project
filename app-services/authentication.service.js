@@ -11,6 +11,7 @@
 
         service.Login = Login;
         service.SetCredentials = SetCredentials;
+        service.SetFBCredentials = SetFBCredentials;
         service.ClearCredentials = ClearCredentials;
 
         return service;
@@ -50,6 +51,21 @@
 
             $http.defaults.headers.common['Authorization'] = 'Basic ' + authdata; // jshint ignore:line
             $cookieStore.put('globals', $rootScope.globals);
+        }
+
+        function SetFBCredentials(username, accessToken, callback) {
+            var authdata = accessToken;
+
+            $rootScope.globals = {
+                currentUser: {
+                    username: username,
+                    authdata: authdata
+                }
+            };
+
+            $http.defaults.headers.common['Authorization'] = 'Basic ' + authdata; // jshint ignore:line
+            $cookieStore.put('globals', $rootScope.globals);
+            callback($rootScope.globals.currentUser);
         }
 
         function ClearCredentials() {

@@ -5,9 +5,9 @@
         .module('mainApp')
         .controller('LoginController', LoginController);
 
-    LoginController.$inject = ['$scope', '$location', 'FlashService', 'AuthenticationService'];
+    LoginController.$inject = ['$scope', '$rootScope','$location', 'FlashService', 'AuthenticationService'];
 
-    	function LoginController($scope, $location, FlashService, AuthenticationService) {
+    	function LoginController($scope, $rootScope, $location, FlashService, AuthenticationService) {
         	$("#bodyBackground").css('background-image', 'url(assets/image-resources/blurred-bg/blurred-bg-3.jpg)');
             /*function statusChangeCallback(response) {
                 console.log('statusChangeCallback');
@@ -58,34 +58,50 @@
                 FB.getLoginStatus(function(response) {
 
                     if (response.status === 'connected') {
+                        FB.api('/me', function(response) {
+                            //console.log('Successful login for: ' + response.name);
+                            var authdata = FB.getAuthResponse().accessToken;
+                            AuthenticationService.SetFBCredentials(response.name, authdata, function(response) {
+                                $scope.$apply( function () { $location.path('/main/dashboard').replace() } );
+                            });
 
+                        });
                         var myVar = setInterval(FlashService.Success, 2000);
                         FlashService.Success('Login successful', true);
 
-                        $scope.$apply( function () { $location.path('/main/dashboard').replace() } );
+                        
+                        
 
-                        FB.api('/me', function(response) {
-                            //console.log('Successful login for: ' + response.name);
-                            var accessToken = FB.getAuthResponse().accessToken;
-                            console.log(accessToken);
-                        });
                     } else if (response.status == 'not_authorized') {
                         FB.login(function(response) {
                             if (response.status === 'connected') {
+
+                                FB.api('/me', function(response) {
+                                    var authdata = FB.getAuthResponse().accessToken;
+                                    AuthenticationService.SetFBCredentials(response.name, authdata, function(response) {
+                                        $scope.$apply( function () { $location.path('/main/dashboard').replace() } );
+                                    });
+
+                                });
                                 
                                 var myVar = setInterval(FlashService.Success, 2000);
                                 FlashService.Success('Login successful', true);
-                                $scope.$apply( function () { $location.path('/main/dashboard').replace() } );
                             }
 
                         });
                     } else {
                         FB.login(function(response) {
                             if (response.status === 'connected') {
+                                FB.api('/me', function(response) {
+                                    var authdata = FB.getAuthResponse().accessToken;
+                                    AuthenticationService.SetFBCredentials(response.name, authdata, function(response) {
+                                        $scope.$apply( function () { $location.path('/main/dashboard').replace() } );
+                                    });
+
+                                });
                                 
                                 var myVar = setInterval(FlashService.Success, 2000);
                                 FlashService.Success('Login successful', true);
-                                $scope.$apply( function () { $location.path('/main/dashboard').replace() } );
                             }
                         });
 
