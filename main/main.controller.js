@@ -8,6 +8,66 @@
     MainController.$inject = ['$scope', '$location', 'FlashService'];
     	function MainController($scope, $location, FlashService) {    		
         	$("#bodyBackground").css('background', 'white');
+
+
+        	$(document).ready(function() {
+
+		    //pageTransitions();
+
+		    // ADD SLIDEDOWN ANIMATION TO DROPDOWN //
+		    $('.dropdown').on('show.bs.dropdown', function(e){
+		        $(this).find('.dropdown-menu').first().stop(true, true).slideDown();
+		    });
+
+		    // ADD SLIDEUP ANIMATION TO DROPDOWN //
+		    $('.dropdown').on('hide.bs.dropdown', function(e){
+		        $(this).find('.dropdown-menu').first().stop(true, true).slideUp();
+		    });
+
+		    /* Sidebar menu */
+		    $(function() {
+
+		        $('#sidebar-menu').superclick({
+		            animation: {
+		                height: 'show'
+		            },
+		            animationOut: {
+		                height: 'hide'
+		            }
+		        });
+
+		        //automatically open the current path
+		        var path = window.location.pathname.split('/');
+		        path = path[path.length-1];
+		        if (path !== undefined) {
+		            $("#sidebar-menu").find("a[href$='" + path + "']").addClass('sfActive');
+		            $("#sidebar-menu").find("a[href$='" + path + "']").parents().eq(3).superclick('show');
+		        }
+
+		    });
+
+		    /* Colapse sidebar */
+		    $(function() {
+		        $('#close-sidebar').click(function() {
+		            $('body').toggleClass('closed-sidebar');
+		            $('.glyph-icon', this).toggleClass('icon-angle-right').toggleClass('icon-angle-left');
+		        });
+
+		    });
+
+    /* Sidebar scroll */
+
+
+
+	});
+
+        	
+
     	};
+
+
+
+
+    	
 
 })();

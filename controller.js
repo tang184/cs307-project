@@ -29,6 +29,7 @@
             .state('main', {
                 abstract: true,
                 url: '/main',
+                controller: 'MainController',
                 templateUrl: 'main/main.html'
             });
 
