@@ -7,17 +7,14 @@
                 <div class="content-box-wrapper row">
                     <div class="col-md-6 col-md-offset-3">
                         <h2>Register</h2>
+                        <br>
                         <form name="form" ng-submit="vm.register()" role="form">
                             <div class="form-group" ng-class="{ 'has-error': form.firstName.$dirty && form.firstName.$error.required }">
-                                <label for="username">First name</label>
-                                <input type="text" name="firstName" id="firstName" class="form-control" ng-model="vm.user.firstName" required />
-                                <span ng-show="form.firstName.$dirty && form.firstName.$error.required" class="help-block">First name is required</span>
+                                <label for="username">User name</label>
+                                <input type="text" name="firstName" id="firstName" class="form-control" ng-model="vm.user.userName" required />
+                                <span ng-show="form.firstName.$dirty && form.firstName.$error.required" class="help-block">User name is required</span>
                             </div>
-                            <div class="form-group" ng-class="{ 'has-error': form.lastName.$dirty && form.lastName.$error.required }">
-                                <label for="username">Last name</label>
-                                <input type="text" name="lastName" id="Text1" class="form-control" ng-model="vm.user.lastName" required />
-                                <span ng-show="form.lastName.$dirty && form.lastName.$error.required" class="help-block">Last name is required</span>
-                            </div>
+                            
                             <div class="form-group" ng-class="{ 'has-error': form.email.$dirty && form.email.$invalid }">
                                 <label for="username">Email address</label>
                                 <input type="text" name="email" id="email" class="form-control" ng-model="vm.user.email"
@@ -28,14 +25,14 @@
                             <div class="form-group" ng-class="{ 'has-error': form.password.$dirty && form.password.$error}">
                                 <label for="password">Password</label>
                                 <input type="password" name="password" id="password" class="form-control" ng-model="vm.user.password"
-                                ng-minlength="8" onpaste="return false" oncontextmenu="return false" oncopy="return false" 
+                                ng-minlength="6" onpaste="return false" oncontextmenu="return false" oncopy="return false" 
                                 oncut="return false" ng-maxlength="20" ng-pattern="/(?=.*[A-z])(?=.*[0-9])/"
                                 required ng-change="checkPassword()"/>
                                 <span ng-show="form.password.$dirty && form.password.$error.required" class="help-block">Password is required</span>
 
                                 <span class="help-block"
                                     ng-show="!form.password.$error.required && (form.password.$error.minlength || form.password.$error.maxlength) && form.password.$dirty">
-                                    Passwords must be between 8 and 20 characters
+                                    Passwords must be between 6 and 20 characters
                                 </span>
                                 <span class="help-block"
                                       ng-show="!form.password.$error.required && !form.password.$error.minlength && !form.password.$error.maxlength && form.password.$error.pattern && form.password.$dirty">

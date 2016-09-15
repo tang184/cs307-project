@@ -8,7 +8,7 @@
     LoginController.$inject = ['$scope', '$rootScope','$location', 'FlashService', 'AuthenticationService'];
 
     	function LoginController($scope, $rootScope, $location, FlashService, AuthenticationService) {
-        	$("#bodyBackground").css('background-image', 'url(assets/image-resources/blurred-bg/blurred-bg-3.jpg)');
+        	$("#bodyBackground").css('background-image', 'url(assets/image-resources/blurred-bg/blurred-bg-7.jpg)');
             /*function statusChangeCallback(response) {
                 console.log('statusChangeCallback');
                 console.log(response);

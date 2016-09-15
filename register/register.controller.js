@@ -7,7 +7,7 @@
 
     RegisterController.$inject = ['$location', '$scope'];
         function RegisterController($location, $scope) {
-            $("#bodyBackground").css('background-image', 'url(assets/image-resources/blurred-bg/blurred-bg-2.jpg)');
+            $("#bodyBackground").css('background-image', 'url(assets/image-resources/blurred-bg/blurred-bg-7.jpg)');
 
             $scope.vm = {};
             $scope.confirmPassword = false;

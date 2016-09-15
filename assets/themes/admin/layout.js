@@ -1,5 +1,6 @@
 $(document).ready(function() {
 
+
     body_sizer();
 
     $("div[id='#fixed-sidebar']").on('click', function() {
