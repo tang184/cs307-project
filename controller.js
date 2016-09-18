@@ -52,8 +52,7 @@
             var restrictedPage = $.inArray($location.path(), ['/login', '/register']) === -1;
             var loggedIn = $rootScope.globals.currentUser;
             if (restrictedPage && !loggedIn) {
-                /*$location.path('/login');*/
-                location.href = 'login/login.view.html';
+                $location.path('/login');
             }
         });
     });
