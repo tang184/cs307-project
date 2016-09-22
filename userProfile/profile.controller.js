@@ -3,10 +3,10 @@
 
     angular
         .module('mainApp')
-        .controller('DashboardController', DashboardController);
+        .controller('ProfileController', ProfileController);
 
-    DashboardController.$inject = ['$scope', '$location', 'FlashService'];
-        function DashboardController($scope, $location, FlashService) {
+    ProfileController.$inject = ['$scope', '$location', 'FlashService'];
+        function ProfileController($scope, $location, FlashService) {
             
             $("#bodyBackground").css('background', 'white');
 

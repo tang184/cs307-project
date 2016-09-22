@@ -26,6 +26,14 @@
                 //authenticated: true
             })
 
+            .state('profile', {
+                parent:'main',
+                controller: 'ProfileController',
+                templateUrl: 'userProfile/profile.view.html',
+                url:"/profile",
+                //authenticated: true
+            })
+
             .state('main', {
                 abstract: true,
                 url: '/main',
