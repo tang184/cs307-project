@@ -1,3 +1,4 @@
+<link rel="stylesheet" type="text/css" href="css/style.css">
 
 <div class="col-xs-12"id="sb-site">
     
@@ -16,7 +17,7 @@
             Monarch <i>UI</i>
             <span>The perfect solution for user interfaces</span>
         </a>
-        <a id="close-sidebar" href="#" title="Close sidebar" ng-click="hide()">
+        <a id="close-sidebar" href="" title="Close sidebar">
             <i class="glyph-icon icon-angle-left" id="abc" style="color:black" ></i>
         </a>
     </div>
@@ -44,7 +45,7 @@
                     </div>
                     
                     <div class="pad5A button-pane button-pane-alt text-center">
-                        <a href="#" class="btn display-block font-normal btn-danger">
+                        <a href="#" ng-click="logout()" class="btn display-block font-normal btn-danger">
                             <i class="glyph-icon icon-power-off"></i>
                             Logout
                         </a>
@@ -195,7 +196,7 @@
         </a>
     </li>
     <li>
-        <a href="#" id="personal_profile" title="Forms UI">
+        <a href="#" id="personal_profile" title="Forms UI" ng-click="profilePage()">
             <i class="glyph-icon icon-linecons-user"></i>
             <span>Personal Profile</span>
         </a>
