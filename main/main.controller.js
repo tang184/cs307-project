@@ -55,27 +55,27 @@
 
 		        $('#hot_events').click(function() {
 		            $('body').toggleClass('closed-sidebar');
-		            $('.glyph-icon', this).switchClass('icon-angle-right');
+		           	$('#abc').toggleClass('icon-angle-right').toggleClass('icon-angle-left');
 		        });
 		        $('#create_events').click(function() {
 		            $('body').toggleClass('closed-sidebar');
-		            $('.glyph-icon', this).toggleClass('icon-angle-right');
+		            $('#abc').toggleClass('icon-angle-right').toggleClass('icon-angle-left');
 		        });
 		        $('#your_events').click(function() {
 		            $('body').toggleClass('closed-sidebar');
-		            $('.glyph-icon', this).toggleClass('icon-angle-right');
+		            $('#abc').toggleClass('icon-angle-right');
 		        });
 		        $('#personal_profile').click(function() {
 		            $('body').toggleClass('closed-sidebar');
-		            $('.glyph-icon', this).toggleClass('icon-angle-right');
+		            $('#abc').toggleClass('icon-angle-right');
 		        });
 		        $('#nearby_events').click(function() {
 		            $('body').toggleClass('closed-sidebar');
-		            $('.glyph-icon', this).toggleClass('icon-angle-right');
+		            $('#abc').toggleClass('icon-angle-right');
 		        });
 		        $('#search_events').click(function() {
 		            $('body').toggleClass('closed-sidebar');
-		            $('.glyph-icon', this).toggleClass('icon-angle-right');
+		            $('#abc').toggleClass('icon-angle-right');
 		        });
 
 		    });
