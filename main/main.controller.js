@@ -53,6 +53,31 @@
 		            $('.glyph-icon', this).toggleClass('icon-angle-right').toggleClass('icon-angle-left');
 		        });
 
+		        $('#hot_events').click(function() {
+		            $('body').toggleClass('closed-sidebar');
+		            $('.glyph-icon', this).switchClass('icon-angle-right');
+		        });
+		        $('#create_events').click(function() {
+		            $('body').toggleClass('closed-sidebar');
+		            $('.glyph-icon', this).toggleClass('icon-angle-right');
+		        });
+		        $('#your_events').click(function() {
+		            $('body').toggleClass('closed-sidebar');
+		            $('.glyph-icon', this).toggleClass('icon-angle-right');
+		        });
+		        $('#personal_profile').click(function() {
+		            $('body').toggleClass('closed-sidebar');
+		            $('.glyph-icon', this).toggleClass('icon-angle-right');
+		        });
+		        $('#nearby_events').click(function() {
+		            $('body').toggleClass('closed-sidebar');
+		            $('.glyph-icon', this).toggleClass('icon-angle-right');
+		        });
+		        $('#search_events').click(function() {
+		            $('body').toggleClass('closed-sidebar');
+		            $('.glyph-icon', this).toggleClass('icon-angle-right');
+		        });
+
 		    });
 
     /* Sidebar scroll */

@@ -632,6 +632,18 @@ header h1 {
     text-align: left;
     color:white;
   }
+
+
+  #header-logo .logo-content-big,
+  .logo-content-small {
+      background: url('../img/logo.png') no-repeat;
+      text-indent: -999em;
+      height: 100%;
+      width: 100%;
+      left: 10px;
+      margin-top: -31px;
+      position: absolute;
+  }
 }
 
 @media only screen and (min-width: 1170px) {
