@@ -654,6 +654,31 @@ header h1 {
     display: block;
   }
 
+  #header-nav-right .header-btn, #header-nav-right > .dropdown {
+    margin: 0 5px 0 5px;
+    margin-top: 0px;
+    margin-right: 5px;
+    margin-bottom: 0px;
+    margin-left: 5px;
+    float: left;
+  }
+  #header-nav-right a.hdr-btn {
+    /* float: left; */
+    height: 28px;
+    line-height: 28px;
+    display: block;
+    width: 28px;
+    text-align: center;
+    background: rgba(255,255,255,0.05);
+    border-radius: 3px;
+    margin: 0px 0px 0 0;
+    color: rgba(255,255,255,0.7);
+  }
+  #page-header .user-account-btn {
+    float: left;
+    margin: 18px 0 0;
+  }
+
 
 }
 

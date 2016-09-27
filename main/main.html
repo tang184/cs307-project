@@ -8,7 +8,7 @@
         <button id="nav-toggle" class="collapsed" data-toggle="collapse" data-target="#page-sidebar"><span></span></button>
         <a href="index.html" class="logo-content-small" title="MonarchUI"></a>
     </div>
-    <div id="header-logo" class="logo-bg">
+    <div id="header-logo" class="logo-bg" >
         <a href="index.html" class="logo-content-big" title="MonarchUI">
             Monarch <i>UI</i>
             <span>The perfect solution for user interfaces</span>
@@ -17,12 +17,12 @@
             Monarch <i>UI</i>
             <span>The perfect solution for user interfaces</span>
         </a>
-        <a id="close-sidebar" href="" title="Close sidebar">
+        <a id="close-sidebar" href="#" title="Close sidebar">
             <i class="glyph-icon icon-angle-left" id="abc" style="color:black" ></i>
         </a>
     </div>
     <div id="header-nav-left">
-        <div class="user-account-btn dropdown">
+        <div class="user-account-btn dropdown" style="height:40px" >
             <a href="#" title="My Account" class="user-profile clearfix" data-toggle="dropdown">
                 <img width="28" src="assets/image-resources/gravatar.jpg" alt="Profile image">
                 <span style="color:black">User Name</span>
@@ -56,24 +56,27 @@
     </div><!-- #header-nav-left -->
 
     <div id="header-nav-right">
-        <a href="#" class="hdr-btn popover-button" title="Search" data-placement="bottom" data-id="#popover-search">
-            <i class="glyph-icon icon-search"></i>
-        </a>
-        <div class="hide" id="popover-search">
-            <div class="pad5A box-md">
-                <div class="input-group">
-                    <input type="text" class="form-control" placeholder="Search terms here ...">
-                    <span class="input-group-btn">
-                        <a class="btn btn-primary" href="#">Search</a>
-                    </span>
+        <div class="dropdown">
+            <a data-toggle="dropdown" class="hdr-btn popover-button"href="#" title="Search" style="color: #acb7c0; border: solid 2px;
+                border-radius: 4px; width:45px; height:45px; line-height: 43px;" >
+                <i class="glyph-icon icon-search" style="color:black;"></i>
+            </a>
+            <div class="hide" id="popover-search">
+                <div class="pad5A box-md">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Search terms here ...">
+                        <span class="input-group-btn">
+                            <a class="btn btn-primary" href="#">Search</a>
+                        </span>
+                    </div>
                 </div>
             </div>
         </div>
         
         <div class="dropdown" id="notifications-btn">
-            <a data-toggle="dropdown" href="#" title="">
-                <span class="small-badge bg-yellow"></span>
-                <i class="glyph-icon icon-linecons-megaphone"></i>
+            <a data-toggle="dropdown" href="#" title="" style="border: solid 2px;
+            border-radius: 4px; width:45px; height:45px" >
+                <i class="glyph-icon icon-linecons-megaphone" style="color:black;"></i>
             </a>
             <div class="dropdown-menu box-md float-right">
 
@@ -110,8 +113,9 @@
         
         
         <div class="dropdown" id="dashnav-btn">
-            <a href="#" data-toggle="dropdown" data-placement="bottom" class="popover-button-header tooltip-button" title="Dashboard Quick Menu">
-                <i class="glyph-icon icon-linecons-cog"></i>
+            <a href="#" data-toggle="dropdown" data-placement="bottom" class="popover-button-header tooltip-button" title="Dashboard Quick Menu" style="border: solid 2px;
+            border-radius: 4px; width:45px; height:45px">
+                <i class="glyph-icon icon-linecons-cog" style="color:black"></i>
             </a>
             <div class="dropdown-menu float-right">
                 <div class="box-sm">
@@ -157,8 +161,9 @@
                 </div>
             </div>
         </div>
-        <a class="header-btn" id="logout-btn" href="lockscreen-3.html" title="Lockscreen page example">
-            <i class="glyph-icon icon-power-off"></i>
+        <a class="header-btn" id="logout-btn" href="lockscreen-3.html" title="Lockscreen page example" style="border: solid 2px;
+            border-radius: 4px; width:45px; height:45px">
+            <i class="glyph-icon icon-power-off" style="color: black"></i>
         </a>
 
     </div><!-- #header-nav-right -->
@@ -196,7 +201,7 @@
         </a>
     </li>
     <li>
-        <a ui-sref="/main/profile" id="personal_profile" title="Forms UI" ng-click="profilePage()">
+        <a ui-sref="/main/profile" href="#" id="personal_profile" title="Forms UI" ng-click="profilePage()">
             <i class="glyph-icon icon-linecons-user"></i>
             <span>Personal Profile</span>
         </a>
