@@ -17,9 +17,9 @@
             Monarch <i>UI</i>
             <span>The perfect solution for user interfaces</span>
         </a>
-        <a id="close-sidebar" ui-sref="{foo:'bar'}" href="#" title="Close sidebar">
-            <i class="glyph-icon icon-angle-left" id="abc" style="color:black" ></i>
-        </a>
+        <button id="close-sidebar" title="Close sidebar">
+            <i class="glyph-icon icon-angle-left" id="abc" style="top: 10px; left: 10px; color:black" ></i>
+        </button>
     </div>
     <div id="header-nav-left">
         <div class="user-account-btn dropdown" style="height:40px" >
@@ -177,7 +177,7 @@
     
     <li class="header"><span>Side bar</span></li>
     <li>
-        <a href="/main/dashboard" title="Home">
+        <a ui-sref="dashboard" href="#" title="Home">
             <i class="glyph-icon icon-linecons-note"></i>
             <span>Home</span>
         </a>

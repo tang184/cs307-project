@@ -6,18 +6,17 @@
         .controller('EventEdit',EventEdit);
 
         EventEdit.$inject = ['$scope', '$location', 'FlashService'];
-            function EventEdit($scope, $location, FlashService) {
+        function EventEdit($scope, $location, FlashService) {
 
                 $("#bodyBackground").css('background', 'white');
 
+                $scope.create = true;
 
-        function EventEdit($scope) {
-            $scope.create = true;
-
-            $scope.test = function() {
-                alert("test");
-            }
-        };
+                $scope.test = function() {
+                    console.log("hello");
+                }
 
 
-})();
+        
+        }
+});

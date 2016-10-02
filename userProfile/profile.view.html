@@ -27,13 +27,13 @@
 <div class="row mailbox-wrapper">
     <ul class="list-group row list-group-icons">
     <li class="col-md-6" ng-class="{active: tab == 1}">
-        <a href="" ng-click="tab = 1" data-toggle="tab" class="list-group-item">
+        <a href="" ng-click="tab = 1" class="list-group-item">
             <i class="glyph-icon font-red icon-bullhorn"></i>
             Personal Information
         </a>
     </li>
     <li class="col-md-6" ng-class="{active: tab == 2}">
-        <a href="" ng-click="tab = 2" data-toggle="tab" class="list-group-item">
+        <a href="" ng-click="tab = 2" class="list-group-item">
             <i class="glyph-icon icon-dashboard"></i>
             Account Settings
         </a>
@@ -221,25 +221,10 @@
 
     </div>
 
-<<<<<<< HEAD
 <div class="example-box-wrapper">
-<ul class="list-group row list-group-icons">
-    <li class="col-md-6">
-        <a href="" ng-click="toggle1()" data-toggle="tab" class="list-group-item" ng-class="{'active' : panel1}">
-            <i class="glyph-icon font-red icon-bullhorn"></i>
-            Personal Information
-        </a>
-    </li>
-    <li class="col-md-6">
-        <a href="" ng-click="toggle2()" data-toggle="tab" class="list-group-item" ng-class="{'active' : panel2}">
-            <i class="glyph-icon icon-dashboard"></i>
-            Account Settings
-        </a>
-    </li>
 
-</ul>
-<div>
-    <div class ng-show="panel1">
+<div ng-show="tab==2">
+    <div class >
         <div class="content-box">
             <form class="form-horizontal pad15L pad15R bordered-row">
                 <div class="form-group remove-border">
@@ -295,7 +280,7 @@
             </div>
         </div>
     </div>
-    <div class="ng-hide" ng-show="panel2">
+    <div ng-show="tab==2">
                 <div class="content-box">
                     <form class="form-horizontal clearfix pad15L pad15R pad20B bordered-row">
                         <div class="form-group remove-border">
