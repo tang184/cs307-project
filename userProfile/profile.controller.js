@@ -10,10 +10,10 @@
 
                 $("#bodyBackground").css('background', 'white');
 
+
+                $scope.tab = 1;
+
             };
 
-        function ProfileController($scope) {
-            $scope.tab = 1;
-
-        }
+        
 })();
