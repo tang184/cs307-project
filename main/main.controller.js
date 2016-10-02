@@ -87,13 +87,7 @@
 
 			
 
-			$scope.CreateEventRoute = function() {
-				// $location.path('/main/eventedit123');
-			}
-
-			$scope.profilePage = function() {
-				$location.path('/main/profile');
-			}
+			
 
 			$scope.logout = function() {
 				$location.path('/login');

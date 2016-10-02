@@ -17,7 +17,6 @@
         return service;
 
         function Login(username, password, callback) {
-
             /* Dummy authentication for testing, uses $timeout to simulate api call
              ----------------------------------------------*/
             $timeout(function () {

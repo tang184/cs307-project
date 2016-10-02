@@ -47,7 +47,7 @@
                 templateUrl: 'event/edit.html',
                 url:"/eventedit",
                 //authenticated: true
-            });
+            })
 
 
             $urlRouterProvider.otherwise('/main/dashboard');
