@@ -39,6 +39,14 @@
                 url: '/main',
                 controller: 'MainController',
                 templateUrl: 'main/main.html'
+            })
+
+            .state('eventedit123', {
+                parent:'main',
+                controller: 'EventEdit',
+                templateUrl: 'event/edit.html',
+                url:"/eventedit",
+                //authenticated: true
             });
 
 
