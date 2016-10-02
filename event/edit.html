@@ -23,9 +23,72 @@
 <!-- Textarea -->
 
 <script type="text/javascript" src="assets/widgets/textarea/textarea.js"></script>
+<script type="text/javascript" src="event/calandar.js"></script>
+<link rel="stylesheet" type="text/css" href="event/calandar.css">
 
-welcome to event edit page !!!
+<div class="content-box">
+	<form class="form-horizontal">
+		<div class="form-group">
+			<h3 class="title-hero" style="text-align: center;">
+				Event Edit
+			</h3>
+		</div>
+		<div class="form-group">
+			<label class="col-sm-3 control-label">Event Name</label>
+			<div class="col-sm-6">
+				<input type="text" class="form-control" id="" placeholder="Event Name">
+			</div>
+		</div>
+		<div class="form-group">
 
+<div class="header">
+    <i class="fa fa-angle-left" ng-click="previous()"></i>
+    <span>{{month.format("MMMM, YYYY")}}</span>
+    <i class="fa fa-angle-right" ng-click="next()"></i>
+</div>
+<div class="week names">
+    <span class="day">Sun</span>
+    <span class="day">Mon</span>
+    <span class="day">Tue</span>
+    <span class="day">Wed</span>
+    <span class="day">Thu</span>
+    <span class="day">Fri</span>
+    <span class="day">Sat</span>
+</div>
+<div class="week" ng-repeat="week in weeks">
+    <span class="day" ng-class="{ today: day.isToday, 'different-month': !day.isCurrentMonth, selected: day.date.isSame(selected) }" ng-click="select(day)" ng-repeat="day in week.days">{{day.number}}</span>
+</div>
+
+
+			<label class="col-sm-3 control-label">Time</label>
+			<div class="col-sm-6">
+				<input type="text" class="form-control" id="" placeholder="Event Time">
+			</div>
+		</div>
+		<div class="form-group">
+			<label class="col-sm-3 control-label">Location</label>
+			<div class="col-sm-6">
+				<input type="text" class="form-control" id="" placeholder="Event Location">
+			</div>
+		</div>
+		<div class="form-group">
+			<label class="col-sm-3 control-label">Tag</label>
+			<div class="col-sm-6">
+				<input type="text" class="form-control" id="" placeholder="Event Tag">
+			</div>
+		</div>
+		<div class="form-group">
+			<label class="col-sm-3 control-label">Description</label>
+			<div class="col-sm-6">
+				<textarea name="" rows="5" class="form-control textarea-autosize" placeholder="Event Description"></textarea>
+			</div>
+		</div>
+	</form>
+	<div class="button-pane mrg20T">
+		<button class="btn btn-info">Submit</button>
+		<button class="btn btn-link font-gray-dark">Cancel</button>
+	</div>
+</div>
 
 
 <script src="eventedit.js"></script>
