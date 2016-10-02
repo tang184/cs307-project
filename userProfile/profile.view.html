@@ -224,112 +224,22 @@ $('.textarea-autosize').autosize();
 
 <div class="example-box-wrapper">
 <ul class="list-group row list-group-icons">
-    <li class="col-md-6" ng-class="{col-md-6--active: tab == 1}">
-        <a href="" ng-click="tab = 1" data-toggle="tab" class="list-group-item">
+    <li class="col-md-6">
+        <a href="" ng-click="toggle1()" data-toggle="tab" class="list-group-item" ng-class="{'active' : panel1}">
             <i class="glyph-icon font-red icon-bullhorn"></i>
             Personal Information
         </a>
     </li>
-    <li class="col-md-6" ng-class="{col-md-6--active: tab == 2}">
-        <a href="" ng-click="tab = 2" data-toggle="tab" class="list-group-item">
+    <li class="col-md-6">
+        <a href="" ng-click="toggle2()" data-toggle="tab" class="list-group-item" ng-class="{'active' : panel2}">
             <i class="glyph-icon icon-dashboard"></i>
             Account Settings
         </a>
     </li>
 
 </ul>
-<div class="tab-content">
-    <div class="tab-pane fade content-two" ng-show="tab == 2">
-        <div class="alert alert-close alert-success">
-            <a href="#" title="Close" class="glyph-icon alert-close-btn icon-remove"></a>
-            <div class="bg-green alert-icon">
-                <i class="glyph-icon icon-check"></i>
-            </div>
-            <div class="alert-content">
-                <h4 class="alert-title">Example Infobox</h4>
-                <p>Lorem ipsum dolor sic amet dixit tu...</p>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-6">
-                <div class="content-box">
-                    <form class="form-horizontal clearfix pad15L pad15R pad20B bordered-row">
-                        <div class="form-group remove-border">
-                            <label class="col-sm-7 control-label">Enable account:</label>
-                            <div class="col-sm-3">
-                                <input type="checkbox" class="input-switch-alt">
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label class="col-sm-7 control-label">Visible Profile</label>
-                            <div class="col-sm-3">
-                                <input type="checkbox" checked class="input-switch-alt">
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label class="col-sm-7 control-label">Hide timeline</label>
-                            <div class="col-sm-3">
-                                <input type="checkbox" data-on-color="danger" data-size="small" name="checkbox-example-1" class="input-switch" data-on-text="On" data-off-text="Off">
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label class="col-sm-7 control-label">Is it active?</label>
-                            <div class="col-sm-3">
-                                <input type="checkbox" data-on-color="info" data-size="small" name="checkbox-example-2" class="input-switch" data-on-text="On" data-off-text="Off">
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label class="col-sm-7 control-label">Radio example</label>
-                            <div class="col-sm-3">
-                                <input type="checkbox" data-on-color="success" data-size="small" name="checkbox-example-3" class="input-switch" checked data-on-text="On" data-off-text="Off">
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="content-box mrg15B">
-                    <h3 class="content-box-header clearfix">
-                        Change Password
-                        <div class="font-size-11 float-right">
-                            <a href="#" title="">
-                                <i class="glyph-icon mrg5R opacity-hover icon-plus"></i>
-                            </a>
-                            <a href="#" title="">
-                                <i class="glyph-icon opacity-hover icon-cog"></i>
-                            </a>
-                        </div>
-                    </h3>
-                    <div class="content-box-wrapper pad0T clearfix">
-                        <form class="form-horizontal pad15L pad15R bordered-row">
-                            <div class="form-group">
-                                <label class="col-sm-6 control-label">Old password:</label>
-                                <div class="col-sm-6">
-                                    <input type="text" class="form-control" id="" placeholder="">
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label class="col-sm-6 control-label">New password:</label>
-                                <div class="col-sm-6">
-                                    <input type="text" class="form-control" id="" placeholder="">
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label class="col-sm-6 control-label">Repeat password:</label>
-                                <div class="col-sm-6">
-                                    <input type="text" class="form-control" id="" placeholder="">
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                    <div class="button-pane mrg20T">
-                        <button class="btn btn-success">Update Password</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="tab-pane fade content-one" ng-show="tab == 1">
+<div>
+    <div class ng-show="panel1">
         <div class="content-box">
             <form class="form-horizontal pad15L pad15R bordered-row">
                 <div class="form-group remove-border">
@@ -384,6 +294,57 @@ $('.textarea-autosize').autosize();
                 <button class="btn btn-link font-gray-dark">Cancel</button>
             </div>
         </div>
+    </div>
+    <div class="ng-hide" ng-show="panel2">
+                <div class="content-box">
+                    <form class="form-horizontal clearfix pad15L pad15R pad20B bordered-row">
+                        <div class="form-group remove-border">
+                        <div class="form-group">
+                            <label class="col-sm-7 control-label">Ignore Notifications</label>
+                            <div class="col-sm-3">
+                                <input type="checkbox" checked class="input-switch-alt">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="content-box mrg15B">
+                    <h3 class="content-box-header clearfix">
+                        Change Password
+                        <div class="font-size-11 float-right">
+                            <a href="#" title="">
+                                <i class="glyph-icon mrg5R opacity-hover icon-plus"></i>
+                            </a>
+                            <a href="#" title="">
+                                <i class="glyph-icon opacity-hover icon-cog"></i>
+                            </a>
+                        </div>
+                    </h3>
+                    <div class="content-box-wrapper pad0T clearfix">
+                        <form class="form-horizontal pad15L pad15R bordered-row">
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label">Old password:</label>
+                                <div class="col-sm-6">
+                                    <input type="text" class="form-control" id="" placeholder="">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label">New password:</label>
+                                <div class="col-sm-6">
+                                    <input type="text" class="form-control" id="" placeholder="">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label">Repeat password:</label>
+                                <div class="col-sm-6">
+                                    <input type="text" class="form-control" id="" placeholder="">
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="button-pane mrg20T">
+                        <button class="btn btn-success">Update Password</button>
+                    </div>
+                </div>
     </div>
 </div>
 </div>

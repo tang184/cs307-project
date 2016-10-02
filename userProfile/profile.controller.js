@@ -13,7 +13,18 @@
             };
 
         function ProfileController($scope) {
-            $scope.tab = 1;
+            $scope.panel1 = true;
+            $scope.panel2 = false;
+
+            $scope.toggle1 = function() {
+                $scope.panel1 = true;
+                $scope.panel2 = false;
+            }
+
+            $scope.toggle2 = function() {
+                $scope.panel1 = false;
+                $scope.panel2 = true;
+            }
 
         }
 })();
