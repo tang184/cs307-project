@@ -10,7 +10,6 @@
 
                 $("#bodyBackground").css('background', 'white');
 
-            };
 
         function ProfileController($scope) {
             $scope.panel1 = true;
@@ -25,6 +24,7 @@
                 $scope.panel1 = false;
                 $scope.panel2 = true;
             }
+        };
 
-        }
+
 })();

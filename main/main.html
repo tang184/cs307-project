@@ -9,15 +9,15 @@
         <a href="index.html" class="logo-content-small" title="MonarchUI"></a>
     </div>
     <div id="header-logo" class="logo-bg" >
-        <a href="index.html" class="logo-content-big" title="MonarchUI">
+        <a ui-sref="dashboard" href="#" class="logo-content-big" title="MonarchUI">
             Monarch <i>UI</i>
             <span>The perfect solution for user interfaces</span>
         </a>
-        <a href="index.html" class="logo-content-small" title="MonarchUI">
+        <a ui-sref="dashboard" href="#" class="logo-content-small" title="MonarchUI">
             Monarch <i>UI</i>
             <span>The perfect solution for user interfaces</span>
         </a>
-        <a id="close-sidebar" href="#" title="Close sidebar">
+        <a id="close-sidebar" ui-sref="{foo:'bar'}" href="#" title="Close sidebar">
             <i class="glyph-icon icon-angle-left" id="abc" style="color:black" ></i>
         </a>
     </div>
@@ -201,7 +201,7 @@
         </a>
     </li>
     <li>
-        <a ui-sref="/main/profile" href="#" id="personal_profile" title="Forms UI" ng-click="profilePage()">
+        <a ui-sref="profile" href="#" id="personal_profile" title="Forms UI" ng-click="profilePage()">
             <i class="glyph-icon icon-linecons-user"></i>
             <span>Personal Profile</span>
         </a>
