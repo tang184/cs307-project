@@ -13,6 +13,7 @@
                 $scope.create = true;
 
                 $scope.test = function() {
+		    $scope.loadScript('event/test.js', 'text/javascript', 'utf-8')
                     console.log("hello");
                 }
                 $scope.showmap = function() {
