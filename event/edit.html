@@ -1,29 +1,3 @@
-
-<!-- Uniform -->
-
-<!--<link rel="stylesheet" type="text/css" href="../../assets/widgets/uniform/uniform.css">-->
-<script type="text/javascript" src="assets/widgets/uniform/uniform.js"></script>
-<script type="text/javascript" src="assets/widgets/uniform/uniform-demo.js"></script>
-
-<!-- Boostrap Tabs -->
-
-<script type="text/javascript" src="assets/widgets/tabs/tabs.js"></script>
-
-<!-- Chosen -->
-
-<!--<link rel="stylesheet" type="text/css" href="../../assets/widgets/chosen/chosen.css">-->
-<script type="text/javascript" src="assets/widgets/chosen/chosen.js"></script>
-<script type="text/javascript" src="assets/widgets/chosen/chosen-demo.js"></script>
-
-<!-- Input switch -->
-
-<!--<link rel="stylesheet" type="text/css" href="../../assets/widgets/input-switch/inputswitch.css">-->
-<script type="text/javascript" src="assets/widgets/input-switch/inputswitch.js"></script>
-
-<!-- Textarea -->
-
-<script type="text/javascript" src="assets/widgets/textarea/textarea.js"></script>
-
 <div class="content-box">
 	<form class="form-horizontal">
 		<div class="form-group">
@@ -35,36 +9,42 @@
 		<div class="form-group">
 			<label class="col-sm-3 control-label">Event Name</label>
 			<div class="col-sm-6">
-				<input type="text" class="form-control" id="" placeholder="Event Name">
+				<input type="text" class="form-control" id="" ng-model="event.event_name" placeholder="Event Name">
 			</div>
 		</div>
 		<div class="form-group">
-			<label class="col-sm-3 control-label">Time</label>
+			<label class="col-sm-3 control-label">Date</label>
 			<div class="col-sm-6">
-				<input type="date" class="form-control" id="">
+				<input type="text" class="bootstrap-datepicker form-control" placeholder="Event Date" data-date-format="yy-mm-dd">
 			</div>
 		</div>
+        <div class="form-group">
+            <label class="col-sm-3 control-label">Time</label>
+            <div class="col-sm-6">
+                <input type="text" class="timepicker-example form-control" >
+			</div>
+        </div>
 		<div class="form-group">
 			<label class="col-sm-3 control-label">Location</label>
 			<div class="col-sm-6">
-				<input type="text" class="form-control" id="" placeholder="Event Location">
+				<input type="text" class="form-control" id="" ng-model="event.event_location" placeholder="Event Location">
 			</div>
 		</div>
 		<div class="form-group">
 			<label class="col-sm-3 control-label">Tag</label>
 			<div class="col-sm-6">
-				<input type="text" class="form-control" id="" placeholder="Event Tag">
+				<input type="text" class="form-control" id="" ng-model="event.event_tag" placeholder="Event Tag">
 			</div>
 		</div>
 		<div class="form-group">
 			<label class="col-sm-3 control-label">Description</label>
 			<div class="col-sm-6">
-				<textarea name="" rows="5" class="form-control textarea-autosize" placeholder="Event Description"></textarea>
+				<textarea name="" rows="5" class="form-control textarea-autosize" ng-model="event.event_description" placeholder="Event Description"></textarea>
 			</div>
 		</div>
 	</form>
 	<div class="button-pane mrg20T">
-		<button class="btn btn-info">Submit</button>
+		<button class="btn btn-info" ng-click="eventsubmit(event)">Submit</button>
 		<button class="btn btn-link font-gray-dark">Cancel</button>
 	</div>
 </div>
