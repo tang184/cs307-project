@@ -9,7 +9,6 @@
         function EventEdit($scope, $location, FlashService, $http) {
                 $scope.event={};
 
-
                 $("#bodyBackground").css('background', 'white');
 
                 $.getScript('assets/widgets/timepicker/timepicker.js',function(){
@@ -18,9 +17,9 @@
                 });
                 $.getScript('assets/widgets/datepicker/datepicker.js',function(){
                     $('.bootstrap-datepicker').bsdatepicker(
-                    {
-                        format: 'yyyy-mm-dd'
-                    }
+                        {
+                            format: 'yyyy-mm-dd'
+                        }
                     );
                     
                 });
@@ -29,8 +28,6 @@
                 $scope.lng;
                 //$scope.mapurl;
 
-
-    /* Timepicker */ 
 
                 $scope.getplace = function() {
 
@@ -49,7 +46,9 @@
                                 if (address) {
                                     $scope.event.lat = address.geometry.location.lat;
                                     $scope.event.lng = address.geometry.location.lng;
-                                    $scope.mapurl="https://maps.googleapis.com/maps/api/staticmap?center=" + $scope.event.lat + "," + $scope.event.lng + "&zoom=16&size=320x200&path=weight:3%7Ccolor:blue%7Cenc:{coaHnetiVjM??_SkM??~R&key=AIzaSyAFhzO5tGWXiCCtH5y6XW6ycS-1fbC4uYA";
+                                    $scope.mapurl="https://maps.googleapis.com/maps/api/staticmap?center=" + $scope.event.lat + "," + $scope.event.lng + 
+                                    "&zoom=16&size=320x200&&markers=color:red%7Clabel:C%7C" + $scope.event.lat + "," + $scope.event.lng 
+                                    + "&key=AIzaSyAFhzO5tGWXiCCtH5y6XW6ycS-1fbC4uYA";
 
                                 } else {
                                     $scope.mapurl="img/loc_404.png"
@@ -69,6 +68,7 @@
                     $scope.event.event_time= $('.timepicker-example').val();
                     $scope.event.event_date= $('.bootstrap-datepicker').val();
                     console.log(event);
+                    $location.path('/main/dashboard');
                 }
 
                 
