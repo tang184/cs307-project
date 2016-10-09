@@ -5,8 +5,8 @@
         .module('mainApp')
         .controller('EventEdit',EventEdit);
 
-        EventEdit.$inject = ['$scope', '$location', 'FlashService', '$compile'];
-        function EventEdit($scope, $location, FlashService, $compile) {
+        EventEdit.$inject = ['$scope', '$location', 'FlashService','$http'];
+        function EventEdit($scope, $location, FlashService, $http) {
                 $scope.event={};
 
 
@@ -25,23 +25,47 @@
                     
                 });
 
-                $scope.create = true;
+                $scope.lat;
+                $scope.lng;
+                //$scope.mapurl;
 
 
+    /* Timepicker */ 
 
+                $scope.getplace = function() {
 
+                    $scope.showMap = false;
 
-    /* Timepicker */               
+                    var s="https://maps.googleapis.com/maps/api/geocode/json?address="
+                    var key="&key=AIzaSyAFhzO5tGWXiCCtH5y6XW6ycS-1fbC4uYA"
+                    var p = s + $scope.event.event_location + key;
+
+                    if ($scope.event.event_location) {
+                        $.ajax({
+                            url: p,
+                            type: "GET",
+                            success: function(response){
+                                var address = response.results[0];
+                                if (address) {
+                                    $scope.event.lat = address.geometry.location.lat;
+                                    $scope.event.lng = address.geometry.location.lng;
+                                    $scope.mapurl="https://maps.googleapis.com/maps/api/staticmap?center=" + $scope.lat + "," + $scope.lng + "&zoom=16&size=320x200&path=weight:3%7Ccolor:blue%7Cenc:{coaHnetiVjM??_SkM??~R&key=AIzaSyAFhzO5tGWXiCCtH5y6XW6ycS-1fbC4uYA";
+
+                                } else {
+                                    $scope.mapurl="/img/loc_404.png"
+                                }
+                            }
+                            error: function (textStatus, errorThrown) {
+                                console.log(textStatus);
+                            }         
+                        });
+                    }
+                                      
+                }
+           
 
                 
-                $scope.showmap = function() {
-        			var mapCanvas = document.getElementById("map");
-        			var mapOptions = {
-        				center: new google.maps.LatLng(51.5, -0.2), 
-        				zoom: 10
-        			}
-                    var map = new google.maps.Map(mapCanvas, mapOptions);
-                }
+                
 
                 $scope.eventsubmit = function(event) {
                     $scope.event.event_time= $('.timepicker-example').val();

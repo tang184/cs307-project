@@ -9,27 +9,36 @@
 		<div class="form-group">
 			<label class="col-sm-3 control-label">Event Name</label>
 			<div class="col-sm-6">
-				<input type="text" class="form-control" id="" ng-model="event.event_name" placeholder="Event Name">
+				<input type="text" class="form-control" id="" ng-model="event.event_name" required placeholder="Event Name">
 			</div>
 		</div>
 		<div class="form-group">
 			<label class="col-sm-3 control-label">Date</label>
 			<div class="col-sm-6">
-				<input type="text" class="bootstrap-datepicker form-control" placeholder="Event Date" data-date-format="yy-mm-dd">
+				<input type="text" class="bootstrap-datepicker form-control" placeholder="Event Date" required data-date-format="yy-mm-dd">
 			</div>
 		</div>
         <div class="form-group">
             <label class="col-sm-3 control-label">Time</label>
             <div class="col-sm-6">
-                <input type="text" class="timepicker-example form-control" >
+                <input type="text" class="timepicker-example form-control" required>
 			</div>
         </div>
 		<div class="form-group">
 			<label class="col-sm-3 control-label">Location</label>
 			<div class="col-sm-6">
-				<input type="text" class="form-control" id="" ng-model="event.event_location" placeholder="Event Location">
+				<input type="text" class="form-control" id="" ng-change="getplace()" ng-model="event.event_location" placeholder="Event Location" required>
+			</div>
+			show map: <input type="checkbox" ng-model="showMap"></input>
+			
+		</div>
+		<div class="form-group" ng-show="showMap">
+			<label class="col-sm-3 control-label">Show Map</label>
+			<div class="col-sm-6">
+			<img src="{{mapurl}}"></img>
 			</div>
 		</div>
+		
 		<div class="form-group">
 			<label class="col-sm-3 control-label">Tag</label>
 			<div class="col-sm-6">
