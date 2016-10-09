@@ -55,9 +55,7 @@
                                     $scope.mapurl="/img/loc_404.png"
                                 }
                             }
-                            error: function (textStatus, errorThrown) {
-                                console.log(textStatus);
-                            }         
+                                     
                         });
                     }
                                       
