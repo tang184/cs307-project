@@ -49,10 +49,10 @@
                                 if (address) {
                                     $scope.event.lat = address.geometry.location.lat;
                                     $scope.event.lng = address.geometry.location.lng;
-                                    $scope.mapurl="https://maps.googleapis.com/maps/api/staticmap?center=" + $scope.lat + "," + $scope.lng + "&zoom=16&size=320x200&path=weight:3%7Ccolor:blue%7Cenc:{coaHnetiVjM??_SkM??~R&key=AIzaSyAFhzO5tGWXiCCtH5y6XW6ycS-1fbC4uYA";
+                                    $scope.mapurl="https://maps.googleapis.com/maps/api/staticmap?center=" + $scope.event.lat + "," + $scope.event.lng + "&zoom=16&size=320x200&path=weight:3%7Ccolor:blue%7Cenc:{coaHnetiVjM??_SkM??~R&key=AIzaSyAFhzO5tGWXiCCtH5y6XW6ycS-1fbC4uYA";
 
                                 } else {
-                                    $scope.mapurl="/img/loc_404.png"
+                                    $scope.mapurl="img/loc_404.png"
                                 }
                             }
                                      
