@@ -42,7 +42,7 @@
         	$scope.login = function() {
 
                 AuthenticationService.Login($scope.username, $scope.password, function (response) {
-                    if (response.success) {
+                    if (response == "SUCCESS") {
                         AuthenticationService.SetCredentials($scope.username, $scope.password);
                         var myVar = setInterval(FlashService.Success, 2000);
                         FlashService.Success('Login successful', true);

@@ -17,24 +17,22 @@
         return service;
 
         function Login(username, password, callback) {
-            /* Dummy authentication for testing, uses $timeout to simulate api call
-             ----------------------------------------------*/
-            $timeout(function () {
-                var response;               
-                if (username === "admin@yakume.xyz" && password === "admin") {
-                    response = { success: true };
-                } else {
-                    response = { success: false, message: 'Username or password is incorrect' };
-                }
-                callback(response);
-            }, 1000);
 
-            /* Use this for real authentication
-             ----------------------------------------------*/
-            //$http.post('/api/authenticate', { username: username, password: password })
-            //    .success(function (response) {
-            //        callback(response);
-            //    });
+            var mydata = $.param({
+                email: username,
+                password: password
+            });
+
+
+            $.ajax({
+                  type: "POST",
+                  url: 'https://yakume.xyz/api/login',
+                  data: mydata,
+                  success: function(response){
+                    console.log(response);
+                    callback(response);
+                  }
+                });
 
         }
 
