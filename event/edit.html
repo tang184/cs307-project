@@ -9,25 +9,37 @@
 		<div class="form-group">
 			<label class="col-sm-3 control-label">Event Name</label>
 			<div class="col-sm-6">
-				<input type="text" class="form-control" id="" ng-model="event.event_name" required placeholder="Event Name">
+				<input type="text" class="form-control" id="" required placeholder="Event Name" ng-model="event.title">
 			</div>
 		</div>
 		<div class="form-group">
-			<label class="col-sm-3 control-label">Date</label>
-			<div class="col-sm-6">
-				<input type="text" class="bootstrap-datepicker form-control" placeholder="Event Date" required data-date-format="yy-mm-dd">
+			<label class="col-sm-3 control-label">Start Date</label>
+			<div class="col-sm-2">
+				<input type="text" class="start_datepicker form-control" placeholder="2016-09-27" required data-date-format="yy-mm-dd">
 			</div>
-		</div>
-        <div class="form-group">
-            <label class="col-sm-3 control-label">Time</label>
-            <div class="col-sm-6">
-                <input type="text" class="timepicker-example form-control" required>
+
+            		<label class="col-sm-2 control-label">Start Time</label>
+            		<div class="col-sm-2">
+                		<input type="text" class="start_timepicker form-control" required>
 			</div>
-        </div>
+        	</div>
+		<div class="form-group">
+			<label class="col-sm-3 control-label">End Date</label>
+			<div class="col-sm-2">
+				<input type="text" class="end_datepicker form-control" placeholder="2016-09-27" required data-date-format="yy-mm-dd">
+			</div>
+
+            		<label class="col-sm-2 control-label">End Time</label>
+            		<div class="col-sm-2">
+                		<input type="text" class="end_timepicker form-control" required>
+			</div>
+        	</div>
+
+
 		<div class="form-group">
 			<label class="col-sm-3 control-label">Location</label>
 			<div class="col-sm-6">
-				<input type="text" class="form-control" id="" ng-change="getplace()" ng-model="event.event_location" placeholder="Event Location" required>
+				<input type="text" class="form-control" id="" ng-change="getplace()" ng-model="event.unused_location" placeholder="Event Location" required>
 			</div>
 			show map: <input type="checkbox" ng-model="showMap"></input>
 			
@@ -42,13 +54,13 @@
 		<div class="form-group">
 			<label class="col-sm-3 control-label">Tag</label>
 			<div class="col-sm-6">
-				<input type="text" class="form-control" id="" ng-model="event.event_tag" placeholder="Event Tag">
+				<input type="text" class="form-control" id="" ng-model="event.unused_tag" placeholder="Event Tag">
 			</div>
 		</div>
 		<div class="form-group">
 			<label class="col-sm-3 control-label">Description</label>
 			<div class="col-sm-6">
-				<textarea name="" rows="5" class="form-control textarea-autosize" ng-model="event.event_description" placeholder="Event Description"></textarea>
+				<textarea name="" rows="5" class="form-control textarea-autosize" ng-model="event.description" placeholder="Event Description"></textarea>
 			</div>
 		</div>
 	</form>

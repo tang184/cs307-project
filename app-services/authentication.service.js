@@ -28,9 +28,12 @@
                   type: "POST",
                   url: 'https://yakume.xyz/api/login',
                   data: mydata,
-                  success: function(response){
+		  /*xhrFields: {
+    		      withCredentials: true
+		  },*/
+                  success: function(response, testStatus, request){
                     console.log(response);
-                    callback(response);
+                    callback(response, request);
                   }
                 });
 

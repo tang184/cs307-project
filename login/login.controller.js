@@ -41,7 +41,9 @@
 
         	$scope.login = function() {
 
-                AuthenticationService.Login($scope.username, $scope.password, function (response) {
+                AuthenticationService.Login($scope.username, $scope.password, function (response, request) {
+		    console.log(request.getAllResponseHeaders())
+		    console.log(request)
                     if (response == "SUCCESS") {
                         AuthenticationService.SetCredentials($scope.username, $scope.password);
                         var myVar = setInterval(FlashService.Success, 2000);

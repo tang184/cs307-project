@@ -8,15 +8,24 @@
         EventEdit.$inject = ['$scope', '$location', 'FlashService','$http'];
         function EventEdit($scope, $location, FlashService, $http) {
                 $scope.event={};
+		$scope.test = function() {
+		    new Date().getTime()
+		}
 
                 $("#bodyBackground").css('background', 'white');
 
                 $.getScript('assets/widgets/timepicker/timepicker.js',function(){
-                    $('.timepicker-example').timepicker();
+                    $('.start_timepicker').timepicker();
+                    $('.end_timepicker').timepicker();
 
                 });
                 $.getScript('assets/widgets/datepicker/datepicker.js',function(){
-                    $('.bootstrap-datepicker').bsdatepicker(
+                    $('.start_datepicker').bsdatepicker(
+                        {
+                            format: 'yyyy-mm-dd'
+                        }
+                    );
+                    $('.end_datepicker').bsdatepicker(
                         {
                             format: 'yyyy-mm-dd'
                         }
@@ -59,16 +68,36 @@
                     }
                                       
                 }
-           
-
-                
-                
 
                 $scope.eventsubmit = function(event) {
-                    $scope.event.event_time= $('.timepicker-example').val();
-                    $scope.event.event_date= $('.bootstrap-datepicker').val();
-                    console.log(event);
-                    $location.path('/main/dashboard');
+		    var start_date = $('.start_datepicker').val();
+		    var start_time = $('.start_timepicker').val();
+		    var start_stamp = new Date(start_date + " " + start_time).getTime()
+
+		    var end_date = $('.end_datepicker').val();
+		    var end_time = $('.end_timepicker').val();
+		    var end_stamp = new Date(end_date + " " + end_time).getTime()
+
+		    var duration = end_stamp - start_stamp
+
+                    // $scope.event.title = title
+                    // $scope.event.description = description
+                    $scope.event.longitude = 10
+                    $scope.event.latitude = 20
+                    $scope.event.timestamp = start_stamp
+                    $scope.event.duration = duration
+                    $scope.event.zipcode = 10000
+
+		    console.log($scope.event)
+
+		    $.ajax({
+                        type: "POST",
+                        url: 'https://yakume.xyz/api/addevent',
+                        data: $scope.event,
+                        success: function(response){
+                            console.log(response);
+                        }
+                    });
                 }
 
                 
