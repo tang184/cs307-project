@@ -5,15 +5,15 @@
         .module('mainApp')
         .controller('RegisterController', RegisterController);
 
-    RegisterController.$inject = ['$location', '$scope', '$http'];
-        function RegisterController($location, $scope, $http) {
+    RegisterController.$inject = ['$location', '$scope', '$http', 'FlashService'];
+        function RegisterController($location, $scope, $http, FlashService) {
             $("#bodyBackground").css('background-image', 'url(assets/image-resources/blurred-bg/blurred-bg-7.jpg)');
 
             $scope.vm = {};
             $scope.confirmPassword = false;
 
             $scope.back = function() {
-                $location.path('/');
+                $location.path('/login');
             }
 
             $scope.submit = function(vm) {
@@ -34,11 +34,16 @@
                       url: 'https://yakume.xyz/api/register',
                       data: mydata,
                       success: function(response){
-                          console.log(response);
-			  
+                            if (response == "ERR_USER_EMAIL_TAKEN") {
+                                alert("Email already taken");
+                            } else {
+                                var myVar = setInterval(FlashService.Success, 2000);
+                                FlashService.Success('Signup successful', true);
+                            }			  
                       }
                 });
-                                      
+                $location.path('/login');
+                                                      
 
 
             }
