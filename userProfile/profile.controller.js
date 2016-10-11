@@ -14,11 +14,18 @@
 
                 $scope.isEdit = false;
 
-                $scope.username = AuthenticationService.selfprofile.name
+                $scope.set_name = function(s, update) {
+                    $scope.username = s;
+                    if (update) {
+                        $scope.$apply();
+                    }
+                }
+                AuthenticationService.SetName($scope.set_name);
 
-                $scope.email = AuthenticationService.selfprofile.email
+                $scope.email = AuthenticationService.GetEmail();
 
-		console.log(AuthenticationService.selfprofile);
+		console.log($scope.username);
+		console.log($scope.email);
 
                 $scope.city = "";
 

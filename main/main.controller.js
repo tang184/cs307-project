@@ -5,8 +5,17 @@
         .module('mainApp')
         .controller('MainController', MainController);
 
-    MainController.$inject = ['$scope', '$location', 'FlashService'];
-    	function MainController($scope, $location, FlashService) {    		
+    MainController.$inject = ['$scope', '$location', 'FlashService', 'AuthenticationService'];
+    	function MainController($scope, $location, FlashService, AuthenticationService) {
+                $scope.set_name = function(s, update) {
+                    $scope.username = s;
+                    if (update) {
+                        $scope.$apply();
+                    }
+                }
+
+                AuthenticationService.SetName($scope.set_name);
+
         	$("#bodyBackground").css('background', 'white');
 
 

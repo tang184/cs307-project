@@ -15,6 +15,8 @@
         service.ClearCredentials = ClearCredentials;
         service.UpdateEmailFromCookie = UpdateEmailFromCookie;
         service.UpdateProfile = UpdateProfile;
+        service.SetName = SetName;
+        service.GetEmail = GetEmail;
         service.selfprofile = {};
 
         return service;
@@ -24,7 +26,14 @@
             service.selfprofile.email = temp1[0] + "@" + temp1[1];
         }
 
-        function UpdateProfile() {
+        function GetEmail() {
+            if (service.selfprofile.email === undefined) {
+                service.UpdateEmailFromCookie();
+            }
+            return service.selfprofile.email;
+        }
+
+        function UpdateProfile(newfunc) {
             if (service.selfprofile.email === undefined) {
                 service.UpdateEmailFromCookie();
             }
@@ -38,9 +47,21 @@
                 success: function(response){
                     var temp = JSON.parse(response);
                     service.selfprofile.name = temp.name;
-                    service.selfprofile.email = temp.email;
+                    newfunc(temp);
                 }
             });
+        }
+
+        function SetName(func) {
+            if (service.selfprofile.name === undefined) {
+                var newfunc = function (obj) {
+                    func(obj.name, true);
+                }
+                service.UpdateProfile(newfunc);
+            }
+            else {
+                func(service.selfprofile.name, false);
+            }
         }
 
         function Login(username, password, callback) {
