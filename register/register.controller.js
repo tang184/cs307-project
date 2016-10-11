@@ -34,9 +34,10 @@
                       url: 'https://yakume.xyz/api/register',
                       data: mydata,
                       success: function(response){
-                        console.log(response);
+                          console.log(response);
+			  
                       }
-                    });
+                });
                                       
 
 

@@ -13,6 +13,7 @@
         service.SetCredentials = SetCredentials;
         service.SetFBCredentials = SetFBCredentials;
         service.ClearCredentials = ClearCredentials;
+	service.selfprofile = {}
 
         return service;
 

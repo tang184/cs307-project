@@ -41,23 +41,38 @@
 
         	$scope.login = function() {
 
-                AuthenticationService.Login($scope.username, $scope.password, function (response, request) {
-		    console.log(request.getAllResponseHeaders())
-		    console.log(request)
-                    if (response == "SUCCESS") {
-                        AuthenticationService.SetCredentials($scope.username, $scope.password);
-                        var myVar = setInterval(FlashService.Success, 2000);
-                        FlashService.Success('Login successful', true);
-                        $location.path('/main/dashboard');
-                    } else {
-                        alert(response.message);
-                    }
-                });
+                    AuthenticationService.Login($scope.username, $scope.password, function (response, request) {
+                        if (response == "SUCCESS") {
+                            AuthenticationService.SetCredentials($scope.username, $scope.password);
+                            var myVar = setInterval(FlashService.Success, 2000);
+                            FlashService.Success('Login successful', true);
+			    $scope.pullself($scope.username);
+                            $location.path('/main/dashboard');
+                        } else {
+                            alert(response.message);
+                        }
+                    });
         	}
 
-            $scope.myFacebookLogin = function() {
+		$scope.pullself = function(email) {
+		    var mydata = $.param({
+                        email: email
+                    });
+		    $.ajax({
+                        type: "GET",
+                        url: 'https://yakume.xyz/api/userprofile',
+                        data: mydata,
+                        success: function(response){
+			    var temp = JSON.parse(response);
+			    AuthenticationService.selfprofile.name = temp.name;
+			    AuthenticationService.selfprofile.email = temp.email;
+                        }
+                    });
+		}
 
-                FB.getLoginStatus(function(response) {
+            	$scope.myFacebookLogin = function() {
+
+                    FB.getLoginStatus(function(response) {
 
                     if (response.status === 'connected') {
                         FB.api('/me', function(response) {

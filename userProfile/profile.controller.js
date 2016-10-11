@@ -5,8 +5,8 @@
         .module('mainApp')
         .controller('ProfileController', ProfileController);
 
-        ProfileController.$inject = ['$scope', '$location', 'FlashService'];
-            function ProfileController($scope, $location, FlashService) {
+        ProfileController.$inject = ['$scope', '$location', 'FlashService', 'AuthenticationService'];
+            function ProfileController($scope, $location, FlashService, AuthenticationService) {
 
                 $("#bodyBackground").css('background', 'white');
 
@@ -14,9 +14,11 @@
 
                 $scope.isEdit = false;
 
-                $scope.username = "Admin";
+                $scope.username = AuthenticationService.selfprofile.name
 
-                $scope.email = "admin@yakume.xyz";
+                $scope.email = AuthenticationService.selfprofile.email
+
+		console.log(AuthenticationService.selfprofile);
 
                 $scope.city = "";
 
