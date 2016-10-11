@@ -35,7 +35,7 @@
                 $scope.longitude;
                 $scope.getplace = function() {
 
-                    // $scope.showMap = false;
+                    $scope.showMap = false;
 
                     var s="https://maps.googleapis.com/maps/api/geocode/json?address="
                     var key="&key=AIzaSyAFhzO5tGWXiCCtH5y6XW6ycS-1fbC4uYA"
@@ -56,9 +56,8 @@
                                             $scope.event.zipcode = tmp[i].long_name;
                                         }
                                     }
-                                    console.log($scope.event.zipcode);
                                     $scope.mapurl="https://maps.googleapis.com/maps/api/staticmap?center=" + $scope.event.latitude + "," + $scope.event.longitude + 
-                                    "&zoom=16&size=320x200&&markers=color:red%7Clabel:C%7C" + $scope.event.lat + "," + $scope.event.lng 
+                                    "&zoom=16&size=320x200&&markers=color:red%7Clabel:C%7C" + $scope.event.latitude + "," + $scope.event.longtitude 
                                     + "&key=AIzaSyAFhzO5tGWXiCCtH5y6XW6ycS-1fbC4uYA";
 
                                 } else {

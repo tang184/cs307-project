@@ -1,0 +1,60 @@
+<div class="panel">
+    <div class="panel-body">
+        <h3 class="title-hero">
+            Hot Events
+        </h3>
+        <div class="example-box-wrapper">
+            <div class="row">
+                <div ng-repeat="event in allevents">
+                    <div class="col-md-6">
+                        <a class="tile-box bg-primary" ng-click="view_event(event.id)" href="">
+                            <div class="tile-header">
+                                {{event.title}}
+                                <div class="float-right">
+                                    {{event.time}}
+                                </div>
+                            </div>
+                            <div class="tile-content-wrapper">
+                                <img style="height:100px; width:200px"
+                                src="img/tennis.jpg"></img>
+                                <div class="tile-content">
+                                    Location: {{event.address}}
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="tile-box bg-white">
+                        <div class="thumbnail-box" style="height:200px">
+                            <div class="thumb-content">
+                                <div class="center-vertical">
+                                    <div class="center-content">
+                                        <h3 class="thumb-heading animated flipInX">
+                                            More Events
+                                        </h3>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="thumb-overlay bg-black"></div>
+                             <div class="tile-content-wrapper">
+                            	<img src="img/more.png" alt="">
+                        	</div>
+                            
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script src="dashboard.controller.js"></script>
+<script src="controller.js"></script>
+<script src="register/register.controller.js"></script>
+<script type="text/javascript" src="app-services/flash.service.js"></script>
+<script type="text/javascript" src="js/angular.min.js"></script>
+<script type="text/javascript" src="js/angular-route.min.js"></script>

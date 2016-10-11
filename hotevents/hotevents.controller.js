@@ -12,10 +12,7 @@
             $scope.allevents = []
 
             $scope.updateevents = function(eventlist) {
-                for (var i = 0; i < 5; i++) {
-                    $scope.allevents.push(eventlist[i]);
-                }
-                //$scope.allevents = eventlist;
+                $scope.allevents = eventlist;
                 $scope.$apply();
             }
 
