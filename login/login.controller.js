@@ -5,9 +5,9 @@
         .module('mainApp')
         .controller('LoginController', LoginController);
 
-    LoginController.$inject = ['$scope', '$rootScope','$location', 'FlashService', 'AuthenticationService'];
+    LoginController.$inject = ['$scope', '$rootScope','$location', 'FlashService', 'AuthenticationService', '$state'];
 
-    	function LoginController($scope, $rootScope, $location, FlashService, AuthenticationService) {
+    	function LoginController($scope, $rootScope, $location, FlashService, AuthenticationService, $state) {
         	$("#bodyBackground").css('background-image', 'url(assets/image-resources/blurred-bg/blurred-bg-7.jpg)');
             /*function statusChangeCallback(response) {
                 console.log('statusChangeCallback');
@@ -48,6 +48,7 @@
                             FlashService.Success('Login successful', true);
 			    $scope.pullself($scope.username);
                             $location.path('/main/dashboard');
+                            $state.go('dashboard');
                         } else {
                             alert(response.message);
                         }
