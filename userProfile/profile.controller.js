@@ -13,6 +13,7 @@
                 $scope.tab = 1;
 
                 $scope.isEdit = false;
+                $scope.change_password = false;
 
                 $scope.set_name = function(s, update) {
                     $scope.username = s;
@@ -51,6 +52,16 @@
                             $scope.email = AuthenticationService.GetEmail();
                         }
                     });
+                    $scope.isEdit = false;
+                }
+                $scope.editProfile = function() {
+                    $scope.isEdit = true;
+                }
+                $scope.changePassword = function() {
+                    $scope.change_password = true;
+                }
+                $scope.updatePassword = function() {
+                    $scope.change_password = false;
                 }
 
 

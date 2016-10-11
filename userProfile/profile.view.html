@@ -161,40 +161,40 @@
 
 <div class="example-box-wrapper">
 
-<div ng-show="tab==2">
-    <div>
+<div>
+    <div ng-show="tab==2 && !change_password">
         <div class="content-box">
             <form class="form-horizontal pad15L pad15R bordered-row">
                 <div class="form-group remove-border">
                     <label class="col-sm-3 control-label">User Name:</label>
                     <div class="col-sm-6">
-                        <input type="text" class="form-control" id="" ng-model="newusername" placeholder="First name...">
+                        <input type="text" class="form-control" id="" ng-disabled="!isEdit" ng-model="newusername" placeholder="First name...">
                     </div>
                 </div>
                 
                 <div class="form-group">
                     <label class="col-sm-3 control-label">Email:</label>
                     <div class="col-sm-6">
-                        <div type="text" class="form-control" id="" ng-model="email" placeholder="Email address...">{{email}}</div>
+                        <div type="text" class="form-control" id="" ng-model="email" ng-disabled placeholder="Email address...">{{email}}</div>
                     </div>
                 </div>
                 <div class="form-group">
                     <label class="col-sm-3 control-label">City:</label>
                     <div class="col-sm-6">
-                        <input type="text" class="form-control" id="" ng-model="city" placeholder="City...">
+                        <input type="text" class="form-control" id="" ng-disabled="!isEdit" ng-model="city" placeholder="City...">
                     </div>
                 </div>
                 <div class="form-group">
                     <label class="col-sm-3 control-label">About me:</label>
                     <div class="col-sm-6">
-                        <textarea name="" rows="3" class="form-control textarea-autosize" ng-model="aboutme"></textarea>
+                        <textarea name="" rows="3" class="form-control textarea-autosize" ng-disabled="!isEdit" ng-model="aboutme"></textarea>
                     </div>
                 </div>
                 <div class="form-group">
                     <label class="col-sm-3 control-label">Profile Picture:</label>
                     <div class="col-sm-6">
                         <div class="fileinput fileinput-new" data-provides="fileinput">
-                            <div class="fileinput-preview thumbnail" data-trigger="fileinput" style="width: 200px; height: 150px;"></div>
+                            <div class="fileinput-preview thumbnail" data-trigger="fileinput" ng-disabled="!isEdit" style="width: 200px; height: 150px;"></div>
                             <div>
                             <span class="btn btn-default btn-file">
                                 <span class="fileinput-new">Select image</span>
@@ -207,13 +207,21 @@
                     </div>
                 </div>
             </form>
-            <div class="button-pane mrg20T">
-                <button class="btn btn-info" ng-click="SaveProfile()">Save</button>
-                <button class="btn btn-link font-gray-dark">Cancel</button>
+            <div ng-if="isEdit">
+                <div class="button-pane mrg20T">
+                    <button class="btn btn-info" ng-click="SaveProfile()">Save</button>
+                    <button class="btn btn-link font-gray-dark">Cancel</button>
+                </div>
+            </div>
+            <div ng-if="!isEdit">
+                <div class="button-pane mrg20T">
+                    <button class="btn btn-info" ng-click="editProfile()">Edit Profile</button>
+                    <button class="btn btn-info" ng-click="changePassword()">Change Password</button>
+                </div>
             </div>
         </div>
     </div>
-    <div ng-show="tab==2">
+    <div ng-if="tab==2 && change_password">
         <div class="content-box mrg15B">
             <h3 class="content-box-header clearfix">
                 Change Password
@@ -249,7 +257,7 @@
                 </form>
             </div>
             <div class="button-pane mrg20T">
-                <button class="btn btn-success">Update Password</button>
+                <button class="btn btn-success" ng-click="updatePassword()">Update Password</button>
             </div>
         </div>
     </div>
