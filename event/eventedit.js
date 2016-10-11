@@ -31,36 +31,33 @@
                     
                 });
 
-                $scope.lat;
-                $scope.lng;
-                //$scope.mapurl;
-
-
+                $scope.latitude;
+                $scope.longitude;
                 $scope.getplace = function() {
 
-                    $scope.showMap = false;
+                    // $scope.showMap = false;
 
                     var s="https://maps.googleapis.com/maps/api/geocode/json?address="
                     var key="&key=AIzaSyAFhzO5tGWXiCCtH5y6XW6ycS-1fbC4uYA"
-                    var p = s + $scope.event.event_location + key;
+                    var p = s + $scope.event.address + key;
 
-                    if ($scope.event.event_location) {
+                    if ($scope.event.address) {
                         $.ajax({
                             url: p,
                             type: "GET",
                             success: function(response){
                                 var address = response.results[0];
                                 if (address) {
-                                    $scope.event.lat = address.geometry.location.lat;
-                                    $scope.event.lng = address.geometry.location.lng;
+                                    $scope.event.latitude = address.geometry.location.lat;
+                                    $scope.event.longitude = address.geometry.location.lng;
                                     var tmp = address.address_components
                                     for (var i in tmp) {
                                         if (tmp[i].types[0] == "postal_code") {
-                                            $scope.event.zip = tmp[i].long_name;
+                                            $scope.event.zipcode = tmp[i].long_name;
                                         }
                                     }
-                                    console.log($scope.event.zip);
-                                    $scope.mapurl="https://maps.googleapis.com/maps/api/staticmap?center=" + $scope.event.lat + "," + $scope.event.lng + 
+                                    console.log($scope.event.zipcode);
+                                    $scope.mapurl="https://maps.googleapis.com/maps/api/staticmap?center=" + $scope.event.latitude + "," + $scope.event.longitude + 
                                     "&zoom=16&size=320x200&&markers=color:red%7Clabel:C%7C" + $scope.event.lat + "," + $scope.event.lng 
                                     + "&key=AIzaSyAFhzO5tGWXiCCtH5y6XW6ycS-1fbC4uYA";
 
