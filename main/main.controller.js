@@ -5,8 +5,8 @@
         .module('mainApp')
         .controller('MainController', MainController);
 
-    MainController.$inject = ['$scope', '$location', 'FlashService', 'AuthenticationService'];
-    	function MainController($scope, $location, FlashService, AuthenticationService) {
+    MainController.$inject = ['$scope', '$location', 'FlashService', 'AuthenticationService', '$state'];
+    	function MainController($scope, $location, FlashService, AuthenticationService, $state) {
                 $scope.set_name = function(s, update) {
                     $scope.username = s;
                     if (update) {
@@ -100,8 +100,13 @@
 			
 
 			$scope.logout = function() {
-				$location.path('/login');
+			    AuthenticationService.Logout();
 			}
+                        $scope.edit_profile = function() {
+                            
+                            $location.path('/main/profile');
+                            $state.go('profile');
+                        }
 
         	
 

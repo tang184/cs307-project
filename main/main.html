@@ -23,7 +23,7 @@
     </div>
     <div id="header-nav-left">
         <div class="user-account-btn dropdown" style="height:40px" >
-            <a href="#" title="My Account" class="user-profile clearfix" data-toggle="dropdown">
+            <a href="" title="My Account" class="user-profile clearfix" data-toggle="dropdown">
                 <img width="28" src="assets/image-resources/gravatar.jpg" alt="Profile image">
                 <span style="color:black">{{username}}</span>
                 <i class="glyph-icon icon-angle-down" style="color:black"></i>
@@ -39,7 +39,7 @@
                             <span>
                                 {{username}}
                             </span>
-                            <a href="#" title="Edit profile">Edit profile</a>
+                            <a href="#" title="Edit profile" ng-click="edit_profile()">Edit profile</a>
                             <a href="#" title="View notifications">View notifications</a>
                         </div>
                     </div>
@@ -163,7 +163,7 @@
         </div>
         <a class="header-btn" id="logout-btn" href="lockscreen-3.html" title="Lockscreen page example" style="border: solid 2px;
             border-radius: 4px; width:45px; height:45px">
-            <i class="glyph-icon icon-power-off" style="color: black"></i>
+            <i class="glyph-icon icon-power-off" ng-click="logout()" style="color: black"></i>
         </a>
 
     </div><!-- #header-nav-right -->

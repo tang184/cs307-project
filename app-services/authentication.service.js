@@ -4,9 +4,9 @@
     angular
         .module('mainApp')
         .factory('AuthenticationService', AuthenticationService);
-    AuthenticationService.$inject = ['$http', '$cookieStore', '$cookies', '$document', '$rootScope', '$timeout'];
+    AuthenticationService.$inject = ['$http', '$cookieStore', '$cookies', '$document', '$rootScope', '$timeout', '$state', '$location'];
 
-    function AuthenticationService($http, $cookieStore, $cookies, $document, $rootScope, $timeout) {
+    function AuthenticationService($http, $cookieStore, $cookies, $document, $rootScope, $timeout, $state, $location) {
         var service = {};
 
         service.Login = Login;
@@ -17,6 +17,7 @@
         service.UpdateProfile = UpdateProfile;
         service.SetName = SetName;
         service.GetEmail = GetEmail;
+        service.Logout = Logout;
         service.selfprofile = {};
 
         return service;
@@ -82,7 +83,6 @@
                   success: function(response, testStatus, request){
                       console.log(response);
                       callback(response, request);
-	    	      service.UpdateProfile();
                   }
                 });
 
@@ -115,6 +115,24 @@
             $http.defaults.headers.common['Authorization'] = 'Basic ' + authdata; // jshint ignore:line
             $cookieStore.put('globals', $rootScope.globals);
             callback($rootScope.globals.currentUser);
+        }
+
+        function Logout() {
+            var mydata = $.param({
+            });
+
+            $.ajax({
+                  type: "GET",
+                  url: 'https://yakume.xyz/api/logout',
+                  data: mydata,
+                  success: function(response, testStatus, request){
+                      console.log(response);
+                  }
+            });
+
+            service.selfprofile = {};
+            $location.path('/login');
+            $state.go('login');
         }
 
         function ClearCredentials() {
