@@ -4,18 +4,44 @@
     angular
         .module('mainApp')
         .factory('AuthenticationService', AuthenticationService);
-    AuthenticationService.$inject = ['$http', '$cookieStore', '$rootScope', '$timeout'];
+    AuthenticationService.$inject = ['$http', '$cookieStore', '$cookies', '$document', '$rootScope', '$timeout'];
 
-    function AuthenticationService($http, $cookieStore, $rootScope, $timeout) {
+    function AuthenticationService($http, $cookieStore, $cookies, $document, $rootScope, $timeout) {
         var service = {};
 
         service.Login = Login;
         service.SetCredentials = SetCredentials;
         service.SetFBCredentials = SetFBCredentials;
         service.ClearCredentials = ClearCredentials;
-	service.selfprofile = {}
+        service.UpdateEmailFromCookie = UpdateEmailFromCookie;
+        service.UpdateProfile = UpdateProfile;
+        service.selfprofile = {};
 
         return service;
+
+        function UpdateEmailFromCookie() {
+            var temp1 = $document[0].cookie.split("%22")[5].split("%40");
+            service.selfprofile.email = temp1[0] + "@" + temp1[1];
+        }
+
+        function UpdateProfile() {
+            if (service.selfprofile.email === undefined) {
+                service.UpdateEmailFromCookie();
+            }
+            var mydata = $.param({
+                email: service.selfprofile.email
+            });
+            $.ajax({
+                type: "GET",
+                url: 'https://yakume.xyz/api/userprofile',
+                data: mydata,
+                success: function(response){
+                    var temp = JSON.parse(response);
+                    service.selfprofile.name = temp.name;
+                    service.selfprofile.email = temp.email;
+                }
+            });
+        }
 
         function Login(username, password, callback) {
 
@@ -33,8 +59,9 @@
     		      withCredentials: true
 		  },*/
                   success: function(response, testStatus, request){
-                    console.log(response);
-                    callback(response, request);
+                      console.log(response);
+                      callback(response, request);
+	    	      service.UpdateProfile();
                   }
                 });
 

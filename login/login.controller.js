@@ -46,7 +46,6 @@
                             AuthenticationService.SetCredentials($scope.username, $scope.password);
                             var myVar = setInterval(FlashService.Success, 2000);
                             FlashService.Success('Login successful', true);
-			    $scope.pullself($scope.username);
                             $location.path('/main/dashboard');
                             $state.go('dashboard');
                         } else {
@@ -54,22 +53,6 @@
                         }
                     });
         	}
-
-		$scope.pullself = function(email) {
-		    var mydata = $.param({
-                        email: email
-                    });
-		    $.ajax({
-                        type: "GET",
-                        url: 'https://yakume.xyz/api/userprofile',
-                        data: mydata,
-                        success: function(response){
-			    var temp = JSON.parse(response);
-			    AuthenticationService.selfprofile.name = temp.name;
-			    AuthenticationService.selfprofile.email = temp.email;
-                        }
-                    });
-		}
 
             	$scope.myFacebookLogin = function() {
 
