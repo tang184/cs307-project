@@ -41,13 +41,20 @@
                 templateUrl: 'main/main.html'
             })
 
-            .state('eventedit123', {
+            .state('eventedit', {
                 parent:'main',
                 controller: 'EventEdit',
                 templateUrl: 'event/edit.html',
                 url:"/eventedit",
             })
 
+
+            .state('hotevents', {
+                parent:'main',
+                controller: 'HoteventController',
+                templateUrl: 'hotevents/hotevents.view.html',
+                url:"/hotevents",
+            })
 
             $urlRouterProvider.otherwise('/main/dashboard');
 
