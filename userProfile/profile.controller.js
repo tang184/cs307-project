@@ -15,6 +15,8 @@
                 $scope.isEdit = false;
                 $scope.change_password = false;
 
+                $scope.user={};
+
                 $scope.set_name = function(s, update) {
                     $scope.username = s;
                     $scope.newusername = s;
@@ -61,6 +63,15 @@
                 $scope.updatePassword = function() {
                     $scope.change_password = false;
                 }
+
+                $scope.checkPassword = function() {
+                if ($scope.user.password == $scope.c_password) {
+                    $scope.confirmPassword = true;
+                } else {
+                    $scope.confirmPassword = false;
+                }
+
+            }
 
 
 

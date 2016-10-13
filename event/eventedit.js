@@ -94,8 +94,8 @@
                             });
                 }
 
-                $scope eventcancel = function() {
-                    
+                $scope.eventcancel = function() {
+                    window.history.back();
                 }            
 
 		
