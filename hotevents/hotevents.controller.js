@@ -5,7 +5,7 @@
         .module('mainApp')
         .controller('HoteventController', HoteventController);
 
-    HoteventControllerController.$inject = ['$scope', '$location', 'FlashService'];
+    HoteventController.$inject = ['$scope', '$location', 'FlashService'];
         function HoteventController($scope, $location, FlashService) {
             
             $("#bodyBackground").css('background', 'white');

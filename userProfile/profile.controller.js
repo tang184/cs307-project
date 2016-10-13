@@ -30,9 +30,6 @@
 
                 $scope.aboutme = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante."
 
-                $scope.print = function() {
-                    console.log($scope.aboutme);
-                }
 
                 $scope.SaveProfile = function() {
                     
@@ -54,6 +51,7 @@
                     });
                     $scope.isEdit = false;
                 }
+                
                 $scope.editProfile = function() {
                     $scope.isEdit = true;
                 }

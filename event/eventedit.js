@@ -57,7 +57,7 @@
                                         }
                                     }
                                     $scope.mapurl="https://maps.googleapis.com/maps/api/staticmap?center=" + $scope.event.latitude + "," + $scope.event.longitude + 
-                                    "&zoom=16&size=320x200&&markers=color:red%7Clabel:C%7C" + $scope.event.latitude + "," + $scope.event.longtitude 
+                                    "&zoom=16&size=320x200&&markers=color:red%7Clabel:C%7C" + $scope.event.latitude + "," + $scope.event.longitude 
                                     + "&key=AIzaSyAFhzO5tGWXiCCtH5y6XW6ycS-1fbC4uYA";
 
                                 } else {
@@ -92,7 +92,11 @@
                                     console.log(response);
                                 }
                             });
-                        }            
+                }
+
+                $scope eventcancel = function() {
+                    
+                }            
 
 		
         }
