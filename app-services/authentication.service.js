@@ -105,6 +105,15 @@
         function SetFBCredentials(username, accessToken, callback) {
             var authdata = accessToken;
 
+            $.ajax({
+                  type: "POST",
+                  url: 'https://yakume.xyz/api/fblogin',
+                  data: authdata,
+                  success: function(response, testStatus, request){
+                      console.log(response);
+                      callback(response, request);
+                  }
+            });
             $rootScope.globals = {
                 currentUser: {
                     username: username,
