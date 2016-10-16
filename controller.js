@@ -1,7 +1,7 @@
 ﻿(function () {
     'use strict';
 
-    var app = angular.module('mainApp',['ngRoute','ui.router', 'ngCookies']);
+    var app = angular.module('mainApp',['ngRoute','ui.router', 'ngCookies', 'pascalprecht.translate']);
     app.config(function($stateProvider, $urlRouterProvider) {
         $stateProvider
             .state('login', {
@@ -61,6 +61,49 @@
 
 
     });
+    app.config(['$translateProvider', function ($translateProvider) {
+        $translateProvider.useStaticFilesLoader({
+            prefix: "/" + 'i18n/',
+            suffix: '.json'
+        });
+        var lang = getFirstBrowserLanguage().toLowerCase();
+        if (lang.indexOf('zh') > -1) {
+            lang = 'zh';
+        }
+        if (lang.indexOf('en') > -1) {
+            lang = 'en';
+        }
+        console.log(lang);
+        $translateProvider.preferredLanguage(lang);
+        //$translateProvider.useLocalStorage();
+    }]);
+
+    var getFirstBrowserLanguage = function () {
+        var nav = window.navigator,
+            browserLanguagePropertyKeys = ['language', 'userLanguage', 'browserLanguage'],
+            i,
+            language;
+
+        // support for HTML 5.1 "navigator.languages"
+        if (Array.isArray(nav.languages)) {
+            for (i = 0; i < nav.languages.length; i++) {
+                language = nav.languages[i];
+                if (language && language.length) {
+                    return language;
+                }
+            }
+        }
+
+        // support for other well known properties in browsers
+        for (i = 0; i < browserLanguagePropertyKeys.length; i++) {
+            language = nav[browserLanguagePropertyKeys[i]];
+            if (language && language.length) {
+                return language;
+            }
+        }
+
+        return null;
+    };
 
 
     //app.run.$inject = ['$rootScope', '$location', '$cookieStore', '$http'];
