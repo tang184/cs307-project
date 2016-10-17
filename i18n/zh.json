@@ -1,4 +1,6 @@
 {
   "Email address": "邮箱地址",
-  "Password": "密码"
+  "Password": "密码",
+  "Enter email":"请输入邮箱",
+  "Enter Password": "请输入密码"
 }
