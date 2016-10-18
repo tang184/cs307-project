@@ -1,0 +1,15 @@
+{
+  "name": "cs307-web-ui",
+  "version": "1.0.0",
+  "description": "hello, this is cs 307 project ui.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@bitbucket.org:cs30700/static.git"
+  },
+  "author": "",
+  "license": "ISC"
+}

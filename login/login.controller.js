@@ -59,9 +59,10 @@
                     FB.getLoginStatus(function(response) {
 
                     if (response.status === 'connected') {
-                        FB.api('/me', function(response) {
-                            //console.log('Successful login for: ' + response.name);
+                        FB.api('/me', {fields: 'email'}, function(response) {
+                            console.log(response);
                             var authdata = FB.getAuthResponse().accessToken;
+                            console.log(authdata);
                             AuthenticationService.SetFBCredentials(response.name, authdata, function(response) {
                                 $scope.$apply( function () { $location.path('/main/dashboard').replace() } );
                             });
@@ -76,8 +77,7 @@
                     } else if (response.status == 'not_authorized') {
                         FB.login(function(response) {
                             if (response.status === 'connected') {
-
-                                FB.api('/me', function(response) {
+                                FB.api('/me', {fields: 'email'}, function(response) {
                                     var authdata = FB.getAuthResponse().accessToken;
                                     AuthenticationService.SetFBCredentials(response.name, authdata, function(response) {
                                         $scope.$apply( function () { $location.path('/main/dashboard').replace() } );
@@ -93,7 +93,7 @@
                     } else {
                         FB.login(function(response) {
                             if (response.status === 'connected') {
-                                FB.api('/me', function(response) {
+                                FB.api('/me', {fields: 'email'},  function(response) {
                                     var authdata = FB.getAuthResponse().accessToken;
                                     AuthenticationService.SetFBCredentials(response.name, authdata, function(response) {
                                         $scope.$apply( function () { $location.path('/main/dashboard').replace() } );
