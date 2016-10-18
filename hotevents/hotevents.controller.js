@@ -25,7 +25,12 @@
                     url: 'https://yakume.xyz/api/getevent',
                     data: mydata,
                     success: function(response){
+
                         var events = JSON.parse(response).events;
+                        //console.log(events);
+                        events.sort(function(a,b){
+                            return parseInt(a.time) - parseInt(b.time);
+                        });
                         $scope.updateevents(events);
                     }
                 });
