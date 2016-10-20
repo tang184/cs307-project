@@ -9,7 +9,8 @@
         function HoteventController($scope, $location, FlashService) {
             
             $("#bodyBackground").css('background', 'white');
-            $scope.allevents = []
+            $scope.allevents = [];
+            $scope.events;
 
             $scope.updateevents = function(eventlist) {
                 $scope.allevents = eventlist;
@@ -26,12 +27,9 @@
                     data: mydata,
                     success: function(response){
 
-                        var events = JSON.parse(response).events;
-                        //console.log(events);
-                        events.sort(function(a,b){
-                            return parseInt(a.time) - parseInt(b.time);
-                        });
-                        $scope.updateevents(events);
+                        $scope.events = JSON.parse(response).events;
+                        //console.log(events); 
+                        $scope.updateevents($scope.events);                    
                     }
                 });
             }
@@ -41,6 +39,21 @@
             }
 
             $scope.pull_all_events();
+
+            $scope.sortbytime = function() {
+                $scope.events.sort(function(a,b){
+                    return parseInt(a.time) - parseInt(b.time);
+                });
+                $scope.updateevents($scope.events);
+            }
+
+            $scope.sortbyname = function() {
+                
+            }
+
+            $scope.sortbypublish = function() {
+                
+            }
             
 
         };

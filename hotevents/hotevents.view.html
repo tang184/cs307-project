@@ -1,8 +1,31 @@
 <div class="panel">
     <div class="panel-body">
-        <h3 class="title-hero">
-            Hot Events
-        </h3>
+            <h3 class="title-hero col-md-10" >Hot Events</h2>
+
+        <div class="dropdown" style="top:-5px">
+            <a style="cursor:pointer" class="btn btn-default" title="" data-toggle="dropdown">
+                <span class="caret"></span>
+                Sort
+            </a>
+            <ul class="dropdown-menu">
+                <li>
+                    <a style="cursor:pointer" ng-click="sortbytime()"title="">
+                        Sort by event time
+                    </a>
+                </li>
+                <li>
+                    <a style="cursor:pointer" title="sortbyname()">
+                        Sort by name
+                    </a>
+                </li>
+                <li>
+                    <a style="cursor:pointer" title="sortbypublish()">
+                        Sort by publish time
+                    </a>
+                </li>
+            </ul>
+        </div>
+
         <div class="example-box-wrapper">
             <div class="row">
                 <div ng-repeat="event in allevents">

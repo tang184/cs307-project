@@ -58,8 +58,6 @@
 
             $urlRouterProvider.otherwise('/main/dashboard');
 
-
-
     });
     app.config(['$translateProvider', function ($translateProvider) {
         $translateProvider.useStaticFilesLoader({
@@ -73,9 +71,9 @@
         if (lang.indexOf('en') > -1) {
             lang = 'en';
         }
-        console.log(lang);
         $translateProvider.preferredLanguage(lang);
         //$translateProvider.useLocalStorage();
+       
     }]);
 
     var getFirstBrowserLanguage = function () {
@@ -148,7 +146,5 @@
                 js.src = "//connect.facebook.net/en_US/sdk.js";
                 fjs.parentNode.insertBefore(js, fjs);
               }(document, 'script', 'facebook-jssdk'));
-
-
 
 })();
