@@ -7,7 +7,7 @@
 
     HoteventController.$inject = ['$scope', '$location', 'FlashService'];
         function HoteventController($scope, $location, FlashService) {
-            
+
             $("#bodyBackground").css('background', 'white');
             $scope.allevents = [];
             $scope.events;
@@ -28,8 +28,8 @@
                     success: function(response){
 
                         $scope.events = JSON.parse(response).events;
-                        //console.log(events); 
-                        $scope.updateevents($scope.events);                    
+                        //console.log(events);
+                        $scope.updateevents($scope.events);
                     }
                 });
             }
@@ -42,19 +42,28 @@
 
             $scope.sortbytime = function() {
                 $scope.events.sort(function(a,b){
-                    return parseInt(a.time) - parseInt(b.time);
+                  return parseInt(a.time) - parseInt(b.time);
                 });
                 $scope.updateevents($scope.events);
+                console.log($scope.events);
             }
 
             $scope.sortbyname = function() {
-                
+				          $scope.events.sort(function(a,b){
+                    return a.title.localeCompare(b.title);
+				          });
+				          $scope.updateevents($scope.events);
+                  console.log($scope.events);
             }
 
             $scope.sortbypublish = function() {
-                
+              $scope.events.sort(function(a,b){
+                  return parseInt(a.timeposted) - parseInt(b.timeposted);
+              });
+              $scope.updateevents($scope.events);
+              console.log($scope.events);
             }
-            
+
 
         };
 
