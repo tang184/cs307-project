@@ -82,8 +82,31 @@
         }
         $translateProvider.preferredLanguage(lang);
         //$translateProvider.useLocalStorage();
-       
     }]);
+
+    app.controller('LangCtrl', ['$cookies', '$scope', '$translate',function($cookies, $scope, $translate) {
+        if ($cookies.get('yakumelanguage') == 'en') {
+            $scope.language = "English";
+        } else if ($cookies.get('yakumelanguage') == 'zh'){
+            $scope.language = "简体中文";
+        } else {
+            $scope.language = "Default";
+        }
+        
+        $scope.update = function() {
+            if ($scope.language == "English") {
+                $cookies.remove('yakumelanguage');
+                $translate.use('en');
+                $cookies.put('yakumelanguage',"en");
+            } else if ($scope.language == "简体中文") {
+                $cookies.remove('yakumelanguage');
+                $translate.use('zh');
+                $cookies.put('yakumelanguage',"zh");
+            }
+        }
+    }]);
+
+    
 
     var getFirstBrowserLanguage = function () {
         var nav = window.navigator,
@@ -114,14 +137,17 @@
 
 
     //app.run.$inject = ['$rootScope', '$location', '$cookieStore', '$http'];
-    app.run(function($rootScope, $location, $cookieStore, $http) {
+    app.run(function($rootScope, $location, $cookies, $translate, $cookieStore, $http) {
         // keep user logged in after page refresh
+        if ($cookies.get('yakumelanguage')) {
+            $translate.use($cookies.get('yakumelanguage'));
+        }
         $rootScope.globals = $cookieStore.get('globals') || {};
         console.log($rootScope.globals.currentUser);
         if ($rootScope.globals.currentUser) {
             $http.defaults.headers.common['Authorization'] = 'Basic ' + $rootScope.globals.currentUser.authdata; // jshint ignore:line
         }
-
+        console.log($cookieStore.get('globals_language'));
         $rootScope.$on('$locationChangeStart', function (event, next, current) {
             // redirect to login page if not logged in and trying to access a restricted page
             var restrictedPage = $.inArray($location.path(), ['/login', '/register']) === -1;

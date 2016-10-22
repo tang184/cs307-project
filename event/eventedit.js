@@ -63,11 +63,9 @@
                                 } else {
                                     $scope.mapurl="img/loc_404.png"
                                 }
-                            }
-                                     
+                            }                                    
                         });
-                    }
-                                      
+                    }                                      
                 }
 
                 $scope.eventsubmit = function(event) {
