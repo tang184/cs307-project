@@ -1,0 +1,63 @@
+<div class="panel">
+    <div class="panel-body">
+            <h3 class="title-hero col-md-10" >My Events</h2>
+
+        <div class="dropdown" style="top:-5px">
+            <a style="cursor:pointer" class="btn btn-default" title="" data-toggle="dropdown">
+                <span class="caret"></span>
+                Sort
+            </a>
+            <ul class="dropdown-menu">
+                <li>
+                    <a style="cursor:pointer" ng-click="sortbytime()"title="">
+                        Sort by event time
+                    </a>
+                </li>
+                <li>
+                    <a style="cursor:pointer" ng-click="sortbyname()">
+                        Sort by name
+                    </a>
+                </li>
+                <li>
+                    <a style="cursor:pointer" ng-click="sortbypublish()">
+                        Sort by publish time
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="example-box-wrapper">
+            <div class="row">
+                <div ng-repeat="event in allevents">
+                    <div class="col-md-6">
+                        <a class="tile-box bg-primary" ng-click="view_event(event.id)" href="">
+                            <div class="tile-header">
+                                {{event.title}}
+                                <div class="float-right">
+                                    {{event.time}}
+                                </div>
+                            </div>
+                            <div class="tile-content-wrapper">
+                                <img style="height:100px; width:200px"
+                                src="img/tennis.jpg"></img>
+                                <div class="tile-content">
+                                    Location: {{event.address}}
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script src="dashboard.controller.js"></script>
+<script src="controller.js"></script>
+<script src="register/register.controller.js"></script>
+<script type="text/javascript" src="app-services/flash.service.js"></script>
+<script type="text/javascript" src="js/angular.min.js"></script>
+<script type="text/javascript" src="js/angular-route.min.js"></script>

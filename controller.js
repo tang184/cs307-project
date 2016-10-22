@@ -56,6 +56,15 @@
                 url:"/hotevents",
             })
 
+            .state('myevents', {
+                parent:'main',
+                controller: 'MyeventController',
+                templateUrl: 'myevents/myevents.view.html',
+                url:"/myevents",
+            })
+
+
+
             $urlRouterProvider.otherwise('/main/dashboard');
 
     });
