@@ -6,51 +6,51 @@
             <div class="content-box border-top border-red clearfix" >
                 <div class="content-box-wrapper row">
                     <div class="col-md-6 col-md-offset-3">
-                        <h2>Register</h2>
+                        <h2>{{'Register'|translate}}</h2>
                         <br>
                         <form name="form" ng-submit="vm.register()" role="form">
                             <div class="form-group" ng-class="{ 'has-error': form.firstName.$dirty && form.firstName.$error.required }">
-                                <label for="username">User name</label>
+                                <label for="username">{{'User name'|translate}}</label>
                                 <input type="text" name="firstName" id="firstName" class="form-control" ng-model="vm.user.userName" required />
-                                <span ng-show="form.firstName.$dirty && form.firstName.$error.required" class="help-block">User name is required</span>
+                                <span ng-show="form.firstName.$dirty && form.firstName.$error.required" class="help-block">{{'User name is required'}}</span>
                             </div>
                             
                             <div class="form-group" ng-class="{ 'has-error': form.email.$dirty && form.email.$invalid }">
-                                <label for="username">Email address</label>
+                                <label for="username">{{'Email address'|translate}}</label>
                                 <input type="text" name="email" id="email" class="form-control" ng-model="vm.user.email"
                                 ng-pattern="/^[_A-z0-9]+(\.[A-z0-9]+)*@[A-z0-9-]+(\.[A-z0-9-]+)*(\.[A-z]{2,4})$/" required />
-                                <span ng-show="form.email.$dirty && form.email.$error.required" class="help-block">Email is required</span>
-                                <span ng-show="form.email.$dirty && !form.email.$error.required && form.email.$error.pattern" class="help-block">Please enter a valid email</span>
+                                <span ng-show="form.email.$dirty && form.email.$error.required" class="help-block">{{'Email is required'|translate}}</span>
+                                <span ng-show="form.email.$dirty && !form.email.$error.required && form.email.$error.pattern" class="help-block">{{'Please enter a valid email'|translate}}</span>
                             </div>
                             <div class="form-group" ng-class="{ 'has-error': form.password.$dirty && form.password.$error}">
-                                <label for="password">Password</label>
+                                <label for="password">{{'Password'|translate}}</label>
                                 <input type="password" name="password" id="password" class="form-control" ng-model="vm.user.password"
                                 ng-minlength="6" onpaste="return false" oncontextmenu="return false" oncopy="return false" 
                                 oncut="return false" ng-maxlength="20" ng-pattern="/(?=.*[A-z])(?=.*[0-9])/"
                                 required ng-change="checkPassword()"/>
-                                <span ng-show="form.password.$dirty && form.password.$error.required" class="help-block">Password is required</span>
+                                <span ng-show="form.password.$dirty && form.password.$error.required" class="help-block">{{'Password is required'|translate}}</span>
 
                                 <span class="help-block"
                                     ng-show="!form.password.$error.required && (form.password.$error.minlength || form.password.$error.maxlength) && form.password.$dirty">
-                                    Passwords must be between 6 and 20 characters
+                                    {{'Passwords must be between 6 and 20 characters'|translate}}
                                 </span>
                                 <span class="help-block"
                                       ng-show="!form.password.$error.required && !form.password.$error.minlength && !form.password.$error.maxlength && form.password.$error.pattern && form.password.$dirty">
-                                    Must contain both alphabetical and number characters
+                                    {{'Must contain both alphabetical and number characters'|translate}}
                                 </span>
 
 
                             </div>
                             <div class="form-group" ng-class="{ 'has-error': form.c_password.$dirty && form.c_password.$error}">
-                                <label for="password">Confirm Password</label>
+                                <label for="password">{{'Confirm Password'|translate}}</label>
                                 <input type="password" name="c_password" id="c_password" class="form-control" ng-model="c_password"
                                 onpaste="return false" oncontextmenu="return false" oncopy="return false"  required ng-change="checkPassword()"/>
-                                <span ng-show="form.c_password.$dirty && form.c_password.$error.required" class="help-block">Confirm password is required.</span>
-                                <span ng-show="form.c_password.$touched && !form.c_password.$error.required && !confirmPassword" class="help-block">Password not match.</span>
+                                <span ng-show="form.c_password.$dirty && form.c_password.$error.required" class="help-block">{{'Confirm password is required'|translate}}</span>
+                                <span ng-show="form.c_password.$touched && !form.c_password.$error.required && !confirmPassword" class="help-block">{{'Password not match'|translate}}</span>
                             </div>
                             <div class="form-actions">
-                                <button type="submit" ng-click="submit(vm)" ng-disabled="form.$invalid || !confirmPassword" class="btn btn-primary">Register</button>
-                                <a href="" ng-click="back()" class="btn btn-link">Cancel</a>
+                                <button type="submit" ng-click="submit(vm)" ng-disabled="form.$invalid || !confirmPassword" class="btn btn-primary">{{'Register'|translate}}</button>
+                                <a href="" ng-click="back()" class="btn btn-link">{{'Cancel'|translate}}</a>
                             </div>
                         </form>
 
