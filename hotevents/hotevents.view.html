@@ -26,30 +26,49 @@
             </ul>
         </div>
 
-        <div class="example-box-wrapper">
-            <div class="row">
-                <div ng-repeat="event in allevents">
-                    <div class="col-md-6">
-                        <a class="tile-box bg-primary" ng-click="view_event(event.id)" href="">
-                            <div class="tile-header">
-                                {{event.title}}
-                                <div class="float-right">
-                                    {{event.time}}
-                                </div>
-                            </div>
-                            <div class="tile-content-wrapper">
-                                <img style="height:100px; width:200px"
-                                src="img/tennis.jpg"></img>
-                                <div class="tile-content">
-                                    Location: {{event.address}}
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                </div>
 
-                
-            </div>
+
+<div class="portfolio-controls mrg10L mrg10R radius-all-4 portfolio-nav-alt bg-blue clearfix controls">
+    <div class="container text-center">
+        <ul class="float-none">
+            <li class="filter">View all</li>
+            <li class="filter">Illustrations</li>
+            <li class="filter">Food &amp; Drink</li>
+            <li class="filter">Mobile applications</li>
+            <li class="filter">Gadgets &amp; Effects</li>
+        </ul>
+    </div>
+</div>
+        <div class="clearfix">
+            <ul id="portfolio-grid" class="reset-ul row">
+                <div ng-repeat="event in allevents">
+                    <li class="col-lg-3 col-sm-6 col-md-4">
+                        <div class="thumbnail-box-wrapper">
+                            <div class="thumbnail-box">
+                                <a class="thumb-link" href="#" title=""></a>
+                                <div class="thumb-content">
+                                    <div class="center-vertical">
+                                        <div class="center-content">
+                                            <i class="icon-helper icon-center animated zoomInUp font-white glyph-icon icon-linecons-camera"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="thumb-overlay bg-black"></div>
+                                <img src="assets/image-resources/stock-images/img-17.jpg" alt="">
+                            </div>
+                            <div class="thumb-pane">
+                                <h3 class="thumb-heading animated rollIn">
+                                    <a href="#" title="">
+                                        {{event.title}}
+                                    </a>
+                                    <small>{{event.time}}</small>
+                                </h3>
+                            </div>
+                        </div>
+                    </li>
+                </div>
+            </ul>
+        </div>
         </div>
     </div>
 </div>

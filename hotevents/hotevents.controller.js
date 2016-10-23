@@ -8,6 +8,7 @@
     HoteventController.$inject = ['$scope', '$location', 'FlashService'];
         function HoteventController($scope, $location, FlashService) {
 
+
             $("#bodyBackground").css('background', 'white');
             $scope.allevents = [];
             $scope.events;
@@ -16,6 +17,7 @@
                 $scope.allevents = eventlist;
                 $scope.$apply();
             }
+
 
             $scope.pull_all_events = function() {
                 var mydata = $.param({

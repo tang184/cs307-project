@@ -5,47 +5,55 @@
         </h3>
         <div class="example-box-wrapper">
             <div class="row">
-                <div ng-repeat="event in allevents">
-                    <div class="col-md-4">
-                        <a class="tile-box bg-primary" ng-click="view_event(event.id)" href="">
-                            <div class="tile-header">
-                                {{event.title}}
-                                <div class="float-right">
-                                    {{event.time}}
-                                </div>
-                            </div>
-                            <div class="tile-content-wrapper">
-                                <img style="height:100px; width:200px"
-                                src="img/tennis.jpg"></img>
-                                <div class="tile-content">
-                                    Location: {{event.address}}
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="col-md-4" ui-sref="hotevents">
-                    <div class="tile-box bg-white" >
-                        <div class="thumbnail-box" style="height:200px" >
-                            <div class="thumb-content">
-                                <div class="center-vertical">
-                                    <div class="center-content">
-                                        <h3 class="thumb-heading animated flipInX" >
-                                            More Events
+                <div class="clearfix">
+                    <ul id="portfolio-grid" class="reset-ul row">
+                        <div ng-repeat="event in allevents">
+                            <li class="col-lg-4 col-sm-6 col-md-4">
+                                <div class="thumbnail-box-wrapper">
+                                    <div class="thumbnail-box">
+                                        <a class="thumb-link" href="#" title=""></a>
+                                        <div class="thumb-content">
+                                            <div class="center-vertical">
+                                                <div class="center-content">
+                                                    <i class="icon-helper icon-center animated zoomInUp font-white glyph-icon icon-linecons-camera"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="thumb-overlay bg-black"></div>
+                                        <img src="assets/image-resources/stock-images/img-17.jpg" alt="">
+                                    </div>
+                                    <div class="thumb-pane">
+                                        <h3 class="thumb-heading animated rollIn">
+                                            <a href="#" title="">
+                                                {{event.title}}
+                                            </a>
+                                            <small>{{event.time}}</small>
                                         </h3>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="thumb-overlay bg-black"></div>
-                             <div class="tile-content-wrapper">
-                            	<img src="img/more.png" alt="">
-                        	</div>
-                            
-
+                            </li>
                         </div>
-                    </div>
-                </div>
+                        <li class="col-lg-4 col-md-4" ui-sref="hotevents">
+                            <div class="tile-box bg-white" >
+                                <div class="thumbnail-box" style="height:200px" >
+                                    <div class="thumb-content">
+                                        <div class="center-vertical">
+                                            <div class="center-content">
+                                                <h3 class="thumb-heading animated flipInX" >
+                                                    More Events
+                                                </h3>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="thumb-overlay bg-black"></div>
+                                     <div class="tile-content-wrapper">
+                                        <img src="img/more.png" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>               
             </div>
         </div>
     </div>
@@ -59,109 +67,138 @@
         </h3>
         <div class="example-box-wrapper">
             <div class="row">
-                <div class="col-md-4">
-                    <div class="tile-box bg-primary">
-                        <div class="tile-header">
-                            Tennis Callout
-                            <div class="float-right">
-                                2016/9/29
-                            </div>
-                        </div>
-                        <div class="tile-content-wrapper">
-                            <img style="height:100px; width:200px"
-                            src="img/tennis.jpg"></img>
-                            <div class="tile-content">
-                                Location: West Lafayette, Indiana
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="tile-box bg-red">
-                        <div class="tile-header">
-                            Basketball Callout
-                            <div class="float-right">
-                                2016/9/23
-                            </div>
-                        </div>
-                        <div class="tile-content-wrapper">
-                            <img style="height:100px; width:200px"
-                            src="img/purdue_bas.jpg"></img>
-                            <div class="tile-content">
-                                Location: Basketball Center on Abc Avenue in Holo wea West Lafayette, Indiana
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="tile-box bg-blue">
-                        <div class="tile-header">
-                            Swimming Callout
-                            <div class="float-right">
-                                2016/9/12
-                            </div>
-                        </div>
-                        <div class="tile-content-wrapper">
-                            <img style="height:100px; width:200px"
-                            src="img/default-activity.jpeg"></img>
-                            <div class="tile-content">
-                                Location: West Lafayette, Indiana
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="tile-box bg-black">
-                        <div class="tile-header">
-                            Industrial RoundTable
-                            <div class="float-right">
-                                2017/9/12
-                            </div>
-                        </div>
-                        <div class="tile-content-wrapper">
-                            <img style="height:100px; width:200px"
-                            src="img/IR2014LOGO.jpg"></img>
-                            <div class="tile-content">
-                                Location: Purdue Momorial Union, West Lafayette, Indiana
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="col-md-4">
-                    <div class="tile-box bg-purple">
-                        <div class="tile-header">
-                            CS 307 Class
-                            <div class="float-right">
-                                2016/9/16
-                            </div>
-                        </div>
-                        <div class="tile-content-wrapper">
-                            <img style="height:100px; width:200px"
-                            src="img/purdue.jpg"></img>
-                            <div class="tile-content">
-                                Location: West Lafayette, Indiana
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="tile-box bg-white">
-                        <div class="thumbnail-box" style="height:200px">
-                            <div class="thumb-content">
-                                <div class="center-vertical">
-                                    <div class="center-content">
-                                        <h3 class="thumb-heading animated flipInX">
-                                            More Events
-                                        </h3>
+                <div class="col-md-6">
+
+                    <div class="panel">
+                        <div class="panel-body">
+                            <h3 class="title-hero">
+                                Events I creat
+                            </h3>
+                            <div class="example-box-wrapper">
+                                <div class="timeline-box timeline-box-left">
+                                    <div class="tl-row">
+                                        <div class="tl-item float-right">
+                                            <div class="tl-icon bg-red">
+                                                <i class="glyph-icon icon-toggle-on"></i>
+                                            </div>
+                                            <div class="popover right">
+                                                <div class="arrow"></div>
+                                                <div class="popover-content">
+                                                    <div class="tl-label bs-label label-info">Appointment</div>
+                                                    <p class="tl-content">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. </p>
+                                                    <div class="tl-time">
+                                                        <i class="glyph-icon icon-clock-o"></i>
+                                                        a few seconds ago
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tl-row">
+                                        <div class="tl-item float-right">
+                                            <div class="tl-icon bg-primary">
+                                                <i class="glyph-icon icon-wifi"></i>
+                                            </div>
+                                            <div class="popover right">
+                                                <div class="arrow"></div>
+                                                <div class="popover-content">
+                                                    <div class="tl-label bs-label bg-yellow">Teleconference</div>
+                                                    <p class="tl-content">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. </p>
+                                                    <div class="tl-time">
+                                                        <i class="glyph-icon icon-clock-o"></i>
+                                                        a few seconds ago
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tl-row">
+                                        <div class="tl-item float-right">
+                                            <div class="tl-icon bg-black">
+                                                <i class="glyph-icon icon-headphones"></i>
+                                            </div>
+                                            <div class="popover right">
+                                                <div class="arrow"></div>
+                                                <div class="popover-content">
+                                                    <div class="tl-label bs-label label-danger">Meeting</div>
+                                                    <p class="tl-content">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. </p>
+                                                    <div class="tl-time">
+                                                        <i class="glyph-icon icon-clock-o"></i>
+                                                        a few seconds ago
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="thumb-overlay bg-black"></div>
-                             <div class="tile-content-wrapper">
-                                <img src="img/more.png" alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="panel">
+                        <div class="panel-body">
+                            <h3 class="title-hero">
+                                Events I attend
+                            </h3>
+                            <div class="example-box-wrapper">
+                                <div class="timeline-box timeline-box-right">
+                                    <div class="tl-row">
+                                        <div class="tl-item">
+                                            <div class="tl-icon bg-yellow">
+                                                <i class="glyph-icon icon-eyedropper"></i>
+                                            </div>
+                                            <div class="popover left">
+                                                <div class="arrow"></div>
+                                                <div class="popover-content">
+                                                    <div class="tl-label bs-label label-success">Meeting</div>
+                                                    <p class="tl-content">Quisque volutpat mattis eros. Nullam malesuada erat ut turpis.</p>
+                                                    <div class="tl-time">
+                                                        <i class="glyph-icon icon-clock-o"></i>
+                                                        a few seconds ago
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tl-row">
+                                        <div class="tl-item">
+                                            <div class="tl-icon bg-blue">
+                                                <i class="glyph-icon icon-line-chart"></i>
+                                            </div>
+                                            <div class="popover left">
+                                                <div class="arrow"></div>
+                                                <div class="popover-content">
+                                                    <div class="tl-label bs-label label-danger">Audio</div>
+                                                    <p class="tl-content">Quisque volutpat mattis eros. Nullam malesuada erat ut turpis.</p>
+                                                    <div class="tl-time">
+                                                        <i class="glyph-icon icon-clock-o"></i>
+                                                        a few seconds ago
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tl-row">
+                                        <div class="tl-item">
+                                            <div class="tl-icon bg-blue">
+                                                <i class="glyph-icon icon-cab"></i>
+                                            </div>
+                                            <div class="popover left">
+                                                <div class="arrow"></div>
+                                                <div class="popover-content">
+                                                    <div class="tl-label bs-label label-warning">Video</div>
+                                                    <p class="tl-content">Quisque volutpat mattis eros. Nullam malesuada erat ut turpis.</p>
+                                                    <div class="tl-time">
+                                                        <i class="glyph-icon icon-clock-o"></i>
+                                                        a few seconds ago
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                            
                         </div>
                     </div>
                 </div>
