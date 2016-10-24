@@ -5,20 +5,26 @@
         .module('mainApp')
         .controller('HoteventController', HoteventController);
 
-    HoteventController.$inject = ['$scope', '$location', 'FlashService'];
-        function HoteventController($scope, $location, FlashService) {
+    HoteventController.$inject = ['$scope', '$location', 'FlashService', 'ngDialog'];
+        function HoteventController($scope, $location, FlashService, ngDialog) {
 
 
             $("#bodyBackground").css('background', 'white');
             $scope.allevents = [];
             $scope.events;
+            $scope.firstime = true;
 
             $scope.updateevents = function(eventlist) {
+                $scope.allevents = [];
                 for (var i = 0; i < eventlist.length; i++) {
-                    eventlist[i].time = $scope.timeConverter(eventlist[i].time);
+                    eventlist[i].timeshow = $scope.timeConverter(eventlist[i].time);
                     $scope.allevents.push(eventlist[i]);
                 }
-                $scope.$apply();
+                if ($scope.firstime) {
+                    $scope.$apply();
+                    $scope.firstime = false;
+                }         
+
             }
 
 
@@ -39,26 +45,23 @@
                 });
             }
 
-            $scope.view_event = function(id) {
-                alert("viewevent".concat(id.toString()));
-            }
 
             $scope.pull_all_events();
 
             $scope.sortbytime = function() {
                 $scope.events.sort(function(a,b){
-                  return parseInt(a.time) - parseInt(b.time);
+                  return parseInt(b.time) - parseInt(a.time);
                 });
                 $scope.updateevents($scope.events);
-                console.log($scope.events);
+                //console.log($scope.events);
             }
 
             $scope.sortbyname = function() {
-				          $scope.events.sort(function(a,b){
+				$scope.events.sort(function(a,b){
                     return a.title.localeCompare(b.title);
-				          });
-				          $scope.updateevents($scope.events);
-                  console.log($scope.events);
+				});
+				$scope.updateevents($scope.events);
+                //console.log($scope.events);
             }
 
             $scope.sortbypublish = function() {
@@ -66,7 +69,7 @@
                   return parseInt(a.timeposted) - parseInt(b.timeposted);
               });
               $scope.updateevents($scope.events);
-              console.log($scope.events);
+              //console.log($scope.events);
             }
 
             $scope.timeConverter = function(UNIX_timestamp){
@@ -79,8 +82,26 @@
                   return time;
             }
 
+            $scope.showspecificevent = function(id) {
+                ngDialog.open({ 
+                    template: 'templateId',
+                    controller: ['$scope', function($scope) {
+                        $scope.test = function()
+                        {
+                            console.log(id);
+                        }
+                    }] 
+                });
+            }
+
+            $scope.test = function() {
+                console.log($scope.specevent);
+            }
+
 
         };
+
+        
 
 
 })();

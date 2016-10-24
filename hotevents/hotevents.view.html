@@ -43,10 +43,9 @@
         <div class="clearfix">
             <ul id="portfolio-grid" class="reset-ul row">
                 <div ng-repeat="event in allevents">
-                    <li class="col-lg-3 col-sm-6 col-md-4">
+                    <li class="col-lg-3 col-sm-6 col-md-4" style="cursor:pointer" ng-click="showspecificevent(event.id)">
                         <div class="thumbnail-box-wrapper">
                             <div class="thumbnail-box">
-                                <a class="thumb-link" href="#" title=""></a>
                                 <div class="thumb-content">
                                     <div class="center-vertical">
                                         <div class="center-content">
@@ -59,10 +58,10 @@
                             </div>
                             <div class="thumb-pane">
                                 <h3 class="thumb-heading animated rollIn">
-                                    <a href="#" title="">
+                                    <a title="">
                                         {{event.title}}
                                     </a>
-                                    <small>{{event.time}}</small>
+                                    <small>{{event.timeshow}}</small>
                                 </h3>
                             </div>
                         </div>
@@ -74,10 +73,10 @@
     </div>
 </div>
 
+<script type="text/ng-template" id="templateId">
 
-<script src="dashboard.controller.js"></script>
-<script src="controller.js"></script>
-<script src="register/register.controller.js"></script>
-<script type="text/javascript" src="app-services/flash.service.js"></script>
-<script type="text/javascript" src="js/angular.min.js"></script>
-<script type="text/javascript" src="js/angular-route.min.js"></script>
+        <div id="target" ng-click="test()">
+          Click here
+        </div>
+</script>
+

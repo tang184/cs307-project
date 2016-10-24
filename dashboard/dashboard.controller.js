@@ -9,7 +9,7 @@
         function DashboardController($scope, $location, FlashService) {
             
             $("#bodyBackground").css('background', 'white');
-            $scope.allevents = []
+            $scope.allevents = [];
 
             $scope.updateevents = function(eventlist) {
                 for (var i = 0; i < 5; i++) {

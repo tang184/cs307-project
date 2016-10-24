@@ -1,7 +1,7 @@
 ﻿(function () {
     'use strict';
 
-    var app = angular.module('mainApp',['ngRoute','ui.router', 'ngCookies', 'pascalprecht.translate']);
+    var app = angular.module('mainApp',['ngRoute','ui.router', 'ngCookies', 'pascalprecht.translate', 'ngDialog']);
     app.config(function($stateProvider, $urlRouterProvider) {
         $stateProvider
             .state('login', {
