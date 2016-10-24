@@ -14,7 +14,10 @@
             $scope.events;
 
             $scope.updateevents = function(eventlist) {
-                $scope.allevents = eventlist;
+                for (var i = 0; i < eventlist.length; i++) {
+                    eventlist[i].time = $scope.timeConverter(eventlist[i].time);
+                    $scope.allevents.push(eventlist[i]);
+                }
                 $scope.$apply();
             }
 
@@ -64,6 +67,16 @@
               });
               $scope.updateevents($scope.events);
               console.log($scope.events);
+            }
+
+            $scope.timeConverter = function(UNIX_timestamp){
+                  var a = new Date(UNIX_timestamp);
+                  var months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+                  var year = a.getFullYear();
+                  var month = months[a.getMonth()];
+                  var date = a.getDate();
+                  var time = month + ' ' + date + ' ' +  year;
+                  return time;
             }
 
 

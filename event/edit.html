@@ -2,8 +2,7 @@
 	<form class="form-horizontal">
 		<div class="form-group">
 			<h3 class="title-hero" style="text-align: center;">
-				Event Edit
-				<br><a ng-click="test()">TEST BUTTON</a>
+				Create Event
 			</h3>
 		</div>
 		<div class="form-group">
@@ -17,7 +16,6 @@
 			<div class="col-sm-2">
 				<input type="text" class="start_datepicker form-control" placeholder="yyyy-mm-dd" required data-date-format="yy-mm-dd">
 			</div>
-
             		<label class="col-sm-2 control-label">Start Time</label>
             		<div class="col-sm-2">
                 		<input type="text" class="start_timepicker form-control" required>
@@ -50,6 +48,19 @@
 			<img src="{{mapurl}}"></img>
 			</div>
 		</div>
+		<div class="form-group">
+			<label class="col-sm-3 control-label">Category</label>
+			<div class="col-sm-6">
+			<select name="category" ng-model="event.category" style="width:100%; height:150%">
+				<option value ="Art">Art &amp Music</option>
+				<option value ="Sport">Sport</option>
+				<option value ="Party">Party</option>
+				<option value ="Call Out">Call Out</option>
+				<option value ="Meeing">Meeing</option>
+				<option value ="Other">Other</option>
+			</select>
+			</div>
+		</div>
 		
 		<div class="form-group">
 			<label class="col-sm-3 control-label">Tag</label>
@@ -65,7 +76,7 @@
 		</div>
 	</form>
 	<div class="button-pane mrg20T">
-		<button class="btn btn-info" ng-click="eventsubmit(event)">Submit</button>
+		<button class="btn btn-info" ng-click="eventsubmit(event)">Create Event</button>
 		<button class="btn btn-link font-gray-dark" ng-click="eventcancel()">Cancel</button>
 	</div>
 </div>
