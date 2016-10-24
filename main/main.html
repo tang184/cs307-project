@@ -57,7 +57,7 @@
 
     <div id="header-nav-right">
         <div class="dropdown">
-            <a data-toggle="dropdown" class="hdr-btn popover-button"href="#" title="Search" style="color: #acb7c0; border: solid 2px;
+            <a data-toggle="dropdown" class="hdr-btn popover-button" ui-sref="searchevents" title="Search" style="color: #acb7c0; border: solid 2px;
                 border-radius: 4px; width:45px; height:45px; line-height: 43px;" >
                 <i class="glyph-icon icon-search" style="color:black;"></i>
             </a>
@@ -72,7 +72,8 @@
                 </div>
             </div>
         </div>
-        
+
+
         <div class="dropdown" id="notifications-btn">
             <a data-toggle="dropdown" href="#" title="" style="border: solid 2px;
             border-radius: 4px; width:45px; height:45px" >
@@ -214,7 +215,7 @@
         
     </li>
     <li>
-        <a href="#" id="search_events" title="Search Events">
+        <a ui-sref="searchevents" id="search_events" title="Search Events">
             <i class="glyph-icon icon-linecons-search "></i>
             <span>Search Events</span>
         </a>

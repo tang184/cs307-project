@@ -63,7 +63,12 @@
                 url:"/myevents",
             })
 
-
+            .state('searchevents', {
+                parent:'main',
+                controller: 'SearcheventController',
+                templateUrl: 'searchevents/searchevents.view.html',
+                url:"/searchevents",
+            })
 
             $urlRouterProvider.otherwise('/main/dashboard');
 
