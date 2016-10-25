@@ -65,7 +65,7 @@
 
             .state('searchevents', {
                 parent:'main',
-                controller: 'SearcheventController',
+                controller: 'SearcheventsController',
                 templateUrl: 'searchevents/searchevents.view.html',
                 url:"/searchevents",
             })
@@ -75,7 +75,7 @@
     });
     app.config(['$translateProvider', function ($translateProvider) {
         $translateProvider.useStaticFilesLoader({
-            prefix: "/" + 'i18n/',
+            prefix: 'i18n/',
             suffix: '.json'
         });
         var lang = getFirstBrowserLanguage().toLowerCase();
