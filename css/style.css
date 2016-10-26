@@ -33,6 +33,24 @@ h1, h2 {
   font-weight: bold;
 }
 
+
+.ngdialog.ngdialog-theme-default .ngdialog-content {
+    -webkit-animation: ngdialog-flyin .5s;
+    animation: ngdialog-flyin .5s;
+    background: #f0f0f0;
+    border-radius: 5px;
+    color: #444;
+    font-family: Helvetica,sans-serif;
+    font-size: 1.1em;
+    line-height: 1.5em;
+    margin: 0 auto;
+    max-width: 100%;
+    padding: 1em;
+    position: relative;
+    width: 60%;
+    height: 350px;
+}
+
 /* -------------------------------- 
 
 Modules - reusable parts of our design
@@ -549,7 +567,7 @@ select#soflow, select#soflow-color {
     -webkit-padding-end: 20px;
     -webkit-padding-start: 2px;
     -webkit-user-select: none;
-    background-image: url(http://i62.tinypic.com/15xvbd5.png), -webkit-linear-gradient(#fafafa, #f4f4f4 40%, #e5e5e5);
+    background-image: url(../img/15xvbd5.png), -webkit-linear-gradient(#fafafa, #f4f4f4 40%, #e5e5e5);
     background-position: 97% center;
     background-repeat: no-repeat;
     border: 1px solid #AAA;

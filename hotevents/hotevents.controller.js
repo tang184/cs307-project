@@ -82,21 +82,17 @@
                   return time;
             }
 
-            $scope.showspecificevent = function(id) {
+            $scope.showspecificevent = function(event) {
                 ngDialog.open({ 
                     template: 'templateId',
                     controller: ['$scope', function($scope) {
-                        $scope.test = function()
-                        {
-                            console.log(id);
-                        }
+                        $scope.specevent = event;
+                        console.log($scope.specevent);
                     }] 
                 });
             }
 
-            $scope.test = function() {
-                console.log($scope.specevent);
-            }
+            
 
 
         };
