@@ -77,9 +77,9 @@
                   type: "POST",
                   url: 'https://yakume.xyz/api/login',
                   data: mydata,
-		  /*xhrFields: {
-    		      withCredentials: true
-		  },*/
+          /*xhrFields: {
+                  withCredentials: true
+          },*/
                   success: function(response, testStatus, request){
                       console.log(response);
                       callback(response, request);
@@ -104,6 +104,9 @@
 
         function SetFBCredentials(username, accessToken, callback) {
             var authdata = accessToken;
+        var mydata = $.param({
+                fbdata: authdata,                
+        });
 
             $.ajax({
                   type: "POST",
@@ -190,5 +193,6 @@
             return output;
         },
     };
+
 
 })();
