@@ -38,6 +38,7 @@
   "End Time":"结束时间",
   "End Date":"结束日期",
   "Location":"地点",
+  "Event Location":"活动地点",
   "Show Map":"显示地图",
   "show map":"显示地图",
   "Category":"分类",
@@ -48,7 +49,10 @@
   "Meeting":"会议",
   "Others":"其他",
   "Tag":"小标签",
+  "Event Tag":"小标签",
   "tag":"小标签",
   "time":"时间",
-  "Description":"活动描述"
+  "Description":"活动描述",
+  "Event Description":"活动描述",
+  "yyyy-mm-dd":"年-月-日"
 }

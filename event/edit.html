@@ -8,13 +8,13 @@
 		<div class="form-group">
 			<label class="col-sm-3 control-label">{{'Event Name'|translate}}</label>
 			<div class="col-sm-6">
-				<input type="text" class="form-control" id="" required placeholder="Event Name" ng-model="event.title">
+				<input type="text" class="form-control" id="" required placeholder="{{'Event Name'|translate}}" ng-model="event.title">
 			</div>
 		</div>
 		<div class="form-group">
 			<label class="col-sm-3 control-label">{{'Start Date'|translate}}</label>
 			<div class="col-sm-2">
-				<input type="text" class="start_datepicker form-control" placeholder="yyyy-mm-dd" required data-date-format="yy-mm-dd">
+				<input type="text" class="start_datepicker form-control" placeholder="{{'yyyy-mm-dd'|translate}}" required data-date-format="yy-mm-dd">
 			</div>
             		<label class="col-sm-2 control-label">{{'Start Time'|translate}}</label>
             		<div class="col-sm-2">
@@ -24,7 +24,7 @@
 		<div class="form-group">
 			<label class="col-sm-3 control-label">{{'End Date'|translate}}</label>
 			<div class="col-sm-2">
-				<input type="text" class="end_datepicker form-control" placeholder="yyyy-mm-dd" required data-date-format="yy-mm-dd">
+				<input type="text" class="end_datepicker form-control" placeholder="{{'yyyy-mm-dd'|translate}}" required data-date-format="yy-mm-dd">
 			</div>
 
             		<label class="col-sm-2 control-label">{{'End Time'|translate}}</label>
@@ -37,7 +37,7 @@
 		<div class="form-group">
 			<label class="col-sm-3 control-label">{{'Location'|translate}}</label>
 			<div class="col-sm-6">
-				<input type="text" class="form-control" id="" ng-change="getplace()" ng-model="event.address" placeholder="Event Location" required>
+				<input type="text" class="form-control" id="" ng-change="getplace()" ng-model="event.address" placeholder="{{'Event Location'|translate}}" required>
 			</div>
 			{{'show map'|translate}}: <input type="checkbox" ng-model="showMap"></input>
 			
@@ -65,13 +65,13 @@
 		<div class="form-group">
 			<label class="col-sm-3 control-label">{{'Tag'|translate}}</label>
 			<div class="col-sm-6">
-				<input type="text" class="form-control" id="" ng-model="event.tags" placeholder="Event Tag">
+				<input type="text" class="form-control" id="" ng-model="event.tags" placeholder="{{'Event Tag'|translate}}">
 			</div>
 		</div>
 		<div class="form-group">
 			<label class="col-sm-3 control-label">{{'Description'|translate}}</label>
 			<div class="col-sm-6">
-				<textarea name="" rows="5" class="form-control textarea-autosize" ng-model="event.description" placeholder="Event Description"></textarea>
+				<textarea name="" rows="5" class="form-control textarea-autosize" ng-model="event.description" placeholder="{{'Event Description'|translate}}"></textarea>
 			</div>
 		</div>
 	</form>
