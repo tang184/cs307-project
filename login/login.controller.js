@@ -38,6 +38,9 @@
         	$scope.register = function() {
         		$location.path('/register');
         	}
+            $scope.forgetPassword = function() {
+                $location.path('/forgetpw');
+            }
 
         	$scope.login = function() {
 
