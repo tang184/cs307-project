@@ -27,7 +27,7 @@
 
 
                 $scope.SaveProfile = function() {
-                    
+
                     var mydata = $.param({
                         newname: $scope.newusername
                     });
@@ -46,7 +46,7 @@
                     });
                     $scope.isEdit = false;
                 }
-                
+
                 $scope.editProfile = function() {
                     $scope.isEdit = true;
                 }
@@ -57,14 +57,21 @@
                     $scope.change_password = false;
                 }
 
-                $scope.checkPassword = function() {
-                if ($scope.user.password == $scope.c_password) {
-                    $scope.confirmPassword = true;
-                } else {
-                    $scope.confirmPassword = false;
-                }
+                $scope.confirmPassword = false;
+                $scope.sameAsOldPassword = false;
 
-            }
+                $scope.checkPassword = function() {
+                    if ($scope.oldpassword == $scope.newpassword) {
+                        $scope.sameAsOldPassword = true;
+                    } else {
+                        $scope.sameAsOldPassword = false;
+                    }
+                    if ($scope.newpassword == $scope.c_password) {
+                        $scope.confirmPassword = true;
+                    } else {
+                        $scope.confirmPassword = false;
+                    }
+                }
 
 
 

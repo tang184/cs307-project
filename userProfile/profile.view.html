@@ -325,7 +325,7 @@
             </div>
         </div>
     </div>
-    <div ng-if="tab==2 && change_password">
+    <div ng-show="tab==2 && change_password">
         <div class="content-box mrg15B">
             <h3 class="content-box-header clearfix">
                 Change Password
@@ -339,30 +339,51 @@
                 </div>
             </h3>
             <div class="content-box-wrapper pad0T clearfix">
-                <form class="form-horizontal pad15L pad15R bordered-row">
-                    <div class="form-group">
-                        <label class="col-sm-3 control-label">Old password:</label>
+                <form name="form" class="form-horizontal pad15L pad15R bordered-row" role="form">
+                    <div class="form-group" ng-class="{ 'has-error': form.oldpassword.$touched && form.oldpassword.$invalid}">
+                        <label class="col-sm-3 control-label required"><span style="color:red">*</span>Old password:</label>
                         <div class="col-sm-6">
-                            <input type="password" ng-model="user.oldpassword" class="form-control" id="" placeholder="">
+                            <input type="password" name="oldpassword" ng-model="oldpassword" onpaste="return false" oncontextmenu="return false"
+                            oncopy="return false" oncut="return false" required class="form-control" ng-change="checkPassword()">
+                            <span ng-show="form.oldpassword.$touched && form.oldpassword.$error.required" class="help-block">Old password is required</span>
                         </div>
                     </div>
-                    <div class="form-group">
-                        <label class="col-sm-3 control-label">New password:</label>
+                    <div class="form-group" ng-class="{ 'has-error': form.password.$touched && (form.password.$invalid || sameAsOldPassword)}">
+                        <label class="col-sm-3 control-label required"><span style="color:red">*</span>New password:</label>
                         <div class="col-sm-6">
-                            <input type="password" ng-model="user.newpassword" class="form-control" id="" placeholder="">
+                            <input type="password" name="password" id="password" class="form-control" ng-model="newpassword"
+                            ng-minlength="6" onpaste="return false" oncontextmenu="return false" oncopy="return false"
+                            oncut="return false" ng-maxlength="20" ng-pattern="/(?=.*[A-z])(?=.*[0-9])/"
+                            required ng-change="checkPassword()"/>
+                            <span ng-show="form.password.$touched && form.password.$error.required" class="help-block">New Password is required</span>
+                            <span ng-show="form.password.$touched && !form.password.$error.required && sameAsOldPassword" class="help-block">Cannot be the same as old password</span>
+                            <span class="help-block"
+                                ng-show="!form.password.$error.required && (form.password.$error.minlength || form.password.$error.maxlength) && form.password.$dirty">
+                                Passwords must be between 6 and 20 characters
+                            </span>
+                            <span class="help-block"
+                                  ng-show="!form.password.$error.required && !form.password.$error.minlength && !form.password.$error.maxlength && form.password.$error.pattern && form.password.$dirty">
+                                  Must contain both alphabetical and number characters
+                            </span>
                         </div>
                     </div>
-                    <div class="form-group">
-                        <label class="col-sm-3 control-label">Confirm New password:</label>
+                    <div class="form-group" ng-class="{ 'has-error': form.c_password.$touched && (form.c_password.$invalid || !confirmPassword)}">
+                        <label class="col-sm-3 control-label"> <span style="color:red">*</span> Confirm New password:</label>
                         <div class="col-sm-6">
-                            <input type="password" ng-model="c_password"class="form-control" id="" placeholder="">
+                            <input type="password" name="c_password" id="c_password" ng-model="c_password"class="form-control"
+                            onpaste="return false" oncontextmenu="return false" oncopy="return false" required ng-change="checkPassword()">
+                            <span ng-show="form.c_password.$dirty && form.c_password.$error.required" class="help-block">Confirm password is required</span>
+                            <span ng-show="form.c_password.$touched && !form.c_password.$error.required && !confirmPassword" class="help-block">Password not match</span>
                         </div>
                     </div>
+
+                    <div class="button-pane mrg20T">
+                        <button type="submit" ng-disabled="form.$invalid || !confirmPassword" class="btn btn-primary">Update</button>
+                    </div>
+
                 </form>
             </div>
-            <div class="button-pane mrg20T">
-                <button class="btn btn-success" ng-click="updatePassword()">Update Password</button>
-            </div>
+
         </div>
     </div>
 </div>
@@ -372,4 +393,3 @@
 
 
 </div>
-
