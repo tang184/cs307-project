@@ -5,19 +5,13 @@
         .module('mainApp')
         .controller('MainController', MainController);
 
-    MainController.$inject = ['$scope', '$location', 'FlashService', 'AuthenticationService', '$state'];
-    	function MainController($scope, $location, FlashService, AuthenticationService, $state) {
-                $scope.set_name = function(s, update) {
-                    $scope.username = s;
-                    if (update) {
-                        $scope.$apply();
-                    }
-                }
-
-                AuthenticationService.SetName($scope.set_name);
-
+    MainController.$inject = ['$scope', '$location', 'FlashService', '$cookies', '$rootScope', 'AuthenticationService' , '$state'];
+    	function MainController($scope, $location, FlashService, $cookies, $rootScope, AuthenticationService, $state) {
+            
         	$("#bodyBackground").css('background', 'white');
-
+        	$rootScope.globals = $cookies.getObject('globals') || {};
+        	$scope.username = $rootScope.globals.currentUser.username;
+        	//console.log($rootscope.globals);
 
         	$(document).ready(function() {
 

@@ -79,11 +79,21 @@
             <label>Time Begin:</label>{{specevent.starttime}}<br>
             <label>Time Ends:</label>{{specevent.endtime}}<br>
             <label>Location:</label>{{specevent.address}}<br>
+            <label>Price:</label>0<br>
             <label>Event creater:</label>{{specevent.owner}}<br>
-            <label>Event creat time:</label>{{specevent.postime}}<br>
+            <label>Event creat time:</label>{{specevent.posttime}}<br>
             <label>Description:</label>{{specevent.description}}<br>
 
-            </div>           
+            <button class="btn btn-alt btn-hover btn-blue-alt" ng-if="show && reserve" ng-click = "reserveEvent()" style="top:20px">
+                <span>Reserve the event</span>
+                <i class="glyph-icon icon-arrow-right"></i>
+            </button>
+            <button class="btn btn-alt btn-hover btn-blue-alt" ng-if="show && !reserve" ng-click = "quitEvent()" style="top:20px">
+                <span>Quit the event</span>
+                <i class="glyph-icon icon-arrow-right"></i>
+            </button>
+            </div>
+
         </div>
         <div class="col-md-6">
             <img ng-src="{{mapurl}}"></img>

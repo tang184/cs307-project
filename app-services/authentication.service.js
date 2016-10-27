@@ -13,57 +13,12 @@
         service.SetCredentials = SetCredentials;
         service.SetFBCredentials = SetFBCredentials;
         service.ClearCredentials = ClearCredentials;
-        service.UpdateEmailFromCookie = UpdateEmailFromCookie;
-        service.UpdateProfile = UpdateProfile;
-        service.SetName = SetName;
-        service.GetEmail = GetEmail;
         service.Logout = Logout;
-        service.selfprofile = {};
+        
 
         return service;
 
-        function UpdateEmailFromCookie() {
-            var temp1 = $document[0].cookie.split("%22")[5].split("%40");
-            service.selfprofile.email = temp1[0] + "@" + temp1[1];
-        }
-
-        function GetEmail() {
-            if (service.selfprofile.email === undefined) {
-                service.UpdateEmailFromCookie();
-            }
-            return service.selfprofile.email;
-        }
-
-        function UpdateProfile(newfunc) {
-            if (service.selfprofile.email === undefined) {
-                service.UpdateEmailFromCookie();
-            }
-            var mydata = $.param({
-                email: service.selfprofile.email
-            });
-            $.ajax({
-                type: "GET",
-                url: 'https://yakume.xyz/api/userprofile',
-                data: mydata,
-                success: function(response){
-                    var temp = JSON.parse(response);
-                    service.selfprofile.name = temp.name;
-                    newfunc(temp);
-                }
-            });
-        }
-
-        function SetName(func) {
-            if (service.selfprofile.name === undefined) {
-                var newfunc = function (obj) {
-                    func(obj.name, true);
-                }
-                service.UpdateProfile(newfunc);
-            }
-            else {
-                func(service.selfprofile.name, false);
-            }
-        }
+        
 
         function Login(username, password, callback) {
 
@@ -77,36 +32,53 @@
                   type: "POST",
                   url: 'https://yakume.xyz/api/login',
                   data: mydata,
-          /*xhrFields: {
-                  withCredentials: true
-          },*/
                   success: function(response, testStatus, request){
-                      console.log(response);
-                      callback(response, request);
+                    callback(response, request);
+
                   }
-                });
+            });
 
         }
 
-        function SetCredentials(username, password) {
+        function SetCredentials(username, password, callback) {
             var authdata = Base64.encode(username + ':' + password);
+            var mydata = $.param({
+                email: username
+            });
 
-            $rootScope.globals = {
-                currentUser: {
-                    username: username,
-                    authdata: authdata
+            $.ajax({
+                type: "GET",
+                url: 'https://yakume.xyz/api/userprofile',
+                data: mydata,
+                success: function(response){
+                    var temp = JSON.parse(response);
+                    $rootScope.globals = {
+                        currentUser: {
+                            username: temp.name,
+                            email: temp.email,
+                            authdata: authdata
+                        }
+                    };
+
+                    $http.defaults.headers.common['Authorization'] = 'Basic ' + authdata; // jshint ignore:line
+                    $cookies.putObject('globals', $rootScope.globals);
+                    callback("success");
+
+                    
                 }
-            };
+            });
 
-            $http.defaults.headers.common['Authorization'] = 'Basic ' + authdata; // jshint ignore:line
-            $cookieStore.put('globals', $rootScope.globals);
+
+            
+
+            
         }
 
         function SetFBCredentials(username, accessToken, callback) {
             var authdata = accessToken;
-        var mydata = $.param({
-                fbdata: authdata,                
-        });
+                var mydata = $.param({
+                        fbdata: authdata,                
+                });
 
             $.ajax({
                   type: "POST",
@@ -125,7 +97,8 @@
             };
 
             $http.defaults.headers.common['Authorization'] = 'Basic ' + authdata; // jshint ignore:line
-            $cookieStore.put('globals', $rootScope.globals);
+            $cookies.put('globals', $rootScope.globals);
+
             callback($rootScope.globals.currentUser);
         }
 
@@ -142,14 +115,14 @@
                   }
             });
 
-            service.selfprofile = {};
+            //service.selfprofile = {};
             $location.path('/login');
             $state.go('login');
         }
 
         function ClearCredentials() {
             $rootScope.globals = {};
-            $cookieStore.remove('globals');
+            $cookies.remove('globals');
             $http.defaults.headers.common.Authorization = 'Basic';
         }
     }

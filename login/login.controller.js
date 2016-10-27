@@ -43,14 +43,18 @@
 
                     AuthenticationService.Login($scope.username, $scope.password, function (response, request) {
                         if (response == "SUCCESS") {
-                            AuthenticationService.SetCredentials($scope.username, $scope.password);
-                            var myVar = setInterval(FlashService.Success, 2000);
-                            FlashService.Success('Login successful', true);
-                            $location.path('/main/dashboard');
-                            $state.go('dashboard');
+                            AuthenticationService.SetCredentials($scope.username, $scope.password, function(response) {
+                                if (response == "success") {
+                                    var myVar = setInterval(FlashService.Success, 2000);
+                                    FlashService.Success('Login successful', true);
+                                    $location.path('/main/dashboard');
+                                    $state.go('dashboard');
+                                }                              
+                            });
                         } else {
                             alert(response.message);
                         }
+                            
                     });
         	}
 

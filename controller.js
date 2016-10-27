@@ -147,12 +147,11 @@
         if ($cookies.get('yakumelanguage')) {
             $translate.use($cookies.get('yakumelanguage'));
         }
-        $rootScope.globals = $cookieStore.get('globals') || {};
+        $rootScope.globals = $cookies.getObject('globals') || {};
         console.log($rootScope.globals.currentUser);
         if ($rootScope.globals.currentUser) {
             $http.defaults.headers.common['Authorization'] = 'Basic ' + $rootScope.globals.currentUser.authdata; // jshint ignore:line
         }
-        console.log($cookieStore.get('globals_language'));
         $rootScope.$on('$locationChangeStart', function (event, next, current) {
             // redirect to login page if not logged in and trying to access a restricted page
             var restrictedPage = $.inArray($location.path(), ['/login', '/register']) === -1;

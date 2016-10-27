@@ -5,8 +5,8 @@
         .module('mainApp')
         .controller('ProfileController', ProfileController);
 
-        ProfileController.$inject = ['$scope', '$location', 'FlashService', 'AuthenticationService'];
-            function ProfileController($scope, $location, FlashService, AuthenticationService) {
+        ProfileController.$inject = ['$scope', '$location','$cookies', 'FlashService', 'AuthenticationService'];
+            function ProfileController($scope, $location, $cookies, FlashService, AuthenticationService) {
 
                 $("#bodyBackground").css('background', 'white');
 
@@ -17,16 +17,9 @@
 
                 $scope.user={};
 
-                $scope.set_name = function(s, update) {
-                    $scope.username = s;
-                    $scope.newusername = s;
-                    if (update) {
-                        $scope.$apply();
-                    }
-                }
-                AuthenticationService.SetName($scope.set_name);
-
-                $scope.email = AuthenticationService.GetEmail();
+                $scope.userinfo = $cookies.getObject('globals') || {};
+                $scope.username = $scope.userinfo.currentUser.username;
+                $scope.email = $scope.userinfo.currentUser.email;
 
                 $scope.city = "";
 
@@ -46,9 +39,9 @@
                         data: mydata,
                         success: function(response){
                             console.log(response);
-                            AuthenticationService.selfprofile = {}
-                            AuthenticationService.SetName($scope.set_name);
-                            $scope.email = AuthenticationService.GetEmail();
+                            //AuthenticationService.selfprofile = {}
+                            //AuthenticationService.SetName($scope.set_name);
+                            //$scope.email = AuthenticationService.GetEmail();
                         }
                     });
                     $scope.isEdit = false;

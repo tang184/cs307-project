@@ -85,18 +85,25 @@
             $scope.showspecificevent = function(event) {
                 ngDialog.open({ 
                     template: 'templateId',
-                    controller: ['$scope', function($scope) {
-
+                    controller: ['$scope', '$cookies' , function($scope, $cookies) {
+                        $scope.userinfo = $cookies.getObject('globals') || {};
+                        $scope.show = true;
+                        $scope.reserve = true;
+                        //$scope.username = $scope.userinfo.currentUser.username;
+                        $scope.email = $scope.userinfo.currentUser.email;
+                        if ($scope.email == event.owner) {
+                            $scope.show = false;
+                        }
                         $scope.timeConverter = function(UNIX_timestamp){
-                              var a = new Date(UNIX_timestamp);
-                              var months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
-                              var year = a.getFullYear();
-                              var month = months[a.getMonth()];
-                              var date = a.getDate();
-                              var hour = a.getHours();
-                              var minute = a.getMinutes();
-                              var time = month + ' ' + date + ' ' +  year + '   ' + hour + ':' + minute;
-                              return time;
+                            var a = new Date(UNIX_timestamp);
+                            var months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+                            var year = a.getFullYear();
+                            var month = months[a.getMonth()];
+                            var date = a.getDate();
+                            var hour = a.getHours();
+                            var minute = a.getMinutes();
+                            var time = month + ' ' + date + ' ' +  year + '   ' + hour + ':' + minute;
+                            return time;
                         }
                         event.starttime = $scope.timeConverter(event.time);
                         event.endtime = $scope.timeConverter(event.time + event.duration);
@@ -111,12 +118,23 @@
                             $scope.mapurl="img/loc_404.png";
                         }
 
+                        $scope.reserveEvent = function() {
+                            $scope.reserve = false;
+                        }
+
+                        $scope.quitEvent = function() {
+                            $scope.reserve = true;
+                        }
+
 
                         
                         
                     }] 
                 });
             }
+
+
+
 
             
 
