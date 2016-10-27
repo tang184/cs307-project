@@ -14,7 +14,7 @@
                                 <input type="text" name="firstName" id="firstName" class="form-control" ng-model="vm.user.userName" required />
                                 <span ng-show="form.firstName.$dirty && form.firstName.$error.required" class="help-block">{{'User name is required'}}</span>
                             </div>
-                            
+
                             <div class="form-group" ng-class="{ 'has-error': form.email.$dirty && form.email.$invalid }">
                                 <label for="username">{{'Email address'|translate}}</label>
                                 <input type="text" name="email" id="email" class="form-control" ng-model="vm.user.email"
@@ -22,10 +22,10 @@
                                 <span ng-show="form.email.$dirty && form.email.$error.required" class="help-block">{{'Email is required'|translate}}</span>
                                 <span ng-show="form.email.$dirty && !form.email.$error.required && form.email.$error.pattern" class="help-block">{{'Please enter a valid email'|translate}}</span>
                             </div>
-                            <div class="form-group" ng-class="{ 'has-error': form.password.$dirty && form.password.$error}">
+                            <div class="form-group" ng-class="{ 'has-error': form.password.$dirty && form.password.$invalid}">
                                 <label for="password">{{'Password'|translate}}</label>
                                 <input type="password" name="password" id="password" class="form-control" ng-model="vm.user.password"
-                                ng-minlength="6" onpaste="return false" oncontextmenu="return false" oncopy="return false" 
+                                ng-minlength="6" onpaste="return false" oncontextmenu="return false" oncopy="return false"
                                 oncut="return false" ng-maxlength="20" ng-pattern="/(?=.*[A-z])(?=.*[0-9])/"
                                 required ng-change="checkPassword()"/>
                                 <span ng-show="form.password.$dirty && form.password.$error.required" class="help-block">{{'Password is required'|translate}}</span>
@@ -41,7 +41,7 @@
 
 
                             </div>
-                            <div class="form-group" ng-class="{ 'has-error': form.c_password.$dirty && form.c_password.$error}">
+                            <div class="form-group" ng-class="{ 'has-error': form.c_password.$dirty && (form.c_password.$invalid|| !confirmPassword)}">
                                 <label for="password">{{'Confirm Password'|translate}}</label>
                                 <input type="password" name="c_password" id="c_password" class="form-control" ng-model="c_password"
                                 onpaste="return false" oncontextmenu="return false" oncopy="return false"  required ng-change="checkPassword()"/>
