@@ -8,14 +8,14 @@
                 <div class="clearfix">
                     <ul id="portfolio-grid" class="reset-ul row">
                         <div ng-repeat="event in allevents">
-                            <li class="col-lg-4 col-sm-6 col-md-4">
+                            <li class="col-lg-4 col-sm-6 col-md-4" style="cursor:pointer" ng-click="showspecificevent(event)">
                                 <div class="thumbnail-box-wrapper">
                                     <div class="thumbnail-box">
                                         <a class="thumb-link" href="#" title=""></a>
                                         <div class="thumb-content">
                                             <div class="center-vertical">
                                                 <div class="center-content">
-                                                    <i class="icon-helper icon-center animated zoomInUp font-white glyph-icon icon-linecons-camera"></i>
+                                                    <i class="icon-helper icon-center animated zoomInUp font-white glyph-icon icon-linecons-note"></i>
                                                 </div>
                                             </div>
                                         </div>
@@ -206,4 +206,37 @@
         </div>
     </div>
 </div>
+
+
+
+<script type="text/ng-template" id="templateId">
+
+        <h1> {{specevent.title}} </h1>
+        <br>
+        <br>
+        <div class="col-md-6">
+            <div class="float-left" style="text-align: left;">
+            <label>Time Begin:</label>{{specevent.starttime}}<br>
+            <label>Time Ends:</label>{{specevent.endtime}}<br>
+            <label>Location:</label>{{specevent.address}}<br>
+            <label>Price:</label>0<br>
+            <label>Event creater:</label>{{specevent.owner}}<br>
+            <label>Event creat time:</label>{{specevent.posttime}}<br>
+            <label>Description:</label>{{specevent.description}}<br>
+
+            <button class="btn btn-alt btn-hover btn-blue-alt" ng-if="show && reserve" ng-click = "reserveEvent()" style="top:20px">
+                <span>Reserve the event</span>
+                <i class="glyph-icon icon-arrow-right"></i>
+            </button>
+            <button class="btn btn-alt btn-hover btn-blue-alt" ng-if="show && !reserve" ng-click = "quitEvent()" style="top:20px">
+                <span>Quit the event</span>
+                <i class="glyph-icon icon-arrow-right"></i>
+            </button>
+            </div>
+
+        </div>
+        <div class="col-md-6">
+            <img ng-src="{{mapurl}}"></img>
+        </div>
+</script>
 
