@@ -8,7 +8,7 @@
         EventEdit.$inject = ['$scope', '$location', 'FlashService','$http'];
         function EventEdit($scope, $location, FlashService, $http) {
                 $scope.event={};
-		
+
 
                 $("#bodyBackground").css('background', 'white');
 
@@ -28,7 +28,7 @@
                             format: 'yyyy-mm-dd'
                         }
                     );
-                    
+
                 });
 
                 $scope.latitude;
@@ -56,17 +56,18 @@
                                             $scope.event.zipcode = tmp[i].long_name;
                                         }
                                     }
-                                    $scope.mapurl="https://maps.googleapis.com/maps/api/staticmap?center=" + $scope.event.latitude + "," + $scope.event.longitude + 
-                                    "&zoom=16&size=320x200&&markers=color:red%7Clabel:C%7C" + $scope.event.latitude + "," + $scope.event.longitude 
+                                    $scope.mapurl="https://maps.googleapis.com/maps/api/staticmap?center=" + $scope.event.latitude + "," + $scope.event.longitude +
+                                    "&zoom=16&size=320x200&&markers=color:red%7Clabel:C%7C" + $scope.event.latitude + "," + $scope.event.longitude
                                     + "&key=AIzaSyAFhzO5tGWXiCCtH5y6XW6ycS-1fbC4uYA";
 
                                 } else {
                                     $scope.mapurl="img/loc_404.png"
                                 }
-                            }                                    
+                            }
                         });
-                    }                                      
+                    }
                 }
+
 
                 $scope.eventsubmit = function(event) {
         		    var start_date = $('.start_datepicker').val();
@@ -94,11 +95,11 @@
 
                 $scope.eventcancel = function() {
                     window.history.back();
-                }            
+                }
 
-		
+
         }
 
 
-        
+
 })();
