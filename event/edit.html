@@ -6,29 +6,29 @@
 			</h3>
 		</div>
 		<div class="form-group" ng-class="{ 'has-error': form.eventname.$dirty && form.eventname.$invalid}">
-			<label class="col-sm-3 control-label">{{'Event Name'|translate}}</label>
+			<label class="col-sm-3 control-label"><span style="color:red">*</span>{{'Event Name'|translate}}</label>
 			<div class="col-sm-6">
 				<input type="text" name="eventname" class="form-control" id="" required placeholder="{{'Event Name'|translate}}" ng-model="event.title">
 				<span ng-show="form.eventname.$dirty && form.eventname.$error.required" class="help-block">Please enter the name of your event!</span>
 			</div>
 		</div>
 		<div class="form-group">
-			<label class="col-sm-3 control-label">{{'Start Date'|translate}}</label>
+			<label class="col-sm-3 control-label"><span style="color:red">*</span>{{'Start Date'|translate}}</label>
 			<div class="col-sm-2">
 				<input type="text" class="start_datepicker form-control" placeholder="{{'yyyy-mm-dd'|translate}}" required data-date-format="yy-mm-dd">
 			</div>
-            		<label class="col-sm-2 control-label">{{'Start Time'|translate}}</label>
+            		<label class="col-sm-2 control-label"><span style="color:red">*</span>{{'Start Time'|translate}}</label>
             		<div class="col-sm-2">
                 		<input type="text" class="start_timepicker form-control" required>
 			</div>
         	</div>
 		<div class="form-group">
-			<label class="col-sm-3 control-label">{{'End Date'|translate}}</label>
+			<label class="col-sm-3 control-label"><span style="color:red">*</span>{{'End Date'|translate}}</label>
 			<div class="col-sm-2">
 				<input type="text" class="end_datepicker form-control" placeholder="{{'yyyy-mm-dd'|translate}}" required data-date-format="yy-mm-dd">
 			</div>
 
-            		<label class="col-sm-2 control-label">{{'End Time'|translate}}</label>
+            		<label class="col-sm-2 control-label"><span style="color:red">*</span>{{'End Time'|translate}}</label>
             		<div class="col-sm-2">
                 		<input type="text" class="end_timepicker form-control" required>
 			</div>
@@ -36,7 +36,7 @@
 
 
 		<div class="form-group" ng-class="{ 'has-error': form.location.$dirty && form.location.$invalid}">
-			<label class="col-sm-3 control-label">{{'Location'|translate}}</label>
+			<label class="col-sm-3 control-label"><span style="color:red">*</span>{{'Location'|translate}}</label>
 			<div class="col-sm-6">
 				<input type="text" name="location" class="form-control" id="" ng-change="getplace()" ng-model="event.address" placeholder="{{'Event Location'|translate}}" required>
 				<span ng-show="form.location.$dirty && form.location.$error.required" class="help-block">Please enter a location!</span>
@@ -80,5 +80,6 @@
 	<div class="button-pane mrg20T">
 		<button class="btn btn-info" ng-click="eventsubmit(event)">{{'Create Event'|translate}}</button>
 		<button class="btn btn-link font-gray-dark" ng-click="eventcancel()">{{'Cancel'|translate}}</button>
+		<span ng-show="hasSubmit && !hasCorrectTime" style="color:red" class="help-block"> Please make sure time are entered correctly</span>
 	</div>
 </div>
