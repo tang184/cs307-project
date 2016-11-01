@@ -63,13 +63,6 @@
                 url:"/hotevents",
             })
 
-            .state('upfile', {
-                parent:'main',
-                controller: 'UpfileController',
-                templateUrl: 'file-upload/upfile.view.html',
-                url:"/upfile",
-            })
-
             .state('myevents', {
                 parent:'main',
                 controller: 'MyeventController',

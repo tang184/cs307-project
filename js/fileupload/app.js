@@ -15,8 +15,8 @@
 ;(function () {
     'use strict';
 
-    var isOnGitHub = window.location.hostname === 'blueimp.github.io',
-        url = isOnGitHub ? '//jquery-file-upload.appspot.com/' : 'server/php/';
+    /* TODO: Change url to file upload handler */
+    url = '';
 
     angular.module('demo', [
         'blueimp.fileupload'
@@ -29,7 +29,6 @@
                     /\/[^\/]*$/,
                     '/cors/result.html?%s'
                 );
-                if (isOnGitHub) {
                     // Demo settings:
                     angular.extend(fileUploadProvider.defaults, {
                         // Enable image resizing, except for Android and Opera,
@@ -40,7 +39,6 @@
                         maxFileSize: 999000,
                         acceptFileTypes: /(\.|\/)(gif|jpe?g|png)$/i
                     });
-                }
             }
         ])
 

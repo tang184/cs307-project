@@ -22,10 +22,7 @@
         ], factory);
     } else if (typeof exports === 'object') {
         // Node/CommonJS:
-        factory(
-            require('jquery'),
-            require('./jquery.fileupload')
-        );
+        factory(require('jquery'));
     } else {
         // Browser globals:
         factory(

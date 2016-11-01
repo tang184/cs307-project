@@ -25,8 +25,7 @@
         // Node/CommonJS:
         factory(
             require('jquery'),
-            require('blueimp-load-image/js/load-image'),
-            require('./jquery.fileupload-process')
+            require('load-image')
         );
     } else {
         // Browser globals:
