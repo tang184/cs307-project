@@ -65,6 +65,11 @@
                     </li>
                 </div>
             </ul>
+            <div class="button-pane mrg20T">
+                <button class="btn btn-info" ng-click="gotoPrevPage()" ng-disabled="currentpage <= 1"><</button>
+                {{currentpage}} / {{maxpage}}
+                <button class="btn btn-info" ng-click="gotoNextPage()" ng-disabled="currentpage >= maxpage">></button>
+            </div>
         </div>
     </div>
 </div>
@@ -99,4 +104,3 @@
             <img ng-src="{{mapurl}}"></img>
         </div>
 </script>
-

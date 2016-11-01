@@ -14,16 +14,33 @@
             $scope.events;
             $scope.firstime = true;
 
+            // pagination
+            const MAXEVENTPERPAGE = 8;
+            $scope.currentpage = 1;
+            $scope.maxpage;
+
+            $scope.gotoPrevPage = function() {
+                $scope.currentpage -= 1;
+                $scope.updateevents($scope.events);
+            }
+
+            $scope.gotoNextPage = function() {
+                $scope.currentpage += 1;
+                $scope.updateevents($scope.events);
+            }
+
             $scope.updateevents = function(eventlist) {
                 $scope.allevents = [];
-                for (var i = 0; i < eventlist.length; i++) {
+                var startpos = ($scope.currentpage - 1) * MAXEVENTPERPAGE;
+                var endpos = ($scope.currentpage) * MAXEVENTPERPAGE;
+                for (var i = startpos; i < endpos; i++) {
                     eventlist[i].starttime = $scope.timeConverter(eventlist[i].time);
                     $scope.allevents.push(eventlist[i]);
                 }
                 if ($scope.firstime) {
                     $scope.$apply();
                     $scope.firstime = false;
-                }         
+                }
 
             }
 
@@ -39,7 +56,7 @@
                     success: function(response){
 
                         $scope.events = JSON.parse(response).events;
-                        //console.log(events);
+                        $scope.maxpage = Math.ceil($scope.events.length/MAXEVENTPERPAGE);
                         $scope.updateevents($scope.events);
                     }
                 });
@@ -83,7 +100,7 @@
             }
 
             $scope.showspecificevent = function(event) {
-                ngDialog.open({ 
+                ngDialog.open({
                     template: 'templateId',
                     controller: ['$scope', '$cookies' , function($scope, $cookies) {
                         $scope.userinfo = $cookies.getObject('globals') || {};
@@ -111,8 +128,8 @@
                         $scope.specevent = event;
                         console.log($scope.specevent);
                         if (event.latitude) {
-                           $scope.mapurl="https://maps.googleapis.com/maps/api/staticmap?center=" + event.latitude + "," + event.longitude + 
-                                    "&zoom=16&size=320x200&&markers=color:red%7Clabel:C%7C" + event.latitude + "," + event.longitude 
+                           $scope.mapurl="https://maps.googleapis.com/maps/api/staticmap?center=" + event.latitude + "," + event.longitude +
+                                    "&zoom=16&size=320x200&&markers=color:red%7Clabel:C%7C" + event.latitude + "," + event.longitude
                                     + "&key=AIzaSyAFhzO5tGWXiCCtH5y6XW6ycS-1fbC4uYA";
                         } else {
                             $scope.mapurl="img/loc_404.png";
@@ -127,21 +144,21 @@
                         }
 
 
-                        
-                        
-                    }] 
+
+
+                    }]
                 });
             }
 
 
 
 
-            
+
 
 
         };
 
-        
+
 
 
 })();
