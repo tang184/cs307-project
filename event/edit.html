@@ -76,7 +76,38 @@
 				<textarea name="" rows="5" class="form-control textarea-autosize" ng-model="event.description" placeholder="{{'Event Description'|translate}}"></textarea>
 			</div>
 		</div>
+
+
+
+
+
+
+
+		
+
+
+
+
 	</form>
+
+
+	<form id="uploadForm" action="https://yakume.xyz/img" method="POST" enctype="multipart/form-data">
+        <!-- Redirect browsers with JavaScript disabled to the origin page -->
+        <noscript><input type="hidden" name="redirect" value="https://blueimp.github.io/jQuery-File-Upload/"></noscript>
+        <!-- The fileupload-buttonbar contains buttons to add/delete files and start/cancel the upload -->
+                <!-- The fileinput-button span is used to style the file input field as button -->
+                
+
+                <label for="file" class="custom-file-upload">
+				    <i class="fa fa-cloud-upload"></i> Custom Upload
+				</label>
+				<input type="file" name="file" id="file" />
+                
+    			<input type="submit"/>
+                                <!-- The global file processing state -->
+            <!-- The global progress state -->
+        <!-- The table listing the files available for upload/download -->
+    </form>
 	<div class="button-pane mrg20T">
 		<button class="btn btn-info" ng-click="eventsubmit(event)">{{'Create Event'|translate}}</button>
 		<button class="btn btn-link font-gray-dark" ng-click="eventcancel()">{{'Cancel'|translate}}</button>
