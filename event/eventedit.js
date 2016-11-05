@@ -95,13 +95,13 @@
 		            console.log($scope.event);
 
         		    $.ajax({
-                                type: "POST",
-                                url: 'https://yakume.xyz/api/addevent',
-                                data: $scope.event,
-                                success: function(response){
-                                    console.log(response);
-                                }
-                            });
+                        type: "POST",
+                        url: 'https://yakume.xyz/api/addevent',
+                        data: $scope.event,
+                        success: function(response) {
+                            console.log(response);
+                        }
+                    });
                 }
 
                 $scope.eventcancel = function() {
@@ -114,13 +114,53 @@
 
                 function filePreview(input) {
                     if (input.files && input.files[0]) {
-                        var reader = new FileReader();
-                        reader.onload = function (e) {
-                            $('#uploadForm + img').remove();
-                            $('#uploadForm').after('<img src="'+e.target.result+'" width="450" height="300"/>');
+                        var formData = new FormData();
+                        if (input.files[0].type == "image/png") {
+                            var reader = new FileReader();
+                            reader.onload = function (e) {
+                                $('#uploadForm + img').remove();
+                                $('#uploadForm').after('<img src="'+e.target.result+'" width="150" height="100"/>');
+                                /*$scope.uploadimage = {
+                                    uploaded_file: e.target.result
+                                }*/
+                                formData.append('uploaded_file', $('input[type=file]')[0].files[0]);
+                                $.ajax({
+                                    type: "POST",
+                                    url: 'https://yakume.xyz/img/upload_png',
+                                    data: formData,
+                                    contentType: false,
+                                    processData: false,
+                                    success: function(response) {
+                                        $scope.event.coverimage = response;
+                                        console.log(response);
+                                    }
+                                });
 
+                            }
+                            reader.readAsDataURL(input.files[0]);
+                        } else if (input.files[0].type == "image/jpeg"){
+                            var reader = new FileReader();
+                            reader.onload = function (e) {
+                                $('#uploadForm + img').remove();
+                                $('#uploadForm').after('<img src="'+e.target.result+'" width="150" height="100"/>');
+                                /*$scope.uploadimage = {
+                                    uploaded_file: e.target.result
+                                }*/
+                                formData.append('uploaded_file', $('input[type=file]')[0].files[0]);
+                                $.ajax({
+                                    type: "POST",
+                                    url: 'https://yakume.xyz/img/upload_jpg',
+                                    data: formData,
+                                    contentType: false,
+                                    processData: false,
+                                    success: function(response){
+                                        console.log(response);
+                                    }
+                                });
+                            }
+                            reader.readAsDataURL(input.files[0]);
                         }
-                        reader.readAsDataURL(input.files[0]);
+                        
                     }
                 }
 

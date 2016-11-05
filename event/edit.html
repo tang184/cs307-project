@@ -32,7 +32,7 @@
             		<div class="col-sm-2">
                 		<input type="text" class="end_timepicker form-control" required>
 			</div>
-        	</div>
+        </div>
 
 
 		<div class="form-group" ng-class="{ 'has-error': form.location.$dirty && form.location.$invalid}">
@@ -51,9 +51,9 @@
 			</div>
 		</div>
 		<div class="form-group">
-			<label class="col-sm-3 control-label">{{'Category'|translate}}</label>
+			<label class="col-sm-3 control-label"><span style="color:red">*</span>{{'Category'|translate}}</label>
 			<div class="col-sm-6">
-			<select name="category" ng-model="event.category" style="width:100%; height:150%">
+			<select name="category" ng-model="event.category" style="width:100%; height:150%" required>
 				<option value ="Art">{{'Art &amp Music'|translate}}</option>
 				<option value ="Sport">{{'Sports'|translate}}</option>
 				<option value ="Party">{{'Party'|translate}}</option>
@@ -65,23 +65,28 @@
 		</div>
 
 		<div class="form-group">
-			<label class="col-sm-3 control-label">{{'Tag'|translate}}</label>
+			<label class="col-sm-3 control-label">{{'Self define Tag'|translate}}</label>
 			<div class="col-sm-6">
 				<input type="text" class="form-control" id="" ng-model="event.tags" placeholder="{{'Event Tag'|translate}}">
 			</div>
 		</div>
+
+		<div class="form-group" id="uploadForm">
+			<label class="col-sm-3 control-label">{{'Upload Event Image'|translate}}</label>
+			<div class="col-sm-6">
+				<label for="file" class="custom-file-upload">
+				    <i class="fa fa-cloud-upload"></i> Event Cover Photo Upload
+				</label>
+				<input type="file" name="file" id="file" />
+			</div>
+		</div>
+
 		<div class="form-group">
 			<label class="col-sm-3 control-label">{{'Description'|translate}}</label>
 			<div class="col-sm-6">
 				<textarea name="" rows="5" class="form-control textarea-autosize" ng-model="event.description" placeholder="{{'Event Description'|translate}}"></textarea>
 			</div>
 		</div>
-
-
-
-
-
-
 
 		
 
@@ -91,25 +96,9 @@
 	</form>
 
 
-	<form id="uploadForm" action="https://yakume.xyz/img" method="POST" enctype="multipart/form-data">
-        <!-- Redirect browsers with JavaScript disabled to the origin page -->
-        <noscript><input type="hidden" name="redirect" value="https://blueimp.github.io/jQuery-File-Upload/"></noscript>
-        <!-- The fileupload-buttonbar contains buttons to add/delete files and start/cancel the upload -->
-                <!-- The fileinput-button span is used to style the file input field as button -->
-                
 
-                <label for="file" class="custom-file-upload">
-				    <i class="fa fa-cloud-upload"></i> Custom Upload
-				</label>
-				<input type="file" name="file" id="file" />
-                
-    			<input type="submit"/>
-                                <!-- The global file processing state -->
-            <!-- The global progress state -->
-        <!-- The table listing the files available for upload/download -->
-    </form>
 	<div class="button-pane mrg20T">
-		<button class="btn btn-info" ng-click="eventsubmit(event)">{{'Create Event'|translate}}</button>
+		<button class="btn btn-info" ng-disabled="form.$invalid" ng-click="eventsubmit(event)">{{'Create Event'|translate}}</button>
 		<button class="btn btn-link font-gray-dark" ng-click="eventcancel()">{{'Cancel'|translate}}</button>
 		<span ng-show="hasSubmit && !hasCorrectTime" style="color:red" class="help-block"> Please make sure time are entered correctly</span>
 	</div>

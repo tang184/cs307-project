@@ -5,8 +5,8 @@
         .module('mainApp')
         .controller('MyeventController', MyeventController);
 
-    MyeventController.$inject = ['$scope', '$location', 'FlashService'];
-        function MyeventController($scope, $location, FlashService) {
+    MyeventController.$inject = ['$scope', '$location', 'FlashService', '$rootScope'];
+        function MyeventController($scope, $location, FlashService, $rootScope) {
 
             $("#bodyBackground").css('background', 'white');
             $scope.allevents = [];
@@ -18,22 +18,24 @@
             }
 
             $scope.pull_all_events = function() {
+
+                $scope.email = $rootScope.globals.currentUser.email;
+                console.log($scope.email);
                 var mydata = $.param({
+                    //email: $scope.email
                 });
+
+
 
                 $.ajax({
                     type: "GET",
-                    url: 'https://yakume.xyz/api/getevent',
+                    url: 'https://yakume.xyz/api/myevents',
                     data: mydata,
                     success: function(response){
-
-                        $scope.events = JSON.parse(response).events;
-                        //console.log(events);
-                        $scope.updateevents($scope.events);
+                        console.log(response);
                     }
                 });
             }
-
             $scope.view_event = function(id) {
                 alert("viewevent".concat(id.toString()));
             }
