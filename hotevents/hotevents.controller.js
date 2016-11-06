@@ -99,18 +99,52 @@
                   return time;
             }
 
-            $scope.showspecificevent = function(event) {
-                ngDialog.open({
+            $scope.showspecificevent = function(id) {
+                var mydata = $.param({
+                    eventid : id
+                });
+                function abc (callback) {
+                    $.ajax({
+                        type: "GET",
+                        url: 'https://yakume.xyz/api/getevent',
+                        data: mydata,
+                        success: function(response){
+                            
+                            callback(response);
+
+                        }
+                    });
+                }
+                var event;
+                abc(function(response) {
+                    $scope.specevent = JSON.parse(response);
+                    if ($scope.email == $scope.specevent.owner) {
+                        $scope.show = false;
+                    }
+                    $scope.abc = "owner";
+                    $scope.specevent.starttime = $scope.timeConverter($scope.specevent.time);
+                    $scope.specevent.endtime = $scope.timeConverter($scope.specevent.time + $scope.specevent.duration);
+                    $scope.specevent.posttime = $scope.timeConverter($scope.specevent.timeposted);
+                    //$scope.specevent = event;
+                    //console.log($scope.specevent);
+                    if ($scope.specevent.latitude) {
+                       $scope.mapurl="https://maps.googleapis.com/maps/api/staticmap?center=" + $scope.specevent.latitude + "," + $scope.specevent.longitude +
+                                "&zoom=16&size=320x200&&markers=color:red%7Clabel:C%7C" + $scope.specevent.latitude + "," + $scope.specevent.longitude
+                                + "&key=AIzaSyAFhzO5tGWXiCCtH5y6XW6ycS-1fbC4uYA";
+                    } else {
+                        $scope.mapurl="img/loc_404.png";
+                    }
+                    event = $scope.specevent;
+                    console.log(event);
+                    ngDialog.open({
                     template: 'templateId',
                     controller: ['$scope', '$cookies' , function($scope, $cookies) {
+                        $scope.specevent = event;                        
                         $scope.userinfo = $cookies.getObject('globals') || {};
                         $scope.show = true;
                         $scope.reserve = true;
-                        //$scope.username = $scope.userinfo.currentUser.username;
                         $scope.email = $scope.userinfo.currentUser.email;
-                        if ($scope.email == event.owner) {
-                            $scope.show = false;
-                        }
+                        
                         $scope.timeConverter = function(UNIX_timestamp){
                             var a = new Date(UNIX_timestamp);
                             var months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
@@ -122,19 +156,8 @@
                             var time = month + ' ' + date + ' ' +  year + '   ' + hour + ':' + minute;
                             return time;
                         }
-                        event.starttime = $scope.timeConverter(event.time);
-                        event.endtime = $scope.timeConverter(event.time + event.duration);
-                        event.posttime = $scope.timeConverter(event.timeposted);
-                        $scope.specevent = event;
-                        console.log($scope.specevent);
-                        if (event.latitude) {
-                           $scope.mapurl="https://maps.googleapis.com/maps/api/staticmap?center=" + event.latitude + "," + event.longitude +
-                                    "&zoom=16&size=320x200&&markers=color:red%7Clabel:C%7C" + event.latitude + "," + event.longitude
-                                    + "&key=AIzaSyAFhzO5tGWXiCCtH5y6XW6ycS-1fbC4uYA";
-                        } else {
-                            $scope.mapurl="img/loc_404.png";
-                        }
-
+                        $scope.mapurl="img/loc_404.png";
+           
                         $scope.reserveEvent = function() {
                             $scope.reserve = false;
                         }
@@ -148,7 +171,10 @@
 
                     }]
                 });
-            }
+            })
+
+                
+        }
 
 
 
