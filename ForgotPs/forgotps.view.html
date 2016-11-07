@@ -1,41 +1,30 @@
-      <div style="padding:80px 0">
-          <div class="help_identify" id="login_help">
-            <form>
-              <div class="mvl ptm uiBoxWhite" style="width: 555px;  border-radius: 4px; margin-left: auto; margin-right: auto;"><div class="uiHeader uiHeaderBottomBorder mhl mts uiHeaderPage interstitialHeader"><div class="clearfix uiHeaderTop"><div class="rfloat _ohf">
-              </div>
-              <div>
-                <h2 class="uiHeaderTitle" aria-hidden="true">Find Your Account</h2>
-              </div>
+<div class="center-vertical" style="top:70px">
+        <div class="center-content row">
+
+            <div class="col-md-6 center-margin">
+            <h3 class="text-center pad15B font-white text-transform-upr font-size-23">Yakume</h3>
+            <div class="content-box border-top border-red clearfix" >
+                <div class="content-box-wrapper row">
+                    <div class="col-md-6 col-md-offset-3">
+                        <h2>{{'Forget Password'|translate}}</h2>
+                        <br>
+                        <form name="form" ng-submit="vm.register()" role="form">
+                        
+                            <div class="form-group" ng-class="{ 'has-error': form.email.$dirty && form.email.$invalid }">
+                                <label for="username">{{'Email address'|translate}}</label>
+                                <input type="text" name="email" id="email" class="form-control" ng-model="vm.user.email"
+                                ng-pattern="/^[_A-z0-9]+(\.[A-z0-9]+)*@[A-z0-9-]+(\.[A-z0-9-]+)*(\.[A-z]{2,7})$/" required />
+                                <span ng-show="form.email.$dirty && form.email.$error.required" class="help-block">{{'Email is required'|translate}}</span>
+                                <span ng-show="form.email.$dirty && !form.email.$error.required && form.email.$error.pattern" class="help-block">{{'Please enter a valid email'|translate}}</span>
+                            </div>
+                            <div class="form-actions">
+                                <button type="submit" ng-click="submit()" ng-disabled="form.$invalid" class="btn btn-primary">{{'Reset Password'|translate}}</button>
+                                <a href="" ng-click="back()" class="btn btn-link">{{'Cancel'|translate}}</a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
             </div>
-          </div>
-          <div class="phl ptm uiInterstitialContent"><div class="identify_yourself_block"><table><tr><td></td><td><div>Your Email:
-          </div></td></tr><tr>
-
-          <td style="right:100px">
-<div class="glyph-icon demo-icon tooltip-button icon-elusive-right-hand" title="" data-original-title=".icon-elusive-right-hand"></div>
-        </td>
-
-        <td>
-          <input type="text" class="inputtext" id="identify_email" name="email" autofocus="1" />
-        </td>
-
-      </tr><tr><td></td><td></td></tr></table>
         </div>
-      </div>
-      <div class="uiBoxGray topborder" style="padding: 8px 10px;">
-        <div class="clearfix">
-          <div class="rfloat _ohf">
-            <a class="uiButton" role="button">
-              <span class="uiButtonText">Reset Password</span>
-          </a>
-          <a class="uiButton" role="button">
-              <span class="uiButtonText">Cancel</span>
-          </a>
-        </div>
-          
-        </div>
-      </div>
     </div>
-  </form>
-</div>
 </div>

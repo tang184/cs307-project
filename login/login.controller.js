@@ -61,60 +61,60 @@
                     });
         	}
 
-            	$scope.myFacebookLogin = function() {
+        	$scope.myFacebookLogin = function() {
 
-                    FB.getLoginStatus(function(response) {
+                FB.getLoginStatus(function(response) {
 
-                    if (response.status === 'connected') {
-                        FB.api('/me', {fields: 'email'}, function(response) {
-                            console.log(response);
-                            var authdata = FB.getAuthResponse().accessToken;
-                            console.log(authdata);
-                            AuthenticationService.SetFBCredentials(response.name, authdata, function(response) {
-                                $scope.$apply( function () { $location.path('/main/dashboard').replace() } );
+                if (response.status === 'connected') {
+                    FB.api('/me', {fields: 'email'}, function(response) {
+                        console.log(response);
+                        var authdata = FB.getAuthResponse().accessToken;
+                        console.log(authdata);
+                        AuthenticationService.SetFBCredentials(response.name, authdata, function(response) {
+                            $scope.$apply( function () { $location.path('/main/dashboard').replace() } );
+                        });
+
+                    });
+                    var myVar = setInterval(FlashService.Success, 2000);
+                    FlashService.Success('Login successful', true);
+
+                    
+                    
+
+                } else if (response.status == 'not_authorized') {
+                    FB.login(function(response) {
+                        if (response.status === 'connected') {
+                            FB.api('/me', {fields: 'email'}, function(response) {
+                                var authdata = FB.getAuthResponse().accessToken;
+                                AuthenticationService.SetFBCredentials(response.name, authdata, function(response) {
+                                    $scope.$apply( function () { $location.path('/main/dashboard').replace() } );
+                                });
+
                             });
+                            
+                            var myVar = setInterval(FlashService.Success, 2000);
+                            FlashService.Success('Login successful', true);
+                        }
 
-                        });
-                        var myVar = setInterval(FlashService.Success, 2000);
-                        FlashService.Success('Login successful', true);
-
-                        
-                        
-
-                    } else if (response.status == 'not_authorized') {
-                        FB.login(function(response) {
-                            if (response.status === 'connected') {
-                                FB.api('/me', {fields: 'email'}, function(response) {
-                                    var authdata = FB.getAuthResponse().accessToken;
-                                    AuthenticationService.SetFBCredentials(response.name, authdata, function(response) {
-                                        $scope.$apply( function () { $location.path('/main/dashboard').replace() } );
-                                    });
-
+                    });
+                } else {
+                    FB.login(function(response) {
+                        if (response.status === 'connected') {
+                            FB.api('/me', {fields: 'email'},  function(response) {
+                                var authdata = FB.getAuthResponse().accessToken;
+                                AuthenticationService.SetFBCredentials(response.name, authdata, function(response) {
+                                    $scope.$apply( function () { $location.path('/main/dashboard').replace() } );
                                 });
-                                
-                                var myVar = setInterval(FlashService.Success, 2000);
-                                FlashService.Success('Login successful', true);
-                            }
 
-                        });
-                    } else {
-                        FB.login(function(response) {
-                            if (response.status === 'connected') {
-                                FB.api('/me', {fields: 'email'},  function(response) {
-                                    var authdata = FB.getAuthResponse().accessToken;
-                                    AuthenticationService.SetFBCredentials(response.name, authdata, function(response) {
-                                        $scope.$apply( function () { $location.path('/main/dashboard').replace() } );
-                                    });
+                            });
+                            
+                            var myVar = setInterval(FlashService.Success, 2000);
+                            FlashService.Success('Login successful', true);
+                        }
+                    });
 
-                                });
-                                
-                                var myVar = setInterval(FlashService.Success, 2000);
-                                FlashService.Success('Login successful', true);
-                            }
-                        });
-
-                    }
-                });
+                }
+            });
 
 
 

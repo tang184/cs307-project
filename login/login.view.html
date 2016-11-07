@@ -7,7 +7,7 @@
 
                 <div class="content-box border-top border-red clearfix" >
                     <div class="content-box-wrapper row">
-                        <form action="" id="login-validation" class="col-md-7" method="">
+                        <form action="" id="login-validation" ng-submit="login()" class="col-md-7" method="">
                             <div id="login-form">
                                 <div class="pad20A">
 
@@ -29,14 +29,7 @@
                                             <input type="password" class="form-control" id="exampleInputPassword1" placeholder="{{'Enter Password'|translate}}" ng-model="password">
                                         </div>
                                     </div>
-                                    <div class="row mrg15B">
-                                        <div class="checkbox-primary col-md-10" style="height: 20px;">
-                                            <label>
-                                                <input type="checkbox" id="loginCheckbox1" class="custom-checkbox">
-                                                {{'Remember me'|translate}}
-                                            </label>
-                                        </div>
-                                    </div>
+                                    
                                     <div class="form-group">
                                         <p href="" ng-click="login()" class="btn btn-block btn-blue-alt">{{'Log in'|translate}}</p>
                                     </div>
@@ -48,7 +41,6 @@
                                     </div>
                                 </div>
                             </div>
-
                         </form>
                         <div class="col-md-5 col-xs-12 float-right" style="height: 287px;">
 

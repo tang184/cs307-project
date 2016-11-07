@@ -5,8 +5,8 @@
         .module('mainApp')
         .controller('RegisterController', RegisterController);
 
-    RegisterController.$inject = ['$location', '$scope', '$http', 'FlashService'];
-        function RegisterController($location, $scope, $http, FlashService) {
+    RegisterController.$inject = ['$location', '$rootScope', '$scope', '$http', 'FlashService'];
+        function RegisterController($location, $rootScope, $scope, $http, FlashService) {
             $("#bodyBackground").css('background-image', 'url(assets/image-resources/blurred-bg/blurred-bg-7.jpg)');
 
             $scope.vm = {};
@@ -39,7 +39,7 @@
                             } else {
                                 var myVar = setInterval(FlashService.Success, 2000);
                                 FlashService.Success('Signup successful', true);
-                            }			  
+                            }	  
                       }
                 });
                 $location.path('/login');
