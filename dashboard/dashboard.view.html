@@ -224,11 +224,11 @@
             <label>Event creat time:</label>{{specevent.posttime}}<br>
             <label>Description:</label>{{specevent.description}}<br>
 
-            <button class="btn btn-alt btn-hover btn-blue-alt" ng-if="show && reserve" ng-click = "reserveEvent()" style="top:20px">
+            <button class="btn btn-alt btn-hover btn-blue-alt" ng-if="show && reserve" ng-click = "reserveEvent(specevent.id)" style="top:20px">
                 <span>Reserve the event</span>
                 <i class="glyph-icon icon-arrow-right"></i>
             </button>
-            <button class="btn btn-alt btn-hover btn-blue-alt" ng-if="show && !reserve" ng-click = "quitEvent()" style="top:20px">
+            <button class="btn btn-alt btn-hover btn-blue-alt" ng-if="show && !reserve" ng-click = "quitEvent(specevent.id)" style="top:20px">
                 <span>Quit the event</span>
                 <i class="glyph-icon icon-arrow-right"></i>
             </button>
@@ -236,7 +236,7 @@
 
         </div>
         <div class="col-md-6">
-            <img ng-src="{{mapurl}}"></img>
+            <img ng-src="{{specevent.mapurl}}"></img>
         </div>
 </script>
 
