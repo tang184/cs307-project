@@ -71,6 +71,11 @@
                 $scope.hasCorrectTime = false;
                 $scope.hasSubmit = false;
 
+                function isInt(value) {
+                  var x = parseFloat(value);
+                  return !isNaN(value) && (x | 0) === x;
+                }
+
                 $scope.eventsubmit = function(event) {
                     $scope.hasSubmit = true;
 
@@ -99,9 +104,26 @@
                         url: 'https://yakume.xyz/api/addevent',
                         data: $scope.event,
                         success: function(response) {
-                            console.log(response);
+                            if (isInt(response) && $scope.event.coverimage) {
+                                var postimage = $.param({
+                                    eventid: response,
+                                    filename: $scope.event.coverimage
+                                });
+                                $.ajax({
+                                    type: "POST",
+                                    url: 'https://yakume.xyz/api/event/image/upload',
+                                    data: postimage,
+                                    success: function(response){
+                                        if (response != "SUCCESS") {
+                                            alert(response);
+                                        }
+                                        console.log(response);
+                                    }
+                                });
+                            }
                         }
                     });
+                    $scope.eventcancel();
                 }
 
                 $scope.eventcancel = function() {
@@ -154,6 +176,7 @@
                                     contentType: false,
                                     processData: false,
                                     success: function(response){
+                                        $scope.event.coverimage = response;
                                         console.log(response);
                                     }
                                 });

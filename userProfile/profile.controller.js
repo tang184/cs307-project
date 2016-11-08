@@ -42,7 +42,19 @@
                         }
                     });
                     if ($scope.profileimage) {
-                        console.log("hello world");
+                        var postimage = $.param({
+                            filename: $scope.profileimage
+                        });
+                        $.ajax({
+                            type: "POST",
+                            url: 'https://yakume.xyz/api/avatar/update',
+                            data: postimage,
+                            success: function(response){
+                                if (response != "SUCCESS") {
+                                    alert(response);
+                                }
+                            }
+                        });
                     }
                     $scope.isEdit = false;
                 }
