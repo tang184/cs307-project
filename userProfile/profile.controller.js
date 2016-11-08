@@ -39,12 +39,24 @@
                         data: mydata,
                         success: function(response){
                             console.log(response);
-                            //AuthenticationService.selfprofile = {}
-                            //AuthenticationService.SetName($scope.set_name);
-                            //$scope.email = AuthenticationService.GetEmail();
+
                         }
                     });
                     $scope.isEdit = false;
+                }
+
+                $scope.uploadnewpass = function() {
+                    var mydata = $.param({
+                        password: $scope.newpassword
+                    });
+                    $.ajax({
+                        type: "POST",
+                        url: 'https://yakume.xyz/api/changepassword',
+                        data: mydata,
+                        success: function(response){
+                            console.log(response);
+                        }
+                    });
                 }
 
                 $scope.editProfile = function() {
@@ -72,6 +84,9 @@
                         $scope.confirmPassword = false;
                     }
                 }
+
+
+
 
 
 

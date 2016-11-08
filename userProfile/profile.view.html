@@ -378,7 +378,8 @@
                     </div>
 
                     <div class="button-pane mrg20T">
-                        <button type="submit" ng-disabled="form.$invalid || !confirmPassword" class="btn btn-primary">Update</button>
+                        <button type="submit" ng-disabled="form.$invalid || !confirmPassword" class="btn btn-primary" ng-click="uploadnewpass()">Update</button>
+                        <p style="cursor:pointer" ng-click="updatePassword()">Cancel</p>
                     </div>
 
                 </form>

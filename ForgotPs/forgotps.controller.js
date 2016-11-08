@@ -19,17 +19,17 @@
                   url: 'https://yakume.xyz/api/resetpassword',
                   data: mydata,
                   success: function(response, testStatus, request){
-                  	console.log(response);
                   	if (response == "ERR_USER_NOT_FOUND") {
                   		var myVar = setInterval(FlashService.Error, 2000);
-                        FlashService.Success('Email not found', true);
+                        alert('Email not found', true);
                   	} else {
                   		var myVar = setInterval(FlashService.Success, 2000);
                         FlashService.Success('Password Reset', true);
-                  		$location.path('/login');
                   	}
                   }	
             });
+            $scope.back();
+
     	}
     	$scope.back = function() {
             $location.path('/login');
