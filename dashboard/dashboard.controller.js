@@ -61,7 +61,7 @@
                         url: 'https://yakume.xyz/api/getevent',
                         data: mydata,
                         success: function(response){
-                            
+
                             callback(response);
 
                         }
@@ -73,6 +73,8 @@
                     if ($scope.email == $scope.specevent.owner) {
                         $scope.show = false;
                     }
+                    $scope.specevent.mapurl="img/loc_404.png";
+
                     $scope.abc = "owner";
                     $scope.specevent.starttime = $scope.timeConverter($scope.specevent.time);
                     $scope.specevent.endtime = $scope.timeConverter($scope.specevent.time + $scope.specevent.duration);
@@ -80,23 +82,24 @@
                     //$scope.specevent = event;
                     //console.log($scope.specevent);
                     if ($scope.specevent.latitude) {
-                       $scope.mapurl="https://maps.googleapis.com/maps/api/staticmap?center=" + $scope.specevent.latitude + "," + $scope.specevent.longitude +
+                       $scope.specevent.mapurl="https://maps.googleapis.com/maps/api/staticmap?center=" + $scope.specevent.latitude + "," + $scope.specevent.longitude +
                                 "&zoom=16&size=320x200&&markers=color:red%7Clabel:C%7C" + $scope.specevent.latitude + "," + $scope.specevent.longitude
                                 + "&key=AIzaSyAFhzO5tGWXiCCtH5y6XW6ycS-1fbC4uYA";
+                        console.log($scope.specevent.mapurl);
                     } else {
-                        $scope.mapurl="img/loc_404.png";
+                        $scope.specevent.mapurl="img/loc_404.png";
                     }
                     event = $scope.specevent;
                     console.log(event);
                     ngDialog.open({
                     template: 'templateId',
                     controller: ['$scope', '$cookies' , function($scope, $cookies) {
-                        $scope.specevent = event;                        
+                        $scope.specevent = event;
                         $scope.userinfo = $cookies.getObject('globals') || {};
                         $scope.show = true;
                         $scope.reserve = true;
                         $scope.email = $scope.userinfo.currentUser.email;
-                        
+
                         $scope.timeConverter = function(UNIX_timestamp){
                             var a = new Date(UNIX_timestamp);
                             var months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
@@ -108,25 +111,43 @@
                             var time = month + ' ' + date + ' ' +  year + '   ' + hour + ':' + minute;
                             return time;
                         }
-                        $scope.mapurl="img/loc_404.png";
-           
-                        $scope.reserveEvent = function() {
+
+                        $scope.reserveEvent = function(id) {
                             $scope.reserve = false;
+                            var mydata = $.param({
+                                eventid : id
+                            });
+
+                            $.ajax({
+                                type: "POST",
+                                url: 'https://yakume.xyz/api/event/register',
+                                data: mydata,
+                                success: function(response){
+                                    console.log(response);
+
+                                }
+                            });
                         }
 
-                        $scope.quitEvent = function() {
+                        $scope.quitEvent = function(id) {
                             $scope.reserve = true;
+                            var mydata = $.param({
+                                eventid : id
+                            });
+
+                            $.ajax({
+                                type: "POST",
+                                url: 'https://yakume.xyz/api/event/unregister',
+                                data: mydata,
+                                success: function(response){
+                                    console.log(response);
+                                }
+                            });
                         }
 
-
-
-
-                        }]
-                    });
-                })
-
-                
-            }
+                    }]
+                });
+            })
 
         };
 

@@ -166,7 +166,7 @@
                         $scope.reserveEvent = function(id) {
                             $scope.reserve = false;
                             var mydata = $.param({
-                                eventid = id
+                                eventid : id
                             });
 
                             $.ajax({
@@ -183,7 +183,7 @@
                         $scope.quitEvent = function(id) {
                             $scope.reserve = true;
                             var mydata = $.param({
-                                eventid = id
+                                eventid : id
                             });
 
                             $.ajax({
@@ -199,8 +199,6 @@
                     }]
                 });
             })
-
-
         }
 
 
