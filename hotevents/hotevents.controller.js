@@ -166,9 +166,6 @@
                             $scope.reserve = true;
                         }
 
-
-
-
                     }]
                 });
             })

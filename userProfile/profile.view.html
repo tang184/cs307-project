@@ -266,50 +266,16 @@
                         <textarea name="" rows="3" class="form-control textarea-autosize" ng-disabled="!isEdit" ng-model="aboutme"></textarea>
                     </div>
                 </div>
-                <div class="form-group">
-                    <label class="col-sm-3 control-label">Profile Picture:</label>
+                <div class="form-group" id="uploadForm">
+                    <label class="col-sm-3 control-label">Profile Avatar:</label>
                     <div class="col-sm-6">
-                        <div class="fileinput fileinput-new" data-provides="fileinput">
-                            <div class="fileinput-preview thumbnail" data-trigger="fileinput" ng-disabled="!isEdit" style="width: 200px; height: 150px;"></div>
-                            <div>
-                            <span class="btn btn-default btn-file">
-                                <span class="fileinput-new">Select image</span>
-                                <span class="fileinput-exists">Change</span>
-                                <input type="file" name="...">
-                            </span>
-                                <a href="#" class="btn btn-default fileinput-exists" data-dismiss="fileinput">Remove</a>
-                            </div>
-                        </div>
+                        <label for="file" class="custom-file-upload">
+                            <i class="fa fa-cloud-upload"></i> Upload New Profile Avatar
+                        </label>
+                        <input type="file" ng-disabled="!isEdit" name="file" id="file" />
                     </div>
                 </div>
-    <!-- The fileupload-buttonbar contains buttons to add/delete files and start/cancel the upload -->
-                <div class="row fileupload-buttonbar">
-                    <div class="col-lg-7">
-                        <!-- The fileinput-button span is used to style the file input field as button -->
-                        <span class="btn btn-md btn-success fileinput-button" ng-class="{disabled: disabled}">
-                            <i class="glyph-icon icon-plus"></i>
-                            Add files...
-                            <input type="file" name="files[]" multiple ng-disabled="disabled">
-                        </span>
-                        <button type="button" class="btn btn-md btn-default start" data-ng-click="submit()">
-                            <i class="glyph-icon icon-upload"></i>
-                            Start upload
-                        </button>
-                        <button type="button" class="btn btn-md btn-warning cancel" data-ng-click="cancel()">
-                            <i class="glyph-icon icon-ban"></i>
-                            Cancel upload
-                        </button>
-                        <!-- The global file processing state -->
-                        <span class="fileupload-process"></span>
-                    </div>
-                    <!-- The global progress state -->
-                    <div class="col-lg-5 fade" data-ng-class="{in: active()}">
-                        <!-- The global progress bar -->
-                        <div class="progress progress-striped active" data-file-upload-progress="progress()"><div class="progress-bar progress-bar-success" data-ng-style="{width: num + '%'}"></div></div>
-                        <!-- The extended global progress state -->
-                        <div class="progress-extended">&nbsp;</div>
-                    </div>
-                </div>
+                
             </form>
             <div ng-if="isEdit">
                 <div class="button-pane mrg20T">
