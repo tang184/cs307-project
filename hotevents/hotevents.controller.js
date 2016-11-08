@@ -33,8 +33,10 @@
                 $scope.allevents = [];
                 var startpos = ($scope.currentpage - 1) * MAXEVENTPERPAGE;
                 var endpos = ($scope.currentpage) * MAXEVENTPERPAGE;
+                if (endpos > eventlist.length)
+                    endpos = eventlist.length;
                 for (var i = startpos; i < endpos; i++) {
-		    console.log(eventlist[i]);
+		    //console.log(eventlist[i]);
                     eventlist[i].starttime = $scope.timeConverter(eventlist[i].time);
                     $scope.allevents.push(eventlist[i]);
                 }
@@ -110,7 +112,7 @@
                         url: 'https://yakume.xyz/api/getevent',
                         data: mydata,
                         success: function(response){
-                            
+
                             callback(response);
 
                         }
@@ -140,12 +142,12 @@
                     ngDialog.open({
                     template: 'templateId',
                     controller: ['$scope', '$cookies' , function($scope, $cookies) {
-                        $scope.specevent = event;                        
+                        $scope.specevent = event;
                         $scope.userinfo = $cookies.getObject('globals') || {};
                         $scope.show = true;
                         $scope.reserve = true;
                         $scope.email = $scope.userinfo.currentUser.email;
-                        
+
                         $scope.timeConverter = function(UNIX_timestamp){
                             var a = new Date(UNIX_timestamp);
                             var months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
@@ -158,7 +160,7 @@
                             return time;
                         }
                         $scope.mapurl="img/loc_404.png";
-           
+
                         $scope.reserveEvent = function() {
                             $scope.reserve = false;
                         }
@@ -171,7 +173,7 @@
                 });
             })
 
-                
+
         }
 
 
