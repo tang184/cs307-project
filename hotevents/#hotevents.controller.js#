@@ -33,6 +33,15 @@
                 $scope.allevents = [];
                 var startpos = ($scope.currentpage - 1) * MAXEVENTPERPAGE;
                 var endpos = ($scope.currentpage) * MAXEVENTPERPAGE;
+		if ($scope.currentpage == $scope.maxPage) {
+		    for (var i = startpos; i < endpos; i++) {
+			console.log(eventlist[i]);
+			eventlist[i].starttime = $scope.timeConverter(eventlist[i].\
+time);
+                    $scope.allevents.push(eventlist[i]);
+                } else 
+
+		}
                 for (var i = startpos; i < endpos; i++) {
 		    console.log(eventlist[i]);
                     eventlist[i].starttime = $scope.timeConverter(eventlist[i].time);
