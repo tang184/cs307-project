@@ -17,8 +17,9 @@
             // pagination
             const MAXEVENTPERPAGE = 8;
             $scope.currentpage = 1;
+            $scope.currentpage_attend = 1;
             $scope.maxpage;
-
+            $scope.maxpage_attend;
             $scope.gotoPrevPage = function() {
                 $scope.currentpage -= 1;
                 $scope.updateevents($scope.events);
@@ -47,6 +48,24 @@
 
             }
 
+            $scope.updateevents_attend = function(eventlist) {
+                $scope.allevents_attend = [];
+                var startpos = ($scope.currentpage_attend - 1) * MAXEVENTPERPAGE;
+                var endpos = ($scope.currentpage_attend) * MAXEVENTPERPAGE;
+                if (endpos > eventlist.length)
+                    endpos = eventlist.length;
+                for (var i = startpos; i < endpos; i++) {
+            //console.log(eventlist[i]);
+                    eventlist[i].starttime = $scope.timeConverter(eventlist[i].time);
+                    $scope.allevents_attend.push(eventlist[i]);
+                }
+                if ($scope.firstime) {
+                    $scope.$apply();
+                    $scope.firstime = false;
+                }
+
+            }
+
 
             $scope.pull_all_events = function() {
                 var mydata = $.param({
@@ -57,9 +76,22 @@
                     url: 'https://yakume.xyz/api/eventcreated',
                     data: mydata,
                     success: function(response){
+
                         $scope.events = JSON.parse(response).events;
                         $scope.maxpage = Math.ceil($scope.events.length/MAXEVENTPERPAGE);
                         $scope.updateevents($scope.events);
+                    }
+                });
+
+                $.ajax({
+                    type: "GET",
+                    url: 'https://yakume.xyz/api/myevents',
+                    data: mydata,
+                    success: function(response){
+                        console.log(response);
+                        $scope.events_attend = JSON.parse(response).events;
+                        $scope.maxpage_attend = Math.ceil($scope.events_attend.length/MAXEVENTPERPAGE);
+                        $scope.updateevents_attend($scope.events_attend);
                     }
                 });
             }

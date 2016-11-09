@@ -116,8 +116,8 @@
         </div>
         <div class="clearfix">
             <ul id="portfolio-grid" class="reset-ul row">
-                <div ng-repeat="event in allevents">
-                    <li class="col-lg-3 col-sm-6 col-md-4" style="cursor:pointer" ng-click="showspecificevent(event.id)">
+                <div ng-repeat="event_attend in allevents_attend">
+                    <li class="col-lg-3 col-sm-6 col-md-4" style="cursor:pointer" ng-click="showspecificevent(event_attend.id)">
                         <div class="thumbnail-box-wrapper">
                             <div class="thumbnail-box">
                                 <div class="thumb-content">
@@ -133,9 +133,9 @@
                             <div class="thumb-pane">
                                 <h3 class="thumb-heading animated rollIn">
                                     <a title="">
-                                        {{event.title}}
+                                        {{event_attend.title}}
                                     </a>
-                                    <small>{{event.starttime}}</small>
+                                    <small>{{event_attend.starttime}}</small>
                                 </h3>
                             </div>
                         </div>
@@ -144,7 +144,7 @@
             </ul>
             <div class="button-pane mrg20T">
                 <button class="btn btn-info" ng-click="gotoPrevPage()" ng-disabled="currentpage <= 1"><</button>
-                {{currentpage}} / {{maxpage}}
+                {{currentpage_attend}} / {{maxpage_attend}}
                 <button class="btn btn-info" ng-click="gotoNextPage()" ng-disabled="currentpage >= maxpage">></button>
             </div>
         </div>
