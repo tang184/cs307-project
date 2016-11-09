@@ -52,21 +52,40 @@
                 data: mydata,
                 success: function(response){
                     var temp = JSON.parse(response);
-                    $rootScope.globals = {
+                    $.ajax({
+                        type: "GET",
+                        url: 'https://yakume.xyz/api/avatar/get',
+                        data: mydata,
+                        success: function(response){
+                            var img = JSON.parse(response);
+                            $rootScope.globals = {
+                                currentUser: {
+                                    username: temp.name,
+                                    email: temp.email,
+                                    avatar: img,
+                                    authdata: authdata
+                                }
+                            };
+                            $http.defaults.headers.common['Authorization'] = 'Basic ' + authdata; // jshint ignore:line                            
+                            $cookies.putObject('globals', $rootScope.globals);
+                            callback("success");            
+                        }
+                    });
+                    /*$rootScope.globals = {
                         currentUser: {
                             username: temp.name,
                             email: temp.email,
                             authdata: authdata
                         }
-                    };
+                    };)*/
 
                     $http.defaults.headers.common['Authorization'] = 'Basic ' + authdata; // jshint ignore:line
-                    $cookies.putObject('globals', $rootScope.globals);
-                    callback("success");
-
-                    
+                    //$cookies.putObject('globals', $rootScope.globals);
+      
                 }
             });
+
+
 
 
             

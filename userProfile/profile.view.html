@@ -280,7 +280,7 @@
             <div ng-if="isEdit">
                 <div class="button-pane mrg20T">
                     <button class="btn btn-info" ng-click="SaveProfile()">Save</button>
-                    <button class="btn btn-link font-gray-dark">Cancel</button>
+                    <button class="btn btn-link font-gray-dark" ng-click="cancelProfile()">Cancel</button>
                 </div>
             </div>
             <div ng-if="!isEdit">
@@ -345,7 +345,7 @@
 
                     <div class="button-pane mrg20T">
                         <button type="submit" ng-disabled="form.$invalid || !confirmPassword" class="btn btn-primary" ng-click="uploadnewpass()">Update</button>
-                        <p style="cursor:pointer" ng-click="updatePassword()">Cancel</p>
+                        <button class="btn btn-link font-gray-dark" ng-click="updatePassword()">Cancel</button>
                     </div>
 
                 </form>
