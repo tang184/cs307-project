@@ -54,7 +54,7 @@
 
                 $.ajax({
                     type: "GET",
-                    url: 'https://yakume.xyz/api/createdevent',
+                    url: 'https://yakume.xyz/api/eventcreated',
                     data: mydata,
                     success: function(response){
                         $scope.events = JSON.parse(response).events;
