@@ -57,12 +57,12 @@
                         url: 'https://yakume.xyz/api/avatar/get',
                         data: mydata,
                         success: function(response){
-                            var img = JSON.parse(response);
+			    console.log(response);
                             $rootScope.globals = {
                                 currentUser: {
                                     username: temp.name,
                                     email: temp.email,
-                                    avatar: img,
+                                    avatar: response,
                                     authdata: authdata
                                 }
                             };
