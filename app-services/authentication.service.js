@@ -77,6 +77,7 @@
                         success: function(response){
                             console.log(response);
                             var events_attend_num = JSON.parse(response).events;
+			    $rootScope.globals.event_attend = [];
                             $.each(events_attend_num, function (i, item) {
                                 var mydata = $.param({
                                     eventid : item
@@ -87,10 +88,12 @@
                                     data: mydata,
                                     success: function(response){
                                         console.log(response);
-                                        $rootScope.event_attend.push(response);
+					var t = JSON.parse(response);
+                                        $rootScope.globals.event_attend.push(t);
                                     }
                                 });
                             })
+			
                             
                         }
                     });

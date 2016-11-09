@@ -5,7 +5,7 @@
         .module('mainApp')
         .controller('MyeventController', MyeventController);
 
-    MyeventController.$inject = ['$scope','$rootScope' '$location', 'FlashService', 'ngDialog'];
+    MyeventController.$inject = ['$scope','$rootScope', '$location', 'FlashService', 'ngDialog'];
         function MyeventController($scope, $rootScope,  $location, FlashService, ngDialog) {
 
 
@@ -29,6 +29,15 @@
                 $scope.currentpage += 1;
                 $scope.updateevents($scope.events);
             }
+	    $scope.timeConverter = function(UNIX_timestamp){
+                  var a = new Date(UNIX_timestamp);
+                  var months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+                  var year = a.getFullYear();
+                  var month = months[a.getMonth()];
+                  var date = a.getDate();
+                  var time = month + ' ' + date + ' ' +  year;
+                  return time;
+            }
 
             $scope.updateevents = function(eventlist) {
                 $scope.allevents = [];
@@ -41,25 +50,23 @@
                     eventlist[i].starttime = $scope.timeConverter(eventlist[i].time);
                     $scope.allevents.push(eventlist[i]);
                 }
-                if ($scope.firstime) {
+		console.log($scope.allevents);
+/*                if ($scope.firstime) {
                     $scope.$apply();
                     $scope.firstime = false;
-                }
+                }*/
 
             }
 
             $scope.updateevents_attend = function(eventlist) {
-                $scope.allevents_attend = [];
                 var startpos = ($scope.currentpage_attend - 1) * MAXEVENTPERPAGE;
                 var endpos = ($scope.currentpage_attend) * MAXEVENTPERPAGE;
                 if (endpos > eventlist.length)
                     endpos = eventlist.length;
                 for (var i = startpos; i < endpos; i++) {
-            //console.log(eventlist[i]);
                     eventlist[i].starttime = $scope.timeConverter(eventlist[i].time);
-                    $scope.allevents_attend.push(eventlist[i]);
                 }
-                if ($scope.firstime) {
+		if ($scope.firstime) {
                     $scope.$apply();
                     $scope.firstime = false;
                 }
@@ -83,12 +90,49 @@
                     }
                 });
 
-                
-                $scope.events_attend = $rootScope.event_attend;
-                        
-                $scope.maxpage_attend = Math.ceil($scope.events_attend.length/MAXEVENTPERPAGE);
-                $scope.updateevents_attend($scope.events_attend);
+                $scope.trc(function(){
+		    $scope.events_attend = $rootScope.globals.event_attend;
+                    console.log($rootScope.globals.event_attend);
+                    $scope.maxpage_attend = Math.ceil($scope.events_attend.length/MAXEVENTPERPAGE);
+                //console.log($scope.events_attend);                                                     
+                    $scope.updateevents_attend($scope.events_attend);
+		});
+                //$scope.events_attend = $rootScope.globals.event_attend;
+                //console.log($rootScope.event_attend);
+                //$scope.maxpage_attend = Math.ceil($scope.events_attend.length/MAXEVENTPERPAGE);
+		//console.log($scope.events_attend);
+                //$scope.updateevents_attend($scope.events_attend);
             }
+
+	    $scope.trc = function(callback) {
+		$.ajax({
+                        type: "GET",
+                        url: 'https://yakume.xyz/api/myevents',
+                        success: function(response){
+                            console.log(response);
+                            var events_attend_num = JSON.parse(response).events;
+                            $rootScope.globals.event_attend = [];
+                            $.each(events_attend_num, function (i, item) {
+                                var mydata = $.param({
+                                    eventid : item
+                                });
+                                $.ajax({
+                                    type: "GET",
+                                    url: 'https://yakume.xyz/api/getevent',
+                                    data: mydata,
+                                    success: function(response){
+                                        console.log(response);
+                                        var t = JSON.parse(response);
+                                        $rootScope.globals.event_attend.push(t);
+					callback()
+                                    }
+                                });
+                            })
+
+
+                        }
+                    });
+	    }
 
 
             $scope.pull_all_events();
@@ -117,15 +161,6 @@
               //console.log($scope.events);
             }
 
-            $scope.timeConverter = function(UNIX_timestamp){
-                  var a = new Date(UNIX_timestamp);
-                  var months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
-                  var year = a.getFullYear();
-                  var month = months[a.getMonth()];
-                  var date = a.getDate();
-                  var time = month + ' ' + date + ' ' +  year;
-                  return time;
-            }
 
             $scope.showspecificevent = function(id) {
                 var mydata = $.param({
