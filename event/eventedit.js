@@ -9,6 +9,8 @@
         function EventEdit($scope, $location, FlashService, $http) {
                 $scope.event={};
 
+                $scope.event.price = 0;
+
 
                 $("#bodyBackground").css('background', 'white');
 

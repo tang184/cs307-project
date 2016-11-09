@@ -38,12 +38,18 @@
                 for (var i = startpos; i < endpos; i++) {
 		    //console.log(eventlist[i]);
                     eventlist[i].starttime = $scope.timeConverter(eventlist[i].time);
+                    if (eventlist[i].images.length == 0) {
+                        eventlist[i].eventimage = "assets/image-resources/stock-images/img-17.jpg";
+                    } else {
+                        eventlist[i].eventimage = "https://yakume.xyz/img/" + eventlist[i].images[0];
+                    }
                     $scope.allevents.push(eventlist[i]);
                 }
                 if ($scope.firstime) {
                     $scope.$apply();
                     $scope.firstime = false;
                 }
+
 
             }
 
@@ -151,7 +157,7 @@
                         $scope.reserve = true;
                         $scope.email = $scope.userinfo.currentUser.email;
 
-                        $scope.timeConverter = function(UNIX_timestamp){
+                        $scope.timeConverter = function(UNIX_timestamp) {
                             var a = new Date(UNIX_timestamp);
                             var months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
                             var year = a.getFullYear();
