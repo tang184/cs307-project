@@ -87,6 +87,7 @@
                                     data: mydata,
                                     success: function(response){
                                         console.log(response);
+                                        $rootScope.event_attend.push(response);
                                     }
                                 });
                             })

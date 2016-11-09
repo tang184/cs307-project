@@ -5,8 +5,8 @@
         .module('mainApp')
         .controller('MyeventController', MyeventController);
 
-    MyeventController.$inject = ['$scope', '$location', 'FlashService', 'ngDialog'];
-        function MyeventController($scope, $location, FlashService, ngDialog) {
+    MyeventController.$inject = ['$scope','$rootScope' '$location', 'FlashService', 'ngDialog'];
+        function MyeventController($scope, $rootScope,  $location, FlashService, ngDialog) {
 
 
             $("#bodyBackground").css('background', 'white');
@@ -83,20 +83,11 @@
                     }
                 });
 
-                $.ajax({
-                    type: "GET",
-                    url: 'https://yakume.xyz/api/myevents',
-                    data: mydata,
-                    success: function(response){
-                        console.log(response);
-                        $scope.events_attend_num = JSON.parse(response).events;
-                        $.each($scope.events_attend_num, function (i, item) {
-                            
-                        })
-                        $scope.maxpage_attend = Math.ceil($scope.events_attend.length/MAXEVENTPERPAGE);
-                        $scope.updateevents_attend($scope.events_attend);
-                    }
-                });
+                
+                $scope.events_attend = $rootScope.event_attend;
+                        
+                $scope.maxpage_attend = Math.ceil($scope.events_attend.length/MAXEVENTPERPAGE);
+                $scope.updateevents_attend($scope.events_attend);
             }
 
 
