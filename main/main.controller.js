@@ -9,7 +9,7 @@
     	function MainController($scope, $location, FlashService, $cookies, $rootScope, AuthenticationService, $state) {
             
         	$("#bodyBackground").css('background', 'white');
-        	$rootScope.globals = $cookies.getObject('globals') || {};
+        	//$rootScope.globals = $cookies.getObject('globals') || {};
         	$scope.username = $rootScope.globals.currentUser.username;
         	//console.log($rootscope.globals);
 

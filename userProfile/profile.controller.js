@@ -5,8 +5,8 @@
         .module('mainApp')
         .controller('ProfileController', ProfileController);
 
-        ProfileController.$inject = ['$scope', '$location','$cookies', 'FlashService', 'AuthenticationService'];
-            function ProfileController($scope, $location, $cookies, FlashService, AuthenticationService) {
+        ProfileController.$inject = ['$scope', '$rootScope','$location','$cookies', 'FlashService', 'AuthenticationService'];
+            function ProfileController($scope, $rootScope, $location, $cookies, FlashService, AuthenticationService) {
 
                 $("#bodyBackground").css('background', 'white');
 
