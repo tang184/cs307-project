@@ -89,7 +89,10 @@
                     data: mydata,
                     success: function(response){
                         console.log(response);
-                        $scope.events_attend = JSON.parse(response).events;
+                        $scope.events_attend_num = JSON.parse(response).events;
+                        $.each($scope.events_attend_num, function (i, item) {
+                            
+                        })
                         $scope.maxpage_attend = Math.ceil($scope.events_attend.length/MAXEVENTPERPAGE);
                         $scope.updateevents_attend($scope.events_attend);
                     }
@@ -143,9 +146,7 @@
                         url: 'https://yakume.xyz/api/getevent',
                         data: mydata,
                         success: function(response){
-
                             callback(response);
-
                         }
                     });
                 }
