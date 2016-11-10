@@ -127,7 +127,7 @@
                 var event;
                 abc(function(response) {
                     $scope.specevent = JSON.parse(response);
-                    if ($scope.email == $scope.specevent.owner) {
+                    if ($rootScope.globals.currentUser.email == $scope.specevent.owner) {
                         $scope.show = false;
                     }
                     $scope.specevent.mapurl="img/loc_404.png";

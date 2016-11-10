@@ -70,7 +70,7 @@
                 var event;
                 abc(function(response) {
                     $scope.specevent = JSON.parse(response);
-                    if ($scope.email == $scope.specevent.owner) {
+                    if ($rootScope.globals.currentUser.email == $scope.specevent.owner) {
                         $scope.show = false;
                     }
                     $scope.specevent.mapurl="img/loc_404.png";
@@ -138,6 +138,38 @@
                             $.ajax({
                                 type: "POST",
                                 url: 'https://yakume.xyz/api/event/unregister',
+                                data: mydata,
+                                success: function(response){
+                                    console.log(response);
+                                }
+                            });
+                        }
+
+                        $scope.Follow = function(id) {
+                            $scope.follow = true;
+                            var mydata = $.param({
+                                email : id
+                            });
+
+                            $.ajax({
+                                type: "POST",
+                                url: 'https://yakume.xyz/api/user/follow',
+                                data: mydata,
+                                success: function(response){
+                                    console.log(response);
+                                }
+                            });
+                        }
+
+                        $scope.unFollow = function(id) {
+                            $scope.follow = false;
+                            var mydata = $.param({
+                                email : id
+                            });
+
+                            $.ajax({
+                                type: "POST",
+                                url: 'https://yakume.xyz/api/user/unfollow',
                                 data: mydata,
                                 success: function(response){
                                     console.log(response);

@@ -810,6 +810,13 @@ select#soflow, select#soflow-color {
 }
 
 
+.thumbnail-box + .thumb-pane {
+    margin-top: -20px;
+    margin-bottom: 20px;
+    height: 100px;
+}
+
+
   #header-logo .logo-content-big,
   .logo-content-small {
       background: url('../img/logo.png') no-repeat;

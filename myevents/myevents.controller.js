@@ -29,7 +29,7 @@
                 $scope.currentpage += 1;
                 $scope.updateevents($scope.events);
             }
-	    $scope.timeConverter = function(UNIX_timestamp){
+            $scope.timeConverter = function(UNIX_timestamp){
                   var a = new Date(UNIX_timestamp);
                   var months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
                   var year = a.getFullYear();
@@ -50,8 +50,8 @@
                     eventlist[i].starttime = $scope.timeConverter(eventlist[i].time);
                     $scope.allevents.push(eventlist[i]);
                 }
-		console.log($scope.allevents);
-           if ($scope.firstime) {
+                console.log($scope.allevents);
+                if ($scope.firstime) {
                     $scope.$apply();
                     $scope.firstime = false;
                 }
@@ -66,11 +66,11 @@
                 for (var i = startpos; i < endpos; i++) {
                     eventlist[i].starttime = $scope.timeConverter(eventlist[i].time);
                 }
-		if ($scope.firstime) {
+                if ($scope.firstime) {
                     $scope.$apply();
                     $scope.firstime = false;
                 }
-		console.log(eventlist);
+                console.log(eventlist);
 
             }
 
@@ -88,18 +88,18 @@
                         $scope.events = JSON.parse(response).events;
                         $scope.maxpage = Math.ceil($scope.events.length/MAXEVENTPERPAGE);
                         $scope.updateevents($scope.events);
-			$scope.sortbytime();
+                        $scope.sortbytime();
                     }
                 });
 
                 $scope.trc(function(){
-		    $scope.events_attend = $rootScope.globals.event_attend;
+                    $scope.events_attend = $rootScope.globals.event_attend;
                     console.log($rootScope.globals.event_attend);
-//                    $scope.maxpage_attend = Math.ceil($scope.events_attend.length/MAXEVENTPERPAGE);
+                    //$scope.maxpage_attend = Math.ceil($scope.events_attend.length/MAXEVENTPERPAGE);
                     console.log($scope.maxpage_attend);                                                     
                     $scope.updateevents_attend($scope.events_attend);
-		    $scope.sortbytime();
-		});
+                    $scope.sortbytime();
+                });
                 //$scope.events_attend = $rootScope.globals.event_attend;
                 //console.log($rootScope.event_attend);
                 //$scope.maxpage_attend = Math.ceil($scope.events_attend.length/MAXEVENTPERPAGE);
@@ -107,36 +107,36 @@
                 //$scope.updateevents_attend($scope.events_attend);
             }
 
-	    $scope.trc = function(callback) {
-		$.ajax({
-                        type: "GET",
-                        url: 'https://yakume.xyz/api/myevents',
-                        success: function(response){
-                            console.log(response);
-                            var events_attend_num = JSON.parse(response).events;
-			    $scope.maxpage_attend = Math.ceil(events_attend_num.length/MAXEVENTPERPAGE);
-                            $rootScope.globals.event_attend = [];
-                            $.each(events_attend_num, function (i, item) {
-                                var mydata = $.param({
-                                    eventid : item
-                                });
-                                $.ajax({
-                                    type: "GET",
-                                    url: 'https://yakume.xyz/api/getevent',
-                                    data: mydata,
-                                    success: function(response){
-                                        console.log(response);
-                                        var t = JSON.parse(response);
-                                        $rootScope.globals.event_attend.push(t);
-					callback();
-                                    }
-                                });
-                            })
+    	    $scope.trc = function(callback) {
+        		$.ajax({
+                    type: "GET",
+                    url: 'https://yakume.xyz/api/myevents',
+                    success: function(response){
+                        console.log(response);
+                        var events_attend_num = JSON.parse(response).events;
+                        $scope.maxpage_attend = Math.ceil(events_attend_num.length/MAXEVENTPERPAGE);
+                        $rootScope.globals.event_attend = [];
+                        $.each(events_attend_num, function (i, item) {
+                            var mydata = $.param({
+                                eventid : item
+                            });
+                            $.ajax({
+                                type: "GET",
+                                url: 'https://yakume.xyz/api/getevent',
+                                data: mydata,
+                                success: function(response){
+                                    console.log(response);
+                                    var t = JSON.parse(response);
+                                    $rootScope.globals.event_attend.push(t);
+                                    callback();
+                                }
+                            });
+                        })
 
 
-                        }
-                    });
-	    }
+                    }
+                });
+    	    }
 
 
             $scope.pull_all_events();
@@ -183,7 +183,7 @@
                 var event;
                 abc(function(response) {
                     $scope.specevent = JSON.parse(response);
-                    if ($scope.email == $scope.specevent.owner) {
+                    if ($rootScope.globals.currentUser.email == $scope.specevent.owner) {
                         $scope.show = false;
                     }
                     $scope.specevent.mapurl="img/loc_404.png";
