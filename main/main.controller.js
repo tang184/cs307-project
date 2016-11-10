@@ -13,6 +13,14 @@
         	$scope.username = $rootScope.globals.currentUser.username;
         	$scope.image = "https://yakume.xyz/img/" + $rootScope.globals.currentUser.image;
         	//console.log($rootscope.globals);
+	    	$.ajax({
+                type: "GET",
+                url: 'https://yakume.xyz/api/myevents',
+                success: function(response){
+                    console.log(response);
+                    $rootScope.globals.myevents = JSON.parse(response).events;
+                }
+            });
 
         	$(document).ready(function() {
 

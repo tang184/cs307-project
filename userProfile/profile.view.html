@@ -26,7 +26,7 @@
             <div class="image-content font-white">
 
                 <div class="meta-box meta-box-bottom">
-                    <img src="assets/image-resources/gravatar.jpg" alt="" class="meta-image img-bordered img-circle">
+                    <img style="max-width: 100px" src="https://yakume.xyz/img/{{globals.currentUser.avatar}}" alt="" class="meta-image img-bordered img-circle">
                     <h3 class="meta-heading">{{globals.currentUser.username}}</h3>
                     <h4 class="meta-subheading" style="color:white">{{globals.currentUser.email}}</h4>
                 </div>
@@ -244,7 +244,7 @@
                 <div class="form-group remove-border">
                     <label class="col-sm-3 control-label">{{'User name'|translate}}:</label>
                     <div class="col-sm-6">
-                        <input type="text" class="form-control"  id="" ng-disabled="!isEdit" ng-model="globals.currentUser.username" placeholder="First name...">
+                        <input type="text" class="form-control"  id="" ng-disabled="!isEdit" ng-model="globals.currentUser.username" placeholder="Username...">
                     </div>
                 </div>
 
@@ -266,26 +266,22 @@
                         <textarea name="" rows="3" class="form-control textarea-autosize" ng-disabled="!isEdit" ng-model="aboutme"></textarea>
                     </div>
                 </div>
-                <div class="form-group" id="uploadForm">
+                <div class="form-group">
                     <label class="col-sm-3 control-label">{{'Profile Avatar'|translate}}:</label>
                     <div class="col-sm-6">
                         <label for="file" class="custom-file-upload">
                             <i class="fa fa-cloud-upload"></i> {{'Upload New Profile Avatar'|translate}}
                         </label>
-                        <input type="file" ng-disabled="!isEdit" name="file" id="file" />
+                        <input type="file" ng-disabled="!isEdit" name="file" id="file" accept="image/*"/>
                     </div>
                 </div>
-                
+    <!-- The fileupload-buttonbar contains buttons to add/delete files and start/cancel the upload -->
+
             </form>
             <div ng-if="isEdit">
                 <div class="button-pane mrg20T">
-<<<<<<< HEAD
                     <button class="btn btn-info" ng-click="SaveProfile()">{{'Save'|translate}}</button>
-                    <button class="btn btn-link font-gray-dark">{{'Cancel'|translate}}</button>
-=======
-                    <button class="btn btn-info" ng-click="SaveProfile()">Save</button>
-                    <button class="btn btn-link font-gray-dark" ng-click="cancelProfile()">Cancel</button>
->>>>>>> 8a11a8ae0391703829e42bb37f7a7f5449f9fc88
+                    <button class="btn btn-link font-gray-dark" ng-click="cancelProfile()">{{'Cancel'|translate}}</button>
                 </div>
             </div>
             <div ng-if="!isEdit">
