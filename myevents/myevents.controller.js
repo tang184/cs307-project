@@ -54,16 +54,18 @@
                 var endpos = ($scope.currentpage) * MAXEVENTPERPAGE;
                 if (endpos > eventlist.length)
                     endpos = eventlist.length;
+
                 for (var i = startpos; i < endpos; i++) {
             //console.log(eventlist[i]);
                     eventlist[i].starttime = $scope.timeConverter(eventlist[i].time);
+                    if (eventlist[i].images.length == 0) {
+                        eventlist[i].eventimage = "assets/image-resources/stock-images/img-17.jpg";
+                    } else {
+                        eventlist[i].eventimage = "https://yakume.xyz/img/" + eventlist[i].images[0];
+                    }
                     $scope.allevents.push(eventlist[i]);
                 }
                 console.log($scope.allevents);
-/*                if ($scope.firstime) {
-                    $scope.$apply();
-                    $scope.firstime = false;
-                }*/
 
             }
 
@@ -74,6 +76,11 @@
                     endpos = eventlist.length;
                 for (var i = startpos; i < endpos; i++) {
                     eventlist[i].starttime = $scope.timeConverter(eventlist[i].time);
+                    if (eventlist[i].images.length == 0) {
+                        eventlist[i].eventimage = "assets/image-resources/stock-images/img-17.jpg";
+                    } else {
+                        eventlist[i].eventimage = "https://yakume.xyz/img/" + eventlist[i].images[0];
+                    }
                 }
                 if ($scope.firstime) {
                     $scope.$apply();
