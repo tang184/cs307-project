@@ -71,7 +71,6 @@
                     $scope.firstime = false;
                 }
                 console.log(eventlist);
-
             }
 
 
