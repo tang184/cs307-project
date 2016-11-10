@@ -60,10 +60,10 @@
                     $scope.allevents.push(eventlist[i]);
                 }
                 console.log($scope.allevents);
-                if ($scope.firstime) {
+/*                if ($scope.firstime) {
                     $scope.$apply();
                     $scope.firstime = false;
-                }
+                }*/
 
             }
 
@@ -136,7 +136,9 @@
                                     console.log(response);
                                     var t = JSON.parse(response);
                                     $rootScope.globals.event_attend.push(t);
-                                    callback();
+                                    if (i == events_attend_num.length - 1) {
+					callback();
+				    }
                                 }
                             });
                         })
