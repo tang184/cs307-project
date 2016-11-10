@@ -11,6 +11,7 @@
         	$("#bodyBackground").css('background', 'white');
         	//$rootScope.globals = $cookies.getObject('globals') || {};
         	$scope.username = $rootScope.globals.currentUser.username;
+        	$scope.image = "https://yakume.xyz/img/" + $rootScope.globals.currentUser.image;
         	//console.log($rootscope.globals);
 
         	$(document).ready(function() {

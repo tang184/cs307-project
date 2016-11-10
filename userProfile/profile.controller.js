@@ -59,6 +59,10 @@
                     $scope.isEdit = false;
                 }
 
+                $scope.cancelProfile= function() {
+                    $scope.isEdit = false;
+                }
+
                 $scope.uploadnewpass = function() {
                     var mydata = $.param({
                         password: $scope.newpassword
@@ -157,12 +161,6 @@
                         $scope.confirmPassword = false;
                     }
                 }
-
-
-
-
-
-
 
 
         }
