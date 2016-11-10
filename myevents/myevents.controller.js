@@ -29,6 +29,15 @@
                 $scope.currentpage += 1;
                 $scope.updateevents($scope.events);
             }
+            $scope.gotoPrevPage_attend = function() {
+                $scope.currentpage -= 1;
+                $scope.updateevents_attend($scope.events_attend);
+            }
+
+            $scope.gotoNextPage_attend = function() {
+                $scope.currentpage_attend += 1;
+                $scope.updateevents_attend($scope.events_attend);
+            }
             $scope.timeConverter = function(UNIX_timestamp){
                   var a = new Date(UNIX_timestamp);
                   var months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
