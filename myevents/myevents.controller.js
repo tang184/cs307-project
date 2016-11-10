@@ -51,10 +51,10 @@
                     $scope.allevents.push(eventlist[i]);
                 }
 		console.log($scope.allevents);
-/*                if ($scope.firstime) {
+           if ($scope.firstime) {
                     $scope.$apply();
                     $scope.firstime = false;
-                }*/
+                }
 
             }
 
@@ -70,6 +70,7 @@
                     $scope.$apply();
                     $scope.firstime = false;
                 }
+		console.log(eventlist);
 
             }
 
@@ -87,15 +88,17 @@
                         $scope.events = JSON.parse(response).events;
                         $scope.maxpage = Math.ceil($scope.events.length/MAXEVENTPERPAGE);
                         $scope.updateevents($scope.events);
+			$scope.sortbytime();
                     }
                 });
 
                 $scope.trc(function(){
 		    $scope.events_attend = $rootScope.globals.event_attend;
                     console.log($rootScope.globals.event_attend);
-                    $scope.maxpage_attend = Math.ceil($scope.events_attend.length/MAXEVENTPERPAGE);
-                //console.log($scope.events_attend);                                                     
+//                    $scope.maxpage_attend = Math.ceil($scope.events_attend.length/MAXEVENTPERPAGE);
+                    console.log($scope.maxpage_attend);                                                     
                     $scope.updateevents_attend($scope.events_attend);
+		    $scope.sortbytime();
 		});
                 //$scope.events_attend = $rootScope.globals.event_attend;
                 //console.log($rootScope.event_attend);
@@ -111,6 +114,7 @@
                         success: function(response){
                             console.log(response);
                             var events_attend_num = JSON.parse(response).events;
+			    $scope.maxpage_attend = Math.ceil(events_attend_num.length/MAXEVENTPERPAGE);
                             $rootScope.globals.event_attend = [];
                             $.each(events_attend_num, function (i, item) {
                                 var mydata = $.param({
@@ -124,7 +128,7 @@
                                         console.log(response);
                                         var t = JSON.parse(response);
                                         $rootScope.globals.event_attend.push(t);
-					callback()
+					callback();
                                     }
                                 });
                             })
