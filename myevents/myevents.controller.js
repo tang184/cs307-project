@@ -183,9 +183,12 @@
                 var event;
                 abc(function(response) {
                     $scope.specevent = JSON.parse(response);
-                    if ($rootScope.globals.currentUser.email == $scope.specevent.owner) {
+//		    console.log($rootScope.globals.currentUser.email);
+//		    console.log($scope.specevent.owner);
+                    /*if ($rootScope.globals.currentUser.email == $scope.specevent.owner) {
                         $scope.show = false;
-                    }
+                    }*/
+//		    console.log($scope.show);
                     $scope.specevent.mapurl="img/loc_404.png";
 
                     $scope.abc = "owner";
@@ -212,6 +215,9 @@
                         $scope.show = true;
                         $scope.reserve = true;
                         $scope.email = $scope.userinfo.currentUser.email;
+			if ($rootScope.globals.currentUser.email == $scope.specevent.owner) {
+                            $scope.show = false;
+			}
 
                         $scope.timeConverter = function(UNIX_timestamp){
                             var a = new Date(UNIX_timestamp);
