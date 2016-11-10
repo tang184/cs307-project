@@ -41,9 +41,9 @@
                             }
                         }
                     });
-                    if ($scope.profileimage) {
+                    if ($rootScope.globals.currentUser.avatar) {
                         var postimage = $.param({
-                            filename: $scope.profileimage
+                            filename: $rootScope.globals.currentUser.avatar
                         });
                         $.ajax({
                             type: "POST",

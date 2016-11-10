@@ -5,8 +5,8 @@
         .module('mainApp')
         .controller('HoteventController', HoteventController);
 
-    HoteventController.$inject = ['$scope', '$location', 'FlashService', 'ngDialog'];
-        function HoteventController($scope, $location, FlashService, ngDialog) {
+    HoteventController.$inject = ['$scope','$rootScope', '$location', 'FlashService', 'ngDialog'];
+        function HoteventController($scope, $rootScope ,$location, FlashService, ngDialog) {
 
 
             $("#bodyBackground").css('background', 'white');
@@ -152,10 +152,35 @@
                     template: 'templateId',
                     controller: ['$scope', '$cookies' , function($scope, $cookies) {
                         $scope.specevent = event;
-                        $scope.userinfo = $cookies.getObject('globals') || {};
                         $scope.show = true;
                         $scope.reserve = true;
-                        $scope.email = $scope.userinfo.currentUser.email;
+                        if ($rootScope.globals.currentUser.email == $scope.specevent.owner) {
+                            $scope.show = false;
+                        }
+                        $scope.sattend = false;
+
+
+                        var mydata = $.param({
+                            eventid : event.id
+                        });
+
+                        $.ajax({
+                            type: "GET",
+                            url: 'https://yakume.xyz/api/attendees',
+                            data: mydata,
+                            success: function(response) {
+                                $scope.attendees = JSON.parse(response).attendees; 
+                                //console.log(attendees);
+                            }
+                        });
+                        $scope.sowner = false;
+                        $scope.showownerinfo = function() {
+                            $scope.sowner = !$scope.sowner;
+                        }
+
+                        $scope.showattend = function() {
+                            $scope.sattend = !$scope.sattend;
+                        }
 
                         $scope.timeConverter = function(UNIX_timestamp) {
                             var a = new Date(UNIX_timestamp);
@@ -180,8 +205,9 @@
                                 url: 'https://yakume.xyz/api/event/register',
                                 data: mydata,
                                 success: function(response){
-                                    console.log(response);
-
+                                    if (response == "SUCCESS") {
+                                        $scope.attendees.push($rootScope.globals.currentUser.email)
+                                    }
                                 }
                             });
                         }
@@ -195,6 +221,40 @@
                             $.ajax({
                                 type: "POST",
                                 url: 'https://yakume.xyz/api/event/unregister',
+                                data: mydata,
+                                success: function(response){
+                                    if (response == "SUCCESS") {
+                                        $scope.attendees.pop();
+                                    }
+                                }
+                            });
+                        }
+
+                        $scope.Follow = function() {
+                            $scope.follow = true;
+                            var mydata = $.param({
+                                email : $rootScope.globals.currentUser.email
+                            });
+
+                            $.ajax({
+                                type: "POST",
+                                url: 'https://yakume.xyz/api/user/follow',
+                                data: mydata,
+                                success: function(response){
+                                    console.log(response);
+                                }
+                            });
+                        }
+
+                        $scope.unFollow = function() {
+                            $scope.follow = false;
+                            var mydata = $.param({
+                                email : $rootScope.globals.currentUser.email
+                            });
+
+                            $.ajax({
+                                type: "POST",
+                                url: 'https://yakume.xyz/api/user/unfollow',
                                 data: mydata,
                                 success: function(response){
                                     console.log(response);

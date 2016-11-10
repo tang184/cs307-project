@@ -179,16 +179,11 @@
                             callback(response);
                         }
                     });
+
                 }
                 var event;
                 abc(function(response) {
                     $scope.specevent = JSON.parse(response);
-//		    console.log($rootScope.globals.currentUser.email);
-//		    console.log($scope.specevent.owner);
-                    /*if ($rootScope.globals.currentUser.email == $scope.specevent.owner) {
-                        $scope.show = false;
-                    }*/
-//		    console.log($scope.show);
                     $scope.specevent.mapurl="img/loc_404.png";
 
                     $scope.abc = "owner";
@@ -215,9 +210,24 @@
                         $scope.show = true;
                         $scope.reserve = true;
                         $scope.email = $scope.userinfo.currentUser.email;
-			if ($rootScope.globals.currentUser.email == $scope.specevent.owner) {
+            			if ($rootScope.globals.currentUser.email == $scope.specevent.owner) {
                             $scope.show = false;
-			}
+            			}
+
+                        var mydata = $.param({
+                            eventid : event.id
+                        });
+
+                        $.ajax({
+                            type: "GET",
+                            url: 'https://yakume.xyz/api/attendees',
+                            data: mydata,
+                            success: function(response) {
+                                console.log(response);
+                                //$scope.attendees = JSON.parse(response); 
+                                //console.log(attendees);
+                            }
+                        });
 
                         $scope.timeConverter = function(UNIX_timestamp){
                             var a = new Date(UNIX_timestamp);
@@ -257,6 +267,38 @@
                             $.ajax({
                                 type: "POST",
                                 url: 'https://yakume.xyz/api/event/unregister',
+                                data: mydata,
+                                success: function(response){
+                                    console.log(response);
+                                }
+                            });
+                        }
+
+                        $scope.Follow = function(id) {
+                            $scope.follow = true;
+                            var mydata = $.param({
+                                email : id
+                            });
+
+                            $.ajax({
+                                type: "POST",
+                                url: 'https://yakume.xyz/api/user/follow',
+                                data: mydata,
+                                success: function(response){
+                                    console.log(response);
+                                }
+                            });
+                        }
+
+                        $scope.unFollow = function(id) {
+                            $scope.follow = false;
+                            var mydata = $.param({
+                                email : id
+                            });
+
+                            $.ajax({
+                                type: "POST",
+                                url: 'https://yakume.xyz/api/user/unfollow',
                                 data: mydata,
                                 success: function(response){
                                     console.log(response);
