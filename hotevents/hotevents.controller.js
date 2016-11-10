@@ -262,6 +262,23 @@
                             });
                         }
 
+                        $scope.deleteEvent = function(id) {
+                            var mydata = $.param({
+                                eventid : id
+                            });
+
+                            $.ajax({
+                                type: "POST",
+                                url: 'https://yakume.xyz/api/deleteevent',
+                                data: mydata,
+                                success: function(response){
+                                    console.log(response);
+                                }
+                            });
+                        }
+
+
+
                     }]
                 });
             })

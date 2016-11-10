@@ -5,8 +5,8 @@
         .module('mainApp')
         .controller('DashboardController', DashboardController);
 
-    DashboardController.$inject = ['$scope', '$location', '$cookies','FlashService', 'ngDialog'];
-        function DashboardController($scope, $location, $cookies, FlashService, ngDialog) {
+    DashboardController.$inject = ['$scope', '$rootScope','$location', '$cookies','FlashService', 'ngDialog'];
+        function DashboardController($scope, $rootScope, $location, $cookies, FlashService, ngDialog) {
             
             $("#bodyBackground").css('background', 'white');
             $scope.allevents = [];
@@ -95,12 +95,37 @@
                     template: 'templateId',
                     controller: ['$scope', '$cookies' , function($scope, $cookies) {
                         $scope.specevent = event;
-                        $scope.userinfo = $cookies.getObject('globals') || {};
                         $scope.show = true;
                         $scope.reserve = true;
-                        $scope.email = $scope.userinfo.currentUser.email;
+                        if ($rootScope.globals.currentUser.email == $scope.specevent.owner) {
+                            $scope.show = false;
+                        }
+                        $scope.sattend = false;
 
-                        $scope.timeConverter = function(UNIX_timestamp){
+
+                        var mydata = $.param({
+                            eventid : event.id
+                        });
+
+                        $.ajax({
+                            type: "GET",
+                            url: 'https://yakume.xyz/api/attendees',
+                            data: mydata,
+                            success: function(response) {
+                                $scope.attendees = JSON.parse(response).attendees; 
+                                //console.log(attendees);
+                            }
+                        });
+                        $scope.sowner = false;
+                        $scope.showownerinfo = function() {
+                            $scope.sowner = !$scope.sowner;
+                        }
+
+                        $scope.showattend = function() {
+                            $scope.sattend = !$scope.sattend;
+                        }
+
+                        $scope.timeConverter = function(UNIX_timestamp) {
                             var a = new Date(UNIX_timestamp);
                             var months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
                             var year = a.getFullYear();
@@ -123,8 +148,9 @@
                                 url: 'https://yakume.xyz/api/event/register',
                                 data: mydata,
                                 success: function(response){
-                                    console.log(response);
-
+                                    if (response == "SUCCESS") {
+                                        $scope.attendees.push($rootScope.globals.currentUser.email)
+                                    }
                                 }
                             });
                         }
@@ -140,15 +166,17 @@
                                 url: 'https://yakume.xyz/api/event/unregister',
                                 data: mydata,
                                 success: function(response){
-                                    console.log(response);
+                                    if (response == "SUCCESS") {
+                                        $scope.attendees.pop();
+                                    }
                                 }
                             });
                         }
 
-                        $scope.Follow = function(id) {
+                        $scope.Follow = function() {
                             $scope.follow = true;
                             var mydata = $.param({
-                                email : id
+                                email : $rootScope.globals.currentUser.email
                             });
 
                             $.ajax({
@@ -161,10 +189,10 @@
                             });
                         }
 
-                        $scope.unFollow = function(id) {
+                        $scope.unFollow = function() {
                             $scope.follow = false;
                             var mydata = $.param({
-                                email : id
+                                email : $rootScope.globals.currentUser.email
                             });
 
                             $.ajax({
@@ -177,12 +205,28 @@
                             });
                         }
 
-                    }]
-                    });
-                })
+                        $scope.deleteEvent = function(id) {
+                            var mydata = $.param({
+                                eventid : id
+                            });
 
-            }
+                            $.ajax({
+                                type: "POST",
+                                url: 'https://yakume.xyz/api/deleteevent',
+                                data: mydata,
+                                success: function(response){
+                                    console.log(response);
+                                }
+                            });
+                        }
+
+
+
+                    }]
+                });
+            })
         }
+    };
 
 
 })();
