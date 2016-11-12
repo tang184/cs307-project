@@ -8,13 +8,17 @@
     <form class="form-wrapper">
         <input type="text" id="search" ng-model="key" placeholder="Search for..." required>
         <input type="submit" value="go" ng-click="searchevent()" id="submit">
-        <label>{{'search by'|translate}}:</label>
-        <select id="soflow">
-          <option value="title" select>{{'Event Name'|translate}}</option>
-          <option value="time">{{'time'|translate}}</option>
-          <option value="location" >{{'Location'|translate}}</option>
-          <option value="tag">{{'tag'|translate}}</option>
-        </select>
+        <label style="text-align:left"><a style="cursor:pointer" ng-click="showadvance()">{{'Advance'|translate}}</a></label>
+
+        <div ng-show="advance">
+            <br>
+            <label class="col-md-3" style="margin:10px; top:4px">Zipcode: </label>
+            <input class="col-md-7"style="height:20px; margin:10px; width:60%" type="number" id="search" ng-model="zip" placeholder="Enter your Zipcode">
+            <label class="col-md-3" style="margin:10px; top:4px">Tag: </label>
+            <input class="col-md-7"style="height:20px; margin:10px; width:60%" type="text" id="search" ng-model="tag" placeholder="Enter your Tag">
+            
+        </div>
+        
     </form>
 
 </div>

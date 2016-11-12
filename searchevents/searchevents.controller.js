@@ -18,6 +18,12 @@
             $scope.currentpage = 1;
             $scope.maxpage;
 
+            $scope.advance = false;
+
+            $scope.showadvance = function() {
+                $scope.advance = !$scope.advance;
+            }
+
             $scope.gotoPrevPage = function() {
                 $scope.currentpage -= 1;
                 $scope.update($scope.events);
@@ -94,9 +100,26 @@
 
             $scope.search = function(callback) {
                 $scope.canapply = true;
-                var mydata = $.param({
-                    keyword : $scope.key
-                });
+                $scope.allevents = [];
+                var mydata;
+                if (!$scope.zip) {
+                    $scope.zip = 0;
+                }
+
+                if ($scope.advance) {
+                    mydata= $.param({
+                        keyword : $scope.key,
+                        zipcode : $scope.zip,
+                        tag : $scope.tag
+                    });
+                } else {
+                    mydata= $.param({
+                        keyword : $scope.key,
+                    });
+                }
+                
+                
+                
                 $.ajax({
                     type: "GET",
                     url: 'https://yakume.xyz/api/event/search',
