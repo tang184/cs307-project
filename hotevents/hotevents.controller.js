@@ -153,6 +153,7 @@
                     controller: ['$scope', '$cookies' , function($scope, $cookies) {
                         $scope.specevent = event;
                         $scope.show = true;
+                        $scope.save = true;
                         $scope.reserve = true;
                         if ($rootScope.globals.currentUser.email == $scope.specevent.owner) {
                             $scope.show = false;
@@ -169,7 +170,7 @@
                             url: 'https://yakume.xyz/api/attendees',
                             data: mydata,
                             success: function(response) {
-                                $scope.attendees = JSON.parse(response).attendees; 
+                                $scope.attendees = JSON.parse(response).attendees;
                                 //console.log(attendees);
                             }
                         });
@@ -194,6 +195,42 @@
                             return time;
                         }
 
+                        $scope.saveEvent = function(id) {
+                            $scope.save = false;
+                            var mydata = $.param({
+                                eventid : id
+                            });
+
+                            $.ajax({
+                                type: "POST",
+                                url: 'https://yakume.xyz/api/watchlist/save',
+                                data: mydata,
+                                success: function(response){
+                                    if (response == "SUCCESS") {
+                                        console.log("saved to watchlist!");
+                                    }
+                                }
+                            });
+                        }
+
+                        $scope.unsaveEvent = function(id) {
+                            $scope.save = true;
+                            var mydata = $.param({
+                                eventid : id
+                            });
+
+                            $.ajax({
+                                type: "POST",
+                                url: 'https://yakume.xyz/api/watchlist/delete',
+                                data: mydata,
+                                success: function(response){
+                                    if (response == "SUCCESS") {
+                                        console.log("unsaved from watchlist!");
+                                    }
+                                }
+                            });
+                        }
+
                         $scope.reserveEvent = function(id) {
                             $scope.reserve = false;
                             var mydata = $.param({
@@ -206,7 +243,7 @@
                                 data: mydata,
                                 success: function(response){
                                     if (response == "SUCCESS") {
-                                        $scope.attendees.push($rootScope.globals.currentUser.email)
+                                        $scope.attendees.push($rootScope.globals.currentUser.email);
                                     }
                                 }
                             });

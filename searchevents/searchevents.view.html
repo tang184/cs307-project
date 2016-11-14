@@ -3,7 +3,7 @@
     <h1 class="title-search" style="text-align: center;">
         {{'Search Events'|translate}}
     </h1>
-</div>    
+</div>
 <div class = "search place">
     <form class="form-wrapper">
         <input type="text" id="search" ng-model="key" placeholder="Search for..." required>
@@ -16,9 +16,9 @@
             <input class="col-md-7"style="height:20px; margin:10px; width:60%" type="number" id="search" ng-model="zip" placeholder="Enter your Zipcode">
             <label class="col-md-3" style="margin:10px; top:4px">Tag: </label>
             <input class="col-md-7"style="height:20px; margin:10px; width:60%" type="text" id="search" ng-model="tag" placeholder="Enter your Tag">
-            
+
         </div>
-        
+
     </form>
 
 </div>
@@ -113,6 +113,12 @@
                 </div>
             </div>
 
+            <button class="btn btn-black-opacity" ng-if="save" ng-click = "saveEvent(specevent.id)" style="top:20px">
+                <span>Save</span>
+            </button>
+            <button class="btn btn-black-opacity" ng-if="!save" ng-click = "unsaveEvent(specevent.id)" style="top:20px">
+                <span>Unsave</span>
+            </button>
             <button class="btn btn-alt btn-hover btn-blue-alt" ng-if="reserve" ng-click = "reserveEvent(specevent.id)" style="top:20px">
                 <span>Reserve the event</span>
                 <i class="glyph-icon icon-arrow-right"></i>

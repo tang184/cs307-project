@@ -53,7 +53,7 @@
                             </div>
                         </li>
                     </ul>
-                </div>               
+                </div>
             </div>
         </div>
     </div>
@@ -235,6 +235,12 @@
                 </div>
             </div>
 
+            <button class="btn btn-black-opacity" ng-if="save" ng-click = "saveEvent(specevent.id)" style="top:20px">
+                <span>Save</span>
+            </button>
+            <button class="btn btn-black-opacity" ng-if="!save" ng-click = "unsaveEvent(specevent.id)" style="top:20px">
+                <span>Unsave</span>
+            </button>
             <button class="btn btn-alt btn-hover btn-blue-alt" ng-if="reserve" ng-click = "reserveEvent(specevent.id)" style="top:20px">
                 <span>Reserve the event</span>
                 <i class="glyph-icon icon-arrow-right"></i>
@@ -253,4 +259,3 @@
             <img ng-src="{{specevent.mapurl}}"></img>
         </div>
 </script>
-
