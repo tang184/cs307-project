@@ -76,8 +76,23 @@
 
             $scope.sortbytime = function() {
                 $scope.events.sort(function(a,b){
-                  return parseInt(b.time) - parseInt(a.time);
+                  return parseInt(a.time) - parseInt(b.time);
                 });
+                var currtime = new Date().getTime();
+                var len = $scope.events.length;
+                var cnt = 0;
+                var index = 0;
+                while(cnt < len){
+                    if($scope.events[cnt].time >= currtime){
+                        break;
+                    }
+                    cnt++;
+                }
+                while(index < cnt){
+                    var temp = $scope.events.shift();
+                    $scope.events.push(temp);
+                    index++;
+                }
                 $scope.updateevents($scope.events);
                 //console.log($scope.events);
             }
@@ -86,7 +101,7 @@
 				$scope.events.sort(function(a,b){
                     return a.title.localeCompare(b.title);
 				});
-				$scope.updateevents($scope.events);
+                $scope.updateevents($scope.events);
                 //console.log($scope.events);
             }
 
