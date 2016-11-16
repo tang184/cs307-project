@@ -114,7 +114,7 @@
                     }
                     cnt++;
                 }
-                console.log(newevnt);
+                //console.log(newevnt);
                 $scope.events = newevnt;
                 $scope.updateevents($scope.events);
                 //console.log($scope.events);
