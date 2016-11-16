@@ -235,11 +235,11 @@
                 </div>
             </div>
 
-            <button class="btn btn-black-opacity" ng-if="save" ng-click = "saveEvent(specevent.id)" style="top:20px">
-                <span>Save</span>
+            <button class="btn btn-round btn-default" ng-if="save" ng-click = "saveEvent(specevent.id)" style="top:20px">
+                <div class="glyph-icon icon-star-o" style="color:yellow"></div>
             </button>
-            <button class="btn btn-black-opacity" ng-if="!save" ng-click = "unsaveEvent(specevent.id)" style="top:20px">
-                <span>Unsave</span>
+            <button class="btn btn-round btn-default" ng-if="!save" ng-click = "unsaveEvent(specevent.id)" style="top:20px">
+                <div class="glyph-icon icon-star" style="color:yellow"></div>
             </button>
             <button class="btn btn-alt btn-hover btn-blue-alt" ng-if="reserve" ng-click = "reserveEvent(specevent.id)" style="top:20px">
                 <span>Reserve the event</span>
