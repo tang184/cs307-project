@@ -99,8 +99,23 @@
 
             $scope.sortbyname = function() {
 				$scope.events.sort(function(a,b){
-                    return a.title.localeCompare(b.title);
+                    return b.title.localeCompare(a.title);
 				});
+                var currtime = new Date().getTime();
+                var len = $scope.events.length;
+                var cnt = 0;
+                var index = 0;
+                var newevnt = new Array();
+                while(cnt < len){
+                    if($scope.events[cnt].time >= currtime){
+                        newevnt.unshift($scope.events[cnt]);
+                    } else {
+                        newevnt.push($scope.events[cnt]);
+                    }
+                    cnt++;
+                }
+                console.log(newevnt);
+                $scope.events = newevnt;
                 $scope.updateevents($scope.events);
                 //console.log($scope.events);
             }
