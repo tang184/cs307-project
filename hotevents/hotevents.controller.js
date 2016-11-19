@@ -199,7 +199,7 @@
                         $scope.specevent = event;
                         $scope.show = true;
                         $scope.save = true;
-                        $scope.reserve = true;
+                        //$scope.reserve = true;
                         if ($rootScope.globals.currentUser.email == $scope.specevent.owner) {
                             $scope.show = false;
                         }
@@ -216,7 +216,10 @@
                             data: mydata,
                             success: function(response) {
                                 $scope.attendees = JSON.parse(response).attendees;
-                                //console.log(attendees);
+                                console.log($scope.attendees);
+                                $scope.reserve = !($.inArray($rootScope.globals.currentUser.email, $scope.attendees) > -1);
+                                //console.log($scope.reserve);
+                                $scope.$apply();
                             }
                         });
                         $scope.sowner = false;
@@ -290,6 +293,7 @@
                                     if (response == "SUCCESS") {
                                         $scope.attendees.push($rootScope.globals.currentUser.email);
                                     }
+                                    console.log($scope.attendees);
                                 }
                             });
                         }
@@ -306,7 +310,12 @@
                                 data: mydata,
                                 success: function(response){
                                     if (response == "SUCCESS") {
-                                        $scope.attendees.pop();
+                                        for(var i = $scope.attendees.length - 1; i >= 0; i--) {
+                                            if($scope.attendees[i] === $rootScope.globals.currentUser.email) {
+                                               $scope.attendees.splice(i, 1);
+                                            }
+                                        }
+                                        console.log($scope.attendees);
                                     }
                                 }
                             });
