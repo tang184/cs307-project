@@ -123,20 +123,8 @@
                                     processData: false,
                                     success: function(response) {
 
+                                        $rootScope.globals.currentUser.avatar = response;
 
-
-
-                            if (response == "SUCCESS") {
-                                $rootScope.globals.currentUser.avatar = response;
-                            } else if (response == "ERR_NOT_LOGGED_IN"){
-                                alert("login expired, please login again");
-                                $location.path('/login');
-                            } else {
-                                alert(response);
-                            }
-
-
-                                        
                                     }
                                 });
 
@@ -160,17 +148,8 @@
                                     success: function(response){
 
 
-                            if (response == "SUCCESS") {
-                                $rootScope.globals.currentUser.avatar = response;
-                            } else if (response == "ERR_NOT_LOGGED_IN"){
-                                alert("login expired, please login again");
-                                $location.path('/login');
-                            } else {
-                                alert(response);
-                            }
+                                        $rootScope.globals.currentUser.avatar = response;
 
-                                        
-                                        
                                     }
                                 });
                             }
