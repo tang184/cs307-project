@@ -338,7 +338,7 @@
                                     } else if (response == "ERR_INVALID_ARGUMENT") {
                                         alert("You haven't pay");
                                     } else if (response == "ERR_NOT_LOGGED_IN") {
-                                        alert(“login expired, please login again”);
+                                        alert("login expired, please login again");
                                         $location.path('/login'); 
                                     } else {
                                         alert(response);

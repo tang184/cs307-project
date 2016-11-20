@@ -65,11 +65,9 @@
                     success: function(response){
 
                             $scope.events = JSON.parse(response).events;
+                            
                             $scope.maxpage = Math.ceil($scope.events.length/MAXEVENTPERPAGE);
                             $scope.updateevents($scope.events);
-
-
-
 
                     }
                 });
@@ -321,7 +319,7 @@
                                     } else if (response == "ERR_INVALID_ARGUMENT") {
                                         alert("You haven't pay");
                                     } else if (response == "ERR_NOT_LOGGED_IN") {
-                                        alert(“login expired, please login again”);
+                                        alert("login expired, please login again");
                                         $location.path('/login'); 
                                     } else {
                                         alert(response);
