@@ -65,26 +65,71 @@
 
             $scope.sortbytime = function() {
                 $scope.events.sort(function(a,b){
-                  return parseInt(b.time) - parseInt(a.time);
+                  return parseInt(a.time) - parseInt(b.time);
                 });
+                var currtime = new Date().getTime();
+                var len = $scope.events.length;
+                var cnt = 0;
+                var index = 0;
+                while(cnt < len){
+                    if($scope.events[cnt].time >= currtime){
+                        break;
+                    }
+                    cnt++;
+                }
+                while(index < cnt){
+                    var temp = $scope.events.shift();
+                    $scope.events.push(temp);
+                    index++;
+                }
                 $scope.updateevents($scope.events);
                 //console.log($scope.events);
             }
 
             $scope.sortbyname = function() {
                 $scope.events.sort(function(a,b){
-                    return a.title.localeCompare(b.title);
+                    return b.title.localeCompare(a.title);
                 });
+                var currtime = new Date().getTime();
+                var len = $scope.events.length;
+                var cnt = 0;
+                var index = 0;
+                var newevnt = new Array();
+                while(cnt < len){
+                    if($scope.events[cnt].time >= currtime){
+                        newevnt.unshift($scope.events[cnt]);
+                    } else {
+                        newevnt.push($scope.events[cnt]);
+                    }
+                    cnt++;
+                }
+                //console.log(newevnt);
+                $scope.events = newevnt;
                 $scope.updateevents($scope.events);
                 //console.log($scope.events);
             }
 
             $scope.sortbypublish = function() {
-              $scope.events.sort(function(a,b){
+                $scope.events.sort(function(a,b){
                   return parseInt(a.timeposted) - parseInt(b.timeposted);
-              });
-              $scope.updateevents($scope.events);
-              //console.log($scope.events);
+                });
+                var currtime = new Date().getTime();
+                var len = $scope.events.length;
+                var cnt = 0;
+                var index = 0;
+                var newevnt = new Array();
+                while(cnt < len){
+                    if($scope.events[cnt].time >= currtime){
+                        newevnt.unshift($scope.events[cnt]);
+                    } else {
+                        newevnt.push($scope.events[cnt]);
+                    }
+                    cnt++;
+                }
+                //console.log(newevnt);
+                $scope.events = newevnt;
+                $scope.updateevents($scope.events);
+                //console.log($scope.events);
             }
 
             $scope.timeConverter = function(UNIX_timestamp){

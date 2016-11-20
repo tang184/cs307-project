@@ -39,9 +39,6 @@
                 });
             }
 
-            $scope.view_event = function(id) {
-                alert("viewevent".concat(id.toString()));
-            }
 
             $scope.pull_all_events();
 
@@ -53,6 +50,18 @@
                   var date = a.getDate();
                   var time = month + ' ' + date + ' ' +  year;
                   return time;
+            }
+
+            $scope.DetailTimeConverter = function(UNIX_timestamp) {
+                var a = new Date(UNIX_timestamp);
+                var months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+                var year = a.getFullYear();
+                var month = months[a.getMonth()];
+                var date = a.getDate();
+                var hour = a.getHours();
+                var minute = a.getMinutes();
+                var time = month + ' ' + date + ' ' +  year + '   ' + hour + ':' + minute;
+                return time;
             }
 
             $scope.showspecificevent = function(id) {
@@ -80,9 +89,9 @@
                     $scope.specevent.mapurl="img/loc_404.png";
 
                     $scope.abc = "owner";
-                    $scope.specevent.starttime = $scope.timeConverter($scope.specevent.time);
-                    $scope.specevent.endtime = $scope.timeConverter($scope.specevent.time + $scope.specevent.duration);
-                    $scope.specevent.posttime = $scope.timeConverter($scope.specevent.timeposted);
+                    $scope.specevent.starttime = $scope.DetailTimeConverter($scope.specevent.time);
+                    $scope.specevent.endtime = $scope.DetailTimeConverter($scope.specevent.time + $scope.specevent.duration);
+                    $scope.specevent.posttime = $scope.DetailTimeConverter($scope.specevent.timeposted);
                     //$scope.specevent = event;
                     //console.log($scope.specevent);
                     if ($scope.specevent.latitude) {
@@ -137,17 +146,7 @@
                             $scope.sattend = !$scope.sattend;
                         }
 
-                        $scope.timeConverter = function(UNIX_timestamp) {
-                            var a = new Date(UNIX_timestamp);
-                            var months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
-                            var year = a.getFullYear();
-                            var month = months[a.getMonth()];
-                            var date = a.getDate();
-                            var hour = a.getHours();
-                            var minute = a.getMinutes();
-                            var time = month + ' ' + date + ' ' +  year + '   ' + hour + ':' + minute;
-                            return time;
-                        }
+                        
 
                         $scope.saveEvent = function(id) {
                             $scope.save = false;
