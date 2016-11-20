@@ -29,8 +29,22 @@
                     url: 'https://yakume.xyz/api/getevent',
                     data: mydata,
                     success: function(response){
-                        var events = JSON.parse(response).events;
-                        $scope.updateevents(events);
+
+
+                        if (response == "SUCCESS") {
+                            var events = JSON.parse(response).events;
+                            $scope.updateevents(events);
+
+                        } else if (response == "ERR_NOT_LOGGED_IN"){
+                            alert("login expired, please login again");
+                            $location.path('/login');
+                        } else {
+                            alert(response);
+                        }
+
+
+
+
                     }
                 });
             }
@@ -62,7 +76,18 @@
                         data: mydata,
                         success: function(response){
 
-                            callback(response);
+
+
+                            if (response == "SUCCESS") {
+
+                                callback(response);
+
+                            } else if (response == "ERR_NOT_LOGGED_IN"){
+                                alert("login expired, please login again");
+                                $location.path('/login');
+                            } else {
+                                alert(response);
+                            }
 
                         }
                     });
@@ -113,11 +138,21 @@
                             url: 'https://yakume.xyz/api/attendees',
                             data: mydata,
                             success: function(response) {
+
+                            if (response == "SUCCESS") {
+                                
                                 $scope.attendees = JSON.parse(response).attendees;
                                 //console.log($scope.attendees);
                                 $scope.reserve = !($.inArray($rootScope.globals.currentUser.email, $scope.attendees) > -1);
                                 //console.log($scope.reserve);
                                 $scope.$apply();
+                            } else if (response == "ERR_NOT_LOGGED_IN"){
+                                alert("login expired, please login again");
+                                $location.path('/login');
+                            } else {
+                                alert(response);
+                            }
+
                             }
                         });
                         $scope.sowner = false;
@@ -152,9 +187,18 @@
                                 url: 'https://yakume.xyz/api/watchlist/save',
                                 data: mydata,
                                 success: function(response){
+
                                     if (response == "SUCCESS") {
                                         console.log("saved to watchlist!");
+                                    }else if (response == "ERR_NOT_LOGGED_IN"){
+                                        alert("login expired, please login again");
+                                        $location.path('/login');
+                                    } else {
+                                        alert(response);
                                     }
+
+
+
                                 }
                             });
                         }
@@ -170,9 +214,21 @@
                                 url: 'https://yakume.xyz/api/watchlist/delete',
                                 data: mydata,
                                 success: function(response){
+
+
+
                                     if (response == "SUCCESS") {
                                         console.log("unsaved from watchlist!");
+                                    } else if (response == "ERR_NOT_LOGGED_IN"){
+                                        alert("login expired, please login again");
+                                        $location.path('/login');
+                                    } else {
+                                        alert(response);
                                     }
+
+
+
+
                                 }
                             });
                         }
@@ -214,6 +270,8 @@
                                 url: 'https://yakume.xyz/api/event/unregister',
                                 data: mydata,
                                 success: function(response){
+
+
                                     if (response == "SUCCESS") {
                                         for(var i = $scope.attendees.length - 1; i >= 0; i--) {
                                             if($scope.attendees[i] === $rootScope.globals.currentUser.email) {
@@ -221,7 +279,14 @@
                                             }
                                         }
                                         console.log($scope.attendees);
+                                    } else if (response == "ERR_NOT_LOGGED_IN"){
+                                        alert("login expired, please login again");
+                                        $location.path('/login');
+                                    } else {
+                                        alert(response);
                                     }
+
+
                                 }
                             });
                         }
@@ -237,7 +302,20 @@
                                 url: 'https://yakume.xyz/api/user/follow',
                                 data: mydata,
                                 success: function(response){
-                                    console.log(response);
+                                            
+
+                                    if (response == "SUCCESS") {
+                                        console.log(response);
+                                    } else if (response == "ERR_NOT_LOGGED_IN"){
+                                        alert("login expired, please login again");
+                                        $location.path('/login');
+                                    } else {
+                                        alert(response);
+                                    }
+
+
+
+
                                 }
                             });
                         }
@@ -253,7 +331,18 @@
                                 url: 'https://yakume.xyz/api/user/unfollow',
                                 data: mydata,
                                 success: function(response){
-                                    console.log(response);
+
+                                    if (response == "SUCCESS") {
+                                        console.log(response);
+                                    } else if (response == "ERR_NOT_LOGGED_IN"){
+                                        alert("login expired, please login again");
+                                        $location.path('/login');
+                                    } else {
+                                        alert(response);
+                                    }
+
+                                    
+                                    
                                 }
                             });
                         }
@@ -268,7 +357,17 @@
                                 url: 'https://yakume.xyz/api/deleteevent',
                                 data: mydata,
                                 success: function(response){
-                                    console.log(response);
+
+                                    if (response == "SUCCESS") {
+                                        console.log(response);
+                                    } else if (response == "ERR_NOT_LOGGED_IN"){
+                                        alert("login expired, please login again");
+                                        $location.path('/login');
+                                    } else {
+                                        alert(response);
+                                    }
+
+                                    
                                 }
                             });
                         }

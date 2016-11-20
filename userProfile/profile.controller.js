@@ -36,7 +36,12 @@
                         url: 'https://yakume.xyz/api/changeusername',
                         data: mydata,
                         success: function(response){
-                            if (response != "SUCCESS") {
+                            if (response == "SUCCESS") {
+                                console.log("saved to watchlist");
+                            } else if (response == "ERR_NOT_LOGGED_IN"){
+                                alert("login expired, please login again");
+                                $location.path('/login');
+                            } else {
                                 alert(response);
                             }
                         }
@@ -50,7 +55,12 @@
                             url: 'https://yakume.xyz/api/avatar/update',
                             data: postimage,
                             success: function(response){
-                                if (response != "SUCCESS") {
+                                if (response == "SUCCESS") {
+                                    console.log("saved to watchlist");
+                                } else if (response == "ERR_NOT_LOGGED_IN"){
+                                    alert("login expired, please login again");
+                                    $location.path('/login');
+                                } else {
                                     alert(response);
                                 }
                             }
