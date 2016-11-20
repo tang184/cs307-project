@@ -64,16 +64,9 @@
                     data: mydata,
                     success: function(response){
 
-                        if (response == "SUCCESS") {
                             $scope.events = JSON.parse(response).events;
                             $scope.maxpage = Math.ceil($scope.events.length/MAXEVENTPERPAGE);
                             $scope.updateevents($scope.events);
-                        } else if (response == "ERR_NOT_LOGGED_IN"){
-                            alert("login expired, please login again");
-                            $location.path('/login');
-                        } else {
-                            alert(response);
-                        }
 
 
 
@@ -175,15 +168,9 @@
                         data: mydata,
                         success: function(response){
 
-                           
-                            if (response == "SUCCESS") {
+
                                  callback(response);
-                            } else if (response == "ERR_NOT_LOGGED_IN"){
-                                alert("login expired, please login again");
-                                $location.path('/login');
-                            } else {
-                                alert(response);
-                            }
+
                         }
                     });
                 }
@@ -235,18 +222,12 @@
                             success: function(response) {
 
 
-                            if (response == "SUCCESS") {
                                 $scope.attendees = JSON.parse(response).attendees;
                                 //console.log($scope.attendees);
                                 $scope.reserve = !($.inArray($rootScope.globals.currentUser.email, $scope.attendees) > -1);
                                 //console.log($scope.reserve);
                                 $scope.$apply();
-                            } else if (response == "ERR_NOT_LOGGED_IN"){
-                                alert("login expired, please login again");
-                                $location.path('/login');
-                            } else {
-                                alert(response);
-                            }
+
 
 
                             }

@@ -82,9 +82,19 @@
                         url: 'https://yakume.xyz/api/changepassword',
                         data: mydata,
                         success: function(response){
+
+
                             if (response == "SUCCESS") {
                                 $scope.updatePassword();
+                            } else if (response == "ERR_NOT_LOGGED_IN"){
+                                alert("login expired, please login again");
+                                $location.path('/login');
+                            } else {
+                                alert(response);
                             }
+
+
+
                         }
                     });
                 }
@@ -112,7 +122,21 @@
                                     contentType: false,
                                     processData: false,
                                     success: function(response) {
-                                        $rootScope.globals.currentUser.avatar = response;
+
+
+
+
+                            if (response == "SUCCESS") {
+                                $rootScope.globals.currentUser.avatar = response;
+                            } else if (response == "ERR_NOT_LOGGED_IN"){
+                                alert("login expired, please login again");
+                                $location.path('/login');
+                            } else {
+                                alert(response);
+                            }
+
+
+                                        
                                     }
                                 });
 
@@ -134,7 +158,19 @@
                                     contentType: false,
                                     processData: false,
                                     success: function(response){
-                                        $rootScope.globals.currentUser.avatar = response;
+
+
+                            if (response == "SUCCESS") {
+                                $rootScope.globals.currentUser.avatar = response;
+                            } else if (response == "ERR_NOT_LOGGED_IN"){
+                                alert("login expired, please login again");
+                                $location.path('/login');
+                            } else {
+                                alert(response);
+                            }
+
+                                        
+                                        
                                     }
                                 });
                             }
