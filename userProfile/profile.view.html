@@ -3,13 +3,13 @@
     <li class="col-md-6" ng-class="{active: tab == 1}">
         <a href="" ng-click="tab = 1" class="list-group-item">
             <i class="glyph-icon font-red icon-bullhorn"></i>
-            Personal Information
+            {{'Personal Information'|translate}}
         </a>
     </li>
     <li class="col-md-6" ng-class="{active: tab == 2}">
         <a href="" ng-click="tab = 2" class="list-group-item">
             <i class="glyph-icon icon-dashboard"></i>
-            Account Settings
+            {{'Account Settings'|translate}}
         </a>
     </li>
 
@@ -88,7 +88,7 @@
     <div class="panel">
     <div class="panel-body">
         <h3 class="title-hero">
-            My Events
+            {{'My Events'|translate}}
         </h3>
         <div class="example-box-wrapper">
             <div class="row">
@@ -97,7 +97,7 @@
                     <div class="panel">
                         <div class="panel-body">
                             <h3 class="title-hero">
-                                Events I creat
+                                {{'Events I create'|translate}}
                             </h3>
                             <div class="example-box-wrapper">
                                 <div class="timeline-box timeline-box-left">
@@ -145,7 +145,7 @@
                                             <div class="popover right">
                                                 <div class="arrow"></div>
                                                 <div class="popover-content">
-                                                    <div class="tl-label bs-label label-danger">Meeting</div>
+                                                    <div class="tl-label bs-label label-danger">{{'Meeting'|translate}}</div>
                                                     <p class="tl-content">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. </p>
                                                     <div class="tl-time">
                                                         <i class="glyph-icon icon-clock-o"></i>
@@ -164,7 +164,7 @@
                     <div class="panel">
                         <div class="panel-body">
                             <h3 class="title-hero">
-                                Events I attend
+                                {{'Events I attend'|translate}}
                             </h3>
                             <div class="example-box-wrapper">
                                 <div class="timeline-box timeline-box-right">
@@ -176,7 +176,7 @@
                                             <div class="popover left">
                                                 <div class="arrow"></div>
                                                 <div class="popover-content">
-                                                    <div class="tl-label bs-label label-success">Meeting</div>
+                                                    <div class="tl-label bs-label label-success">{{'Meeting'|translate}}</div>
                                                     <p class="tl-content">Quisque volutpat mattis eros. Nullam malesuada erat ut turpis.</p>
                                                     <div class="tl-time">
                                                         <i class="glyph-icon icon-clock-o"></i>
@@ -232,50 +232,6 @@
     </div>
 </div>
     </div>
-	
-	
-    <div class="content-box mrg15B">
-    <div class="panel">
-    <div class="panel-body">
-        <h3 class="title-hero">
-            My Timeline
-        </h3>
-        <div class="example-box-wrapper">
-            <div class="row">
-                    <div class="panel">
-                        <div class="panel-body">
-                            <div class="example-box-wrapper">
-                                <div class="timeline-box timeline-box-left">
-									<div ng-repeat="news in newsfeed">
-										<div class="tl-row">
-											<div class="tl-item float-right">
-												<div class="tl-icon bg-red">
-													<i class="glyph-icon icon-toggle-on"></i>
-												</div>
-												<div class="popover right">
-													<div class="arrow"></div>
-													<div class="popover-content">
-														<div class="tl-label bs-label label-info">{{news.action}}</div>
-														<p class="tl-content">{{news.user.name}} {{news.action}} {{news.anevent.title}}</p>
-														<div class="tl-time">
-															<i class="glyph-icon icon-clock-o"></i>
-															{{news.timeshow}}
-														</div>
-													</div>
-												</div>
-											</div>
-										</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-            </div>
-        </div>
-    </div>
-</div>
-    </div>
 
     </div>
 
@@ -286,51 +242,52 @@
         <div class="content-box">
             <form class="form-horizontal pad15L pad15R bordered-row">
                 <div class="form-group remove-border">
-                    <label class="col-sm-3 control-label">User Name:</label>
+                    <label class="col-sm-3 control-label">{{'User name'|translate}}:</label>
                     <div class="col-sm-6">
-                        <input type="text" class="form-control"  id="" ng-disabled="!isEdit" ng-model="globals.currentUser.username" placeholder="First name...">
+                        <input type="text" class="form-control"  id="" ng-disabled="!isEdit" ng-model="globals.currentUser.username" placeholder="Username...">
                     </div>
                 </div>
 
                 <div class="form-group">
-                    <label class="col-sm-3 control-label">Email:</label>
+                    <label class="col-sm-3 control-label">{{'Email'|translate}}:</label>
                     <div class="col-sm-6">
                         <input type="text" class="form-control" id="" ng-model="globals.currentUser.email" ng-disabled="true" placeholder="Email address...">
                     </div>
                 </div>
                 <div class="form-group">
-                    <label class="col-sm-3 control-label">City:</label>
+                    <label class="col-sm-3 control-label">{{'City'|translate}}:</label>
                     <div class="col-sm-6">
                         <input type="text" class="form-control" id="" ng-disabled="!isEdit" ng-model="city" placeholder="City...">
                     </div>
                 </div>
                 <div class="form-group">
-                    <label class="col-sm-3 control-label">About me:</label>
+                    <label class="col-sm-3 control-label">{{'About me'|translate}}:</label>
                     <div class="col-sm-6">
                         <textarea name="" rows="3" class="form-control textarea-autosize" ng-disabled="!isEdit" ng-model="aboutme"></textarea>
                     </div>
                 </div>
-                <div class="form-group" id="uploadForm">
-                    <label class="col-sm-3 control-label">Profile Avatar:</label>
+                <div class="form-group">
+                    <label class="col-sm-3 control-label">{{'Profile Avatar'|translate}}:</label>
                     <div class="col-sm-6">
                         <label for="file" class="custom-file-upload">
-                            <i class="fa fa-cloud-upload"></i> Upload New Profile Avatar
+                            <i class="fa fa-cloud-upload"></i> {{'Upload New Profile Avatar'|translate}}
                         </label>
-                        <input type="file" ng-disabled="!isEdit" name="file" id="file" />
+                        <input type="file" ng-disabled="!isEdit" name="file" id="file" accept="image/*"/>
                     </div>
                 </div>
-                
+    <!-- The fileupload-buttonbar contains buttons to add/delete files and start/cancel the upload -->
+
             </form>
             <div ng-if="isEdit">
                 <div class="button-pane mrg20T">
-                    <button class="btn btn-info" ng-click="SaveProfile()">Save</button>
-                    <button class="btn btn-link font-gray-dark" ng-click="cancelProfile()">Cancel</button>
+                    <button class="btn btn-info" ng-click="SaveProfile()">{{'Save'|translate}}</button>
+                    <button class="btn btn-link font-gray-dark" ng-click="cancelProfile()">{{'Cancel'|translate}}</button>
                 </div>
             </div>
             <div ng-if="!isEdit">
                 <div class="button-pane mrg20T">
-                    <button class="btn btn-info" ng-click="editProfile()">Edit Profile</button>
-                    <button class="btn btn-info" ng-click="changePassword()">Change Password</button>
+                    <button class="btn btn-info" ng-click="editProfile()">{{'Edit Profile'|translate}}</button>
+                    <button class="btn btn-info" ng-click="changePassword()">{{'Change Password'|translate}}</button>
                 </div>
             </div>
         </div>
