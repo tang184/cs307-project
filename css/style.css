@@ -48,7 +48,7 @@ h1, h2 {
     padding: 1em;
     position: relative;
     width: 60%;
-    height: 500px;
+    height: 350px;
 }
 
 /* -------------------------------- 
@@ -807,13 +807,6 @@ select#soflow, select#soflow-color {
     display: inline-block;
     padding: 6px 12px;
     cursor: pointer;
-}
-
-
-.thumbnail-box + .thumb-pane {
-    margin-top: -20px;
-    margin-bottom: 20px;
-    height: 100px;
 }
 
 

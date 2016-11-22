@@ -3,137 +3,20 @@
     <h1 class="title-search" style="text-align: center;">
         {{'Search Events'|translate}}
     </h1>
-</div>
+</div>    
 <div class = "search place">
     <form class="form-wrapper">
-        <input type="text" id="search" ng-model="key" placeholder="Search for..." required>
-        <input type="submit" value="go" ng-click="searchevent()" id="submit">
-        <label style="text-align:left"><a style="cursor:pointer" ng-click="showadvance()">{{'Advance'|translate}}</a></label>
-
-        <div ng-show="advance">
-            <br>
-            <label class="col-md-3" style="margin:10px; top:4px">Zipcode: </label>
-            <input class="col-md-7"style="height:20px; margin:10px; width:60%" type="number" id="search" ng-model="zip" placeholder="Enter your Zipcode">
-            <label class="col-md-3" style="margin:10px; top:4px">Tag: </label>
-            <input class="col-md-7"style="height:20px; margin:10px; width:60%" type="text" id="search" ng-model="tag" placeholder="Enter your Tag">
-
-        </div>
-
+        <input type="text" id="search" placeholder="Search for..." required>
+        <input type="submit" value="go" id="submit">
+        <label>{{'search by'|translate}}:</label>
+        <select id="soflow">
+          <option value="title" select>{{'Event Name'|translate}}</option>
+          <option value="time">{{'time'|translate}}</option>
+          <option value="location" >{{'Location'|translate}}</option>
+          <option value="tag">{{'tag'|translate}}</option>
+        </select>
     </form>
 
+
 </div>
 
-<div ng-if="showresult"class="panel">
-    <div class="panel-body">
-            <h3 class="title-hero col-md-10" >{{'Search Events'|translate}}</h2>
-
-        <div class="dropdown" style="top:-5px">
-            <a style="cursor:pointer" class="btn btn-default" title="" data-toggle="dropdown">
-                <span class="caret"></span>
-                Sort
-            </a>
-            <ul class="dropdown-menu">
-                <li>
-                    <a style="cursor:pointer" ng-click="sortbytime()"title="">
-                        Sort by event time
-                    </a>
-                </li>
-                <li>
-                    <a style="cursor:pointer" ng-click="sortbyname()">
-                        Sort by name
-                    </a>
-                </li>
-                <li>
-                    <a style="cursor:pointer" ng-click="sortbypublish()">
-                        Sort by publish time
-                    </a>
-                </li>
-            </ul>
-        </div>
-        <div class="clearfix">
-            <ul id="portfolio-grid" class="reset-ul row">
-                <div ng-repeat="event in allevents">
-                    <li class="col-lg-3 col-sm-6 col-md-4" style="cursor:pointer" ng-click="showspecificevent(event.id)">
-                        <div class="thumbnail-box-wrapper">
-                            <div class="thumbnail-box">
-                                <div class="thumb-content">
-                                    <div class="center-vertical">
-                                        <div class="center-content">
-                                            <i class="icon-helper icon-center animated zoomInUp font-white glyph-icon icon-linecons-note"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="thumb-overlay bg-black"></div>
-                                <img style="height:132.95px" src="{{event.eventimage}}" alt="Image Not Found">
-                            </div>
-                            <div class="thumb-pane">
-                                <h3 class="thumb-heading animated rollIn">
-                                    <a title="">
-                                        {{event.title}}
-                                    </a>
-                                    <small>{{event.starttime}}</small>
-                                </h3>
-                            </div>
-                        </div>
-                    </li>
-                </div>
-            </ul>
-            <div class="button-pane mrg20T">
-                <button class="btn btn-info" ng-click="gotoPrevPage()" ng-disabled="currentpage <= 1"><</button>
-                {{currentpage}} / {{maxpage}}
-                <button class="btn btn-info" ng-click="gotoNextPage()" ng-disabled="currentpage >= maxpage">></button>
-            </div>
-        </div>
-    </div>
-</div>
-
-<script type="text/ng-template" id="templateId">
-
-        <h1> {{specevent.title}} </h1>
-        <br>
-        <br>
-        <div class="col-md-6">
-            <div class="float-left" style="text-align: left;">
-            <label>Time Begin:</label>{{specevent.starttime}}<br>
-            <label>Time Ends:</label>{{specevent.endtime}}<br>
-            <label>Location:</label>{{specevent.address}}<br>
-            <label>Price:</label>0<br>
-            <label>Event creater:</label><a style="cursor:pointer" ng-click="showownerinfo()">{{specevent.owner}}</a><br>
-            <div ng-if="sowner">
-                <button ng-if="!follow" ng-click="Follow()">Follow User</button>
-                <button ng-if="follow" ng-click="unFollow()">Unfollow User</button>
-            </div>
-            <label>Event creat time:</label>{{specevent.posttime}}<br>
-            <label>Description:</label>{{specevent.description}}<br>
-            <label ng-if="!sattend" ng-click="showattend()" style="cursor:pointer">Show Attendees</label><br>
-            <div ng-if="sattend">
-                <label ng-click="showattend()" style="cursor:pointer">Hide Attendee:</label>
-                <div ng-repeat="a in attendees">
-                    <p>{{a}}</p>
-                </div>
-            </div>
-
-            <button class="btn btn-round btn-default" ng-if="save" ng-click = "saveEvent(specevent.id)" style="top:20px">
-                <div class="glyph-icon icon-star-o" style="color:yellow"></div>
-            </button>
-            <button class="btn btn-round btn-default" ng-if="!save" ng-click = "unsaveEvent(specevent.id)" style="top:20px">
-                <div class="glyph-icon icon-star" style="color:yellow"></div>
-            </button>
-            <button class="btn btn-alt btn-hover btn-blue-alt" ng-if="reserve" ng-click = "reserveEvent(specevent.id)" style="top:20px">
-                <span>Reserve the event</span>
-                <i class="glyph-icon icon-arrow-right"></i>
-            </button>
-            <button class="btn btn-alt btn-hover btn-blue-alt" ng-if="!reserve" ng-click = "quitEvent(specevent.id)" style="top:20px">
-                <span>Quit the event</span>
-                <i class="glyph-icon icon-arrow-right"></i>
-            </button>
-            <button class="btn btn-alt btn-hover btn-red-alt bg-red" ng-if="!show" ng-click = "deleteEvent(specevent.id)" style="top:20px">
-                <span>Delete the event</span>
-                <i class="glyph-icon icon-arrow-right"></i>
-            </button>
-            </div>
-        </div>
-        <div class="col-md-6">
-            <img ng-src="{{specevent.mapurl}}"></img>
-        </div>
-</script>

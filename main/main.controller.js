@@ -13,14 +13,31 @@
         	$scope.username = $rootScope.globals.currentUser.username;
         	$scope.image = "https://yakume.xyz/img/" + $rootScope.globals.currentUser.image;
         	//console.log($rootscope.globals);
-	    	$.ajax({
-                type: "GET",
-                url: 'https://yakume.xyz/api/myevents',
-                success: function(response){
-                    console.log(response);
-                    $rootScope.globals.myevents = JSON.parse(response).events;
-                }
-            });
+/*	    $.ajax({
+                        type: "GET",
+                        url: 'https://yakume.xyz/api/myevents',
+                        success: function(response){
+                            console.log(response);
+                            var events_attend_num = JSON.parse(response).events;
+                            $rootScope.globals.event_attend = [];
+                            $.each(events_attend_num, function (i, item) {
+                                var mydata = $.param({
+                                    eventid : item
+                                });
+                                $.ajax({
+                                    type: "GET",
+                                    url: 'https://yakume.xyz/api/getevent',
+                                    data: mydata,
+                                    success: function(response){
+                                        var t = JSON.parse(response);
+                                        $rootScope.globals.event_attend.push(t);
+                                    }
+                                });
+                            })
+
+
+                        }
+                    });*/
 
         	$(document).ready(function() {
 

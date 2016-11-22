@@ -4,9 +4,9 @@
     angular
         .module('mainApp')
         .controller('ProfileController', ProfileController);
-
-        ProfileController.$inject = ['$scope', '$rootScope','$location','$cookies', 'FlashService', 'AuthenticationService'];
-            function ProfileController($scope, $rootScope, $location, $cookies, FlashService, AuthenticationService) {
+			
+        ProfileController.$inject = ['$scope', '$rootScope','$location','$cookies', 'FlashService', 'AuthenticationService', 'EventService'];
+            function ProfileController($scope, $rootScope, $location, $cookies, FlashService, AuthenticationService, EventService) {
 
                 $("#bodyBackground").css('background', 'white');
 
@@ -36,31 +36,21 @@
                         url: 'https://yakume.xyz/api/changeusername',
                         data: mydata,
                         success: function(response){
-                            if (response == "SUCCESS") {
-                                console.log("saved to watchlist");
-                            } else if (response == "ERR_NOT_LOGGED_IN"){
-                                alert("login expired, please login again");
-                                $location.path('/login');
-                            } else {
+                            if (response != "SUCCESS") {
                                 alert(response);
                             }
                         }
                     });
-                    if ($rootScope.globals.currentUser.avatar) {
+                    if ($scope.profileimage) {
                         var postimage = $.param({
-                            filename: $rootScope.globals.currentUser.avatar
+                            filename: $scope.profileimage
                         });
                         $.ajax({
                             type: "POST",
                             url: 'https://yakume.xyz/api/avatar/update',
                             data: postimage,
                             success: function(response){
-                                if (response == "SUCCESS") {
-                                    console.log("saved to watchlist");
-                                } else if (response == "ERR_NOT_LOGGED_IN"){
-                                    alert("login expired, please login again");
-                                    $location.path('/login');
-                                } else {
+                                if (response != "SUCCESS") {
                                     alert(response);
                                 }
                             }
@@ -72,6 +62,8 @@
                 $scope.cancelProfile= function() {
                     $scope.isEdit = false;
                 }
+				
+				
 
                 $scope.uploadnewpass = function() {
                     var mydata = $.param({
@@ -82,19 +74,9 @@
                         url: 'https://yakume.xyz/api/changepassword',
                         data: mydata,
                         success: function(response){
-
-
                             if (response == "SUCCESS") {
                                 $scope.updatePassword();
-                            } else if (response == "ERR_NOT_LOGGED_IN"){
-                                alert("login expired, please login again");
-                                $location.path('/login');
-                            } else {
-                                alert(response);
                             }
-
-
-
                         }
                     });
                 }
@@ -122,9 +104,7 @@
                                     contentType: false,
                                     processData: false,
                                     success: function(response) {
-
                                         $rootScope.globals.currentUser.avatar = response;
-
                                     }
                                 });
 
@@ -146,10 +126,7 @@
                                     contentType: false,
                                     processData: false,
                                     success: function(response){
-
-
                                         $rootScope.globals.currentUser.avatar = response;
-
                                     }
                                 });
                             }
@@ -187,7 +164,61 @@
                     }
                 }
 
+				$scope.pull_newsfeed = function() {
+					var mydata = $.param({
+					});
 
+					$.ajax({
+						type: "GET",
+						url: 'https://yakume.xyz/api/newsfeed',
+						data: mydata,
+						success: function(response){
+							// console.log(response);
+							$scope.newsfeed = JSON.parse(response).newsfeed;
+							$scope.newsfeed.sort(function(a, b){return a.time - b.time});
+							var id;
+							var news;
+							var rest = $scope.newsfeed.length * 2;
+							
+							var callback_generator_user = function(outside_news) {
+								var inside_news = outside_news;
+								return function(profile) {
+									inside_news.user = profile;
+									rest = rest - 1;
+									if (rest == 0) {
+										$scope.$apply();
+									}
+								};
+							};
+							var callback_generator_event = function(outside_news) {
+								var inside_news = outside_news;
+								return function(anevent) {
+									inside_news.anevent = anevent;
+									rest = rest - 1;
+									if (rest == 0) {
+										$scope.$apply();
+									}
+								};
+							};
+							var callback_function;
+							
+							for (id in $scope.newsfeed) {
+								news = $scope.newsfeed[id];
+								news.order = id;
+								news.timeshow = EventService.timeConverter(news.time);
+								
+								callback_function = callback_generator_user(news);
+								
+								EventService.pull_user_by_email(news.email, callback_function);
+								
+								callback_function = callback_generator_event(news);
+								
+								EventService.pull_event_by_ID(news.event, callback_function);
+							}
+						}
+					});
+				}
+				$scope.pull_newsfeed();
         }
 
     })();
