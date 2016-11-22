@@ -14,11 +14,6 @@
             $scope.updateevents = function(eventlist) {
                 for (var i = 0; i < 5; i++) {
                     eventlist[i].time = $scope.timeConverter(eventlist[i].time);
-                    if (eventlist[i].images.length == 0) {
-                        eventlist[i].eventimage = "assets/image-resources/stock-images/img-17.jpg";
-                    } else {
-                        eventlist[i].eventimage = "https://yakume.xyz/img/" + eventlist[i].images[0];
-                    }
                     $scope.allevents.push(eventlist[i]);
                 }
                 //$scope.allevents = eventlist;
@@ -34,35 +29,14 @@
                     url: 'https://yakume.xyz/api/getevent',
                     data: mydata,
                     success: function(response){
-                        $scope.events = JSON.parse(response).events;
-                        $scope.sortbytime();
+
+
+                            var events = JSON.parse(response).events;
+                            $scope.updateevents(events);
+
 
                     }
                 });
-            }
-
-            $scope.sortbytime = function() {
-                $scope.events.sort(function(a,b){
-                  return parseInt(a.time) - parseInt(b.time);
-                });
-                var currtime = new Date().getTime();
-                var len = $scope.events.length;
-                var cnt = 0;
-                var index = 0;
-                while(cnt < len){
-                    if($scope.events[cnt].time >= currtime){
-                        break;
-                    }
-                    cnt++;
-                }
-                while(index < cnt){
-                    var temp = $scope.events.shift();
-                    $scope.events.push(temp);
-                    index++;
-                }
-                $scope.currentpage = 1;
-                $scope.updateevents($scope.events);
-                //console.log($scope.events);
             }
 
 

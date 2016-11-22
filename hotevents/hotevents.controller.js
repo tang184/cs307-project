@@ -94,7 +94,6 @@
                     $scope.events.push(temp);
                     index++;
                 }
-                $scope.currentpage = 1;
                 $scope.updateevents($scope.events);
                 //console.log($scope.events);
             }
@@ -118,7 +117,6 @@
                 }
                 //console.log(newevnt);
                 $scope.events = newevnt;
-                $scope.currentpage = 1;
                 $scope.updateevents($scope.events);
                 //console.log($scope.events);
             }
@@ -142,7 +140,6 @@
                 }
                 //console.log(newevnt);
                 $scope.events = newevnt;
-                $scope.currentpage = 1;
                 $scope.updateevents($scope.events);
                 //console.log($scope.events);
             }

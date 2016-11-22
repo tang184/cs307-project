@@ -26,16 +26,16 @@
 
             $scope.gotoPrevPage = function() {
                 $scope.currentpage -= 1;
-                $scope.updateevents($scope.events);
+                $scope.update($scope.events);
             }
 
             $scope.gotoNextPage = function() {
                 $scope.currentpage += 1;
-                $scope.updateevents($scope.events);
+                $scope.update($scope.events);
             }
 
 
-            $scope.updateevents = function(eventlist) {
+            $scope.update = function(eventlist) {
                 $scope.allevents = [];
                 var startpos = ($scope.currentpage - 1) * MAXEVENTPERPAGE;
                 var endpos = ($scope.currentpage) * MAXEVENTPERPAGE;
@@ -82,7 +82,6 @@
                     $scope.events.push(temp);
                     index++;
                 }
-                $scope.currentpage = 1;
                 $scope.updateevents($scope.events);
                 //console.log($scope.events);
             }
@@ -106,7 +105,6 @@
                 }
                 //console.log(newevnt);
                 $scope.events = newevnt;
-                $scope.currentpage = 1;
                 $scope.updateevents($scope.events);
                 //console.log($scope.events);
             }
@@ -130,7 +128,6 @@
                 }
                 //console.log(newevnt);
                 $scope.events = newevnt;
-                $scope.currentpage = 1;
                 $scope.updateevents($scope.events);
                 //console.log($scope.events);
             }
@@ -173,7 +170,6 @@
                     url: 'https://yakume.xyz/api/event/search',
                     data: mydata,
                     success: function(response){
-                        $scope.currentpage = 1;
                         var arr = JSON.parse(response).events;
                         $scope.searchResult = [];
                         $.each(arr, function (i, item) {
@@ -206,7 +202,7 @@
                 $scope.search(function(response) {
                     $scope.maxpage = Math.ceil(response.length/MAXEVENTPERPAGE);
                     $scope.events = response;
-                    $scope.updateevents(response);
+                    $scope.update(response);
                 })
 
             }
