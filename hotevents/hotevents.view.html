@@ -1,26 +1,26 @@
 <div class="panel">
     <div class="panel-body">
-            <h3 class="title-hero col-md-10" >Hot Events</h2>
+            <h3 class="title-hero col-md-10" >{{'Hot Events'|translate}}</h2>
 
         <div class="dropdown" style="top:-5px">
             <a style="cursor:pointer" class="btn btn-default" title="" data-toggle="dropdown">
                 <span class="caret"></span>
-                Sort
+                {{'Sort'|translate}}
             </a>
             <ul class="dropdown-menu">
                 <li>
                     <a style="cursor:pointer" ng-click="sortbytime()"title="">
-                        Sort by event time
+                        {{'Sort by event time'|translate}}
                     </a>
                 </li>
                 <li>
                     <a style="cursor:pointer" ng-click="sortbyname()">
-                        Sort by name
+                        {{'Sort by name'|translate}}
                     </a>
                 </li>
                 <li>
                     <a style="cursor:pointer" ng-click="sortbypublish()">
-                        Sort by publish time
+                        {{'Sort by publish time'|translate}}
                     </a>
                 </li>
             </ul>
@@ -28,12 +28,12 @@
         <div class="portfolio-controls mrg10L mrg10R radius-all-4 portfolio-nav-alt bg-blue clearfix controls">
             <div class="container text-center">
                 <ul class="float-none">
-                    <li class="filter active">View all</li>
-                    <li class="filter">Art &amp; Music</li>
-                    <li class="filter">Sport</li>
-                    <li class="filter">Call Out</li>
-                    <li class="filter">Meeting</li>
-                    <li class="filter">Other</li>
+                    <li class="filter active">{{'View all'|translate}}</li>
+                    <li class="filter">{{'Art &amp; Music'|translate}}</li>
+                    <li class="filter">{{'Sports'|translate}}</li>
+                    <li class="filter">{{'Call Out'|translate}}</li>
+                    <li class="filter">{{'Meeting'|translate}}</li>
+                    <li class="filter">{{'Others'|translate}}</li>
                 </ul>
             </div>
         </div>
@@ -51,7 +51,7 @@
                                     </div>
                                 </div>
                                 <div class="thumb-overlay bg-black"></div>
-                                <img style="max-height:132.95px" src="{{event.eventimage}}" alt="Image Not Found">
+                                <img style="height:132.95px" src="{{event.eventimage}}" alt="Image Not Found">
                             </div>
                             <div class="thumb-pane">
                                 <h3 class="thumb-heading animated rollIn">
@@ -85,16 +85,37 @@
             <label>Time Ends:</label>{{specevent.endtime}}<br>
             <label>Location:</label>{{specevent.address}}<br>
             <label>Price:</label>0<br>
-            <label>Event creater:</label>{{specevent.owner}}<br>
+            <label>Event creater:</label><a style="cursor:pointer" ng-click="showownerinfo()">{{specevent.owner}}</a><br>
+            <div ng-if="sowner">
+                <button ng-if="!follow" ng-click="Follow()">Follow User</button>
+                <button ng-if="follow" ng-click="unFollow()">Unfollow User</button>
+            </div>
             <label>Event creat time:</label>{{specevent.posttime}}<br>
             <label>Description:</label>{{specevent.description}}<br>
+            <label ng-if="!sattend" ng-click="showattend()" style="cursor:pointer">Show Attendees</label><br>
+            <div ng-if="sattend">
+                <label ng-click="showattend()" style="cursor:pointer">Hide Attendee:</label>
+                <div ng-repeat="a in attendees">
+                    <p>{{a}}</p>
+                </div>
+            </div>
 
-            <button class="btn btn-alt btn-hover btn-blue-alt" ng-if="show && reserve" ng-click = "reserveEvent(specevent.id)" style="top:20px">
+            <button class="btn btn-round btn-default" ng-if="save" ng-click = "saveEvent(specevent.id)" style="top:20px">
+                <div class="glyph-icon icon-star-o" style="color:yellow"></div>
+            </button>
+            <button class="btn btn-round btn-default" ng-if="!save" ng-click = "unsaveEvent(specevent.id)" style="top:20px">
+                <div class="glyph-icon icon-star" style="color:yellow"></div>
+            </button>
+            <button class="btn btn-alt btn-hover btn-blue-alt" ng-if="reserve" ng-click = "reserveEvent(specevent.id)" style="top:20px">
                 <span>Reserve the event</span>
                 <i class="glyph-icon icon-arrow-right"></i>
             </button>
-            <button class="btn btn-alt btn-hover btn-blue-alt" ng-if="show && !reserve" ng-click = "quitEvent(specevent.id)" style="top:20px">
+            <button class="btn btn-alt btn-hover btn-blue-alt" ng-if="!reserve" ng-click = "quitEvent(specevent.id)" style="top:20px">
                 <span>Quit the event</span>
+                <i class="glyph-icon icon-arrow-right"></i>
+            </button>
+            <button class="btn btn-alt btn-hover btn-red-alt bg-red" ng-if="!show" ng-click = "deleteEvent(specevent.id)" style="top:20px">
+                <span>Delete the event</span>
                 <i class="glyph-icon icon-arrow-right"></i>
             </button>
             </div>

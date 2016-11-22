@@ -1,7 +1,7 @@
 <div class="panel">
     <div class="panel-body">
         <h3 class="title-hero">
-            Hot Events
+            {{'Hot Events'|translate}}
         </h3>
         <div class="example-box-wrapper">
             <div class="row">
@@ -20,7 +20,7 @@
                                             </div>
                                         </div>
                                         <div class="thumb-overlay bg-black"></div>
-                                        <img src="assets/image-resources/stock-images/img-17.jpg" alt="">
+                                        <img style="height:132.95px" src="{{event.eventimage}}" alt="">
                                     </div>
                                     <div class="thumb-pane">
                                         <h3 class="thumb-heading animated rollIn">
@@ -40,7 +40,7 @@
                                         <div class="center-vertical">
                                             <div class="center-content">
                                                 <h3 class="thumb-heading animated flipInX" >
-                                                    More Events
+                                                    {{'More Events'|translate}}
                                                 </h3>
                                             </div>
                                         </div>
@@ -53,7 +53,7 @@
                             </div>
                         </li>
                     </ul>
-                </div>               
+                </div>
             </div>
         </div>
     </div>
@@ -63,7 +63,7 @@
 <div class="panel">
     <div class="panel-body">
         <h3 class="title-hero">
-            My Events
+            {{'My Events'|translate}}
         </h3>
         <div class="example-box-wrapper">
             <div class="row">
@@ -72,7 +72,7 @@
                     <div class="panel">
                         <div class="panel-body">
                             <h3 class="title-hero">
-                                Events I creat
+                                {{'Events I create'|translate}}
                             </h3>
                             <div class="example-box-wrapper">
                                 <div class="timeline-box timeline-box-left">
@@ -120,7 +120,7 @@
                                             <div class="popover right">
                                                 <div class="arrow"></div>
                                                 <div class="popover-content">
-                                                    <div class="tl-label bs-label label-danger">Meeting</div>
+                                                    <div class="tl-label bs-label label-danger">{{'Meeting'|translate}}</div>
                                                     <p class="tl-content">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. </p>
                                                     <div class="tl-time">
                                                         <i class="glyph-icon icon-clock-o"></i>
@@ -139,7 +139,7 @@
                     <div class="panel">
                         <div class="panel-body">
                             <h3 class="title-hero">
-                                Events I attend
+                                {{'Events I attend'|translate}}
                             </h3>
                             <div class="example-box-wrapper">
                                 <div class="timeline-box timeline-box-right">
@@ -151,7 +151,7 @@
                                             <div class="popover left">
                                                 <div class="arrow"></div>
                                                 <div class="popover-content">
-                                                    <div class="tl-label bs-label label-success">Meeting</div>
+                                                    <div class="tl-label bs-label label-success">{{'Meeting'|translate}}</div>
                                                     <p class="tl-content">Quisque volutpat mattis eros. Nullam malesuada erat ut turpis.</p>
                                                     <div class="tl-time">
                                                         <i class="glyph-icon icon-clock-o"></i>
@@ -220,23 +220,42 @@
             <label>Time Ends:</label>{{specevent.endtime}}<br>
             <label>Location:</label>{{specevent.address}}<br>
             <label>Price:</label>0<br>
-            <label>Event creater:</label>{{specevent.owner}}<br>
+            <label>Event creater:</label><a style="cursor:pointer" ng-click="showownerinfo()">{{specevent.owner}}</a><br>
+            <div ng-if="sowner">
+                <button ng-if="!follow" ng-click="Follow()">Follow User</button>
+                <button ng-if="follow" ng-click="unFollow()">Unfollow User</button>
+            </div>
             <label>Event creat time:</label>{{specevent.posttime}}<br>
             <label>Description:</label>{{specevent.description}}<br>
+            <label ng-if="!sattend" ng-click="showattend()" style="cursor:pointer">Show Attendees</label><br>
+            <div ng-if="sattend">
+                <label ng-click="showattend()" style="cursor:pointer">Hide Attendee:</label>
+                <div ng-repeat="a in attendees">
+                    <p>{{a}}</p>
+                </div>
+            </div>
 
-            <button class="btn btn-alt btn-hover btn-blue-alt" ng-if="show && reserve" ng-click = "reserveEvent(specevent.id)" style="top:20px">
+            <button class="btn btn-round btn-default" ng-if="save" ng-click = "saveEvent(specevent.id)" style="top:20px">
+                <div class="glyph-icon icon-star-o" style="color:yellow"></div>
+            </button>
+            <button class="btn btn-round btn-default" ng-if="!save" ng-click = "unsaveEvent(specevent.id)" style="top:20px">
+                <div class="glyph-icon icon-star" style="color:yellow"></div>
+            </button>
+            <button class="btn btn-alt btn-hover btn-blue-alt" ng-if="reserve" ng-click = "reserveEvent(specevent.id)" style="top:20px">
                 <span>Reserve the event</span>
                 <i class="glyph-icon icon-arrow-right"></i>
             </button>
-            <button class="btn btn-alt btn-hover btn-blue-alt" ng-if="show && !reserve" ng-click = "quitEvent(specevent.id)" style="top:20px">
+            <button class="btn btn-alt btn-hover btn-blue-alt" ng-if="!reserve" ng-click = "quitEvent(specevent.id)" style="top:20px">
                 <span>Quit the event</span>
                 <i class="glyph-icon icon-arrow-right"></i>
             </button>
+            <button class="btn btn-alt btn-hover btn-red-alt bg-red" ng-if="!show" ng-click = "deleteEvent(specevent.id)" style="top:20px">
+                <span>Delete the event</span>
+                <i class="glyph-icon icon-arrow-right"></i>
+            </button>
             </div>
-
         </div>
         <div class="col-md-6">
             <img ng-src="{{specevent.mapurl}}"></img>
         </div>
 </script>
-
