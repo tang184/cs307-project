@@ -1,6 +1,5 @@
 (function () {
     'use strict';
-
     angular
         .module('mainApp')
         .controller('ProfileController', ProfileController);
@@ -175,6 +174,7 @@
 
                 $scope.confirmPassword = false;
                 $scope.sameAsOldPassword = false;
+		$scope.emptyfollowees = true;
 
                 $scope.checkPassword = function() {
                     if ($scope.oldpassword == $scope.newpassword) {
@@ -199,7 +199,9 @@
                         data: mydata,
                         success: function(response){
                             $scope.followees = JSON.parse(response).followee;
-                            console.log($scope.followees);
+                            if ($scope.followees.length != 0) {
+				$scope.emptyfollowees = false;
+			    }
                         }
                     });
                 }

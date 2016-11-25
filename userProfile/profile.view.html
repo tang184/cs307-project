@@ -46,42 +46,24 @@
         </div>
     </div>
     <div class="content-box mrg15B">
-    <h3 class="content-box-header clearfix">
+    <h3 class="content-box-header">
         Followed
         <div class="font-size-11 float-right">
-            <a href="#" title="">
-                <i class="glyph-icon mrg5R opacity-hover icon-plus"></i>
-            </a>
-            <a href="#" title="">
-                <i class="glyph-icon opacity-hover icon-cog"></i>
-            </a>
+            
         </div>
     </h3>
-    <div class="content-box-wrapper text-center clearfix">
-        <div class="status-badge mrg10A">
-            <img class="img-circle" width="40" src="assets/image-resources/people/testimonial1.jpg" alt="">
-            <div class="small-badge bg-red"></div>
-        </div>
-        <div class="status-badge mrg10A">
-            <img class="img-circle" width="40" src="assets/image-resources/people/testimonial2.jpg" alt="">
-            <div class="small-badge bg-orange"></div>
-        </div>
-        <div class="status-badge mrg10A">
-            <img class="img-circle" width="40" src="assets/image-resources/people/testimonial3.jpg" alt="">
-            <div class="small-badge bg-red"></div>
-        </div>
-        <div class="status-badge mrg10A">
-            <img class="img-circle" width="40" src="assets/image-resources/people/testimonial4.jpg" alt="">
-            <div class="small-badge bg-green"></div>
-        </div>
-        <div class="status-badge mrg10A">
-            <img class="img-circle" width="40" src="assets/image-resources/people/testimonial5.jpg" alt="">
-            <div class="small-badge bg-orange"></div>
-        </div>
-        <div class="status-badge mrg10A">
-            <img class="img-circle" width="40" src="assets/image-resources/people/testimonial6.jpg" alt="">
-            <div class="small-badge bg-red"></div>
-        </div>
+    <div ng-if="emptyfollowees">
+      <label>{{"No follower at this time"}}</label>
+    </div>
+    <div ng-if="!emptyfollowees" class="content-box-wrapper text-center clearfix">
+        <div ng-repeat="follow in followees">
+	  <a ui-sref="#" title="follow">
+          <div class="status-badge mrg10A">
+           <img class="img-circle" width="40" src="/img/default-avatar.png" alt="">
+          </div>
+	  </a>
+	</div>
+	<a href="">abc</a>
     </div>
     </div>
     <div class="content-box mrg15B">
