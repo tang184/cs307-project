@@ -30,7 +30,7 @@
                 $scope.updateevents($scope.events);
             }
             $scope.gotoPrevPage_attend = function() {
-                $scope.currentpage -= 1;
+                $scope.currentpage_attend -= 1;
                 $scope.updateevents_attend($scope.events_attend);
             }
 

@@ -17,19 +17,21 @@
 
                 $scope.user={};
 
-                $scope.userinfo = $cookies.getObject('globals') || {};
-                $scope.username = $scope.userinfo.currentUser.username;
-                $scope.email = $scope.userinfo.currentUser.email;
+                
+                if ($rootScope.globals.currentUser.city == "null") {
+                    $rootScope.globals.currentUser.city = "mars";
+                }
+                if ($rootScope.globals.currentUser.aboutme == "null") {
+                    $rootScope.globals.currentUser.aboutme = "Hi, my name is " + $scope.username;
+                }
 
-                $scope.city = "";
-
-                $scope.aboutme = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante."
+                //$scope.aboutme = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante."
 
 
                 $scope.SaveProfile = function() {
 
                     var mydata = $.param({
-                        newname: $scope.username
+                        newname: $rootScope.globals.currentUser.username
                     });
                     $.ajax({
                         type: "POST",
@@ -187,6 +189,21 @@
                     }
                 }
 
+                $scope.getfollowee = function() {
+                    var mydata = $.param({
+                    });
+
+                     $.ajax({
+                        type: "GET",
+                        url: 'https://yakume.xyz/api/user/followees',
+                        data: mydata,
+                        success: function(response){
+                            $scope.followees = JSON.parse(response).followee;
+                            console.log($scope.followees);
+                        }
+                    });
+                }
+
                 $scope.pull_newsfeed = function() {
                     var mydata = $.param({
                     });
@@ -241,6 +258,7 @@
                         }
                     });
                 }
+                $scope.getfollowee();
                 $scope.pull_newsfeed();
 
 

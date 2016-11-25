@@ -37,10 +37,10 @@
         </div>
             <div class="mrg15T mrg15B"></div>
             <blockquote class="font-gray">
-                <p>{{aboutme}}</p>
+                <p>{{globals.currentUser.aboutme}}</p>
                 <small>
-                    Programmer at
-                    <cite title="Monarch">Monarch</cite>
+                    I am at
+                    <cite title="Monarch">{{globals.currentUser.city}}</cite>
                 </small>
             </blockquote>
         </div>
@@ -301,13 +301,13 @@
                 <div class="form-group">
                     <label class="col-sm-3 control-label">City:</label>
                     <div class="col-sm-6">
-                        <input type="text" class="form-control" id="" ng-disabled="!isEdit" ng-model="city" placeholder="City...">
+                        <input type="text" class="form-control" id="" ng-disabled="!isEdit" ng-model="globals.currentUser.city" placeholder="City...">
                     </div>
                 </div>
                 <div class="form-group">
                     <label class="col-sm-3 control-label">About me:</label>
                     <div class="col-sm-6">
-                        <textarea name="" rows="3" class="form-control textarea-autosize" ng-disabled="!isEdit" ng-model="aboutme"></textarea>
+                        <textarea name="" rows="3" class="form-control textarea-autosize" ng-disabled="!isEdit" ng-model="globals.currentUser.aboutme"></textarea>
                     </div>
                 </div>
                 <div class="form-group" id="uploadForm">
@@ -353,8 +353,7 @@
                     <div class="form-group" ng-class="{ 'has-error': form.oldpassword.$touched && form.oldpassword.$invalid}">
                         <label class="col-sm-3 control-label required"><span style="color:red">*</span>Old password:</label>
                         <div class="col-sm-6">
-                            <input type="password" name="oldpassword" ng-model="oldpassword" onpaste="return false" oncontextmenu="return false"
-                            oncopy="return false" oncut="return false" required class="form-control" ng-change="checkPassword()">
+                            <input type="password" name="oldpassword" ng-model="oldpassword" required class="form-control" ng-change="checkPassword()">
                             <span ng-show="form.oldpassword.$touched && form.oldpassword.$error.required" class="help-block">Old password is required</span>
                         </div>
                     </div>
