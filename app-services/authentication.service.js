@@ -73,32 +73,6 @@
                         }
                     });
 
-                    $.ajax({
-                        type: "GET",
-                        url: 'https://yakume.xyz/api/myevents',
-                        success: function(response){
-                            console.log(response);
-                            var events_attend_num = JSON.parse(response).events;
-			                 $rootScope.globals.event_attend = [];
-                            $.each(events_attend_num, function (i, item) {
-                                var mydata = $.param({
-                                    eventid : item
-                                });
-                                $.ajax({
-                                    type: "GET",
-                                    url: 'https://yakume.xyz/api/getevent',
-                                    data: mydata,
-                                    success: function(response){
-                                        console.log(response);
-                                        var t = JSON.parse(response);
-                                        $rootScope.globals.event_attend.push(t);
-                                    }
-                                });
-                            })
-			
-                            
-                        }
-                    });
 
                     $http.defaults.headers.common['Authorization'] = 'Basic ' + authdata; // jshint ignore:line
                     //$cookies.putObject('globals', $rootScope.globals);

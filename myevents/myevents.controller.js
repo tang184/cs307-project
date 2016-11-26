@@ -118,14 +118,14 @@
                     }
                 });
 
-                $scope.trc(function(){
-                    $scope.events_attend = $rootScope.globals.event_attend;
+                
+                $scope.events_attend = $rootScope.globals.event_attend;
                     //console.log($rootScope.globals.event_attend);
-                    $scope.maxpage_attend = Math.ceil($scope.events_attend.length/MAXEVENTPERPAGE);
+                $scope.maxpage_attend = Math.ceil($scope.events_attend.length/MAXEVENTPERPAGE);
                     //console.log($scope.maxpage_attend);
                     //$scope.updateevents_attend($scope.events_attend);
-                    $scope.sortbytime_attend();
-                });
+                $scope.sortbytime_attend();
+                
                 //$scope.events_attend = $rootScope.globals.event_attend;
                 //console.log($rootScope.event_attend);
                 //$scope.maxpage_attend = Math.ceil($scope.events_attend.length/MAXEVENTPERPAGE);
@@ -133,38 +133,7 @@
                 //$scope.updateevents_attend($scope.events_attend);
             }
 
-    	    $scope.trc = function(callback) {
-        		$.ajax({
-                    type: "GET",
-                    url: 'https://yakume.xyz/api/myevents',
-                    success: function(response){
-                        console.log(response);
-                        var events_attend_num = JSON.parse(response).events;
-                        $scope.maxpage_attend = Math.ceil(events_attend_num.length/MAXEVENTPERPAGE);
-                        $rootScope.globals.event_attend = [];
-                        $.each(events_attend_num, function (i, item) {
-                            var mydata = $.param({
-                                eventid : item
-                            });
-                            $.ajax({
-                                type: "GET",
-                                url: 'https://yakume.xyz/api/getevent',
-                                data: mydata,
-                                success: function(response){
-                                    console.log(response);
-                                    var t = JSON.parse(response);
-                                    $rootScope.globals.event_attend.push(t);
-                                    if (i == events_attend_num.length - 1) {
-                    					callback();
-                    				}
-                                }
-                            });
-                        })
-
-
-                    }
-                });
-    	    }
+    	    
 
 
             $scope.pull_all_events();
