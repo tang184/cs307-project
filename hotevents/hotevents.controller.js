@@ -323,7 +323,34 @@
                                         url: 'https://yakume.xyz/api/pay',
                                         data: mydata,
                                         success: function(response){
-                                            console.log(response);
+                                            if (response == "ERR_NOT_LOGGED_IN") {
+                                                alert("login expired, please login again");
+                                                $location.path('/login');
+                                            } else {
+                                                var mydatareserve = $.param({
+                                                    eventid : id,
+                                                    payment_token : response
+                                                });
+                                                $.ajax({
+                                                    type: "POST",
+                                                    url: 'https://yakume.xyz/api/event/register',
+                                                    data: mydatareserve,
+                                                    success: function(response){
+                                                        if (response == "SUCCESS") {
+                                                            $scope.attendees.push($rootScope.globals.currentUser.email);
+                                                        } else if (response == "ERR_INVALID_ARGUMENT") {
+                                                            alert("You haven't pay");
+                                                        } else if (response == "ERR_NOT_LOGGED_IN") {
+                                                            alert("login expired, please login again");
+                                                            $location.path('/login'); 
+                                                        } else {
+                                                            alert(response);
+                                                        }
+                                                        console.log($scope.attendees);
+                                                    }
+                                                });
+
+                                            }
                                             /*if (response == "SUCCESS") {
                                                 console.log("unsaved from watchlist!");
                                             } else if (response == "ERR_NOT_LOGGED_IN"){
