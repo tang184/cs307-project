@@ -215,10 +215,12 @@
                         url: 'https://yakume.xyz/api/newsfeed',
                         data: mydata,
                         success: function(response){
-                            // console.log(response);
+                            //console.log(response);
                             $scope.newsfeed = JSON.parse(response).newsfeed;
                             $scope.newsfeed.sort(function(a, b){return a.time - b.time});
                             var id;
+			    console.log($scope.newsfeed);
+			    $scope.rsvpnews = [];
                             var news;
                             var rest = $scope.newsfeed.length * 2;
                             
