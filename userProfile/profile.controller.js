@@ -200,8 +200,8 @@
                         success: function(response){
                             $scope.followees = JSON.parse(response).followee;
                             if ($scope.followees.length != 0) {
-				$scope.emptyfollowees = false;
-			    }
+				                $scope.emptyfollowees = false;
+                            }
                         }
                     });
                 }
@@ -217,10 +217,21 @@
                         success: function(response){
                             //console.log(response);
                             $scope.newsfeed = JSON.parse(response).newsfeed;
-                            $scope.newsfeed.sort(function(a, b){return a.time - b.time});
+
+                            $scope.createnews = [];
+                            $scope.reservenews = [];
+                            $.each($scope.newsfeed, function (i, item) {
+                                if (item.action == "created") {
+                                    $scope.createnews.push(item);
+                                } else {
+                                    $scope.reservenews.push(item);
+                                }
+                            });
+
+                            $scope.createnews.sort(function(a, b){return a.time - b.time});
+                            $scope.reservenews.sort(function(a, b){return a.time - b.time});
+
                             var id;
-			    console.log($scope.newsfeed);
-			    $scope.rsvpnews = [];
                             var news;
                             var rest = $scope.newsfeed.length * 2;
                             
@@ -246,8 +257,22 @@
                             };
                             var callback_function;
                             
-                            for (id in $scope.newsfeed) {
-                                news = $scope.newsfeed[id];
+                            for (id in $scope.createnews) {
+                                news = $scope.createnews[id];
+                                news.order = id;
+                                news.timeshow = EventService.timeConverter(news.time);
+                                
+                                callback_function = callback_generator_user(news);
+                                
+                                EventService.pull_user_by_email(news.email, callback_function);
+                                
+                                callback_function = callback_generator_event(news);
+                                
+                                EventService.pull_event_by_ID(news.event, callback_function);
+                            }
+
+                            for (id in $scope.reservenews) {
+                                news = $scope.reservenews[id];
                                 news.order = id;
                                 news.timeshow = EventService.timeConverter(news.time);
                                 
