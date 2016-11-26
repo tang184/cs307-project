@@ -51,6 +51,34 @@ h1, h2 {
     height: 500px;
 }
 
+.cc-container {
+    font-family: Arial;
+    font-size: 14px;
+    font-weight: bold;
+    width: 350px;
+    height: 150px;
+    background-color: #363739;
+    border: solid 1px #2f3032;
+    border-radius: 8px;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    box-shadow: 0 3px 3px rgba(0,0,0,0.20), rgba(0,0,0,0.12) 0px 0px 10px inset;
+    -webkit-box-shadow: 0 3px 3px rgba(0,0,0,0.20), rgba(0,0,0,0.12) 0px 0px 10px inset;
+    -moz-box-shadow: 0 3px 3px rgba(0,0,0,0.20), rgba(0,0,0,0.12) 0px 0px 10px inset;
+}
+
+.cc-contents {
+    margin-left: 12px;
+    padding: 8px;
+    width: 300px;
+    height: 110px;
+    border: solid 1px #2f3032;
+    border-radius: 8px;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    background-color: #f1f1f1;
+}
+
 /* -------------------------------- 
 
 Modules - reusable parts of our design

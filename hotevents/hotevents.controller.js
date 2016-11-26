@@ -209,7 +209,6 @@
                         $scope.specevent.mapurl="img/loc_404.png";
                     }
                     event = $scope.specevent;
-                    console.log(event);
                     ngDialog.open({
                     template: 'templateId',
                     controller: ['$scope', '$cookies' , function($scope, $cookies) {
@@ -221,7 +220,10 @@
                             $scope.show = false;
                         }
                         $scope.sattend = false;
-
+                        $scope.payment = false;
+                        if ($scope.specevent.price != 0) {
+                            $scope.payment = true;
+                        }
 
                         var mydata = $.param({
                             eventid : event.id
@@ -306,31 +308,66 @@
                                 }
                             });
                         }
-
+                        $scope.showpayinfo = false;
                         $scope.reserveEvent = function(id) {
-                            $scope.reserve = false;
-                            var mydata = $.param({
-                                eventid : id
-                            });
+                            if ($scope.payment) {
+                                if ($scope.showpayinfo) {
+                                    var mydata = $.param({
+                                        amount : $scope.specevent.price,
+                                        card : $scope.cardnumber,
+                                        exp_mm : $scope.expmonth,
+                                        exp_yy : $scope.expyear
+                                    });
+                                    $.ajax({
+                                        type: "POST",
+                                        url: 'https://yakume.xyz/api/pay',
+                                        data: mydata,
+                                        success: function(response){
+                                            console.log(response);
+                                            /*if (response == "SUCCESS") {
+                                                console.log("unsaved from watchlist!");
+                                            } else if (response == "ERR_NOT_LOGGED_IN"){
+                                                alert("login expired, please login again");
+                                                $location.path('/login');
+                                            } else {
+                                                alert(response);
+                                            }*/
 
-                            $.ajax({
-                                type: "POST",
-                                url: 'https://yakume.xyz/api/event/register',
-                                data: mydata,
-                                success: function(response){
-                                    if (response == "SUCCESS") {
-                                        $scope.attendees.push($rootScope.globals.currentUser.email);
-                                    } else if (response == "ERR_INVALID_ARGUMENT") {
-                                        alert("You haven't pay");
-                                    } else if (response == "ERR_NOT_LOGGED_IN") {
-                                        alert("login expired, please login again");
-                                        $location.path('/login'); 
-                                    } else {
-                                        alert(response);
-                                    }
-                                    console.log($scope.attendees);
+
+
+                                        }
+                                    });
+                                } else {
+                                    $scope.showpayinfo = true;
                                 }
-                            });
+                                
+                            }  else {
+                                $scope.reserve = false;
+                                $scope.showpayinfo = false;
+                                var mydata = $.param({
+                                    eventid : id
+                                });
+
+                                $.ajax({
+                                    type: "POST",
+                                    url: 'https://yakume.xyz/api/event/register',
+                                    data: mydata,
+                                    success: function(response){
+                                        if (response == "SUCCESS") {
+                                            $scope.attendees.push($rootScope.globals.currentUser.email);
+                                        } else if (response == "ERR_INVALID_ARGUMENT") {
+                                            alert("You haven't pay");
+                                        } else if (response == "ERR_NOT_LOGGED_IN") {
+                                            alert("login expired, please login again");
+                                            $location.path('/login'); 
+                                        } else {
+                                            alert(response);
+                                        }
+                                        console.log($scope.attendees);
+                                    }
+                                });
+                            }
+                            
                         }
 
                         $scope.quitEvent = function(id) {
