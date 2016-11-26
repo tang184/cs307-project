@@ -86,56 +86,50 @@
         </h3>
         <div class="example-box-wrapper">
             <div class="row">
-                    <div class="panel">
-                        <div class="panel-body">
-                            <div class="example-box-wrapper">
-                                <div class="timeline-box timeline-box-left">
-                                    <div class="tl-row col-md-6">
-                                        <div ng-repeat="news in createnews">
-                                        
-                                            <div class="tl-item float-right">
-                                                <div class="tl-icon bg-red">
-                                                    <i class="glyph-icon icon-toggle-on"></i>
-                                                </div>
-                                                <div class="popover right">
-                                                    <div class="arrow"></div>
-                                                    <div class="popover-content">
-                                                        <div class="tl-label bs-label label-info">{{news.action}}</div>
-                                                        <p class="tl-content">{{news.user.name}} {{news.action}} {{news.anevent.title}}</p>
-                                                        <div class="tl-time">
-                                                            <i class="glyph-icon icon-clock-o"></i>
-                                                            {{news.timeshow}}
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="tl-row col-md-6">
-                                        <div ng-repeat="news in reservenews">
-                                        
-                                            <div class="tl-item float-right">
-                                                <div class="tl-icon bg-red">
-                                                    <i class="glyph-icon icon-toggle-on"></i>
-                                                </div>
-                                                <div class="popover right">
-                                                    <div class="arrow"></div>
-                                                    <div class="popover-content">
-                                                        <div class="tl-label bs-label label-info">{{news.action}}</div>
-                                                        <p class="tl-content">{{news.user.name}} {{news.action}} {{news.anevent.title}}</p>
-                                                        <div class="tl-time">
-                                                            <i class="glyph-icon icon-clock-o"></i>
-                                                            {{news.timeshow}}
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
+                <div class="timeline-box timeline-box-left">
+                    <div class="tl-row col-md-6">
+                        <div ng-repeat="news in createnews">
+                        
+                            <div class="tl-item float-right">
+                                <div class="tl-icon bg-red">
+                                    <i class="glyph-icon icon-toggle-on"></i>
+                                </div>
+                                <div class="popover right">
+                                    <div class="arrow"></div>
+                                    <div class="popover-content">
+                                        <div class="tl-label bs-label label-info">{{news.action}}</div>
+                                        <p class="tl-content">{{news.user.name}} {{news.action}} {{news.anevent.title}}</p>
+                                        <div class="tl-time">
+                                            <i class="glyph-icon icon-clock-o"></i>
+                                            {{news.timeshow}}
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+                    <div class="tl-row col-md-6">
+                        <div ng-repeat="news in reservenews">
+                        
+                            <div class="tl-item float-right">
+                                <div class="tl-icon bg-red">
+                                    <i class="glyph-icon icon-toggle-on"></i>
+                                </div>
+                                <div class="popover right">
+                                    <div class="arrow"></div>
+                                    <div class="popover-content">
+                                        <div class="tl-label bs-label label-info">{{news.action}}</div>
+                                        <p class="tl-content">{{news.user.name}} {{news.action}} {{news.anevent.title}}</p>
+                                        <div class="tl-time">
+                                            <i class="glyph-icon icon-clock-o"></i>
+                                            {{news.timeshow}}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>                 
             </div>
         </div>
     </div>
