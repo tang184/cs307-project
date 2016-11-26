@@ -395,8 +395,8 @@ header h1 {
     top: 72px;
     left: 50%;
     display: block;
-    width: 17px;
-    height: 17px;
+    width: 34px;
+    height: 34px;
     margin-top: -9px;
     margin-left: -8px;
     border-radius: 100px;
@@ -404,6 +404,7 @@ header h1 {
 
 .timeline-box-left.timeline-box .tl-row .tl-item .tl-icon, .timeline-box-left.timeline-box .tl-row .tl-item .tl-bullet {
     right: auto;
+    left:0px;
     margin-right: 0;
     margin-left: -17px;
 }
