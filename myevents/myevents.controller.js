@@ -142,6 +142,7 @@
                         var events_attend_num = JSON.parse(response).events;
                         $scope.maxpage_attend = Math.ceil(events_attend_num.length/MAXEVENTPERPAGE);
                         $rootScope.globals.event_attend = [];
+			var count = 0;
                         $.each(events_attend_num, function (i, item) {
                             var mydata = $.param({
                                 eventid : item
@@ -152,11 +153,16 @@
                                 data: mydata,
                                 success: function(response){
                                     console.log(response);
+				    if (response) {
+					count++;
+					//console.log(count);
+				    }
                                     var t = JSON.parse(response);
                                     $rootScope.globals.event_attend.push(t);
-                                    if (i == events_attend_num.length - 1) {
-                    					callback();
-                    				}
+                                    if (count == events_attend_num.length) {
+					//console.log(count);
+                    			callback();
+                    		    }
                                 }
                             });
                         })
