@@ -247,10 +247,24 @@
 
             $scope.sortbytime_attend = function() {
                 $scope.events_attend.sort(function(a,b){
-                  return parseInt(b.time) - parseInt(a.time);
+                  return parseInt(a.time) - parseInt(b.time);
                 });
+                var currtime = new Date().getTime();
+                var len = $scope.events.length;
+                var cnt = 0;
+                var index = 0;
+                while(cnt < len){
+                    if($scope.events_attend[cnt].time >= currtime){
+                        break;
+                    }
+                    cnt++;
+                }
+                while(index < cnt){
+                    var temp = $scope.events_attend.shift();
+                    $scope.events_attend.push(temp);
+                    index++;
+                }
                 $scope.updateevents_attend($scope.events_attend);
-                //console.log($scope.events);
             }
 
             $scope.sortbyname_attend = function() {

@@ -65,144 +65,55 @@
         <h3 class="title-hero">
             {{'My Events'|translate}}
         </h3>
-        <div class="example-box-wrapper">
-            <div class="row">
-                <div class="col-md-6">
+        
 
-                    <div class="panel">
-                        <div class="panel-body">
-                            <h3 class="title-hero">
-                                {{'Events I create'|translate}}
-                            </h3>
-                            <div class="example-box-wrapper">
-                                <div class="timeline-box timeline-box-left">
-                                    <div class="tl-row">
-                                        <div class="tl-item float-right">
-                                            <div class="tl-icon bg-red">
-                                                <i class="glyph-icon icon-toggle-on"></i>
-                                            </div>
-                                            <div class="popover right">
-                                                <div class="arrow"></div>
-                                                <div class="popover-content">
-                                                    <div class="tl-label bs-label label-info">Appointment</div>
-                                                    <p class="tl-content">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. </p>
-                                                    <div class="tl-time">
-                                                        <i class="glyph-icon icon-clock-o"></i>
-                                                        a few seconds ago
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="tl-row">
-                                        <div class="tl-item float-right">
-                                            <div class="tl-icon bg-primary">
-                                                <i class="glyph-icon icon-wifi"></i>
-                                            </div>
-                                            <div class="popover right">
-                                                <div class="arrow"></div>
-                                                <div class="popover-content">
-                                                    <div class="tl-label bs-label bg-yellow">Teleconference</div>
-                                                    <p class="tl-content">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. </p>
-                                                    <div class="tl-time">
-                                                        <i class="glyph-icon icon-clock-o"></i>
-                                                        a few seconds ago
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="tl-row">
-                                        <div class="tl-item float-right">
-                                            <div class="tl-icon bg-black">
-                                                <i class="glyph-icon icon-headphones"></i>
-                                            </div>
-                                            <div class="popover right">
-                                                <div class="arrow"></div>
-                                                <div class="popover-content">
-                                                    <div class="tl-label bs-label label-danger">{{'Meeting'|translate}}</div>
-                                                    <p class="tl-content">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. </p>
-                                                    <div class="tl-time">
-                                                        <i class="glyph-icon icon-clock-o"></i>
-                                                        a few seconds ago
-                                                    </div>
-                                                </div>
-                                            </div>
+        <div class="clearfix">
+            <ul id="portfolio-grid" class="reset-ul row">
+                <div ng-repeat="event_attend in events_attend">
+                    <li class="col-lg-4 col-sm-6 col-md-4" style="cursor:pointer" ng-click="showspecificevent(event_attend.id)">
+                        <div class="thumbnail-box-wrapper">
+                            <div class="thumbnail-box">
+                                <div class="thumb-content">
+                                    <div class="center-vertical">
+                                        <div class="center-content">
+                                            <i class="icon-helper icon-center animated zoomInUp font-white glyph-icon icon-linecons-note"></i>
                                         </div>
                                     </div>
                                 </div>
+                                <div class="thumb-overlay bg-black"></div>
+                                <img style="height:132.95px" src="{{event_attend.eventimage}}" alt="">
+                            </div>
+                            <div class="thumb-pane">
+                                <h3 class="thumb-heading animated rollIn">
+                                    <a title="">
+                                        {{event_attend.title}}
+                                    </a>
+                                    <small>{{event_attend.starttime}}</small>
+                                </h3>
                             </div>
                         </div>
-                    </div>
+                    </li>
                 </div>
-                <div class="col-md-6">
-                    <div class="panel">
-                        <div class="panel-body">
-                            <h3 class="title-hero">
-                                {{'Events I attend'|translate}}
-                            </h3>
-                            <div class="example-box-wrapper">
-                                <div class="timeline-box timeline-box-right">
-                                    <div class="tl-row">
-                                        <div class="tl-item">
-                                            <div class="tl-icon bg-yellow">
-                                                <i class="glyph-icon icon-eyedropper"></i>
-                                            </div>
-                                            <div class="popover left">
-                                                <div class="arrow"></div>
-                                                <div class="popover-content">
-                                                    <div class="tl-label bs-label label-success">{{'Meeting'|translate}}</div>
-                                                    <p class="tl-content">Quisque volutpat mattis eros. Nullam malesuada erat ut turpis.</p>
-                                                    <div class="tl-time">
-                                                        <i class="glyph-icon icon-clock-o"></i>
-                                                        a few seconds ago
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="tl-row">
-                                        <div class="tl-item">
-                                            <div class="tl-icon bg-blue">
-                                                <i class="glyph-icon icon-line-chart"></i>
-                                            </div>
-                                            <div class="popover left">
-                                                <div class="arrow"></div>
-                                                <div class="popover-content">
-                                                    <div class="tl-label bs-label label-danger">Audio</div>
-                                                    <p class="tl-content">Quisque volutpat mattis eros. Nullam malesuada erat ut turpis.</p>
-                                                    <div class="tl-time">
-                                                        <i class="glyph-icon icon-clock-o"></i>
-                                                        a few seconds ago
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="tl-row">
-                                        <div class="tl-item">
-                                            <div class="tl-icon bg-blue">
-                                                <i class="glyph-icon icon-cab"></i>
-                                            </div>
-                                            <div class="popover left">
-                                                <div class="arrow"></div>
-                                                <div class="popover-content">
-                                                    <div class="tl-label bs-label label-warning">Video</div>
-                                                    <p class="tl-content">Quisque volutpat mattis eros. Nullam malesuada erat ut turpis.</p>
-                                                    <div class="tl-time">
-                                                        <i class="glyph-icon icon-clock-o"></i>
-                                                        a few seconds ago
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
+                <li class="col-lg-4 col-md-4" ui-sref="myevents">
+                    <div class="tile-box bg-white" >
+                        <div class="thumbnail-box" style="height:200px" >
+                            <div class="thumb-content">
+                                <div class="center-vertical">
+                                    <div class="center-content">
+                                        <h3 class="thumb-heading animated flipInX" >
+                                            {{'More Events'|translate}}
+                                        </h3>
                                     </div>
                                 </div>
                             </div>
+                            <div class="thumb-overlay bg-black"></div>
+                             <div class="tile-content-wrapper">
+                                <img src="img/more.png" alt="">
+                            </div>
                         </div>
                     </div>
-                </div>
-            </div>
+                </li>
+            </ul>
         </div>
     </div>
 </div>
