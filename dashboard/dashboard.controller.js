@@ -34,11 +34,9 @@
                         eventlist[i].eventimage = "https://yakume.xyz/img/" + eventlist[i].images[0];
                     }
                 }
-                if ($scope.firstime) {
-                    $scope.$apply();
-                    $scope.firstime = false;
-                }
-                console.log(eventlist);
+                $scope.$apply();
+              
+               // console.log(eventlist);
             }
 
             $scope.pull_all_events = function() {
@@ -70,7 +68,6 @@
                     success: function(response){
                         console.log(response);
                         var events_attend_num = JSON.parse(response).events;
-                        $scope.maxpage_attend = Math.ceil(events_attend_num.length/MAXEVENTPERPAGE);
                         $rootScope.globals.event_attend = [];
                         var count = 0;
                         $.each(events_attend_num, function (i, item) {
@@ -82,14 +79,15 @@
                                 url: 'https://yakume.xyz/api/getevent',
                                 data: mydata,
                                 success: function(response){
-                                    console.log(response);
+                                    //console.log(response);
                                     if (response) {
                                         count++;
                                     //console.log(count);
                                     }
+				    $scope.mymax = events_attend_num.length;
                                     var t = JSON.parse(response);
                                     $rootScope.globals.event_attend.push(t);
-                                    if (count == events_attend_num.length) {
+                                    if (count == events_attend_num.length - 1) {
                     //console.log(count);
                                         callback();
                                     }
