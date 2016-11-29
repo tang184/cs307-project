@@ -250,7 +250,7 @@
                   return parseInt(a.time) - parseInt(b.time);
                 });
                 var currtime = new Date().getTime();
-                var len = $scope.events.length;
+                var len = $scope.events_attend.length;
                 var cnt = 0;
                 var index = 0;
                 while(cnt < len){
