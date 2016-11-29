@@ -10,6 +10,7 @@
 
             $("#bodyBackground").css('background', 'white');
             $scope.allevents = [];
+	    $scope.allevents_attend = [];
 
             $scope.updateevents = function(eventlist) {
                 for (var i = 0; i < 5; i++) {
@@ -33,6 +34,7 @@
                     } else {
                         eventlist[i].eventimage = "https://yakume.xyz/img/" + eventlist[i].images[0];
                     }
+		    $scope.allevents_attend.push(eventlist[i]);
                 }
                 $scope.$apply();
               
@@ -87,8 +89,9 @@
 				    $scope.mymax = events_attend_num.length;
                                     var t = JSON.parse(response);
                                     $rootScope.globals.event_attend.push(t);
-                                    if (count == events_attend_num.length - 1) {
+                                    if (count == events_attend_num.length) {
                     //console.log(count);
+					console.log($rootScope.globals.event_attend);
                                         callback();
                                     }
                                 }
