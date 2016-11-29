@@ -27,19 +27,21 @@
             }
 
             $scope.updateevents_attend = function(eventlist) {
-                for (var i = 0; i < 5; i++) {
+                if ($scope.max > 5) {
+                    $scope.max = 5;
+                }
+                for (var i = 0; i < $scope.max; i++) {
                     eventlist[i].starttime = $scope.timeConverter(eventlist[i].time);
                     if (eventlist[i].images.length == 0) {
                         eventlist[i].eventimage = "assets/image-resources/stock-images/img-17.jpg";
                     } else {
                         eventlist[i].eventimage = "https://yakume.xyz/img/" + eventlist[i].images[0];
                     }
-		    $scope.allevents_attend.push(eventlist[i]);
+                    $scope.allevents_attend.push(eventlist[i]);
                 }
-                $scope.$apply();
-              
-               // console.log(eventlist);
+                $scope.$apply();             
             }
+
 
             $scope.pull_all_events = function() {
                 var mydata = $.param({
@@ -62,6 +64,9 @@
                     $scope.sortbytime_attend();
                 });
             }
+
+
+            
 
             $scope.trc = function(callback) {
                 $.ajax({
@@ -86,12 +91,11 @@
                                         count++;
                                     //console.log(count);
                                     }
-				    $scope.mymax = events_attend_num.length;
+				                    $scope.mymax = events_attend_num.length;
                                     var t = JSON.parse(response);
                                     $rootScope.globals.event_attend.push(t);
                                     if (count == events_attend_num.length) {
-                    //console.log(count);
-					console.log($rootScope.globals.event_attend);
+					                    console.log($rootScope.globals.event_attend);
                                         callback();
                                     }
                                 }

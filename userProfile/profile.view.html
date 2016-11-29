@@ -67,14 +67,62 @@
     </div>
     </div>
     <div class="content-box mrg15B">
-    <div class="panel">
-    <div class="panel-body">
-        <h3 class="title-hero">
-            My Events
-        </h3>
-        
-    </div>
-</div>
+        <div class="panel">
+            <div class="panel-body">
+                <h3 class="title-hero">
+                    {{'My Events'|translate}}
+                </h3>
+                
+                <div class="clearfix">
+                    <ul id="portfolio-grid" class="reset-ul row">
+                        <div ng-repeat="event_attend in allevents_attend">
+                            <li class="col-lg-4 col-sm-6 col-md-4" style="cursor:pointer" ng-click="showspecificevent(event_attend.id)">
+                                <div class="thumbnail-box-wrapper">
+                                    <div class="thumbnail-box">
+                                        <div class="thumb-content">
+                                            <div class="center-vertical">
+                                                <div class="center-content">
+                                                    <i class="icon-helper icon-center animated zoomInUp font-white glyph-icon icon-linecons-note"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="thumb-overlay bg-black"></div>
+                                        <img style="height:132.95px" src="{{event_attend.eventimage}}" alt="">
+                                    </div>
+                                    <div class="thumb-pane">
+                                        <h3 class="thumb-heading animated rollIn">
+                                            <a title="">
+                                                {{event_attend.title}}
+                                            </a>
+                                            <small>{{event_attend.starttime}}</small>
+                                        </h3>
+                                    </div>
+                                </div>
+                            </li>
+                        </div>
+                        <li class="col-lg-4 col-md-4" ui-sref="myevents">
+                            <div class="tile-box bg-white" >
+                                <div class="thumbnail-box" style="height:200px" >
+                                    <div class="thumb-content">
+                                        <div class="center-vertical">
+                                            <div class="center-content">
+                                                <h3 class="thumb-heading animated flipInX" >
+                                                    {{'More Events'|translate}}
+                                                </h3>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="thumb-overlay bg-black"></div>
+                                     <div class="tile-content-wrapper">
+                                        <img src="img/more.png" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
     </div>
 
 

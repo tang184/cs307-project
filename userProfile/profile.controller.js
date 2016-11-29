@@ -70,6 +70,8 @@
                     $scope.isEdit = false;
                 }
 
+
+
                 $scope.cancelProfile= function() {
                     $scope.isEdit = false;
                 }
@@ -99,6 +101,89 @@
                         }
                     });
                 }
+
+                $scope.updateevents_attend = function(eventlist) {
+                    if ($scope.max > 5) {
+                        $scope.max = 5;
+                    }
+                    for (var i = 0; i < $scope.max; i++) {
+                        eventlist[i].starttime = $scope.timeConverter(eventlist[i].time);
+                        if (eventlist[i].images.length == 0) {
+                            eventlist[i].eventimage = "assets/image-resources/stock-images/img-17.jpg";
+                        } else {
+                            eventlist[i].eventimage = "https://yakume.xyz/img/" + eventlist[i].images[0];
+                        }
+                        $scope.allevents_attend.push(eventlist[i]);
+                    }
+                    $scope.$apply();             
+                }
+
+                $scope.trc(function(){
+                    $scope.events_attend = $rootScope.globals.event_attend;
+
+                    $scope.sortbytime_attend();
+                });
+
+                $scope.trc = function(callback) {
+                    $.ajax({
+                        type: "GET",
+                        url: 'https://yakume.xyz/api/myevents',
+                        success: function(response){
+                            console.log(response);
+                            var events_attend_num = JSON.parse(response).events;
+                            $rootScope.globals.event_attend = [];
+                            var count = 0;
+                            $.each(events_attend_num, function (i, item) {
+                                var mydata = $.param({
+                                    eventid : item
+                                });
+                                $.ajax({
+                                    type: "GET",
+                                    url: 'https://yakume.xyz/api/getevent',
+                                    data: mydata,
+                                    success: function(response){
+                                        //console.log(response);
+                                        if (response) {
+                                            count++;
+                                        //console.log(count);
+                                        }
+                                        $scope.mymax = events_attend_num.length;
+                                        var t = JSON.parse(response);
+                                        $rootScope.globals.event_attend.push(t);
+                                        if (count == events_attend_num.length) {
+                                            //console.log($rootScope.globals.event_attend);
+                                            callback();
+                                        }
+                                    }
+                                });
+                            })
+                        }
+                    });
+                }
+
+                $scope.sortbytime_attend = function() {
+                    $scope.events_attend.sort(function(a,b){
+                      return parseInt(a.time) - parseInt(b.time);
+                    });
+                    var currtime = new Date().getTime();
+                    var len = $scope.events.length;
+                    var cnt = 0;
+                    var index = 0;
+                    while(cnt < len){
+                        if($scope.events_attend[cnt].time >= currtime){
+                            break;
+                        }
+                        cnt++;
+                    }
+                    while(index < cnt){
+                        var temp = $scope.events_attend.shift();
+                        $scope.events_attend.push(temp);
+                        index++;
+                    }
+                    $scope.updateevents_attend($scope.events_attend);
+                }
+
+
 
                 $("#file").change(function () {
                     filePreview(this);
@@ -174,7 +259,7 @@
 
                 $scope.confirmPassword = false;
                 $scope.sameAsOldPassword = false;
-		$scope.emptyfollowees = true;
+                $scope.emptyfollowees = true;
 
                 $scope.checkPassword = function() {
                     if ($scope.oldpassword == $scope.newpassword) {
