@@ -81,14 +81,18 @@
                 $scope.eventsubmit = function(event) {
                     $scope.hasSubmit = true;
 
-        		    var start_date = $('.start_datepicker').val();
-        		    var start_time = $('.start_timepicker').val();
-        		    var start_stamp = new Date(start_date + " " + start_time).getTime()
-
-        		    var end_date = $('.end_datepicker').val();
-        		    var end_time = $('.end_timepicker').val();
-        		    var end_stamp = new Date(end_date + " " + end_time).getTime()
-
+        	    var start_date = $('.start_datepicker').val();
+        	    var start_time = $('.start_timepicker').val();
+        	    var start_stamp = new Date(start_date + " " + start_time).getTime();
+		    //console.log(start_date);
+		    //console.log(start_time);
+		    //console.log(start_stamp);
+		    var end_date = $('.end_datepicker').val();
+        	    var end_time = $('.end_timepicker').val();
+        	    var end_stamp = new Date(end_date + " " + end_time).getTime()
+		    //console.log(end_date);
+		    //console.log(end_time);
+		    //console.log(end_stamp);
                     var now = new Date();
                     var duration = end_stamp - start_stamp;
                     if (start_stamp > now && duration > 0) {
@@ -99,9 +103,9 @@
                     $scope.event.timestamp = start_stamp
                     $scope.event.duration = duration;
 
-		            console.log($scope.event);
+		    console.log($scope.event);
 
-        		    $.ajax({
+		    $.ajax({
                         type: "POST",
                         url: 'https://yakume.xyz/api/addevent',
                         data: $scope.event,

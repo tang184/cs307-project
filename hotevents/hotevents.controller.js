@@ -432,7 +432,7 @@
                         $scope.Follow = function() {
                             $scope.follow = true;
                             var mydata = $.param({
-                                email : $rootScope.globals.currentUser.email
+                                email : $scope.specevent.owner
                             });
 
                             $.ajax({
@@ -461,7 +461,7 @@
                         $scope.unFollow = function() {
                             $scope.follow = false;
                             var mydata = $.param({
-                                email : $rootScope.globals.currentUser.email
+                                email : $scope.specevent.owner
                             });
 
                             $.ajax({
