@@ -118,12 +118,6 @@
                     $scope.$apply();             
                 }
 
-                $scope.trc(function(){
-                    $scope.events_attend = $rootScope.globals.event_attend;
-
-                    $scope.sortbytime_attend();
-                });
-
                 $scope.trc = function(callback) {
                     $.ajax({
                         type: "GET",
@@ -160,6 +154,14 @@
                         }
                     });
                 }
+
+                $scope.trc(function(){
+                    $scope.events_attend = $rootScope.globals.event_attend;
+
+                    $scope.sortbytime_attend();
+                });
+
+                
 
                 $scope.sortbytime_attend = function() {
                     $scope.events_attend.sort(function(a,b){

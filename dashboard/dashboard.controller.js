@@ -27,10 +27,10 @@
             }
 
             $scope.updateevents_attend = function(eventlist) {
-                if ($scope.max > 5) {
-                    $scope.max = 5;
+                if ($scope.mymax > 5) {
+                    $scope.mymax = 5;
                 }
-                for (var i = 0; i < $scope.max; i++) {
+                for (var i = 0; i < $scope.mymax; i++) {
                     eventlist[i].starttime = $scope.timeConverter(eventlist[i].time);
                     if (eventlist[i].images.length == 0) {
                         eventlist[i].eventimage = "assets/image-resources/stock-images/img-17.jpg";
