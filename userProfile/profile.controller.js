@@ -101,12 +101,12 @@
                         }
                     });
                 }
-
+		$scope.allevents_attend = [];
                 $scope.updateevents_attend = function(eventlist) {
                     if ($scope.mymax > 5) {
                         $scope.mymax = 5;
                     }
-                    for (var i = 0; i < $scope.max; i++) {
+                    for (var i = 0; i < $scope.mymax; i++) {
                         eventlist[i].starttime = $scope.timeConverter(eventlist[i].time);
                         if (eventlist[i].images.length == 0) {
                             eventlist[i].eventimage = "assets/image-resources/stock-images/img-17.jpg";
@@ -115,6 +115,7 @@
                         }
                         $scope.allevents_attend.push(eventlist[i]);
                     }
+		    console.log($scope.allevents_attend);
                     $scope.$apply();             
                 }
 
@@ -155,13 +156,16 @@
                     });
                 }
 
-                $scope.trc(function(){
-                    $scope.events_attend = $rootScope.globals.event_attend;
+		$scope.pull_myevent = function() {
 
-                    $scope.sortbytime_attend();
-                });
 
-                
+                    $scope.trc(function(){
+			$scope.events_attend = $rootScope.globals.event_attend;
+
+			$scope.sortbytime_attend();
+                    });
+		}
+                $scope.pull_myevent();
 
                 $scope.sortbytime_attend = function() {
                     $scope.events_attend.sort(function(a,b){
@@ -245,6 +249,16 @@
                         }                        
                     }
                 }
+
+		$scope.timeConverter = function(UNIX_timestamp){
+                  var a = new Date(UNIX_timestamp);
+                  var months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+                  var year = a.getFullYear();
+                  var month = months[a.getMonth()];
+                  var date = a.getDate();
+                  var time = month + ' ' + date + ' ' +  year;
+                  return time;
+            }
 
                 $scope.editProfile = function() {
                     $scope.isEdit = true;
