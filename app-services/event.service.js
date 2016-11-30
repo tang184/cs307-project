@@ -20,6 +20,9 @@
 		service.pull_user_by_email = pull_user_by_email;
 		service.pull_event_by_ID = pull_event_by_ID;
 		
+		service.pull_followee_list = pull_followee_list;
+		service.pull_follower_list = pull_follower_list;
+		
         return service;
 		
         function pulleventfromID(callback) {
@@ -152,6 +155,48 @@
 						console.log("ID:" + id + " with " + response);
 					}
                     callback(anevent);
+                }
+            });
+        }
+
+        function pull_followee_list(callback) {
+            var mydata = $.param({
+            });
+
+            $.ajax({
+                type: "GET",
+                url: 'https://yakume.xyz/api/user/followees',
+                data: mydata,
+                success: function(response){
+                    var list = response;
+					try {
+						list = JSON.parse(response);
+					}
+					catch(err) {
+						console.log("unable to pull followee list with response: " + response);
+					}
+                    callback(list.followee);
+                }
+            });
+        }
+
+        function pull_follower_list(callback) {
+            var mydata = $.param({
+            });
+
+            $.ajax({
+                type: "GET",
+                url: 'https://yakume.xyz/api/user/followers',
+                data: mydata,
+                success: function(response){
+                    var list = response;
+					try {
+						list = JSON.parse(response);
+					}
+					catch(err) {
+						console.log("unable to pull follower list with response: " + response);
+					}
+                    callback(list.follower);
                 }
             });
         }
