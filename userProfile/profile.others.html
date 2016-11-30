@@ -7,9 +7,9 @@
             <div class="image-content font-white">
 
                 <div class="meta-box meta-box-bottom">
-                    <img style="max-width: 100px" src="https://yakume.xyz/img/{{globals.currentUser.avatar}}" alt="" class="meta-image img-bordered img-circle">
-                    <h3 class="meta-heading">{{globals.currentUser.username}}</h3>
-                    <h4 class="meta-subheading" style="color:white">{{globals.currentUser.email}}</h4>
+                    <img style="max-width: 100px" src="https://yakume.xyz/img/{{user.avatar}}" alt="" class="meta-image img-bordered img-circle">
+                    <h3 class="meta-heading">{{user.name}}</h3>
+                    <h4 class="meta-subheading" style="color:white">{{user.email}}</h4>
                 </div>
 
             </div>
@@ -18,10 +18,10 @@
         </div>
             <div class="mrg15T mrg15B"></div>
             <blockquote class="font-gray">
-                <p>{{globals.currentUser.aboutme}}</p>
+                <p>{{user.description}}</p>
                 <small>
                     I am at
-                    <cite title="Monarch">{{globals.currentUser.city}}</cite>
+                    <cite title="Monarch">{{user.city}}</cite>
                 </small>
             </blockquote>
         </div>

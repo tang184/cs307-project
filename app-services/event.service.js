@@ -16,6 +16,7 @@
         service.tag_tostring = tag_tostring;
         service.timeConverter = timeConverter;
 		
+		service.pull_user_by_email_then_avatar = pull_user_by_email_then_avatar;
 		service.pull_user_by_email = pull_user_by_email;
 		service.pull_event_by_ID = pull_event_by_ID;
 		
@@ -43,7 +44,7 @@
         }
 		
         function pull_user_by_email_from_url(callback) {
-            pull_user_by_email($state.params.profile_others_email, callback);
+            pull_user_by_email_then_avatar($state.params.profile_others_email, callback);
         }
 
         function pull_all_events(callback) {
@@ -108,11 +109,29 @@
 						profile = JSON.parse(response);
 					}
 					catch(err) {
-						console.log("ID:" + id + " with " + response);
+						console.log("email:" + email + " with " + response);
 					}
                     callback(profile);
                 }
             });
+        }
+		
+        function pull_user_by_email_then_avatar(email, callback) {
+            pull_user_by_email(email, function(user) {
+				var mydata = $.param({
+					email: user.email
+				});
+
+				$.ajax({
+					type: "GET",
+					url: 'https://yakume.xyz/api/avatar/get',
+					data: mydata,
+					success: function(response){
+						user.avatar = response;
+						callback(user);
+					}
+				});
+			});
         }
 
         function pull_event_by_ID(id, callback) {
