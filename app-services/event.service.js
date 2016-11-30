@@ -22,6 +22,7 @@
 		
 		service.pull_followee_list = pull_followee_list;
 		service.pull_follower_list = pull_follower_list;
+		service.showspecificevent = showspecificevent;
 		
         return service;
 		
@@ -200,6 +201,334 @@
                 }
             });
         }
+
+		function DetailTimeConverter(UNIX_timestamp) {
+			var a = new Date(UNIX_timestamp);
+			var months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+			var year = a.getFullYear();
+			var month = months[a.getMonth()];
+			var date = a.getDate();
+			var hour = a.getHours();
+			var minute = a.getMinutes();
+			var time = month + ' ' + date + ' ' +  year + '   ' + hour + ':' + minute;
+			return time;
+		}
+		
+		function showspecificevent($scope, $rootScope, ngDialog, id) {
+			var mydata = $.param({
+				eventid : id
+			});
+			function abc (callback) {
+				$.ajax({
+					type: "GET",
+					url: 'https://yakume.xyz/api/getevent',
+					data: mydata,
+					success: function(response){
+						callback(response);
+					}
+				});
+			}
+			var event;
+			abc(function(response) {
+				$scope.specevent = JSON.parse(response);
+				if ($rootScope.globals.currentUser.email == $scope.specevent.owner) {
+					$scope.show = false;
+				}
+				$scope.specevent.mapurl="img/loc_404.png";
+
+				$scope.abc = "owner";
+				$scope.specevent.starttime = DetailTimeConverter($scope.specevent.time);
+				$scope.specevent.endtime = DetailTimeConverter($scope.specevent.time + $scope.specevent.duration);
+				$scope.specevent.posttime = DetailTimeConverter($scope.specevent.timeposted);
+
+				if ($scope.specevent.latitude) {
+					$scope.specevent.mapurl="https://maps.googleapis.com/maps/api/staticmap?center=" + $scope.specevent.latitude + "," + $scope.specevent.longitude +
+						"&zoom=16&size=320x200&&markers=color:red%7Clabel:C%7C" + $scope.specevent.latitude + "," + $scope.specevent.longitude
+						+ "&key=AIzaSyAFhzO5tGWXiCCtH5y6XW6ycS-1fbC4uYA";
+					console.log($scope.specevent.mapurl);
+				}
+				else {
+					$scope.specevent.mapurl="img/loc_404.png";
+				}
+				event = $scope.specevent;
+				ngDialog.open({
+					template: 'templateId', controller: ['$scope', '$cookies' , function($scope, $cookies) {
+						$scope.specevent = event;
+						$scope.show = true;
+						$scope.save = true;
+						//$scope.reserve = true;
+						if ($rootScope.globals.currentUser.email == $scope.specevent.owner) {
+							$scope.show = false;
+						}
+						$scope.sattend = false;
+						$scope.payment = false;
+						if ($scope.specevent.price != 0) {
+							$scope.payment = true;
+						}
+						var mydata = $.param({
+							eventid : event.id
+						});
+						$.ajax({
+							type: "GET",
+							url: 'https://yakume.xyz/api/attendees',
+							data: mydata,
+							success: function(response) {
+								$scope.attendees = JSON.parse(response).attendees;
+								//console.log($scope.attendees);
+								$scope.reserve = !($.inArray($rootScope.globals.currentUser.email, $scope.attendees) > -1);
+								//console.log($scope.reserve);
+								$scope.$apply();
+							}
+						});
+						$scope.sowner = false;
+						$scope.showownerinfo = function() {
+							$scope.sowner = !$scope.sowner;
+						}
+						$scope.showattend = function() {
+							$scope.sattend = !$scope.sattend;
+						}
+						$scope.saveEvent = function(id) {
+							$scope.save = false;
+							var mydata = $.param({
+								eventid : id
+							});
+
+							$.ajax({
+								type: "POST",
+								url: 'https://yakume.xyz/api/watchlist/save',
+								data: mydata,
+								success: function(response){
+
+									if (response == "SUCCESS") {
+										console.log("saved to watchlist!");
+									} else if (response == "ERR_NOT_LOGGED_IN"){
+										alert("login expired, please login again");
+										$location.path('/login');
+									} else {
+										alert(response);
+									}
+
+								}
+							});
+						}
+
+						$scope.unsaveEvent = function(id) {
+							$scope.save = true;
+							var mydata = $.param({
+								eventid : id
+							});
+
+							$.ajax({
+								type: "POST",
+								url: 'https://yakume.xyz/api/watchlist/delete',
+								data: mydata,
+								success: function(response){
+
+									if (response == "SUCCESS") {
+										console.log("unsaved from watchlist!");
+									} else if (response == "ERR_NOT_LOGGED_IN"){
+										alert("login expired, please login again");
+										$location.path('/login');
+									} else {
+										alert(response);
+									}
+
+
+
+								}
+							});
+						}
+						$scope.showpayinfo = false;
+						$scope.reserveEvent = function(id) {
+							if ($scope.payment) {
+								if ($scope.showpayinfo) {
+									var mydata = $.param({
+										amount : $scope.specevent.price,
+										card : $scope.cardnumber,
+										exp_mm : $scope.expmonth,
+										exp_yy : $scope.expyear
+									});
+									$.ajax({
+										type: "POST",
+										url: 'https://yakume.xyz/api/pay',
+										data: mydata,
+										success: function(response){
+											if (response == "ERR_NOT_LOGGED_IN") {
+												alert("login expired, please login again");
+												$location.path('/login');
+											} else {
+												var mydatareserve = $.param({
+													eventid : id,
+													payment_token : response
+												});
+												$.ajax({
+													type: "POST",
+													url: 'https://yakume.xyz/api/event/register',
+													data: mydatareserve,
+													success: function(response){
+														if (response == "SUCCESS") {
+															$scope.attendees.push($rootScope.globals.currentUser.email);
+														} else if (response == "ERR_INVALID_ARGUMENT") {
+															alert("You haven't pay");
+														} else if (response == "ERR_NOT_LOGGED_IN") {
+															alert("login expired, please login again");
+															$location.path('/login'); 
+														} else {
+															alert(response);
+														}
+														console.log($scope.attendees);
+													}
+												});
+											}
+										}
+									});
+								} else {
+									$scope.showpayinfo = true;
+								}
+							}  else {
+								$scope.reserve = false;
+								$scope.showpayinfo = false;
+								var mydata = $.param({
+									eventid : id
+								});
+
+								$.ajax({
+									type: "POST",
+									url: 'https://yakume.xyz/api/event/register',
+									data: mydata,
+									success: function(response){
+										if (response == "SUCCESS") {
+											$scope.attendees.push($rootScope.globals.currentUser.email);
+										} else if (response == "ERR_INVALID_ARGUMENT") {
+											alert("You haven't pay");
+										} else if (response == "ERR_NOT_LOGGED_IN") {
+											alert("login expired, please login again");
+											$location.path('/login'); 
+										} else {
+											alert(response);
+										}
+										console.log($scope.attendees);
+									}
+								});
+							}
+							
+						}
+
+						$scope.quitEvent = function(id) {
+							$scope.reserve = true;
+							var mydata = $.param({
+								eventid : id
+							});
+
+							$.ajax({
+								type: "POST",
+								url: 'https://yakume.xyz/api/event/unregister',
+								data: mydata,
+								success: function(response){
+
+									
+									if (response == "SUCCESS") {
+										for(var i = $scope.attendees.length - 1; i >= 0; i--) {
+											if($scope.attendees[i] === $rootScope.globals.currentUser.email) {
+											   $scope.attendees.splice(i, 1);
+											}
+										}
+										console.log($scope.attendees);
+									} else if (response == "ERR_NOT_LOGGED_IN"){
+										alert("login expired, please login again");
+										$location.path('/login');
+									} else {
+										alert(response);
+									}
+
+
+								}
+							});
+						}
+
+						$scope.Follow = function() {
+							$scope.follow = true;
+							var mydata = $.param({
+								email : $scope.specevent.owner
+							});
+
+							$.ajax({
+								type: "POST",
+								url: 'https://yakume.xyz/api/user/follow',
+								data: mydata,
+								success: function(response){
+
+
+									if (response == "SUCCESS") {
+										console.log(response);
+									} else if (response == "ERR_NOT_LOGGED_IN"){
+										alert("login expired, please login again");
+										$location.path('/login');
+									} else {
+										alert(response);
+									}
+
+
+									
+									
+								}
+							});
+						}
+
+						$scope.unFollow = function() {
+							$scope.follow = false;
+							var mydata = $.param({
+								email : $scope.specevent.owner
+							});
+
+							$.ajax({
+								type: "POST",
+								url: 'https://yakume.xyz/api/user/unfollow',
+								data: mydata,
+								success: function(response){
+
+									if (response == "SUCCESS") {
+										console.log(response);
+									} else if (response == "ERR_NOT_LOGGED_IN"){
+										alert("login expired, please login again");
+										$location.path('/login');
+									} else {
+										alert(response);
+									}
+
+								}
+							});
+						}
+
+						$scope.deleteEvent = function(id) {
+							var mydata = $.param({
+								eventid : id
+							});
+
+							$.ajax({
+								type: "POST",
+								url: 'https://yakume.xyz/api/deleteevent',
+								data: mydata,
+								success: function(response){
+
+									if (response == "SUCCESS") {
+										console.log(response);
+									} else if (response == "ERR_NOT_LOGGED_IN"){
+										alert("login expired, please login again");
+										$location.path('/login');
+									} else {
+										alert(response);
+									}
+
+								}
+							});
+						}
+					}]
+                });
+            })
+        }
+
+		
     }
 	
 })();
