@@ -41,6 +41,14 @@
                 //authenticated: true
             })
 
+            .state('profile_others', {
+                parent:'main',
+                controller: 'ProfileOthersController',
+                templateUrl: 'userProfile/profile.others.html',
+                url:"/profileothers",
+                //authenticated: true
+            })
+
             .state('main', {
                 abstract: true,
                 url: '/main',
