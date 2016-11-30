@@ -10,6 +10,7 @@
         var service = {};
 		
         service.pulleventfromID = pulleventfromID;
+        service.pull_user_by_email_from_url = pull_user_by_email_from_url;
         service.pull_all_events = pull_all_events;
         service.maketexttime = maketexttime;
         service.tag_tostring = tag_tostring;
@@ -39,6 +40,10 @@
                     callback(anevent);
                 }
             });
+        }
+		
+        function pull_user_by_email_from_url(callback) {
+            pull_user_by_email($state.params.profile_others_email, callback);
         }
 
         function pull_all_events(callback) {

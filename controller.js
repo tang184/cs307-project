@@ -45,7 +45,7 @@
                 parent:'main',
                 controller: 'ProfileOthersController',
                 templateUrl: 'userProfile/profile.others.html',
-                url:"/profileothers",
+                url:"/profileothers/{profile_others_email}",
                 //authenticated: true
             })
 
