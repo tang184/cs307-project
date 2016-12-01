@@ -4,8 +4,8 @@
         .module('mainApp')
         .controller('ProfileController', ProfileController);
 
-        ProfileController.$inject = ['$scope', '$rootScope','$location','$cookies', 'FlashService', 'AuthenticationService', 'EventService'];
-            function ProfileController($scope, $rootScope, $location, $cookies, FlashService, AuthenticationService, EventService) {
+        ProfileController.$inject = ['$scope', '$rootScope','$location','$cookies', 'FlashService', 'AuthenticationService', 'EventService', 'ngDialog'];
+            function ProfileController($scope, $rootScope, $location, $cookies, FlashService, AuthenticationService, EventService, ngDialog) {
 
                 $("#bodyBackground").css('background', 'white');
 
@@ -101,13 +101,13 @@
                         }
                     });
                 }
-		$scope.allevents_attend = [];
+				$scope.allevents_attend = [];
                 $scope.updateevents_attend = function(eventlist) {
                     if ($scope.mymax > 5) {
                         $scope.mymax = 5;
                     }
                     for (var i = 0; i < $scope.mymax; i++) {
-                        eventlist[i].starttime = $scope.timeConverter(eventlist[i].time);
+                        eventlist[i].starttime = EventService.timeConverter(eventlist[i].time);
                         if (eventlist[i].images.length == 0) {
                             eventlist[i].eventimage = "assets/image-resources/stock-images/img-17.jpg";
                         } else {
@@ -115,7 +115,7 @@
                         }
                         $scope.allevents_attend.push(eventlist[i]);
                     }
-		    console.log($scope.allevents_attend);
+					console.log($scope.allevents_attend);
                     $scope.$apply();             
                 }
 
@@ -156,15 +156,13 @@
                     });
                 }
 
-		$scope.pull_myevent = function() {
+				$scope.pull_myevent = function() {
+					$scope.trc(function(){
+						$scope.events_attend = $rootScope.globals.event_attend;
 
-
-			$scope.trc(function(){
-				$scope.events_attend = $rootScope.globals.event_attend;
-
-				$scope.sortbytime_attend();
-			});
-		}
+						$scope.sortbytime_attend();
+					});
+				}
                 $scope.pull_myevent();
 
                 $scope.sortbytime_attend = function() {
@@ -250,16 +248,6 @@
                     }
                 }
 
-		$scope.timeConverter = function(UNIX_timestamp){
-                  var a = new Date(UNIX_timestamp);
-                  var months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
-                  var year = a.getFullYear();
-                  var month = months[a.getMonth()];
-                  var date = a.getDate();
-                  var time = month + ' ' + date + ' ' +  year;
-                  return time;
-            }
-
                 $scope.editProfile = function() {
                     $scope.isEdit = true;
                 }
@@ -276,6 +264,7 @@
                 $scope.confirmPassword = false;
                 $scope.sameAsOldPassword = false;
                 $scope.emptyfollowees = true;
+                $scope.emptyfollowers = true;
 
                 $scope.checkPassword = function() {
                     if ($scope.oldpassword == $scope.newpassword) {
@@ -291,20 +280,49 @@
                 }
 
                 $scope.getfollowee = function() {
-                    var mydata = $.param({
-                    });
+					$scope.followee_list = [];
+                    EventService.pull_followee_list(function (email_list) {
+						var rest = email_list.length;
+						if (rest == 0) {
+							$scope.emptyfollowees = true;
+						}
+						else {
+							$scope.emptyfollowees = false;
+							var id;
+							for (id in email_list) {
+								EventService.pull_user_by_email_then_avatar(email_list[id], function(user) {
+									$scope.followee_list.push(user);
+									rest = rest - 1;
+									if (rest == 0) {
+										$scope.$apply();
+									}
+								});
+							}
+						}
+					});
+                }
 
-                     $.ajax({
-                        type: "GET",
-                        url: 'https://yakume.xyz/api/user/followees',
-                        data: mydata,
-                        success: function(response){
-                            $scope.followees = JSON.parse(response).followee;
-                            if ($scope.followees.length != 0) {
-				                $scope.emptyfollowees = false;
-                            }
-                        }
-                    });
+                $scope.getfollower = function() {
+					$scope.follower_list = [];
+                    EventService.pull_follower_list(function (email_list) {
+						var rest = email_list.length;
+						if (rest == 0) {
+							$scope.emptyfollowers = true;
+						}
+						else {
+							$scope.emptyfollowers = false;
+							var id;
+							for (id in email_list) {
+								EventService.pull_user_by_email_then_avatar(email_list[id], function(user) {
+									$scope.follower_list.push(user);
+									rest = rest - 1;
+									if (rest == 0) {
+										$scope.$apply();
+									}
+								});
+							}
+						}
+					});
                 }
 
                 $scope.pull_newsfeed = function() {
@@ -389,13 +407,15 @@
                     });
                 }
 				$scope.goto_profie = function(email) {
+					console.log("haha " + email);
 					$location.path("/main/profileothers/" + email);
 				}
-				
+				$scope.showspecificevent = function(id) {
+					EventService.showspecificevent($scope, $rootScope, $location, ngDialog, id);
+				}
                 $scope.getfollowee();
+                $scope.getfollower();
                 $scope.pull_newsfeed();
-
-
         }
 
     })();
