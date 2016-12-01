@@ -15,30 +15,20 @@
                 $scope.change_password = false;
 
                 $scope.user={};
-
                 
-                if ($rootScope.globals.currentUser.city == "null") {
-                    $rootScope.globals.currentUser.city = "mars";
-                }
-                if ($rootScope.globals.currentUser.aboutme == "null") {
-                    $rootScope.globals.currentUser.aboutme = "Hi, my name is " + $scope.username;
-                }
-
-                //$scope.aboutme = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante."
-
-
                 $scope.SaveProfile = function() {
-
                     var mydata = $.param({
-                        newname: $rootScope.globals.currentUser.username
+                        name: $rootScope.globals.currentUser.username,
+                        city: $rootScope.globals.currentUser.city,
+                        description: $rootScope.globals.currentUser.aboutme
                     });
                     $.ajax({
                         type: "POST",
-                        url: 'https://yakume.xyz/api/changeusername',
+                        url: 'https://yakume.xyz/api/userprofile/update',
                         data: mydata,
                         success: function(response){
                             if (response == "SUCCESS") {
-                                console.log("saved to watchlist");
+								
                             } else if (response == "ERR_NOT_LOGGED_IN"){
                                 alert("login expired, please login again");
                                 $location.path('/login');
@@ -57,7 +47,7 @@
                             data: postimage,
                             success: function(response){
                                 if (response == "SUCCESS") {
-                                    console.log("saved to watchlist");
+									
                                 } else if (response == "ERR_NOT_LOGGED_IN"){
                                     alert("login expired, please login again");
                                     $location.path('/login');
@@ -69,8 +59,6 @@
                     }
                     $scope.isEdit = false;
                 }
-
-
 
                 $scope.cancelProfile= function() {
                     $scope.isEdit = false;
@@ -95,9 +83,6 @@
                             } else {
                                 alert(response);
                             }
-
-
-
                         }
                     });
                 }
