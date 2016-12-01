@@ -214,26 +214,10 @@
 			return time;
 		}
 		
-		function showspecificevent($scope, $rootScope, ngDialog, id) {
-			var mydata = $.param({
-				eventid : id
-			});
-			function abc (callback) {
-				$.ajax({
-					type: "GET",
-					url: 'https://yakume.xyz/api/getevent',
-					data: mydata,
-					success: function(response){
-						callback(response);
-					}
-				});
-			}
+		function showspecificevent($scope, $rootScope, $location, ngDialog, id) {
 			var event;
-			abc(function(response) {
-				$scope.specevent = JSON.parse(response);
-				if ($rootScope.globals.currentUser.email == $scope.specevent.owner) {
-					$scope.show = false;
-				}
+			pull_event_by_ID(id, function(specevent) {
+				$scope.specevent = specevent;
 				$scope.specevent.mapurl="img/loc_404.png";
 
 				$scope.abc = "owner";
@@ -254,11 +238,18 @@
 				ngDialog.open({
 					template: 'templateId', controller: ['$scope', '$cookies' , function($scope, $cookies) {
 						$scope.specevent = event;
-						$scope.show = true;
+						
+						// pull user.
+						pull_user_by_email_then_avatar($scope.specevent.owner, function(user) {
+							$scope.specevent.owner_object = user;
+							$scope.$apply();
+						});
+						
+						$scope.selfown = false;
 						$scope.save = true;
 						//$scope.reserve = true;
 						if ($rootScope.globals.currentUser.email == $scope.specevent.owner) {
-							$scope.show = false;
+							$scope.selfown = true;
 						}
 						$scope.sattend = false;
 						$scope.payment = false;
@@ -280,9 +271,8 @@
 								$scope.$apply();
 							}
 						});
-						$scope.sowner = false;
-						$scope.showownerinfo = function() {
-							$scope.sowner = !$scope.sowner;
+						$scope.ownerprofie = function() {
+							$location.path("/main/profileothers/" + $scope.specevent.owner);
 						}
 						$scope.showattend = function() {
 							$scope.sattend = !$scope.sattend;

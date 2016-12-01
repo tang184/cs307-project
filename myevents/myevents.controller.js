@@ -264,7 +264,7 @@
 
 
             $scope.showspecificevent = function(id) {
-				EventService.showspecificevent($scope, $rootScope, ngDialog, id);
+				EventService.showspecificevent($scope, $rootScope, $location, ngDialog, id);
 			}
 
         };

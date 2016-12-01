@@ -159,11 +159,11 @@
 		$scope.pull_myevent = function() {
 
 
-                    $scope.trc(function(){
-			$scope.events_attend = $rootScope.globals.event_attend;
+			$scope.trc(function(){
+				$scope.events_attend = $rootScope.globals.event_attend;
 
-			$scope.sortbytime_attend();
-                    });
+				$scope.sortbytime_attend();
+			});
 		}
                 $scope.pull_myevent();
 
@@ -365,7 +365,7 @@
                                 
                                 callback_function = callback_generator_user(news);
                                 
-                                EventService.pull_user_by_email(news.email, callback_function);
+                                EventService.pull_user_by_email_then_avatar(news.email, callback_function);
                                 
                                 callback_function = callback_generator_event(news);
                                 
@@ -379,7 +379,7 @@
                                 
                                 callback_function = callback_generator_user(news);
                                 
-                                EventService.pull_user_by_email(news.email, callback_function);
+                                EventService.pull_user_by_email_then_avatar(news.email, callback_function);
                                 
                                 callback_function = callback_generator_event(news);
                                 
@@ -388,6 +388,10 @@
                         }
                     });
                 }
+				$scope.goto_profie = function(email) {
+					$location.path("/main/profileothers/" + email);
+				}
+				
                 $scope.getfollowee();
                 $scope.pull_newsfeed();
 

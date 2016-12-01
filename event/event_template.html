@@ -15,10 +15,10 @@
             <label>Time Ends:</label>{{specevent.endtime}}<br>
             <label>Location:</label>{{specevent.address}}<br>
             <label>Price:</label>{{specevent.price}}<br>
-            <label>Event creater:</label><a style="cursor:pointer" ng-click="showownerinfo()">{{specevent.owner}}</a><br>
-            <div ng-if="sowner">
-                <button ng-if="!follow" ng-click="Follow()">Follow User</button>
-                <button ng-if="follow" ng-click="unFollow()">Unfollow User</button>
+            <label>Event creater:</label><br>
+            <div ng-click="ownerprofie()" style="cursor:pointer">
+				<img style="max-width: 100px" src="https://yakume.xyz/img/{{specevent.owner_object.avatar}}" alt="" class="meta-image img-bordered img-circle">
+                <h3 class="meta-heading">{{specevent.owner_object.name}}</h3>
             </div>
             <label>Event creat time:</label>{{specevent.posttime}}<br>
             <label>Description:</label>{{specevent.description}}<br>
@@ -116,7 +116,7 @@
                 <span>Quit</span>
                 <i class="glyph-icon icon-arrow-right col-md-6"></i>
             </button>
-            <button class="btn btn-alt btn-hover btn-red-alt bg-red" ng-if="!show" ng-click = "deleteEvent(specevent.id)" style="top:20px">
+            <button class="btn btn-alt btn-hover btn-red-alt bg-red" ng-if="selfown" ng-click = "deleteEvent(specevent.id)" style="top:20px">
                 <span>Delete event</span>
                 <i class="glyph-icon icon-arrow-right"></i>
             </button>
