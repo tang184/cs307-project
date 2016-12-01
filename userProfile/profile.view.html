@@ -15,298 +15,296 @@
 
     </ul>
     <div class="col-md-12" ng-show="tab==1">
+		<div class="panel-layout">
+			<div class="panel-box">
 
+				<div class="panel-content image-box">
 
+					<div class="image-content font-white">
 
-    <div class="panel-layout">
-    <div class="panel-box">
+						<div class="meta-box meta-box-bottom">
+							<img style="max-width: 100px" src="https://yakume.xyz/img/{{globals.currentUser.avatar}}" alt="" class="meta-image img-bordered img-circle">
+							<h3 class="meta-heading">{{globals.currentUser.username}}</h3>
+							<h4 class="meta-subheading" style="color:white">{{globals.currentUser.email}}</h4>
+						</div>
 
-        <div class="panel-content image-box">
+					</div>
+					<img src="assets/image-resources/blurred-bg/blurred-bg-13.jpg" alt="">
 
-            <div class="image-content font-white">
-
-                <div class="meta-box meta-box-bottom">
-                    <img style="max-width: 100px" src="https://yakume.xyz/img/{{globals.currentUser.avatar}}" alt="" class="meta-image img-bordered img-circle">
-                    <h3 class="meta-heading">{{globals.currentUser.username}}</h3>
-                    <h4 class="meta-subheading" style="color:white">{{globals.currentUser.email}}</h4>
-                </div>
-
-            </div>
-            <img src="assets/image-resources/blurred-bg/blurred-bg-13.jpg" alt="">
-
-        </div>
-            <div class="mrg15T mrg15B"></div>
-            <blockquote class="font-gray">
-                <p>{{globals.currentUser.aboutme}}</p>
-                <small>
-                    I am at
-                    <cite title="Monarch">{{globals.currentUser.city}}</cite>
-                </small>
-            </blockquote>
-        </div>
-    </div>
-    <div ng-if="!emptyfollowees" class="content-box mrg15B">
-		<h3 class="content-box-header">
-			YOU FOLLOW WHO:
-		</h3>
-		<div class="content-box-wrapper text-center clearfix">
-			<div ng-repeat="user in followee_list">
-				<div ng-click="goto_profie(user.email)" style="cursor:pointer">
-					<img style="max-width: 50px" src="https://yakume.xyz/img/{{user.avatar}}" alt="" class="meta-image img-bordered img-circle">
-					<p class="meta-heading"> {{user.name}}</p>
+				</div>
+				<div class="mrg15T mrg15B"></div>
+				<blockquote class="font-gray">
+				<p>{{globals.currentUser.aboutme}}</p>
+				<small>
+					I am at
+					<cite title="Monarch">{{globals.currentUser.city}}</cite>
+				</small>
+				</blockquote>
+			</div>
+		</div>
+		<div ng-if="!emptyfollowees" class="content-box mrg15B">
+			<h3 class="content-box-header">
+				YOU FOLLOW WHO:
+			</h3>
+			<div class="content-box-wrapper text-center clearfix">
+				<div ng-repeat="user in followee_list">
+					<div ng-click="goto_profie(user.email)" style="cursor:pointer">
+						<img style="max-width: 50px" src="https://yakume.xyz/img/{{user.avatar}}" alt="" class="meta-image img-bordered img-circle">
+						<p class="meta-heading"> {{user.name}}</p>
+					</div>
 				</div>
 			</div>
 		</div>
-    </div>
-    <div ng-if="!emptyfollowers" class="content-box mrg15B">
-		<h3 class="content-box-header">
-			WHO FOLLOW YOU:
-		</h3>
-		<div class="content-box-wrapper text-center clearfix">
-			<div ng-repeat="user in follower_list">
-				<div ng-click="goto_profie(user.email)" style="cursor:pointer">
-					<img style="max-width: 50px" src="https://yakume.xyz/img/{{user.avatar}}" alt="" class="meta-image img-bordered img-circle">
-					<p class="meta-heading"> {{user.name}}</p>
+	
+		<div ng-if="!emptyfollowers" class="content-box mrg15B">
+			<h3 class="content-box-header">
+				WHO FOLLOW YOU:
+			</h3>
+			<div class="content-box-wrapper text-center clearfix">
+				<div ng-repeat="user in follower_list">
+					<div ng-click="goto_profie(user.email)" style="cursor:pointer">
+						<img style="max-width: 50px" src="https://yakume.xyz/img/{{user.avatar}}" alt="" class="meta-image img-bordered img-circle">
+						<p class="meta-heading"> {{user.name}}</p>
+					</div>
 				</div>
 			</div>
 		</div>
-    </div>
-    <div class="content-box mrg15B">
-        <div class="panel">
-            <div class="panel-body">
-                <h3 class="title-hero">
-                    {{'My Events'|translate}}
-                </h3>
-                
-                <div class="clearfix">
-                    <ul id="portfolio-grid" class="reset-ul row">
-                        <div ng-repeat="event_attend in allevents_attend">
-                            <li class="col-lg-4 col-sm-6 col-md-4" style="cursor:pointer" ng-click="showspecificevent(event_attend.id)">
-                                <div class="thumbnail-box-wrapper">
-                                    <div class="thumbnail-box">
-                                        <div class="thumb-content">
-                                            <div class="center-vertical">
-                                                <div class="center-content">
-                                                    <i class="icon-helper icon-center animated zoomInUp font-white glyph-icon icon-linecons-note"></i>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="thumb-overlay bg-black"></div>
-                                        <img style="height:132.95px" src="{{event_attend.eventimage}}" alt="">
-                                    </div>
-                                    <div class="thumb-pane">
-                                        <h3 class="thumb-heading animated rollIn">
-                                            <a title="">
-                                                {{event_attend.title}}
-                                            </a>
-                                            <small>{{event_attend.starttime}}</small>
-                                        </h3>
-                                    </div>
-                                </div>
-                            </li>
-                        </div>
-                        <li class="col-lg-4 col-md-4" ui-sref="myevents">
-                            <div class="tile-box bg-white" >
-                                <div class="thumbnail-box" style="height:200px" >
-                                    <div class="thumb-content">
-                                        <div class="center-vertical">
-                                            <div class="center-content">
-                                                <h3 class="thumb-heading animated flipInX" >
-                                                    {{'More Events'|translate}}
-                                                </h3>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="thumb-overlay bg-black"></div>
-                                     <div class="tile-content-wrapper">
-                                        <img src="img/more.png" alt="">
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
+		
+		<div class="content-box mrg15B">
+			<div class="panel">
+				<div class="panel-body">
+					<h3 class="title-hero">
+						{{'My Events'|translate}}
+					</h3>
+					
+					<div class="clearfix">
+						<ul id="portfolio-grid" class="reset-ul row">
+							<div ng-repeat="event_attend in allevents_attend">
+								<li class="col-lg-4 col-sm-6 col-md-4" style="cursor:pointer" ng-click="showspecificevent(event_attend.id)">
+									<div class="thumbnail-box-wrapper">
+										<div class="thumbnail-box">
+											<div class="thumb-content">
+												<div class="center-vertical">
+													<div class="center-content">
+														<i class="icon-helper icon-center animated zoomInUp font-white glyph-icon icon-linecons-note"></i>
+													</div>
+												</div>
+											</div>
+											<div class="thumb-overlay bg-black"></div>
+											<img style="height:132.95px" src="{{event_attend.eventimage}}" alt="">
+										</div>
+										<div class="thumb-pane">
+											<h3 class="thumb-heading animated rollIn">
+												<a title="">
+													{{event_attend.title}}
+												</a>
+												<small>{{event_attend.starttime}}</small>
+											</h3>
+										</div>
+									</div>
+								</li>
+							</div>
+							<li class="col-lg-4 col-md-4" ui-sref="myevents">
+								<div class="tile-box bg-white" >
+									<div class="thumbnail-box" style="height:200px" >
+										<div class="thumb-content">
+											<div class="center-vertical">
+												<div class="center-content">
+													<h3 class="thumb-heading animated flipInX" >
+														{{'More Events'|translate}}
+													</h3>
+												</div>
+											</div>
+										</div>
+										<div class="thumb-overlay bg-black"></div>
+										 <div class="tile-content-wrapper">
+											<img src="img/more.png" alt="">
+										</div>
+									</div>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
 
 
-        <div class="content-box mrg15B">
-    <div class="panel">
-    <div class="panel-body">
-        <h3 class="title-hero">
-            My Timeline
-        </h3>
-        <div class="example-box-wrapper">
-            <div class="row">
-                <div class="timeline-box timeline-box-left">
-                    <div class="tl-row col-md-6">
-                        <div ng-repeat="news in createnews">
-                        
-                            <div class="tl-item float-right">
-                                <div class="tl-icon" ng-click="goto_profie(news.user.email)" style="cursor:pointer">
-									<img style="max-width: 50px" src="https://yakume.xyz/img/{{news.user.avatar}}" alt="" class="meta-image img-bordered img-circle">
+		<div class="content-box mrg15B">
+			<div class="panel">
+				<div class="panel-body">
+					<h3 class="title-hero">
+						My Newsfeed
+					</h3>
+					<div class="example-box-wrapper">
+						<div class="row">
+							<div class="timeline-box timeline-box-left">
+								<div class="tl-row col-md-6">
+									<div ng-repeat="news in createnews">
+									
+										<div class="tl-item float-right">
+											<div class="tl-icon" ng-click="goto_profie(news.user.email)" style="cursor:pointer">
+												<img style="max-width: 50px" src="https://yakume.xyz/img/{{news.user.avatar}}" alt="" class="meta-image img-bordered img-circle">
+											</div>
+											<div class="popover right">
+												<div class="arrow"></div>
+												<div class="popover-content">
+													<p class="tl-content"><a ng-click="goto_profie(news.user.email)" style="cursor:pointer">{{news.user.name}}</a> {{news.action}} <a ng-click="showspecificevent(news.anevent.id)" style="cursor:pointer">{{news.anevent.title}}</a></p>
+													<div class="tl-time">
+														<i class="glyph-icon icon-clock-o"></i>
+														{{news.timeshow}}
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
 								</div>
-                                <div class="popover right">
-                                    <div class="arrow"></div>
-                                    <div class="popover-content">
-                                        <p class="tl-content"><a ng-click="goto_profie(news.user.email)" style="cursor:pointer">{{news.user.name}}</a> {{news.action}} <a ng-click="showspecificevent(news.anevent.id)" style="cursor:pointer">{{news.anevent.title}}</a></p>
-                                        <div class="tl-time">
-                                            <i class="glyph-icon icon-clock-o"></i>
-                                            {{news.timeshow}}
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="tl-row col-md-6">
-                        <div ng-repeat="news in reservenews">
-                        
-                            <div class="tl-item float-right">
-                                <div class="tl-icon" ng-click="goto_profie(news.user.email)" style="cursor:pointer">
-									<img style="max-width: 50px" src="https://yakume.xyz/img/{{news.user.avatar}}" alt="" class="meta-image img-bordered img-circle">
+								<div class="tl-row col-md-6">
+									<div ng-repeat="news in reservenews">
+									
+										<div class="tl-item float-right">
+											<div class="tl-icon" ng-click="goto_profie(news.user.email)" style="cursor:pointer">
+												<img style="max-width: 50px" src="https://yakume.xyz/img/{{news.user.avatar}}" alt="" class="meta-image img-bordered img-circle">
+											</div>
+											<div class="popover right">
+												<div class="arrow"></div>
+												<div class="popover-content">
+													<p class="tl-content"><a ng-click="goto_profie(news.user.email)" style="cursor:pointer">{{news.user.name}}</a> {{news.action}} <a ng-click="showspecificevent(news.anevent.id)" style="cursor:pointer">{{news.anevent.title}}</a></p>
+													<div class="tl-time">
+														<i class="glyph-icon icon-clock-o"></i>
+														{{news.timeshow}}
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
 								</div>
-                                <div class="popover right">
-                                    <div class="arrow"></div>
-                                    <div class="popover-content">
-                                        <p class="tl-content"><a ng-click="goto_profie(news.user.email)" style="cursor:pointer">{{news.user.name}}</a> {{news.action}} <a ng-click="showspecificevent(news.anevent.id)" style="cursor:pointer">{{news.anevent.title}}</a></p>
-                                        <div class="tl-time">
-                                            <i class="glyph-icon icon-clock-o"></i>
-                                            {{news.timeshow}}
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>                 
-            </div>
-        </div>
-    </div>
-</div>
-    </div>
+							</div>                 
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
 
     </div>
 
 <div class="example-box-wrapper">
+	<div>
+		<div ng-show="tab==2 && !change_password">
+			<div class="content-box">
+				<form class="form-horizontal pad15L pad15R bordered-row">
+					<div class="form-group remove-border">
+						<label class="col-sm-3 control-label">User Name:</label>
+						<div class="col-sm-6">
+							<input type="text" class="form-control"  id="" ng-disabled="!isEdit" ng-model="globals.currentUser.username" placeholder="First name...">
+						</div>
+					</div>
 
-<div>
-    <div ng-show="tab==2 && !change_password">
-        <div class="content-box">
-            <form class="form-horizontal pad15L pad15R bordered-row">
-                <div class="form-group remove-border">
-                    <label class="col-sm-3 control-label">User Name:</label>
-                    <div class="col-sm-6">
-                        <input type="text" class="form-control"  id="" ng-disabled="!isEdit" ng-model="globals.currentUser.username" placeholder="First name...">
-                    </div>
-                </div>
+					<div class="form-group">
+						<label class="col-sm-3 control-label">Email:</label>
+						<div class="col-sm-6">
+							<input type="text" class="form-control" id="" ng-model="globals.currentUser.email" ng-disabled="true" placeholder="Email address...">
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-sm-3 control-label">City:</label>
+						<div class="col-sm-6">
+							<input type="text" class="form-control" id="" ng-disabled="!isEdit" ng-model="globals.currentUser.city" placeholder="City...">
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-sm-3 control-label">About me:</label>
+						<div class="col-sm-6">
+							<textarea name="" rows="3" class="form-control textarea-autosize" ng-disabled="!isEdit" ng-model="globals.currentUser.aboutme"></textarea>
+						</div>
+					</div>
+					<div class="form-group" id="uploadForm">
+						<label class="col-sm-3 control-label">Profile Avatar:</label>
+						<div class="col-sm-6">
+							<label for="file" class="custom-file-upload">
+								<i class="fa fa-cloud-upload"></i> Upload New Profile Avatar
+							</label>
+							<input type="file" ng-disabled="!isEdit" name="file" id="file" />
+						</div>
+					</div>
+					
+				</form>
+				<div ng-if="isEdit">
+					<div class="button-pane mrg20T">
+						<button class="btn btn-info" ng-click="SaveProfile()">Save</button>
+						<button class="btn btn-link font-gray-dark" ng-click="cancelProfile()">Cancel</button>
+					</div>
+				</div>
+				<div ng-if="!isEdit">
+					<div class="button-pane mrg20T">
+						<button class="btn btn-info" ng-click="editProfile()">Edit Profile</button>
+						<button class="btn btn-info" ng-click="changePassword()">Change Password</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div ng-show="tab==2 && change_password">
+			<div class="content-box mrg15B">
+				<h3 class="content-box-header clearfix">
+					Change Password
+					<div class="font-size-11 float-right">
+						<a href="#" title="">
+							<i class="glyph-icon mrg5R opacity-hover icon-plus"></i>
+						</a>
+						<a href="#" title="">
+							<i class="glyph-icon opacity-hover icon-cog"></i>
+						</a>
+					</div>
+				</h3>
+				<div class="content-box-wrapper pad0T clearfix">
+					<form name="form" class="form-horizontal pad15L pad15R bordered-row" role="form">
+						<div class="form-group" ng-class="{ 'has-error': form.oldpassword.$touched && form.oldpassword.$invalid}">
+							<label class="col-sm-3 control-label required"><span style="color:red">*</span>Old password:</label>
+							<div class="col-sm-6">
+								<input type="password" name="oldpassword" ng-model="oldpassword" required class="form-control" ng-change="checkPassword()">
+								<span ng-show="form.oldpassword.$touched && form.oldpassword.$error.required" class="help-block">Old password is required</span>
+							</div>
+						</div>
+						<div class="form-group" ng-class="{ 'has-error': form.password.$touched && (form.password.$invalid || sameAsOldPassword)}">
+							<label class="col-sm-3 control-label required"><span style="color:red">*</span>New password:</label>
+							<div class="col-sm-6">
+								<input type="password" name="password" id="password" class="form-control" ng-model="newpassword"
+								ng-minlength="6" onpaste="return false" oncontextmenu="return false" oncopy="return false"
+								oncut="return false" ng-maxlength="20" ng-pattern="/(?=.*[A-z])(?=.*[0-9])/"
+								required ng-change="checkPassword()"/>
+								<span ng-show="form.password.$touched && form.password.$error.required" class="help-block">New Password is required</span>
+								<span ng-show="form.password.$touched && !form.password.$error.required && sameAsOldPassword" class="help-block">Cannot be the same as old password</span>
+								<span class="help-block"
+									ng-show="!form.password.$error.required && (form.password.$error.minlength || form.password.$error.maxlength) && form.password.$dirty">
+									Passwords must be between 6 and 20 characters
+								</span>
+								<span class="help-block"
+									  ng-show="!form.password.$error.required && !form.password.$error.minlength && !form.password.$error.maxlength && form.password.$error.pattern && form.password.$dirty">
+									  Must contain both alphabetical and number characters
+								</span>
+							</div>
+						</div>
+						<div class="form-group" ng-class="{ 'has-error': form.c_password.$touched && (form.c_password.$invalid || !confirmPassword)}">
+							<label class="col-sm-3 control-label"> <span style="color:red">*</span> Confirm New password:</label>
+							<div class="col-sm-6">
+								<input type="password" name="c_password" id="c_password" ng-model="c_password"class="form-control"
+								onpaste="return false" oncontextmenu="return false" oncopy="return false" required ng-change="checkPassword()">
+								<span ng-show="form.c_password.$dirty && form.c_password.$error.required" class="help-block">Confirm password is required</span>
+								<span ng-show="form.c_password.$touched && !form.c_password.$error.required && !confirmPassword" class="help-block">Password not match</span>
+							</div>
+						</div>
 
-                <div class="form-group">
-                    <label class="col-sm-3 control-label">Email:</label>
-                    <div class="col-sm-6">
-                        <input type="text" class="form-control" id="" ng-model="globals.currentUser.email" ng-disabled="true" placeholder="Email address...">
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label class="col-sm-3 control-label">City:</label>
-                    <div class="col-sm-6">
-                        <input type="text" class="form-control" id="" ng-disabled="!isEdit" ng-model="globals.currentUser.city" placeholder="City...">
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label class="col-sm-3 control-label">About me:</label>
-                    <div class="col-sm-6">
-                        <textarea name="" rows="3" class="form-control textarea-autosize" ng-disabled="!isEdit" ng-model="globals.currentUser.aboutme"></textarea>
-                    </div>
-                </div>
-                <div class="form-group" id="uploadForm">
-                    <label class="col-sm-3 control-label">Profile Avatar:</label>
-                    <div class="col-sm-6">
-                        <label for="file" class="custom-file-upload">
-                            <i class="fa fa-cloud-upload"></i> Upload New Profile Avatar
-                        </label>
-                        <input type="file" ng-disabled="!isEdit" name="file" id="file" />
-                    </div>
-                </div>
-                
-            </form>
-            <div ng-if="isEdit">
-                <div class="button-pane mrg20T">
-                    <button class="btn btn-info" ng-click="SaveProfile()">Save</button>
-                    <button class="btn btn-link font-gray-dark" ng-click="cancelProfile()">Cancel</button>
-                </div>
-            </div>
-            <div ng-if="!isEdit">
-                <div class="button-pane mrg20T">
-                    <button class="btn btn-info" ng-click="editProfile()">Edit Profile</button>
-                    <button class="btn btn-info" ng-click="changePassword()">Change Password</button>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div ng-show="tab==2 && change_password">
-        <div class="content-box mrg15B">
-            <h3 class="content-box-header clearfix">
-                Change Password
-                <div class="font-size-11 float-right">
-                    <a href="#" title="">
-                        <i class="glyph-icon mrg5R opacity-hover icon-plus"></i>
-                    </a>
-                    <a href="#" title="">
-                        <i class="glyph-icon opacity-hover icon-cog"></i>
-                    </a>
-                </div>
-            </h3>
-            <div class="content-box-wrapper pad0T clearfix">
-                <form name="form" class="form-horizontal pad15L pad15R bordered-row" role="form">
-                    <div class="form-group" ng-class="{ 'has-error': form.oldpassword.$touched && form.oldpassword.$invalid}">
-                        <label class="col-sm-3 control-label required"><span style="color:red">*</span>Old password:</label>
-                        <div class="col-sm-6">
-                            <input type="password" name="oldpassword" ng-model="oldpassword" required class="form-control" ng-change="checkPassword()">
-                            <span ng-show="form.oldpassword.$touched && form.oldpassword.$error.required" class="help-block">Old password is required</span>
-                        </div>
-                    </div>
-                    <div class="form-group" ng-class="{ 'has-error': form.password.$touched && (form.password.$invalid || sameAsOldPassword)}">
-                        <label class="col-sm-3 control-label required"><span style="color:red">*</span>New password:</label>
-                        <div class="col-sm-6">
-                            <input type="password" name="password" id="password" class="form-control" ng-model="newpassword"
-                            ng-minlength="6" onpaste="return false" oncontextmenu="return false" oncopy="return false"
-                            oncut="return false" ng-maxlength="20" ng-pattern="/(?=.*[A-z])(?=.*[0-9])/"
-                            required ng-change="checkPassword()"/>
-                            <span ng-show="form.password.$touched && form.password.$error.required" class="help-block">New Password is required</span>
-                            <span ng-show="form.password.$touched && !form.password.$error.required && sameAsOldPassword" class="help-block">Cannot be the same as old password</span>
-                            <span class="help-block"
-                                ng-show="!form.password.$error.required && (form.password.$error.minlength || form.password.$error.maxlength) && form.password.$dirty">
-                                Passwords must be between 6 and 20 characters
-                            </span>
-                            <span class="help-block"
-                                  ng-show="!form.password.$error.required && !form.password.$error.minlength && !form.password.$error.maxlength && form.password.$error.pattern && form.password.$dirty">
-                                  Must contain both alphabetical and number characters
-                            </span>
-                        </div>
-                    </div>
-                    <div class="form-group" ng-class="{ 'has-error': form.c_password.$touched && (form.c_password.$invalid || !confirmPassword)}">
-                        <label class="col-sm-3 control-label"> <span style="color:red">*</span> Confirm New password:</label>
-                        <div class="col-sm-6">
-                            <input type="password" name="c_password" id="c_password" ng-model="c_password"class="form-control"
-                            onpaste="return false" oncontextmenu="return false" oncopy="return false" required ng-change="checkPassword()">
-                            <span ng-show="form.c_password.$dirty && form.c_password.$error.required" class="help-block">Confirm password is required</span>
-                            <span ng-show="form.c_password.$touched && !form.c_password.$error.required && !confirmPassword" class="help-block">Password not match</span>
-                        </div>
-                    </div>
+						<div class="button-pane mrg20T">
+							<button type="submit" ng-disabled="form.$invalid || !confirmPassword" class="btn btn-primary" ng-click="uploadnewpass()">Update</button>
+							<button class="btn btn-link font-gray-dark" ng-click="updatePassword()">Cancel</button>
+						</div>
 
-                    <div class="button-pane mrg20T">
-                        <button type="submit" ng-disabled="form.$invalid || !confirmPassword" class="btn btn-primary" ng-click="uploadnewpass()">Update</button>
-                        <button class="btn btn-link font-gray-dark" ng-click="updatePassword()">Cancel</button>
-                    </div>
+					</form>
+				</div>
 
-                </form>
-            </div>
-
-        </div>
-    </div>
-</div>
+			</div>
+		</div>
+	</div>
 </div>
 
 <!-- TODO: action="image server url" -->

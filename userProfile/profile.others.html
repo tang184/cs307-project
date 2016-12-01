@@ -1,28 +1,24 @@
 <div class="row mailbox-wrapper">
     <div class="panel-layout">
-    <div class="panel-box">
+		<div class="panel-box">
+			<div class="panel-content image-box">
+				<div class="image-content font-white">
+					<div class="meta-box meta-box-bottom">
+						<img style="max-width: 100px" src="https://yakume.xyz/img/{{user.avatar}}" alt="" class="meta-image img-bordered img-circle">
+						<h3 class="meta-heading">{{user.name}}</h3>
+						<h4 class="meta-subheading" style="color:white">{{user.email}}</h4>
+						<button class="btn btn-alt btn-hover btn-blue-alt" ng-click = "change_follow()" style="top:20px">
+							<span ng-if="you_follow && follow_you">Following eachother</span>
+							<span ng-if="!you_follow && follow_you">Following you</span>
+							<span ng-if="you_follow && !follow_you">Followed</span>
+							<span ng-if="!you_follow && !follow_you">Not followed</span>
+							<i class="glyph-icon icon-arrow-right"></i>
+						</button>
+					</div>
 
-        <div class="panel-content image-box">
-
-            <div class="image-content font-white">
-
-                <div class="meta-box meta-box-bottom">
-                    <img style="max-width: 100px" src="https://yakume.xyz/img/{{user.avatar}}" alt="" class="meta-image img-bordered img-circle">
-                    <h3 class="meta-heading">{{user.name}}</h3>
-                    <h4 class="meta-subheading" style="color:white">{{user.email}}</h4>
-					<button class="btn btn-alt btn-hover btn-blue-alt" ng-click = "change_follow()" style="top:20px">
-						<span ng-if="you_follow && follow_you">Following eachother</span>
-						<span ng-if="!you_follow && follow_you">Following you</span>
-						<span ng-if="you_follow && !follow_you">Followed</span>
-						<span ng-if="!you_follow && !follow_you">Not followed</span>
-						<i class="glyph-icon icon-arrow-right"></i>
-					</button>
-                </div>
-
-            </div>
-            <img src="assets/image-resources/blurred-bg/blurred-bg-13.jpg" alt="">
-
-        </div>
+				</div>
+				<img src="assets/image-resources/blurred-bg/blurred-bg-13.jpg" alt="">
+			</div>
             <div class="mrg15T mrg15B"></div>
             <blockquote class="font-gray">
                 <p>{{user.description}}</p>
@@ -33,7 +29,60 @@
             </blockquote>
         </div>
     </div>
-<!-- TODO: action="image server url" -->
-
+	
+	<div class="content-box mrg15B">
+		<div class="panel">
+			<div class="panel-body">
+				<h3 class="title-hero">
+					{{user.name}}'s Timeline
+				</h3>
+				<div class="example-box-wrapper">
+					<div class="row">
+						<div class="timeline-box timeline-box-left">
+							<div class="tl-row col-md-6">
+								<div ng-repeat="news in createnews">
+									<div class="tl-item float-right">
+										<div class="tl-icon" ng-click="goto_profie(news.user.email)" style="cursor:pointer">
+											<img style="max-width: 50px" src="https://yakume.xyz/img/{{news.user.avatar}}" alt="" class="meta-image img-bordered img-circle">
+										</div>
+										<div class="popover right">
+											<div class="arrow"></div>
+											<div class="popover-content">
+												<p class="tl-content">{{news.user.name}} {{news.action}} <a ng-click="showspecificevent(news.anevent.id)" style="cursor:pointer">{{news.anevent.title}}</a></p>
+												<div class="tl-time">
+													<i class="glyph-icon icon-clock-o"></i>
+													{{news.timeshow}}
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="tl-row col-md-6">
+								<div ng-repeat="news in reservenews">
+								
+									<div class="tl-item float-right">
+										<div class="tl-icon" ng-click="goto_profie(news.user.email)" style="cursor:pointer">
+											<img style="max-width: 50px" src="https://yakume.xyz/img/{{news.user.avatar}}" alt="" class="meta-image img-bordered img-circle">
+										</div>
+										<div class="popover right">
+											<div class="arrow"></div>
+											<div class="popover-content">
+												<p class="tl-content">{{news.user.name}} {{news.action}} <a ng-click="showspecificevent(news.anevent.id)" style="cursor:pointer">{{news.anevent.title}}</a></p>
+												<div class="tl-time">
+													<i class="glyph-icon icon-clock-o"></i>
+													{{news.timeshow}}
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>                 
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 
 </div>

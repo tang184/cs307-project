@@ -15,6 +15,7 @@
 				console.log(user);
 				$scope.user = user;
 				$scope.get_follow();
+				$scope.pull_timeline();
 				$scope.$apply();
 			});
 			
@@ -54,6 +55,90 @@
                 }
             });
 		}
+
+		$scope.pull_timeline = function() {
+			var mydata = $.param({
+				email:$scope.user.email
+			});
+
+			$.ajax({
+				type: "GET",
+				url: 'https://yakume.xyz/api/timeline/user',
+				data: mydata,
+				success: function(response){
+					//console.log(response);
+					$scope.timeline = JSON.parse(response).timeline;
+
+					$scope.createnews = [];
+					$scope.reservenews = [];
+					$.each($scope.timeline, function (i, item) {
+						if (item.action == "created") {
+							$scope.createnews.push(item);
+						} else {
+							$scope.reservenews.push(item);
+						}
+					});
+
+					$scope.createnews.sort(function(a, b){return a.time - b.time});
+					$scope.reservenews.sort(function(a, b){return a.time - b.time});
+
+					var id;
+					var news;
+					var rest = $scope.timeline.length * 2;
+					
+					var callback_generator_user = function(outside_news) {
+						var inside_news = outside_news;
+						return function(profile) {
+							inside_news.user = profile;
+							rest = rest - 1;
+							if (rest == 0) {
+								$scope.$apply();
+							}
+						};
+					};
+					var callback_generator_event = function(outside_news) {
+						var inside_news = outside_news;
+						return function(anevent) {
+							inside_news.anevent = anevent;
+							rest = rest - 1;
+							if (rest == 0) {
+								$scope.$apply();
+							}
+						};
+					};
+					var callback_function;
+					
+					for (id in $scope.createnews) {
+						news = $scope.createnews[id];
+						news.order = id;
+						news.timeshow = EventService.timeConverter(news.time);
+						callback_function = callback_generator_user(news);
+						EventService.pull_user_by_email_then_avatar(news.email, callback_function);
+						callback_function = callback_generator_event(news);
+						EventService.pull_event_by_ID(news.event, callback_function);
+					}
+
+					for (id in $scope.reservenews) {
+						news = $scope.reservenews[id];
+						news.order = id;
+						news.timeshow = EventService.timeConverter(news.time);
+						callback_function = callback_generator_user(news);
+						EventService.pull_user_by_email_then_avatar(news.email, callback_function);
+						callback_function = callback_generator_event(news);
+						EventService.pull_event_by_ID(news.event, callback_function);
+					}
+				}
+			});
+		}
+		
+		$scope.goto_profie = function(email) {
+			console.log("haha " + email);
+			$location.path("/main/profileothers/" + email);
+		}
+		$scope.showspecificevent = function(id) {
+			EventService.showspecificevent($scope, $rootScope, $location, ngDialog, id);
+		}
+		
 		$scope.update();
 
 	}
