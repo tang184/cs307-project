@@ -265,47 +265,33 @@
                 }
 
                 $scope.getfollowee = function() {
-					$scope.followee_list = [];
                     EventService.pull_followee_list(function (email_list) {
-						var rest = email_list.length;
-						if (rest == 0) {
+						if (email_list.length == 0) {
 							$scope.emptyfollowees = true;
+							$scope.$apply();
 						}
 						else {
 							$scope.emptyfollowees = false;
-							var id;
-							for (id in email_list) {
-								EventService.pull_user_by_email_then_avatar(email_list[id], function(user) {
-									$scope.followee_list.push(user);
-									rest = rest - 1;
-									if (rest == 0) {
-										$scope.$apply();
-									}
-								});
-							}
+							EventService.pull_user_by_email_then_avatar_list(email_list, function(user_list) {
+								$scope.followee_list = user_list;
+								$scope.$apply();
+							});
 						}
 					});
                 }
 
                 $scope.getfollower = function() {
-					$scope.follower_list = [];
                     EventService.pull_follower_list(function (email_list) {
-						var rest = email_list.length;
-						if (rest == 0) {
+						if (email_list.length == 0) {
 							$scope.emptyfollowers = true;
+							$scope.$apply();
 						}
 						else {
 							$scope.emptyfollowers = false;
-							var id;
-							for (id in email_list) {
-								EventService.pull_user_by_email_then_avatar(email_list[id], function(user) {
-									$scope.follower_list.push(user);
-									rest = rest - 1;
-									if (rest == 0) {
-										$scope.$apply();
-									}
-								});
-							}
+							EventService.pull_user_by_email_then_avatar_list(email_list, function(user_list) {
+								$scope.follower_list = user_list;
+								$scope.$apply();
+							});
 						}
 					});
                 }

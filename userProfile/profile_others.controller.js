@@ -4,8 +4,8 @@
         .module('mainApp')
         .controller('ProfileOthersController', ProfileOthersController);
 
-    ProfileOthersController.$inject = ['$scope', '$rootScope','$location','$cookies', 'FlashService', 'AuthenticationService', 'EventService'];
-    function ProfileOthersController($scope, $rootScope, $location, $cookies, FlashService, AuthenticationService, EventService) {
+    ProfileOthersController.$inject = ['$scope', '$rootScope','$location','$cookies', 'FlashService', 'AuthenticationService', 'EventService', 'ngDialog'];
+    function ProfileOthersController($scope, $rootScope, $location, $cookies, FlashService, AuthenticationService, EventService, ngDialog) {
 		console.log("Profile Controller Init.");
 		$scope.you_follow = false;
 		$scope.follow_you = false;

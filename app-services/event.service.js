@@ -17,6 +17,7 @@
         service.timeConverter = timeConverter;
 		
 		service.pull_user_by_email_then_avatar = pull_user_by_email_then_avatar;
+		service.pull_user_by_email_then_avatar_list = pull_user_by_email_then_avatar_list;
 		service.pull_user_by_email = pull_user_by_email;
 		service.pull_event_by_ID = pull_event_by_ID;
 		
@@ -136,6 +137,22 @@
 					}
 				});
 			});
+        }
+		
+        function pull_user_by_email_then_avatar_list(list, callback) {
+			var users = [];
+			var rest = list.length;
+			var id;
+			
+			for (id in list) {
+				pull_user_by_email_then_avatar(list[id], function(user) {
+					users.push(user);
+					rest = rest - 1;
+					if (rest == 0) {
+						callback(users);
+					}
+				});
+			}
         }
 
         function pull_event_by_ID(id, callback) {
@@ -265,14 +282,22 @@
 							data: mydata,
 							success: function(response) {
 								$scope.attendees = JSON.parse(response).attendees;
-								//console.log($scope.attendees);
 								$scope.reserve = !($.inArray($rootScope.globals.currentUser.email, $scope.attendees) > -1);
-								//console.log($scope.reserve);
-								$scope.$apply();
+								$scope.getattendees();
 							}
 						});
+						$scope.getattendees = function() {
+							pull_user_by_email_then_avatar_list($scope.attendees, function(list) {
+								$scope.attend_users = list;
+								$scope.$apply();
+								console.log($scope.attend_users);
+							});
+						}
 						$scope.ownerprofie = function() {
 							$location.path("/main/profileothers/" + $scope.specevent.owner);
+						}
+						$scope.goto_profie = function(email) {
+							$location.path("/main/profileothers/" + email);
 						}
 						$scope.showattend = function() {
 							$scope.sattend = !$scope.sattend;
