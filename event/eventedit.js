@@ -95,12 +95,12 @@
 
                     $scope.event.timestamp = start_stamp
                     $scope.event.duration = duration;
-                    $scope.event.recur = 0;
+                    $scope.event.recurring = 0;
                     if ($scope.recurday) {
-                        $scope.event.recur += 86400 * $scope.recurday;
+                        $scope.event.recurring += 86400000 * $scope.recurday;
                     }
                     if ($scope.recurhour) {
-                        $scope.event.recur += 3600 * $scope.recurhour;
+                        $scope.event.recurring += 3600000 * $scope.recurhour;
                     }
 
                     console.log($scope.event);
