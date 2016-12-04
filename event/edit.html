@@ -41,10 +41,8 @@
 				<input type="text" name="location" class="form-control" id="" ng-change="getplace()" ng-model="event.address" placeholder="{{'Event Location'|translate}}" required>
 				<span ng-show="form.location.$dirty && form.location.$error.required" class="help-block">Please enter a location!</span>
 			</div>
-			{{'show map'|translate}}: <input type="checkbox" ng-model="showMap"></input>
-
 		</div>
-		<div class="form-group" ng-show="showMap">
+		<div class="form-group">
 			<label class="col-sm-3 control-label">{{'Show Map'|translate}}</label>
 			<div class="col-sm-6">
 			<img src="{{mapurl}}"></img>
@@ -74,6 +72,15 @@
 			<label class="col-sm-3 control-label"><span style="color:red">*</span>{{'Price'|translate}}</label>
 			<div class="col-sm-6">
 				<input type="number" class="form-control" id="" ng-model="event.price" ng-init="0" placeholder="{{'Event Price'|translate}}" required>
+			</div>
+		</div>
+		<div class="form-group">
+			<label class="col-sm-3 control-label">{{'Recur Event'|translate}}</label>
+			<div class="col-sm-6">
+				<input type="number" style="width: 20%; height: 34x; padding: 6px 12px; float:left" ng-model="recurday" placeholder="{{'Days'|translate}}" min="0">
+				<label style="float:left;padding: 6px 12px;">{{'Days'|translate}}</label>
+				<input type="number" style="width: 20%; height: 34x; padding: 6px 12px; float:left" ng-model="recurhour"placeholder="{{'Hours'|translate}}" min="0">
+				<label style="float:left; padding: 6px 12px;">{{'Hours'|translate}}</label>
 			</div>
 		</div>
 

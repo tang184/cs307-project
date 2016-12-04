@@ -37,8 +37,6 @@
                 $scope.longitude;
                 $scope.getplace = function() {
 
-                    $scope.showMap = false;
-
                     var s="https://maps.googleapis.com/maps/api/geocode/json?address="
                     var key="&key=AIzaSyAFhzO5tGWXiCCtH5y6XW6ycS-1fbC4uYA"
                     var p = s + $scope.event.address + key;
@@ -61,9 +59,11 @@
                                     $scope.mapurl="https://maps.googleapis.com/maps/api/staticmap?center=" + $scope.event.latitude + "," + $scope.event.longitude +
                                     "&zoom=16&size=320x200&&markers=color:red%7Clabel:C%7C" + $scope.event.latitude + "," + $scope.event.longitude
                                     + "&key=AIzaSyAFhzO5tGWXiCCtH5y6XW6ycS-1fbC4uYA";
+                                    $scope.$apply();
 
                                 } else {
-                                    $scope.mapurl="img/loc_404.png"
+                                    $scope.mapurl="img/loc_404.png";
+                                    $scope.$apply();
                                 }
                             }
                         });
@@ -81,55 +81,60 @@
                 $scope.eventsubmit = function(event) {
                     $scope.hasSubmit = true;
 
-        	    var start_date = $('.start_datepicker').val();
-        	    var start_time = $('.start_timepicker').val();
-        	    var start_stamp = new Date(start_date + " " + start_time).getTime();
-		    //console.log(start_date);
-		    //console.log(start_time);
-		    //console.log(start_stamp);
-		    var end_date = $('.end_datepicker').val();
-        	    var end_time = $('.end_timepicker').val();
-        	    var end_stamp = new Date(end_date + " " + end_time).getTime()
-		    //console.log(end_date);
-		    //console.log(end_time);
-		    //console.log(end_stamp);
+        	        var start_date = $('.start_datepicker').val();
+                    var start_time = $('.start_timepicker').val();
+                    var start_stamp = new Date(start_date + " " + start_time).getTime();
+                    var end_date = $('.end_datepicker').val();
+                    var end_time = $('.end_timepicker').val();
+                    var end_stamp = new Date(end_date + " " + end_time).getTime()
                     var now = new Date();
                     var duration = end_stamp - start_stamp;
                     if (start_stamp > now && duration > 0) {
                         $scope.hasCorrectTime = true;
                     }
-                    console.log($scope.hasCorrectTime);
 
                     $scope.event.timestamp = start_stamp
                     $scope.event.duration = duration;
+                    $scope.event.recur = 0;
+                    if ($scope.recurday) {
+                        $scope.event.recur += 86400 * scope.recurday;
+                    }
+                    if ($scope.recurhour) {
+                        $scope.event.recur += 3600 * scope.recurhour;
+                    }
 
-		    console.log($scope.event);
+                    console.log($scope.event);
 
-		    $.ajax({
-                        type: "POST",
-                        url: 'https://yakume.xyz/api/addevent',
-                        data: $scope.event,
-                        success: function(response) {
-                            if (isInt(response) && $scope.event.coverimage) {
-                                var postimage = $.param({
-                                    eventid: response,
-                                    filename: $scope.event.coverimage
-                                });
-                                $.ajax({
-                                    type: "POST",
-                                    url: 'https://yakume.xyz/api/event/image/upload',
-                                    data: postimage,
-                                    success: function(response){
-                                        if (response != "SUCCESS") {
-                                            alert(response);
+                    if ($scope.hasCorrectTime) {
+                        $.ajax({
+                            type: "POST",
+                            url: 'https://yakume.xyz/api/addevent',
+                            data: $scope.event,
+                            success: function(response) {
+                                if (isInt(response) && $scope.event.coverimage) {
+                                    var postimage = $.param({
+                                        eventid: response,
+                                        filename: $scope.event.coverimage
+                                    });
+                                    $.ajax({
+                                        type: "POST",
+                                        url: 'https://yakume.xyz/api/event/image/upload',
+                                        data: postimage,
+                                        success: function(response){
+                                            if (response != "SUCCESS") {
+                                                alert(response);
+                                            }
+                                            console.log(response);
                                         }
-                                        console.log(response);
-                                    }
-                                });
+                                    });
+                                }
                             }
-                        }
-                    });
-                    $scope.eventcancel();
+                        });
+                        $scope.eventcancel();
+                    } else {
+                        alert("event time expires or not valid");
+                    }
+            	    
                 }
 
                 $scope.eventcancel = function() {
