@@ -97,10 +97,10 @@
                     $scope.event.duration = duration;
                     $scope.event.recur = 0;
                     if ($scope.recurday) {
-                        $scope.event.recur += 86400 * scope.recurday;
+                        $scope.event.recur += 86400 * $scope.recurday;
                     }
                     if ($scope.recurhour) {
-                        $scope.event.recur += 3600 * scope.recurhour;
+                        $scope.event.recur += 3600 * $scope.recurhour;
                     }
 
                     console.log($scope.event);
