@@ -277,6 +277,10 @@
 						var mydata = $.param({
 							eventid : event.id
 						});
+
+					    $scope.closeDialog = function() {
+						$scope.popDialog.close();
+					    }
 						$.ajax({
 							type: "GET",
 							url: 'https://yakume.xyz/api/attendees',
@@ -296,9 +300,11 @@
 						}
 						$scope.ownerprofie = function() {
 							$location.path("/main/profileothers/" + $scope.specevent.owner);
+						    $scope.popDialog.close();
 						}
 						$scope.goto_profie = function(email) {
 							$location.path("/main/profileothers/" + email);
+						    $scope.popDialog.close();
 						}
 						$scope.showattend = function() {
 							$scope.sattend = !$scope.sattend;
@@ -538,6 +544,7 @@
 
 								}
 							});
+						    popDialog.close();
 						}
 					}]
                 });
