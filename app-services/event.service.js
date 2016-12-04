@@ -255,7 +255,8 @@
 				ngDialog.open({
 					template: 'templateId', controller: ['$scope', '$cookies' , function($scope, $cookies) {
 						$scope.specevent = event;
-						
+						$scope.popDialog = ngDialog;
+
 						// pull user.
 						pull_user_by_email_then_avatar($scope.specevent.owner, function(user) {
 							$scope.specevent.owner_object = user;

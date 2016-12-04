@@ -132,7 +132,6 @@
 		}
 		
 		$scope.goto_profie = function(email) {
-			console.log("haha " + email);
 			$location.path("/main/profileothers/" + email);
 		}
 		$scope.showspecificevent = function(id) {
