@@ -14,7 +14,7 @@
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">{{'Email address'|translate}}</label>
                                         <div class="input-group input-group-lg">
-                                            <span class="input-group-addon addon-inside bg-white font-primary">
+                                            <span class="input-group-addon bg-white font-primary">
                                                 <i class="glyph-icon icon-envelope-o"></i>
                                             </span>
                                             <input type="email" class="form-control" id="exampleInputEmail1" placeholder="{{'Enter email'|translate}}" ng-model="username">
@@ -23,13 +23,15 @@
                                     <div class="form-group">
                                         <label for="exampleInputPassword1">{{'Password'|translate}}</label>
                                         <div class="input-group input-group-lg">
-                                            <span class="input-group-addon addon-inside bg-white font-primary">
+                                            <span class="input-group-addon bg-white font-primary">
                                                 <i class="glyph-icon icon-unlock-alt"></i>
                                             </span>
                                             <input type="password" class="form-control" id="exampleInputPassword1" placeholder="{{'Enter Password'|translate}}" ng-model="password">
                                         </div>
                                     </div>
-                                    
+
+                                    <span ng-if="notmatch == true" style="color:red" class="help-block">
+                                        The username and password you entered did not match our records. Please double-check and try again.</span>
                                     <div class="form-group">
                                         <p href="" ng-click="login()" class="btn btn-block btn-blue-alt">{{'Log in'|translate}}</p>
                                     </div>

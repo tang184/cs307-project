@@ -20,7 +20,7 @@
                     'into Facebook.';
                 }
             }*/
-            
+
 
               /*function testAPI() {
                 console.log('Welcome!  Fetching your information.... ');
@@ -42,6 +42,7 @@
                 $location.path('/forgetpw');
             }
 
+            $scope.notmatch = false;;
         	$scope.login = function() {
 
                     AuthenticationService.Login($scope.username, $scope.password, function (response, request) {
@@ -52,12 +53,13 @@
                                     FlashService.Success('Login successful', true);
                                     $location.path('/main/dashboard');
                                     $state.go('dashboard');
-                                }                              
+                                }
                             });
                         } else {
-                            alert(response.message);
+                            $scope.notmatch = true;
+                            $scope.$apply();
                         }
-                            
+
                     });
         	}
 
@@ -78,8 +80,8 @@
                     var myVar = setInterval(FlashService.Success, 2000);
                     FlashService.Success('Login successful', true);
 
-                    
-                    
+
+
 
                 } else if (response.status == 'not_authorized') {
                     FB.login(function(response) {
@@ -91,7 +93,7 @@
                                 });
 
                             });
-                            
+
                             var myVar = setInterval(FlashService.Success, 2000);
                             FlashService.Success('Login successful', true);
                         }
@@ -107,7 +109,7 @@
                                 });
 
                             });
-                            
+
                             var myVar = setInterval(FlashService.Success, 2000);
                             FlashService.Success('Login successful', true);
                         }
