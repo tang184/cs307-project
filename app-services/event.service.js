@@ -23,6 +23,8 @@
 		
 		service.pull_followee_list = pull_followee_list;
 		service.pull_follower_list = pull_follower_list;
+		service.pull_rating_from_email = pull_rating_from_email;
+		service.change_rating = change_rating;
 		service.showspecificevent = showspecificevent;
 		
         return service;
@@ -229,6 +231,58 @@
 			var minute = a.getMinutes();
 			var time = month + ' ' + date + ' ' +  year + '   ' + hour + ':' + minute;
 			return time;
+		}
+		
+		function pull_rating_from_email(email, callback) {
+			var mydata = $.param({
+                email: email
+            });
+
+            $.ajax({
+                type: "GET",
+                url: 'https://yakume.xyz/api/rating/get',
+                data: mydata,
+                success: function(response){
+					var rating_data = {};
+					rating_data.rating = response;
+					rating_data.stars = [];
+					rating_data.star_num = Math.round(response);
+					
+					var i = 0;
+					var star;
+					
+					while (i < 5) {
+						star = {};
+						star.id = i;
+						if (i < rating_data.star_num) {
+							star.image_src = "img/star_1.png";
+						}
+						else {
+							star.image_src = "img/star_0.png";
+						}
+						i = i + 1;
+						rating_data.stars.push(star);
+					}
+					
+                    callback(rating_data);
+                }
+            });
+		}
+		
+		function change_rating(email, rating, callback) {
+			var mydata = $.param({
+				email: email,
+				rating: rating
+            });
+
+            $.ajax({
+                type: "POST",
+                url: 'https://yakume.xyz/api/rating/rate',
+                data: mydata,
+                success: function(response){
+					callback && callback(response);
+                }
+            });
 		}
 		
 		function showspecificevent($scope, $rootScope, $location, ngDialog, id) {

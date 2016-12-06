@@ -6,7 +6,6 @@
 
     ProfileOthersController.$inject = ['$scope', '$rootScope','$location','$cookies', 'FlashService', 'AuthenticationService', 'EventService', 'ngDialog'];
     function ProfileOthersController($scope, $rootScope, $location, $cookies, FlashService, AuthenticationService, EventService, ngDialog) {
-		console.log("Profile Controller Init.");
 		$scope.you_follow = false;
 		$scope.follow_you = false;
 		
@@ -16,6 +15,7 @@
 				$scope.user = user;
 				$scope.get_follow();
 				$scope.pull_timeline();
+				$scope.get_rating();
 				$scope.$apply();
 			});
 			
@@ -56,6 +56,21 @@
             });
 		}
 
+		$scope.get_rating = function() {
+			EventService.pull_rating_from_email($scope.user.email, function (rating_data) {
+				$scope.rating_data = rating_data;
+				$scope.$apply();
+			});
+		}
+		
+		$scope.change_rating = function(rating) {
+			console.log(star.id);
+			EventService.change_rating($scope.user.email, rating, function(response) {
+				alert(response);
+				$scope.get_rating();
+			});
+		}
+		
 		$scope.pull_timeline = function() {
 			var mydata = $.param({
 				email:$scope.user.email
