@@ -49,8 +49,8 @@
 			<div class="content-box-wrapper text-center clearfix">
 				<div ng-repeat="user in followee_list">
 					<div ng-click="goto_profie(user.email)" style="cursor:pointer">
-						<img style="max-width: 50px" src="https://yakume.xyz/img/{{user.avatar}}" alt="" class="meta-image img-bordered img-circle">
-						<p class="meta-heading"> {{user.name}}</p>
+						<img style="max-width: 50px" src="https://yakume.xyz/img/{{user.avatar}}" alt="" class="meta-image img-bordered img-circle col-md-2">
+						<p class="meta-heading col-md-2"> {{user.name}}</p>
 					</div>
 				</div>
 			</div>
@@ -63,8 +63,8 @@
 			<div class="content-box-wrapper text-center clearfix">
 				<div ng-repeat="user in follower_list">
 					<div ng-click="goto_profie(user.email)" style="cursor:pointer">
-						<img style="max-width: 50px" src="https://yakume.xyz/img/{{user.avatar}}" alt="" class="meta-image img-bordered img-circle">
-						<p class="meta-heading"> {{user.name}}</p>
+						<img style="max-width: 50px" src="https://yakume.xyz/img/{{user.avatar}}" alt="" class="meta-image img-bordered img-circle col-md-2">
+						<p class="meta-heading col-md-2"> {{user.name}}</p>
 					</div>
 				</div>
 			</div>
