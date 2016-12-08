@@ -128,3 +128,68 @@
         </div>
     </div>
 </div>
+
+<div class="panel">
+    <div class="panel-body">
+            <h3 class="title-hero col-md-10" >{{'Events I saved'|translate}}</h2>
+
+        <div class="dropdown" style="top:-5px">
+            <a style="cursor:pointer" class="btn btn-default" title="" data-toggle="dropdown">
+                <span class="caret"></span>
+                {{'Sort'|translate}}
+            </a>
+            <ul class="dropdown-menu">
+                <li>
+                    <a style="cursor:pointer" ng-click="events_saved.sort_by_time(true);"title="">
+                        {{'Sort by event time'|translate}}
+                    </a>
+                </li>
+                <li>
+                    <a style="cursor:pointer" ng-click="events_saved.sort_by_name(true);">
+                        {{'Sort by name'|translate}}
+                    </a>
+                </li>
+                <li>
+                    <a style="cursor:pointer" ng-click="events_saved.sort_by_publish(true);">
+                        {{'Sort by publish time'|translate}}
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="clearfix">
+            <ul id="portfolio-grid" class="reset-ul row">
+                <div ng-repeat="event in events_saved.showing">
+                    <li class="col-lg-3 col-sm-6 col-md-4" style="cursor:pointer" ng-click="showspecificevent(event.id)">
+                        <div class="thumbnail-box-wrapper">
+                            <div class="thumbnail-box">
+                                <div class="thumb-content">
+                                    <div class="center-vertical">
+                                        <div class="center-content">
+                                            <i class="icon-helper icon-center animated zoomInUp font-white glyph-icon icon-linecons-note"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="thumb-overlay bg-black"></div>
+                                <img style="height:132.95px" src="{{event.eventimage}}" alt="">
+                            </div>
+                            <div class="thumb-pane">
+                                <h3 class="thumb-heading animated rollIn">
+                                    <a title="">
+                                        {{event.title}}
+                                    </a>
+                                    <small>{{event.starttime}}</small>
+                                </h3>
+                            </div>
+                        </div>
+                    </li>
+                </div>
+            </ul>
+            <div class="button-pane mrg20T">
+                <button class="btn btn-info" ng-click="events_saved.change_page(-1);" ng-disabled="events_saved.currentpage <= 1"><</button>
+                {{events_saved.currentpage}} / {{events_saved.maxpage}}
+                <button class="btn btn-info" ng-click="events_saved.change_page(1);" ng-disabled="events_saved.currentpage >= events_saved.maxpage">></button>
+            </div>
+        </div>
+    </div>
+</div>

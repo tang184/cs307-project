@@ -53,8 +53,32 @@
                 });
             }
 
+            $scope.pull_events_saved = function() {
+                var mydata = $.param({
+                });
+
+                $.ajax({
+                    type: "GET",
+                    url: 'https://yakume.xyz/api/watchlist',
+                    data: mydata,
+                    success: function(response){
+                        var events_list = JSON.parse(response).events;
+						EventService.pull_event_by_ID_list(events_list, function(events) {
+							$scope.events_saved = EventService.pack_event_list(events);
+							$scope.$apply();
+						});
+                    }
+                });
+            }
+
+
+            $scope.showspecificevent = function(id) {
+				EventService.showspecificevent($scope, $rootScope, $location, ngDialog, id);
+			}
+
             $scope.pull_events_attend();
             $scope.pull_events_created();
+            $scope.pull_events_saved();
 
         };
 
