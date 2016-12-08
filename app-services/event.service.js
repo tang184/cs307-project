@@ -193,14 +193,23 @@
 			var rest = list.length;
 			var id;
 			
-			for (id in list) {
-				pull_event_by_ID(list[id], function(event) {
+			var position_keeper = function(position) {
+				var internal_position = position;
+				return function(event) {
+					event.origianl_position = internal_position;
 					events.push(event);
 					rest = rest - 1;
 					if (rest == 0) {
+						events.sort(function(a, b) {
+							return a.origianl_position - b.origianl_position;
+						});
 						callback(events);
 					}
-				});
+				}
+			}
+			
+			for (id in list) {
+				pull_event_by_ID(list[id], position_keeper(id));
 			}
         }
 		
