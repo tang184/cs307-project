@@ -430,9 +430,12 @@
 						}
 						$scope.sattend = false;
 						$scope.payment = false;
+						
 						if ($scope.specevent.price != 0) {
 							$scope.payment = true;
 						}
+						$scope.past = ((new Date().getTime()) > (event.time));
+						
 						var mydata = $.param({
 							eventid : event.id
 						});
