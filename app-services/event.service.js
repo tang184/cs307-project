@@ -277,7 +277,6 @@
 				list_object.change_page(0);
             }
 			
-			list_object.sort_by_time();
 			list_object.change_page(0);
 			
 			return list_object;

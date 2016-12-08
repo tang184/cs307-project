@@ -29,6 +29,7 @@
 						}
 						EventService.pull_event_by_ID_list(l, function(events) {
 							$scope.events_all = EventService.pack_event_list(events);
+							$scope.events_all.sort_by_time(true);
 							$scope.$apply();
 						});
                     }
