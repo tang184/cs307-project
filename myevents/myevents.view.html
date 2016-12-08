@@ -9,17 +9,17 @@
             </a>
             <ul class="dropdown-menu">
                 <li>
-                    <a style="cursor:pointer" ng-click="sortbytime()"title="">
+                    <a style="cursor:pointer" ng-click="events_created.sort_by_time(true);"title="">
                         {{'Sort by event time'|translate}}
                     </a>
                 </li>
                 <li>
-                    <a style="cursor:pointer" ng-click="sortbyname()">
+                    <a style="cursor:pointer" ng-click="events_created.sort_by_name(true);">
                         {{'Sort by name'|translate}}
                     </a>
                 </li>
                 <li>
-                    <a style="cursor:pointer" ng-click="sortbypublish()">
+                    <a style="cursor:pointer" ng-click="events_created.sort_by_publish(true);">
                         {{'Sort by publish time'|translate}}
                     </a>
                 </li>
@@ -28,7 +28,7 @@
 
         <div class="clearfix">
             <ul id="portfolio-grid" class="reset-ul row">
-                <div ng-repeat="event in allevents">
+                <div ng-repeat="event in events_created.showing">
                     <li class="col-lg-3 col-sm-6 col-md-4" style="cursor:pointer" ng-click="showspecificevent(event.id)">
                         <div class="thumbnail-box-wrapper">
                             <div class="thumbnail-box">
@@ -55,9 +55,9 @@
                 </div>
             </ul>
             <div class="button-pane mrg20T">
-                <button class="btn btn-info" ng-click="gotoPrevPage()" ng-disabled="currentpage <= 1"><</button>
-                {{currentpage}} / {{maxpage}}
-                <button class="btn btn-info" ng-click="gotoNextPage()" ng-disabled="currentpage >= maxpage">></button>
+                <button class="btn btn-info" ng-click="events_created.change_page(-1);" ng-disabled="events_created.currentpage <= 1"><</button>
+                {{events_created.currentpage}} / {{events_created.maxpage}}
+                <button class="btn btn-info" ng-click="events_created.change_page(1);" ng-disabled="events_created.currentpage >= events_created.maxpage">></button>
             </div>
         </div>
     </div>
@@ -71,22 +71,22 @@
         <div class="dropdown" style="top:-5px">
             <a style="cursor:pointer" class="btn btn-default" title="" data-toggle="dropdown">
                 <span class="caret"></span>
-                Sort
+                {{'Sort'|translate}}
             </a>
             <ul class="dropdown-menu">
                 <li>
-                    <a style="cursor:pointer" ng-click="sortbytime()"title="">
-                        Sort by event time
+                    <a style="cursor:pointer" ng-click="events_attend.sort_by_time(true);"title="">
+                        {{'Sort by event time'|translate}}
                     </a>
                 </li>
                 <li>
-                    <a style="cursor:pointer" ng-click="sortbyname()">
-                        Sort by name
+                    <a style="cursor:pointer" ng-click="events_attend.sort_by_name(true);">
+                        {{'Sort by name'|translate}}
                     </a>
                 </li>
                 <li>
-                    <a style="cursor:pointer" ng-click="sortbypublish()">
-                        Sort by publish time
+                    <a style="cursor:pointer" ng-click="events_attend.sort_by_publish(true);">
+                        {{'Sort by publish time'|translate}}
                     </a>
                 </li>
             </ul>
@@ -94,8 +94,8 @@
 
         <div class="clearfix">
             <ul id="portfolio-grid" class="reset-ul row">
-                <div ng-repeat="event_attend in events_attend">
-                    <li class="col-lg-3 col-sm-6 col-md-4" style="cursor:pointer" ng-click="showspecificevent(event_attend.id)">
+                <div ng-repeat="event in events_attend.showing">
+                    <li class="col-lg-3 col-sm-6 col-md-4" style="cursor:pointer" ng-click="showspecificevent(event.id)">
                         <div class="thumbnail-box-wrapper">
                             <div class="thumbnail-box">
                                 <div class="thumb-content">
@@ -106,14 +106,14 @@
                                     </div>
                                 </div>
                                 <div class="thumb-overlay bg-black"></div>
-                                <img style="height:132.95px" src="{{event_attend.eventimage}}" alt="">
+                                <img style="height:132.95px" src="{{event.eventimage}}" alt="">
                             </div>
                             <div class="thumb-pane">
                                 <h3 class="thumb-heading animated rollIn">
                                     <a title="">
-                                        {{event_attend.title}}
+                                        {{event.title}}
                                     </a>
-                                    <small>{{event_attend.starttime}}</small>
+                                    <small>{{event.starttime}}</small>
                                 </h3>
                             </div>
                         </div>
@@ -121,9 +121,9 @@
                 </div>
             </ul>
             <div class="button-pane mrg20T">
-                <button class="btn btn-info" ng-click="gotoPrevPage_attend()" ng-disabled="currentpage_attend <= 1"><</button>
-                {{currentpage_attend}} / {{maxpage_attend}}
-                <button class="btn btn-info" ng-click="gotoNextPage_attend()" ng-disabled="currentpage_attend >= maxpage_attend">></button>
+                <button class="btn btn-info" ng-click="events_attend.change_page(-1);" ng-disabled="events_attend.currentpage <= 1"><</button>
+                {{events_attend.currentpage}} / {{events_attend.maxpage}}
+                <button class="btn btn-info" ng-click="events_attend.change_page(1);" ng-disabled="events_attend.currentpage >= events_attend.maxpage">></button>
             </div>
         </div>
     </div>

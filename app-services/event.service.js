@@ -16,10 +16,12 @@
         service.tag_tostring = tag_tostring;
         service.timeConverter = timeConverter;
 		
+		service.pull_user_by_email = pull_user_by_email;
 		service.pull_user_by_email_then_avatar = pull_user_by_email_then_avatar;
 		service.pull_user_by_email_then_avatar_list = pull_user_by_email_then_avatar_list;
-		service.pull_user_by_email = pull_user_by_email;
 		service.pull_event_by_ID = pull_event_by_ID;
+		service.pull_event_by_ID_list = pull_event_by_ID_list
+		service.pack_event_list = pack_event_list
 		
 		service.pull_followee_list = pull_followee_list;
 		service.pull_follower_list = pull_follower_list;
@@ -170,6 +172,13 @@
                     var anevent = response;
 					try {
 						anevent = JSON.parse(response);
+						anevent.starttime = timeConverter(anevent.time);
+						if (anevent.images.length == 0) {
+							anevent.eventimage = "assets/image-resources/stock-images/img-17.jpg";
+						}
+						else {
+							anevent.eventimage = "https://yakume.xyz/img/" + anevent.images[0];
+						}
 					}
 					catch(err) {
 						console.log("ID:" + id + " with " + response);
@@ -178,7 +187,102 @@
                 }
             });
         }
+		
+        function pull_event_by_ID_list(list, callback) {
+			var events = [];
+			var rest = list.length;
+			var id;
+			
+			for (id in list) {
+				pull_event_by_ID(list[id], function(event) {
+					events.push(event);
+					rest = rest - 1;
+					if (rest == 0) {
+						callback(events);
+					}
+				});
+			}
+        }
+		
+        function pack_event_list(list) {
+			var list_object = {};
+			list_object.list = list;
+			
+			list_object.MAXEVENTPERPAGE = 8;
+			list_object.currentpage = 1;
+			list_object.maxpage = Math.ceil(list_object.list.length / list_object.MAXEVENTPERPAGE);
+			
+			list_object.change_page = function(x) {
+				list_object.currentpage = list_object.currentpage + x;
+				if (list_object.currentpage > list_object.maxpage) {
+					list_object.currentpage = list_object.maxpage;
+				}
+				if (list_object.currentpage < 1) {
+					list_object.currentpage = 1;
+				}
+				
+                list_object.startpos = (list_object.currentpage - 1) * list_object.MAXEVENTPERPAGE;
+                list_object.endpos = (list_object.currentpage) * list_object.MAXEVENTPERPAGE;
+                if (list_object.endpos > list_object.list.length) {
+                    list_object.endpos = list_object.list.length;
+				}
+				list_object.showing = list_object.list.slice(list_object.startpos, list_object.endpos);
+			}
+			
+			list_object.fix_time_after_sort = function() {
+				var currtime = new Date().getTime();
+                var len = list_object.list.length;
+                var cnt = 0;
+                var index = 0;
+                while(cnt < len){
+                    if(list_object.list[cnt].time >= currtime){
+                        break;
+                    }
+                    cnt ++;
+                }
+                while(index < cnt){
+                    var temp = list_object.list.shift();
+                    list_object.list.push(temp);
+                    index++;
+                }
+			}
+			
+			list_object.sort_by_time = function(fix_time) {
+                list_object.list.sort(function(a,b) {
+                  return parseInt(a.time) - parseInt(b.time);
+                });
+				if (fix_time) {
+					list_object.fix_time_after_sort();
+				}
+				list_object.change_page(0);
+            }
 
+            list_object.sort_by_name = function(fix_time) {
+                list_object.list.sort(function(a,b) {
+                    return a.title.localeCompare(b.title);
+                });
+				if (fix_time) {
+					list_object.fix_time_after_sort();
+				}
+				list_object.change_page(0);
+            }
+
+            list_object.sort_by_publish = function(fix_time) {
+				list_object.list.sort(function(a,b) {
+                  return parseInt(a.timeposted) - parseInt(b.timeposted);
+				});
+				if (fix_time) {
+					list_object.fix_time_after_sort();
+				}
+				list_object.change_page(0);
+            }
+			
+			list_object.sort_by_time();
+			list_object.change_page(0);
+			
+			return list_object;
+        }
+		
         function pull_followee_list(callback) {
             var mydata = $.param({
             });
