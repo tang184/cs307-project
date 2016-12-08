@@ -235,7 +235,7 @@
 		
 		function pull_rating_from_email(email, callback) {
 			var mydata = $.param({
-                email: email
+                user: email
             });
 
             $.ajax({
@@ -247,6 +247,7 @@
 					rating_data.rating = response;
 					rating_data.stars = [];
 					rating_data.star_num = Math.round(response);
+					console.log(response);
 					
 					var i = 0;
 					var star;
@@ -255,10 +256,10 @@
 						star = {};
 						star.id = i;
 						if (i < rating_data.star_num) {
-							star.image_src = "img/star_1.png";
+							star.image_src = "star_1.png";
 						}
 						else {
-							star.image_src = "img/star_0.png";
+							star.image_src = "star_0.png";
 						}
 						i = i + 1;
 						rating_data.stars.push(star);
@@ -271,7 +272,7 @@
 		
 		function change_rating(email, rating, callback) {
 			var mydata = $.param({
-				email: email,
+				user: email,
 				rating: rating
             });
 

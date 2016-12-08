@@ -64,8 +64,8 @@
 		}
 		
 		$scope.change_rating = function(rating) {
-			console.log(star.id);
-			EventService.change_rating($scope.user.email, rating, function(response) {
+			console.log("Rate: " + (rating + 1).toString());
+			EventService.change_rating($scope.user.email, rating + 1, function(response) {
 				alert(response);
 				$scope.get_rating();
 			});

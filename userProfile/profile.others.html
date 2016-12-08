@@ -15,7 +15,9 @@
 							<i class="glyph-icon icon-arrow-right"></i>
 						</button>
 						<div ng-repeat="star in rating_data.stars">
-							<img src="https://yakume.xyz/img/{{star.image_src}}" ng_click="change_rating(star.id);">
+							<div class="col-md-2">
+								<img src="https://yakume.xyz/img/{{star.image_src}}" ng_click="change_rating(star.id);">
+							</div>
 						</div>
 					</div>
 
