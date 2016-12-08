@@ -1,6 +1,6 @@
 <div class="panel">
     <div class="panel-body">
-            <h3 class="title-hero col-md-10" >{{'My Created Events'|translate}}</h2>
+            <h3 class="title-hero col-md-10" >{{'Events I create'|translate}}</h2>
 
         <div class="dropdown" style="top:-5px">
             <a style="cursor:pointer" class="btn btn-default" title="" data-toggle="dropdown">
@@ -66,7 +66,7 @@
 
 <div class="panel">
     <div class="panel-body">
-            <h3 class="title-hero col-md-10" >{{'My Reserved Events'|translate}}</h2>
+            <h3 class="title-hero col-md-10" >{{'Events I attend'|translate}}</h2>
 
         <div class="dropdown" style="top:-5px">
             <a style="cursor:pointer" class="btn btn-default" title="" data-toggle="dropdown">
@@ -189,71 +189,6 @@
                 <button class="btn btn-info" ng-click="events_saved.change_page(-1);" ng-disabled="events_saved.currentpage <= 1"><</button>
                 {{events_saved.currentpage}} / {{events_saved.maxpage}}
                 <button class="btn btn-info" ng-click="events_saved.change_page(1);" ng-disabled="events_saved.currentpage >= events_saved.maxpage">></button>
-            </div>
-        </div>
-    </div>
-</div>
-
-<div class="panel">
-    <div class="panel-body">
-            <h3 class="title-hero col-md-10" >{{'My Saved Events'|translate}}</h2>
-
-        <div class="dropdown" style="top:-5px">
-            <a style="cursor:pointer" class="btn btn-default" title="" data-toggle="dropdown">
-                <span class="caret"></span>
-                Sort
-            </a>
-            <ul class="dropdown-menu">
-                <li>
-                    <a style="cursor:pointer" ng-click="sortbytime_save()"title="">
-                        Sort by event time
-                    </a>
-                </li>
-                <li>
-                    <a style="cursor:pointer" ng-click="sortbyname()">
-                        Sort by name
-                    </a>
-                </li>
-                <li>
-                    <a style="cursor:pointer" ng-click="sortbypublish()">
-                        Sort by publish time
-                    </a>
-                </li>
-            </ul>
-        </div>
-
-        <div class="clearfix">
-            <ul id="portfolio-grid" class="reset-ul row">
-                <div ng-repeat="event_save in events_save">
-                    <li class="col-lg-3 col-sm-6 col-md-4" style="cursor:pointer" ng-click="showspecificevent(event_save.id)">
-                        <div class="thumbnail-box-wrapper">
-                            <div class="thumbnail-box">
-                                <div class="thumb-content">
-                                    <div class="center-vertical">
-                                        <div class="center-content">
-                                            <i class="icon-helper icon-center animated zoomInUp font-white glyph-icon icon-linecons-note"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="thumb-overlay bg-black"></div>
-                                <img style="height:132.95px" src="{{event_save.eventimage}}" alt="">
-                            </div>
-                            <div class="thumb-pane">
-                                <h3 class="thumb-heading animated rollIn">
-                                    <a title="">
-                                        {{event_save.title}}
-                                    </a>
-                                    <small>{{event_save.starttime}}</small>
-                                </h3>
-                            </div>
-                        </div>
-                    </li>
-                </div>
-            </ul>
-            <div class="button-pane mrg20T">
-                <button class="btn btn-info" ng-click="gotoPrevPage_save()" ng-disabled="currentpage_save <= 1"><</button>
-                {{currentpage_save}} / {{maxpage_save}}
-                <button class="btn btn-info" ng-click="gotoNextPage_save()" ng-disabled="currentpage_save >= maxpage_save">></button>
             </div>
         </div>
     </div>
