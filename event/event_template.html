@@ -26,10 +26,12 @@
             <div ng-if="sattend">
                 <label ng-click="showattend()" style="cursor:pointer">Hide Attendee:</label>
                 <div ng-repeat="user in attend_users">
-					<div ng-click="goto_profie(user.email)" style="cursor:pointer">
-						<img style="max-width: 30px" src="https://yakume.xyz/img/{{user.avatar}}" alt="" class="meta-image img-bordered img-circle">
-						<p class="meta-heading">{{user.name}}</p>
-					</div>
+                    <div class="col-md-2">
+    					<div ng-click="goto_profie(user.email)" style="cursor:pointer">
+    						<img style="max-width: 30px; max-height:30px" src="https://yakume.xyz/img/{{user.avatar}}" alt="" class="meta-image img-bordered img-circle">
+    						<p class="meta-heading">{{user.name}}</p>
+    					</div>
+                    </div>
                 </div>
             </div>
 
