@@ -9,5 +9,22 @@
         <input type="text" id="search" ng-model="key" placeholder="Search for..." required>
         <input type="submit" value="go" ng-click="search()" id="submit">
     </form>
-
+	<div ng-if="show_result" class="content-box mrg15B">
+		<h3 class="content-box-header">
+			RESULTS:
+		</h3>
+		<div ng-if="users" class="content-box-wrapper text-center clearfix">
+			<div ng-repeat="user in users">
+				<div ng-click="goto_profie(user.email)" style="cursor:pointer">
+					<div class="col-md-2">
+						<img style="max-width: 50px" src="https://yakume.xyz/img/{{user.avatar}}" alt="" class="meta-image img-bordered img-circle">
+						<p class="meta-heading"> {{user.name}}</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div ng-if="!users" class="content-box-wrapper text-center clearfix">
+			<p class="meta-heading">No result.</p>
+		</div>
+	</div>
 </div>
