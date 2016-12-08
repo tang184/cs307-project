@@ -8,7 +8,6 @@
     MyeventController.$inject = ['$scope','$rootScope', '$location', 'FlashService', 'ngDialog', 'EventService'];
         function MyeventController($scope, $rootScope,  $location, FlashService, ngDialog, EventService) {
 
-
             $("#bodyBackground").css('background', 'white');
 
             $scope.pull_events_created = function() {
@@ -70,7 +69,6 @@
                     }
                 });
             }
-
 
             $scope.showspecificevent = function(id) {
 				EventService.showspecificevent($scope, $rootScope, $location, ngDialog, id);

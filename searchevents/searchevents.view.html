@@ -7,7 +7,7 @@
 <div class = "search place">
     <form class="form-wrapper">
         <input type="text" id="search" ng-model="key" placeholder="Search for..." required>
-        <input type="submit" value="go" ng-click="searchevent()" id="submit">
+        <input type="submit" value="go" ng-click="search()" id="submit">
         <label style="text-align:left"><a style="cursor:pointer" ng-click="showadvance()">{{'Advance'|translate}}</a></label>
 
         <div ng-show="advance">
@@ -23,36 +23,38 @@
 
 </div>
 
-<div ng-if="showresult"class="panel">
+<div ng-if="showresult" class="panel">
+
     <div class="panel-body">
             <h3 class="title-hero col-md-10" >{{'Search Events'|translate}}</h2>
 
         <div class="dropdown" style="top:-5px">
             <a style="cursor:pointer" class="btn btn-default" title="" data-toggle="dropdown">
                 <span class="caret"></span>
-                Sort
+                {{'Sort'|translate}}
             </a>
             <ul class="dropdown-menu">
                 <li>
-                    <a style="cursor:pointer" ng-click="sortbytime()"title="">
-                        Sort by event time
+                    <a style="cursor:pointer" ng-click="events_result.sort_by_time(true);"title="">
+                        {{'Sort by event time'|translate}}
                     </a>
                 </li>
                 <li>
-                    <a style="cursor:pointer" ng-click="sortbyname()">
-                        Sort by name
+                    <a style="cursor:pointer" ng-click="events_result.sort_by_name(true);">
+                        {{'Sort by name'|translate}}
                     </a>
                 </li>
                 <li>
-                    <a style="cursor:pointer" ng-click="sortbypublish()">
-                        Sort by publish time
+                    <a style="cursor:pointer" ng-click="events_result.sort_by_publish(true);">
+                        {{'Sort by publish time'|translate}}
                     </a>
                 </li>
             </ul>
         </div>
+
         <div class="clearfix">
             <ul id="portfolio-grid" class="reset-ul row">
-                <div ng-repeat="event in allevents">
+                <div ng-repeat="event in events_result.showing">
                     <li class="col-lg-3 col-sm-6 col-md-4" style="cursor:pointer" ng-click="showspecificevent(event.id)">
                         <div class="thumbnail-box-wrapper">
                             <div class="thumbnail-box">
@@ -64,7 +66,7 @@
                                     </div>
                                 </div>
                                 <div class="thumb-overlay bg-black"></div>
-                                <img style="height:132.95px" src="{{event.eventimage}}" alt="Image Not Found">
+                                <img style="height:132.95px" src="{{event.eventimage}}" alt="">
                             </div>
                             <div class="thumb-pane">
                                 <h3 class="thumb-heading animated rollIn">
@@ -79,10 +81,11 @@
                 </div>
             </ul>
             <div class="button-pane mrg20T">
-                <button class="btn btn-info" ng-click="gotoPrevPage()" ng-disabled="currentpage <= 1"><</button>
-                {{currentpage}} / {{maxpage}}
-                <button class="btn btn-info" ng-click="gotoNextPage()" ng-disabled="currentpage >= maxpage">></button>
+                <button class="btn btn-info" ng-click="events_result.change_page(-1);" ng-disabled="events_result.currentpage <= 1"><</button>
+                {{events_result.currentpage}} / {{events_result.maxpage}}
+                <button class="btn btn-info" ng-click="events_result.change_page(1);" ng-disabled="events_result.currentpage >= events_result.maxpage">></button>
             </div>
         </div>
     </div>
+
 </div>

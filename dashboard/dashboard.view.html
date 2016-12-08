@@ -1,76 +1,35 @@
 <div class="panel">
     <div class="panel-body">
-        <h3 class="title-hero">
-            {{'Hot Events'|translate}}
-        </h3>
-        <div class="example-box-wrapper">
-            <div class="row">
-                <div class="clearfix">
-                    <ul id="portfolio-grid" class="reset-ul row">
-                        <div ng-repeat="event in allevents">
-                            <li class="col-lg-4 col-sm-6 col-md-4" style="cursor:pointer" ng-click="showspecificevent(event.id)">
-                                <div class="thumbnail-box-wrapper">
-                                    <div class="thumbnail-box">
-                                        <a class="thumb-link" href="#" title=""></a>
-                                        <div class="thumb-content">
-                                            <div class="center-vertical">
-                                                <div class="center-content">
-                                                    <i class="icon-helper icon-center animated zoomInUp font-white glyph-icon icon-linecons-note"></i>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="thumb-overlay bg-black"></div>
-                                        <img style="height:132.95px" src="{{event.eventimage}}" alt="">
-                                    </div>
-                                    <div class="thumb-pane">
-                                        <h3 class="thumb-heading animated rollIn">
-                                            <a href="#" title="">
-                                                {{event.title}}
-                                            </a>
-                                            <small>{{event.time}}</small>
-                                        </h3>
-                                    </div>
-                                </div>
-                            </li>
-                        </div>
-                        <li class="col-lg-4 col-md-4" ui-sref="hotevents">
-                            <div class="tile-box bg-white" >
-                                <div class="thumbnail-box" style="height:200px" >
-                                    <div class="thumb-content">
-                                        <div class="center-vertical">
-                                            <div class="center-content">
-                                                <h3 class="thumb-heading animated flipInX" >
-                                                    {{'More Events'|translate}}
-                                                </h3>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="thumb-overlay bg-black"></div>
-                                     <div class="tile-content-wrapper">
-                                        <img src="img/more.png" alt="">
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-            </div>
+            <h3 class="title-hero col-md-10" >{{'Hot Events'|translate}}</h2>
+
+        <div class="dropdown" style="top:-5px">
+            <a style="cursor:pointer" class="btn btn-default" title="" data-toggle="dropdown">
+                <span class="caret"></span>
+                {{'Sort'|translate}}
+            </a>
+            <ul class="dropdown-menu">
+                <li>
+                    <a style="cursor:pointer" ng-click="events_all.sort_by_time(true);"title="">
+                        {{'Sort by event time'|translate}}
+                    </a>
+                </li>
+                <li>
+                    <a style="cursor:pointer" ng-click="events_all.sort_by_name(true);">
+                        {{'Sort by name'|translate}}
+                    </a>
+                </li>
+                <li>
+                    <a style="cursor:pointer" ng-click="events_all.sort_by_publish(true);">
+                        {{'Sort by publish time'|translate}}
+                    </a>
+                </li>
+            </ul>
         </div>
-    </div>
-</div>
-
-
-<div class="panel">
-    <div class="panel-body">
-        <h3 class="title-hero">
-            {{'My Events'|translate}}
-        </h3>
-        
 
         <div class="clearfix">
             <ul id="portfolio-grid" class="reset-ul row">
-                <div ng-repeat="event_attend in allevents_attend">
-                    <li class="col-lg-4 col-sm-6 col-md-4" style="cursor:pointer" ng-click="showspecificevent(event_attend.id)">
+                <div ng-repeat="event in events_all.showing">
+                    <li class="col-lg-3 col-sm-6 col-md-4" style="cursor:pointer" ng-click="showspecificevent(event.id)">
                         <div class="thumbnail-box-wrapper">
                             <div class="thumbnail-box">
                                 <div class="thumb-content">
@@ -81,39 +40,91 @@
                                     </div>
                                 </div>
                                 <div class="thumb-overlay bg-black"></div>
-                                <img style="height:132.95px" src="{{event_attend.eventimage}}" alt="">
+                                <img style="height:132.95px" src="{{event.eventimage}}" alt="">
                             </div>
                             <div class="thumb-pane">
                                 <h3 class="thumb-heading animated rollIn">
                                     <a title="">
-                                        {{event_attend.title}}
+                                        {{event.title}}
                                     </a>
-                                    <small>{{event_attend.starttime}}</small>
+                                    <small>{{event.starttime}}</small>
                                 </h3>
                             </div>
                         </div>
                     </li>
                 </div>
-                <li class="col-lg-4 col-md-4" ui-sref="myevents">
-                    <div class="tile-box bg-white" >
-                        <div class="thumbnail-box" style="height:200px" >
-                            <div class="thumb-content">
-                                <div class="center-vertical">
-                                    <div class="center-content">
-                                        <h3 class="thumb-heading animated flipInX" >
-                                            {{'More Events'|translate}}
-                                        </h3>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="thumb-overlay bg-black"></div>
-                             <div class="tile-content-wrapper">
-                                <img src="img/more.png" alt="">
-                            </div>
-                        </div>
-                    </div>
+            </ul>
+            <div class="button-pane mrg20T">
+                <button class="btn btn-info" ng-click="events_all.change_page(-1);" ng-disabled="events_all.currentpage <= 1"><</button>
+                {{events_all.currentpage}} / {{events_all.maxpage}}
+                <button class="btn btn-info" ng-click="events_all.change_page(1);" ng-disabled="events_all.currentpage >= events_all.maxpage">></button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="panel">
+    <div class="panel-body">
+            <h3 class="title-hero col-md-10" >{{'Events I attend'|translate}}</h2>
+
+        <div class="dropdown" style="top:-5px">
+            <a style="cursor:pointer" class="btn btn-default" title="" data-toggle="dropdown">
+                <span class="caret"></span>
+                {{'Sort'|translate}}
+            </a>
+            <ul class="dropdown-menu">
+                <li>
+                    <a style="cursor:pointer" ng-click="events_attend.sort_by_time(true);"title="">
+                        {{'Sort by event time'|translate}}
+                    </a>
+                </li>
+                <li>
+                    <a style="cursor:pointer" ng-click="events_attend.sort_by_name(true);">
+                        {{'Sort by name'|translate}}
+                    </a>
+                </li>
+                <li>
+                    <a style="cursor:pointer" ng-click="events_attend.sort_by_publish(true);">
+                        {{'Sort by publish time'|translate}}
+                    </a>
                 </li>
             </ul>
+        </div>
+
+        <div class="clearfix">
+            <ul id="portfolio-grid" class="reset-ul row">
+                <div ng-repeat="event in events_attend.showing">
+                    <li class="col-lg-3 col-sm-6 col-md-4" style="cursor:pointer" ng-click="showspecificevent(event.id)">
+                        <div class="thumbnail-box-wrapper">
+                            <div class="thumbnail-box">
+                                <div class="thumb-content">
+                                    <div class="center-vertical">
+                                        <div class="center-content">
+                                            <i class="icon-helper icon-center animated zoomInUp font-white glyph-icon icon-linecons-note"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="thumb-overlay bg-black"></div>
+                                <img style="height:132.95px" src="{{event.eventimage}}" alt="">
+                            </div>
+                            <div class="thumb-pane">
+                                <h3 class="thumb-heading animated rollIn">
+                                    <a title="">
+                                        {{event.title}}
+                                    </a>
+                                    <small>{{event.starttime}}</small>
+                                </h3>
+                            </div>
+                        </div>
+                    </li>
+                </div>
+            </ul>
+            <div class="button-pane mrg20T">
+                <button class="btn btn-info" ng-click="events_attend.change_page(-1);" ng-disabled="events_attend.currentpage <= 1"><</button>
+                {{events_attend.currentpage}} / {{events_attend.maxpage}}
+                <button class="btn btn-info" ng-click="events_attend.change_page(1);" ng-disabled="events_attend.currentpage >= events_attend.maxpage">></button>
+            </div>
         </div>
     </div>
 </div>
