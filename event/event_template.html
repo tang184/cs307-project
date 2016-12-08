@@ -112,22 +112,21 @@
 
             </div>
 
-            
-            <button class="btn btn-alt btn-hover btn-blue-alt" ng-if="reserve" ng-click = "reserveEvent(specevent.id)" style="top:20px">
-                <span>Reserve Event</span>
-                <i class="glyph-icon icon-arrow-right"></i>
-            </button>
-            <button class="btn btn-alt btn-hover btn-blue-alt" ng-if="!reserve" ng-click = "quitEvent(specevent.id)" style="top:20px">
-                <span>Quit Event</span>
-                <i class="glyph-icon icon-arrow-right col-md-6"></i>
-            </button>
-            <button class="btn btn-alt btn-hover btn-red-alt bg-red" ng-if="selfown" ng-click = "deleteEvent(specevent.id)" style="top:20px">
-                <span>Delete event</span>
-                <i class="glyph-icon icon-arrow-right"></i>
-            </button>
             </div>
         </div>
         <div class="col-md-6">
             <img ng-src="{{specevent.mapurl}}"></img>
         </div>
+        <button class="btn btn-alt btn-hover btn-blue-alt" ng-if="reserve" ng-click = "reserveEvent(specevent.id)" style="top:20px">
+            <span>Reserve Event</span>
+            <i class="glyph-icon icon-arrow-right"></i>
+        </button>
+        <button class="btn btn-alt btn-hover btn-blue-alt" ng-if="!reserve" ng-click = "quitEvent(specevent.id)" style="top:20px">
+            <span>Quit Event</span>
+            <i class="glyph-icon icon-arrow-right col-md-6"></i>
+        </button>
+        <button class="btn btn-alt btn-hover btn-red-alt bg-red" ng-if="selfown" ng-click = "deleteEvent(specevent.id)" style="top:20px">
+            <span>Delete event</span>
+            <i class="glyph-icon icon-arrow-right"></i>
+        </button>
 </script>
