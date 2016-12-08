@@ -24,7 +24,7 @@
                         email: vm.user.email,
                         name: vm.user.userName,
                         password: vm.user.password,
-                        recaptcha: $("#g-recaptcha-response").val();
+                        recaptcha: $("#g-recaptcha-response").val()
                     });
 
 
