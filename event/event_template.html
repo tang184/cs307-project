@@ -29,7 +29,6 @@
                     <div class="col-md-2">
     					<div ng-click="goto_profie(user.email)" style="cursor:pointer">
     						<img style="max-width: 30px; max-height:30px" src="https://yakume.xyz/img/{{user.avatar}}" alt="" class="meta-image img-bordered img-circle">
-    						<p class="meta-heading">{{user.name}}</p>
     					</div>
                     </div>
                 </div>
@@ -123,7 +122,7 @@
         </button>
         <button class="btn btn-alt btn-hover btn-blue-alt" ng-if="!reserve" ng-click = "quitEvent(specevent.id)" style="top:20px">
             <span>Quit Event</span>
-            <i class="glyph-icon icon-arrow-right col-md-6"></i>
+            <i class="glyph-icon icon-arrow-right"></i>
         </button>
         <button class="btn btn-alt btn-hover btn-red-alt bg-red" ng-if="selfown" ng-click = "deleteEvent(specevent.id)" style="top:20px">
             <span>Delete event</span>
