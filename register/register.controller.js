@@ -9,6 +9,8 @@
         function RegisterController($location, $rootScope, $scope, $http, FlashService) {
             $("#bodyBackground").css('background-image', 'url(assets/image-resources/blurred-bg/blurred-bg-7.jpg)');
 
+            $.getScript('https://www.google.com/recaptcha/api.js');
+
             $scope.vm = {};
             $scope.confirmPassword = false;
 
@@ -25,13 +27,14 @@
                 var mydata = $.param({
                     email: vm.user.email,
                     name: vm.user.userName,
-                    password: vm.user.password
+                    password: vm.user.password,
+                    recaptcha: g-recaptcha-response
                 });
 
 
                 $.ajax({
                       type: "POST",
-                      url: 'https://yakume.xyz/api/register',
+                      url: 'https://yakume.xyz/api/registerwithrecaptcha',
                       data: mydata,
                       success: function(response){
                             if (response == "ERR_USER_EMAIL_TAKEN") {

@@ -48,10 +48,13 @@
                                 <span ng-show="form.c_password.$dirty && form.c_password.$error.required" class="help-block">{{'Confirm password is required'|translate}}</span>
                                 <span ng-show="form.c_password.$touched && !form.c_password.$error.required && !confirmPassword" class="help-block">{{'Password not match'|translate}}</span>
                             </div>
+                            <div class="g-recapcha" data-sitekey="6LdpaCkTAAAAAIs6mVHx_1bh-D-Jrqa0IMR4EBWo"></div>
+
                             <div class="form-actions">
                                 <button type="submit" ng-click="submit(vm)" ng-disabled="form.$invalid || !confirmPassword" class="btn btn-primary">{{'Register'|translate}}</button>
                                 <a href="" ng-click="back()" class="btn btn-link">{{'Cancel'|translate}}</a>
                             </div>
+
                         </form>
 
                     </div>
