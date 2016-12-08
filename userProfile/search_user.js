@@ -40,8 +40,13 @@
                 });
             };
 			
+			$scope.goto_profie = function(email) {
+				$location.path("/main/profileothers/" + email);
+			};
+			
 			$scope.users = false;
 			$scope.show_result = false;
+			// $scope.$apply();
         };
 
 
