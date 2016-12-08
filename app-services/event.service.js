@@ -449,23 +449,25 @@
 						});
 
 					    $scope.closeDialog = function() {
-						$scope.popDialog.close();
+							$scope.popDialog.close();
 					    }
-						$.ajax({
-							type: "GET",
-							url: 'https://yakume.xyz/api/attendees',
-							data: mydata,
-							success: function(response) {
-								$scope.attendees = JSON.parse(response).attendees;
-								$scope.reserve = !($.inArray($rootScope.globals.currentUser.email, $scope.attendees) > -1);
-								$scope.getattendees();
-							}
-						});
+						$scope.updateattendees = function() {
+							$.ajax({
+								type: "GET",
+								url: 'https://yakume.xyz/api/attendees',
+								data: mydata,
+								success: function(response) {
+									$scope.attendees = JSON.parse(response).attendees;
+									$scope.reserve = !($.inArray($rootScope.globals.currentUser.email, $scope.attendees) > -1);
+									$scope.getattendees();
+								}
+							});
+						}
+						$scope.updateattendees();
 						$scope.getattendees = function() {
 							pull_user_by_email_then_avatar_list($scope.attendees, function(list) {
 								$scope.attend_users = list;
 								$scope.$apply();
-								console.log($scope.attend_users);
 							});
 						}
 						$scope.ownerprofie = function() {
@@ -559,7 +561,7 @@
 													data: mydatareserve,
 													success: function(response){
 														if (response == "SUCCESS") {
-															$scope.attendees.push($rootScope.globals.currentUser.email);
+															$scope.updateattendees();
 														} else if (response == "ERR_INVALID_ARGUMENT") {
 															alert("You haven't pay");
 														} else if (response == "ERR_NOT_LOGGED_IN") {
@@ -590,7 +592,7 @@
 									data: mydata,
 									success: function(response){
 										if (response == "SUCCESS") {
-											$scope.attendees.push($rootScope.globals.currentUser.email);
+											$scope.updateattendees();
 										} else if (response == "ERR_INVALID_ARGUMENT") {
 											alert("You haven't pay");
 										} else if (response == "ERR_NOT_LOGGED_IN") {
@@ -620,12 +622,7 @@
 
 									
 									if (response == "SUCCESS") {
-										for(var i = $scope.attendees.length - 1; i >= 0; i--) {
-											if($scope.attendees[i] === $rootScope.globals.currentUser.email) {
-											   $scope.attendees.splice(i, 1);
-											}
-										}
-										console.log($scope.attendees);
+										$scope.updateattendees();
 									} else if (response == "ERR_NOT_LOGGED_IN"){
 										alert("login expired, please login again");
 										$location.path('/login');
@@ -643,14 +640,11 @@
 							var mydata = $.param({
 								email : $scope.specevent.owner
 							});
-
 							$.ajax({
 								type: "POST",
 								url: 'https://yakume.xyz/api/user/follow',
 								data: mydata,
 								success: function(response){
-
-
 									if (response == "SUCCESS") {
 										console.log(response);
 									} else if (response == "ERR_NOT_LOGGED_IN"){
@@ -659,10 +653,6 @@
 									} else {
 										alert(response);
 									}
-
-
-									
-									
 								}
 							});
 						}
