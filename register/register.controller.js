@@ -19,33 +19,34 @@
             }
 
             $scope.submit = function(vm) {
-                
-                var myconfig = {
+                if ($("#g-recaptcha-response").val()) {
+                    var mydata = $.param({
+                        email: vm.user.email,
+                        name: vm.user.userName,
+                        password: vm.user.password,
+                        recaptcha: $("#g-recaptcha-response").val();
+                    });
+
+
+                    $.ajax({
+                          type: "POST",
+                          url: 'https://yakume.xyz/api/registerwithrecaptcha',
+                          data: mydata,
+                          success: function(response){
+                                if (response == "ERR_USER_EMAIL_TAKEN") {
+                                    alert("Email already taken");
+                                } else {
+                                    var myVar = setInterval(FlashService.Success, 2000);
+                                    FlashService.Success('Signup successful', true);
+                                }     
+                          }
+                    });
+                    $location.path('/login');
 
                 }
+                
 
-                var mydata = $.param({
-                    email: vm.user.email,
-                    name: vm.user.userName,
-                    password: vm.user.password,
-                    recaptcha: g-recaptcha-response
-                });
-
-
-                $.ajax({
-                      type: "POST",
-                      url: 'https://yakume.xyz/api/registerwithrecaptcha',
-                      data: mydata,
-                      success: function(response){
-                            if (response == "ERR_USER_EMAIL_TAKEN") {
-                                alert("Email already taken");
-                            } else {
-                                var myVar = setInterval(FlashService.Success, 2000);
-                                FlashService.Success('Signup successful', true);
-                            }	  
-                      }
-                });
-                $location.path('/login');
+                
                                                       
 
 
