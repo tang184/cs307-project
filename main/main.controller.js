@@ -89,6 +89,10 @@
 			            $('body').toggleClass('closed-sidebar');
 			            $('#abc').toggleClass('icon-angle-right').toggleClass('icon-angle-left');
 			        });
+			        $('#search_user').click(function() {
+			            $('body').toggleClass('closed-sidebar');
+			            $('#abc').toggleClass('icon-angle-right').toggleClass('icon-angle-left');
+			        });
 
 			    });
 

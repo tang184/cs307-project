@@ -85,6 +85,13 @@
                 url:"/searchevents",
             })
 
+            .state('searchuser', {
+                parent:'main',
+                controller: 'SearchuserController',
+                templateUrl: 'userProfile/search_user.html',
+                url:"/searchuser",
+            })
+
             $urlRouterProvider.otherwise('/main/dashboard');
 
     });
