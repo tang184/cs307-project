@@ -8,17 +8,24 @@
 						<h3 class="meta-heading">{{user.name}}</h3>
 						<h4 class="meta-subheading" style="color:white">{{user.email}}</h4>
 						<button class="btn btn-alt btn-hover btn-blue-alt" ng-click = "change_follow()" style="top:20px">
-							<span ng-if="you_follow && follow_you">Following eachother</span>
-							<span ng-if="!you_follow && follow_you">Following you</span>
-							<span ng-if="you_follow && !follow_you">Followed</span>
-							<span ng-if="!you_follow && !follow_you">Not followed</span>
+							<span ng-if="you_follow && follow_you">Following each other</span>
+							<span ng-if="!you_follow && follow_you">Follow</span>
+							<span ng-if="you_follow && !follow_you">UnFollow</span>
+							<span ng-if="!you_follow && !follow_you">Follow</span>
 							<i class="glyph-icon icon-arrow-right"></i>
 						</button>
+						<br>
+						<br>
+						<br>
+						<h4 class="meta-subheading" style="color:white">Rating:</h4>
+						<div class="col-md-push-4 col-md-4">
 						<div ng-repeat="star in rating_data.stars">
-							<div class="col-md-2">
-								<img src="https://yakume.xyz/img/{{star.image_src}}" ng_click="change_rating(star.id);">
-							</div>
+								<div class="col-md-2">
+									<img src="https://yakume.xyz/img/{{star.image_src}}" ng_click="change_rating(star.id);">
+								</div>				
 						</div>
+					</div>
+
 					</div>
 
 				</div>
